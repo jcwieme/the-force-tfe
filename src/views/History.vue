@@ -7,18 +7,24 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, computed } from '@vue/composition-api'
 
 export default defineComponent({
   name: 'History',
   setup(props, ctx) {
-    const text =
-      ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].text.intro
-    const number =
-      ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].number
-    const title = ctx.root.$store.state.movies[
-      ctx.root.$route.params.id - 1
-    ].title.toUpperCase()
+    let text = computed(() => {
+      return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].text
+        .intro
+    })
+    let number = computed(() => {
+      return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].number
+    })
+    let title = computed(() => {
+      return ctx.root.$store.state.movies[
+        ctx.root.$route.params.id - 1
+      ].title.toUpperCase()
+    })
+
     return {
       text,
       number,
