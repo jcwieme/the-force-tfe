@@ -1,23 +1,50 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Loader from "@/views/Loader.vue";
+import Choice from "@/views/Choice.vue";
+import Words from "@/views/Words.vue";
+import Dialogues from "@/views/Dialogues.vue";
+import Numbers from "@/views/Numbers.vue";
+import History from "@/views/History.vue";
+import Credits from "@/views/Credits.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    name: "Loader",
+    component: Loader
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    path: "/choice",
+    name: "Choice",
+    component: Choice
+  },
+  {
+    path: "/movie/:id/history",
+    name: "History",
+    component: History
+  },
+  {
+    path: "/movie/:id/dialogues",
+    name: "Dialogues",
+    component: Dialogues
+  },
+  {
+    path: "/movie/:id/words",
+    name: "Words",
+    component: Words
+  },
+  {
+    path: "/movie/:id/numbers",
+    name: "Numbers",
+    component: Numbers
+  },
+  {
+    path: "/movie/:id/credits",
+    name: "Credits",
+    component: Credits
   }
 ];
 

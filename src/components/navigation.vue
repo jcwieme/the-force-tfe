@@ -1,0 +1,440 @@
+<template>
+  <div class="nav">
+    <div class="nav__sound">Sound: on</div>
+    <div class="nav__arrows">
+      <img
+        src="../assets/img/nav/up--actif.svg"
+        alt="actif up"
+        class="nav__up"
+      />
+      <img
+        :src="down ? downActif : downInactif"
+        alt="actif down"
+        class="nav__down"
+      />
+      <img
+        :src="left ? leftActif : leftInactif"
+        alt="actif left"
+        class="nav__left"
+      />
+      <img
+        :src="right ? rightActif : rightInactif"
+        alt="actif right"
+        class="nav__right"
+      />
+    </div>
+    <div class="nav__chapter">
+      <h3 :data-number="chapter">
+        {{ this.$route.name }}
+      </h3>
+    </div>
+    <div class="nav__title" :class="[isNavOpen ? 'nav__title--actif' : '']">
+      <div class="nav__menu" @click="openNav">
+        <div class="nav__btn nav__btn--top">btn1</div>
+        <div class="nav__btn nav__btn--center">btn2</div>
+        <div class="nav__btn nav__btn--bottom">btn3</div>
+      </div>
+      <h2 class="nav__movie">
+        <span>Star Wars: {{ number }}</span>
+        <span>{{ title }}</span>
+      </h2>
+      <div class="nav__choice">
+        <ul class="nav__list">
+          <router-link
+            to="/choice"
+            tag="li"
+            data-number="01"
+            @click.native="closeNav"
+            >Choice</router-link
+          >
+          <router-link
+            :to="{ path: '/movie/' + this.$route.params.id + '/history' }"
+            tag="li"
+            data-number="02"
+            @click.native="closeNav"
+            >History</router-link
+          >
+          <router-link
+            :to="{ path: '/movie/' + this.$route.params.id + '/dialogues' }"
+            tag="li"
+            data-number="03"
+            @click.native="closeNav"
+            >Dialogues</router-link
+          >
+          <router-link
+            :to="{ path: '/movie/' + this.$route.params.id + '/words' }"
+            tag="li"
+            data-number="04"
+            @click.native="closeNav"
+            >Words</router-link
+          >
+          <router-link
+            :to="{ path: '/movie/' + this.$route.params.id + '/numbers' }"
+            tag="li"
+            data-number="05"
+            @click.native="closeNav"
+            >Numbers</router-link
+          >
+        </ul>
+        <ul class="nav__extra">
+          <router-link to="/" tag="li">Credits</router-link>
+          <a href="/" target="_blank">Case-Study</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Navigation",
+  data() {
+    return {
+      leftActif: "../../assets/img/nav/left--actif.svg",
+      leftInactif: "../../assets/img/nav/left--inactif.svg",
+      rightActif: "../../assets/img/nav/right--actif.svg",
+      rightInactif: "../../assets/img/nav/right--inactif.svg",
+      downActif: "../../assets/img/nav/down--actif.svg",
+      downInactif: "../../assets/img/nav/down--inactif.svg",
+      isNavOpen: false
+    };
+  },
+  computed: {
+    number: function() {
+      return this.$store.state.movies[
+        this.$route.params.id - 1
+      ].number.toLowerCase();
+    },
+    title: function() {
+      return this.$store.state.movies[this.$route.params.id - 1].title;
+    },
+    left: function() {
+      if (this.$route.params.id === 1) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    right: function() {
+      if (this.$route.params.id === 6) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    down: function() {
+      if (this.$route.name === "Credits") {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    chapter: function() {
+      if (this.$route.name === "History") {
+        return "02";
+      } else if (this.$route.name === "Dialogues") {
+        return "03";
+      } else if (this.$route.name === "Words") {
+        return "04";
+      } else if (this.$route.name === "Numbers") {
+        return "05";
+      } else {
+        return "06";
+      }
+    }
+  },
+  methods: {
+    openNav() {
+      this.isNavOpen = !this.isNavOpen;
+    },
+    closeNav() {
+      this.isNavOpen = !this.isNavOpen;
+    }
+  }
+};
+</script>
+
+<style lang="scss">
+.st0 {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 4;
+}
+.st1 {
+  fill-rule: evenodd;
+  clip-rule: evenodd;
+  fill: #ffffff;
+}
+.nav {
+  color: white;
+  font-family: star_jediregular;
+  letter-spacing: 0.1em;
+
+  &__sound {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+
+    z-index: 11;
+  }
+  &__arrows {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+
+    width: 105px;
+    height: 70px;
+
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  &__left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  &__right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &__up {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+  &__down {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  &__chapter {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+
+    h3 {
+      position: relative;
+      transform-origin: left center;
+      transform: rotate(-90deg) translateY(100%);
+
+      &::before {
+        content: attr(data-number);
+        top: -70%;
+        left: 0;
+        position: absolute;
+        color: #ffe403;
+      }
+    }
+  }
+  &__title {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+
+    z-index: 11;
+
+    display: flex;
+
+    &--actif {
+      .nav__choice {
+        transform: translateX(0);
+      }
+
+      .nav__btn {
+        &--top {
+          width: 45px;
+          transform-origin: center center;
+          transform: translateY(17px) rotate(45deg);
+
+          transition: all 500ms ease, opacity 0s;
+        }
+        &--center {
+          opacity: 0;
+        }
+        &--bottom {
+          transform-origin: center center;
+          transform: translateY(-17px) rotate(-45deg);
+
+          transition: all 500ms ease, opacity 0s;
+        }
+      }
+    }
+  }
+  &__menu {
+    width: 45px;
+    height: 40px;
+
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 20;
+
+    cursor: pointer;
+
+    &:hover {
+      .nav__btn {
+        &--top {
+          width: 45px;
+        }
+        &--center {
+          width: 45px;
+        }
+      }
+    }
+  }
+  &__btn {
+    height: 6px;
+    background-color: white;
+
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+
+    transition: all 500ms ease, opacity 0s;
+
+    &--top {
+      width: 25px;
+    }
+
+    &--center {
+      width: 35px;
+    }
+    &--bottom {
+      width: 45px;
+    }
+  }
+  &__movie {
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 6px solid white;
+    line-height: 1;
+    height: 45px;
+    font-size: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 20;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__choice {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 445px;
+    height: calc(100vh - 6px);
+    background-color: #18181c;
+    border: 3px solid #ffe403;
+    z-index: 19;
+
+    display: flex;
+
+    transform: translateX(-100%);
+    transition: all 500ms ease;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 95px;
+
+    font-size: 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    li {
+      margin-bottom: 70px;
+      position: relative;
+
+      cursor: pointer;
+
+      transition: all 500ms ease;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        content: attr(data-number);
+        position: absolute;
+        top: -80%;
+        left: -35px;
+
+        font-size: 60px;
+
+        color: #ffe403;
+        opacity: 0.5;
+        transition: all 500ms ease;
+      }
+
+      &:hover {
+        color: #ffe403;
+
+        &::before {
+          color: white;
+        }
+      }
+    }
+  }
+  &__extra {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    li {
+      cursor: pointer;
+      transition: all 500ms ease;
+
+      &:hover {
+        color: #ffe403;
+      }
+    }
+
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      margin-left: 7px;
+      padding-left: 10px;
+
+      position: relative;
+      transition: all 500ms ease;
+
+      &:hover {
+        color: #ffe403;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background-color: white;
+      }
+    }
+  }
+}
+</style>
