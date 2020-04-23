@@ -16,11 +16,6 @@ export default new Vuex.Store({
     movies: [movie1, movie2, movie3, movie4, movie5, movie6],
     definitions,
   },
-  getters: {
-    movies: state => {
-      return state.movies
-    },
-  },
   mutations: {},
   actions: {},
   modules: {},
