@@ -40,6 +40,7 @@
       </h2>
       <div class="nav__choice">
         <ul class="nav__list">
+          check
           <router-link
             v-for="(route, index) in routes"
             :key="index"
