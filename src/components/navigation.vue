@@ -41,39 +41,13 @@
       <div class="nav__choice">
         <ul class="nav__list">
           <router-link
-            to="/choice"
+            v-for="(route, index) in routes"
+            :key="index"
+            :to="{ path: route.path }"
+            :data-number="route.number"
             tag="li"
-            data-number="01"
             @click.native="closeNav"
-            >Choice</router-link
-          >
-          <router-link
-            :to="{ path: '/movie/' + this.$route.params.id + '/history' }"
-            tag="li"
-            data-number="02"
-            @click.native="closeNav"
-            >History</router-link
-          >
-          <router-link
-            :to="{ path: '/movie/' + this.$route.params.id + '/dialogues' }"
-            tag="li"
-            data-number="03"
-            @click.native="closeNav"
-            >Dialogues</router-link
-          >
-          <router-link
-            :to="{ path: '/movie/' + this.$route.params.id + '/words' }"
-            tag="li"
-            data-number="04"
-            @click.native="closeNav"
-            >Words</router-link
-          >
-          <router-link
-            :to="{ path: '/movie/' + this.$route.params.id + '/numbers' }"
-            tag="li"
-            data-number="05"
-            @click.native="closeNav"
-            >Numbers</router-link
+            >{{ route.title }}</router-link
           >
         </ul>
         <ul class="nav__extra">
@@ -87,71 +61,100 @@
 
 <script>
 export default {
-  name: "Navigation",
+  name: 'Navigation',
   data() {
     return {
-      leftActif: "../../assets/img/nav/left--actif.svg",
-      leftInactif: "../../assets/img/nav/left--inactif.svg",
-      rightActif: "../../assets/img/nav/right--actif.svg",
-      rightInactif: "../../assets/img/nav/right--inactif.svg",
-      downActif: "../../assets/img/nav/down--actif.svg",
-      downInactif: "../../assets/img/nav/down--inactif.svg",
-      isNavOpen: false
-    };
+      leftActif: '../../assets/img/nav/left--actif.svg',
+      leftInactif: '../../assets/img/nav/left--inactif.svg',
+      rightActif: '../../assets/img/nav/right--actif.svg',
+      rightInactif: '../../assets/img/nav/right--inactif.svg',
+      downActif: '../../assets/img/nav/down--actif.svg',
+      downInactif: '../../assets/img/nav/down--inactif.svg',
+      isNavOpen: false,
+    }
   },
   computed: {
+    routes: function() {
+      return [
+        {
+          path: '/choice',
+          number: '01',
+          title: 'Choice',
+        },
+        {
+          path: `/movie/${this.$route.params.id}/history`,
+          number: '02',
+          title: 'History',
+        },
+        {
+          path: `/movie/${this.$route.params.id}/dialogues`,
+          number: '03',
+          title: 'Dialogues',
+        },
+        {
+          path: `/movie/${this.$route.params.id}/words`,
+          number: '04',
+          title: 'Words',
+        },
+        {
+          path: `/movie/${this.$route.params.id}/numbers`,
+          number: '05',
+          title: 'Numbers',
+        },
+      ]
+    },
     number: function() {
       return this.$store.state.movies[
         this.$route.params.id - 1
-      ].number.toLowerCase();
+      ].number.toLowerCase()
     },
     title: function() {
-      return this.$store.state.movies[this.$route.params.id - 1].title;
+      return this.$store.state.movies[this.$route.params.id - 1].title
     },
     left: function() {
       if (this.$route.params.id === 1) {
-        return false;
+        return false
       } else {
-        return true;
+        return true
       }
     },
     right: function() {
       if (this.$route.params.id === 6) {
-        return false;
+        return false
       } else {
-        return true;
+        return true
       }
     },
     down: function() {
-      if (this.$route.name === "Credits") {
-        return false;
+      if (this.$route.name === 'Credits') {
+        return false
       } else {
-        return true;
+        return true
       }
     },
     chapter: function() {
-      if (this.$route.name === "History") {
-        return "02";
-      } else if (this.$route.name === "Dialogues") {
-        return "03";
-      } else if (this.$route.name === "Words") {
-        return "04";
-      } else if (this.$route.name === "Numbers") {
-        return "05";
+      if (this.$route.name === 'History') {
+        return '02'
+      } else if (this.$route.name === 'Dialogues') {
+        return '03'
+      } else if (this.$route.name === 'Words') {
+        return '04'
+      } else if (this.$route.name === 'Numbers') {
+        return '05'
       } else {
-        return "06";
+        return '06'
       }
-    }
+    },
   },
   methods: {
     openNav() {
-      this.isNavOpen = !this.isNavOpen;
+      this.isNavOpen = !this.isNavOpen
     },
     closeNav() {
-      this.isNavOpen = !this.isNavOpen;
-    }
-  }
-};
+      this.isNavOpen = !this.isNavOpen
+    },
+  },
+}
 </script>
 
 <style lang="scss">
@@ -426,7 +429,7 @@ export default {
       }
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
