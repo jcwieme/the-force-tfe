@@ -25,141 +25,150 @@
 </template>
 
 <script>
+import { defineComponent, ref, computed, onMounted } from '@vue/composition-api'
 import Navigation from '@/components/navigation'
 
-export default {
+export default defineComponent({
   name: 'Application',
   components: {
     Navigation,
   },
-  data() {
-    return {
-      keyUp: true,
-      screen: false,
-    }
-  },
-  computed: {
-    navRender: function() {
-      if (this.$route.name !== 'Choice' && this.$route.name !== 'Loader') {
+  setup(props, ctx) {
+    const keyUp = ref(true)
+    const screen = ref(false)
+    const navRender = computed(() => {
+      if (
+        ctx.root.$route.name !== 'Choice' &&
+        ctx.root.$route.name !== 'Loader'
+      ) {
         return true
       } else {
         return false
       }
-    },
-  },
-  created() {
-    if (window.innerWidth > 1024) {
-      this.screen = false
-    } else {
-      this.screen = true
+    })
+
+    onMounted(() => {
+      screen.value = checkSize()
+
+      window.addEventListener('resize', onResize)
+
+      // Navigation arrows
+      document.addEventListener('keydown', e => {
+        if (
+          ctx.root.$route.name !== 'Choice' ||
+          ctx.root.$route.name !== 'Loader'
+        ) {
+          if (e.keyCode === 39) {
+            if (ctx.root.$route.params.id < 6 && keyUp.value === true) {
+              let next = ctx.root.$route.params.id
+              next++
+              ctx.root.$router.push({
+                name: ctx.root.$route.name,
+                params: { id: next },
+              })
+            }
+          }
+          if (e.keyCode === 37) {
+            if (ctx.root.$route.params.id > 1 && keyUp.value === true) {
+              let before = ctx.root.$route.params.id - 1
+              ctx.root.$router.push({
+                name: ctx.root.$route.name,
+                params: { id: before },
+              })
+            }
+          }
+          if (e.keyCode === 40) {
+            switch (ctx.root.$route.name) {
+              case 'History':
+                ctx.root.$router.push({
+                  name: 'Dialogues',
+                })
+                break
+              case 'Dialogues':
+                ctx.root.$router.push({
+                  name: 'Words',
+                })
+                break
+              case 'Words':
+                ctx.root.$router.push({
+                  name: 'Numbers',
+                })
+                break
+              case 'Numbers':
+                ctx.root.$router.push({
+                  name: 'Credits',
+                })
+                break
+            }
+          }
+          if (e.keyCode === 38) {
+            switch (ctx.root.$route.name) {
+              case 'History':
+                ctx.root.$router.push({
+                  name: 'Choice',
+                })
+                break
+              case 'Dialogues':
+                ctx.root.$router.push({
+                  name: 'History',
+                })
+                break
+              case 'Words':
+                ctx.root.$router.push({
+                  name: 'Dialogues',
+                })
+                break
+              case 'Numbers':
+                ctx.root.$router.push({
+                  name: 'Words',
+                })
+                break
+              case 'Credits':
+                ctx.root.$router.push({
+                  name: 'Numbers',
+                })
+                break
+            }
+          }
+        }
+
+        keyUp.value = false
+      })
+
+      document.addEventListener('keyup', e => {
+        if (
+          e.keyCode === 39 ||
+          e.keyCode === 37 ||
+          e.keyCode === 38 ||
+          e.keyCode === 40
+        ) {
+          keyUp.value = true
+        }
+      })
+    })
+
+    const onResize = () => {
+      screen.value = checkSize()
     }
 
-    window.addEventListener('resize', this.onResize)
-
-    // Navigation arrows
-    document.addEventListener('keydown', e => {
-      if (this.$route.name !== 'Choice' || this.$route.name !== 'Loader') {
-        if (e.keyCode === 39) {
-          if (this.$route.params.id < 6 && this.keyUp === true) {
-            let next = this.$route.params.id
-            next++
-            this.$router.push({
-              name: this.$route.name,
-              params: { id: next },
-            })
-          }
-        }
-        if (e.keyCode === 37) {
-          if (this.$route.params.id > 1 && this.keyUp === true) {
-            let before = this.$route.params.id - 1
-            this.$router.push({
-              name: this.$route.name,
-              params: { id: before },
-            })
-          }
-        }
-        if (e.keyCode === 40) {
-          switch (this.$route.name) {
-            case 'History':
-              this.$router.push({
-                name: 'Dialogues',
-              })
-              break
-            case 'Dialogues':
-              this.$router.push({
-                name: 'Words',
-              })
-              break
-            case 'Words':
-              this.$router.push({
-                name: 'Numbers',
-              })
-              break
-            case 'Numbers':
-              this.$router.push({
-                name: 'Credits',
-              })
-              break
-          }
-        }
-        if (e.keyCode === 38) {
-          switch (this.$route.name) {
-            case 'History':
-              this.$router.push({
-                name: 'Choice',
-              })
-              break
-            case 'Dialogues':
-              this.$router.push({
-                name: 'History',
-              })
-              break
-            case 'Words':
-              this.$router.push({
-                name: 'Dialogues',
-              })
-              break
-            case 'Numbers':
-              this.$router.push({
-                name: 'Words',
-              })
-              break
-            case 'Credits':
-              this.$router.push({
-                name: 'Numbers',
-              })
-              break
-          }
-        }
+    const checkSize = () => {
+      if (window.innerWidth > 1024) {
+        return false
+      } else {
+        return true
       }
+    }
 
-      this.keyUp = false
-    })
-
-    document.addEventListener('keyup', e => {
-      if (
-        e.keyCode === 39 ||
-        e.keyCode === 37 ||
-        e.keyCode === 38 ||
-        e.keyCode === 40
-      ) {
-        this.keyUp = true
-      }
-    })
+    return {
+      keyUp,
+      screen,
+      navRender,
+    }
   },
   beforeRoute(to, from, next) {
     next()
   },
-  methods: {
-    onResize() {
-      if (window.innerWidth > 1024) {
-        this.screen = false
-      } else {
-        this.screen = true
-      }
-    },
-  },
-}
+})
 </script>
 
 <style lang="scss">

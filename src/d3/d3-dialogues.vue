@@ -11,7 +11,7 @@ export default defineComponent({
   props: {
     DataDialogues: Object,
   },
-  setup(props) {
+  setup(props, ctx) {
     const setupGraphic = {
       margin: {
         top: 150,
@@ -717,7 +717,7 @@ export default defineComponent({
     }
 
     const onResize = () => {
-      if (window.innerWidth > 1024) {
+      if (window.innerWidth > 1024 && ctx.root.$route.name === 'Dialogues') {
         setupGraphic.width = window.innerWidth
         setupGraphic.height = window.innerHeight
         setupGraphic.circle.originX = setupGraphic.width / 2
