@@ -1,86 +1,24 @@
 <template>
   <ul class="choice">
-    <router-link tag="li" to="movie/1/history" class="choice__movie">
+    <router-link
+      v-for="(choice, index) in choices"
+      :key="index"
+      tag="li"
+      :to="choice.path"
+      class="choice__movie"
+    >
       <div class="choice__title">
-        <span class="choice__number">i</span>
+        <span class="choice__number">{{ choice.number }}</span>
         <div class="choice__reveal">
-          <span class="choice__star choice__star--top"><span>StaR</span></span>
-          <span class="choice__name">
-            the phantom menace
+          <span class="choice__star choice__star--top">
+            <span>StaR</span>
           </span>
-          <span class="choice__star choice__star--bottom"
-            ><span>Wars</span></span
-          >
-        </div>
-      </div>
-    </router-link>
-    <router-link tag="li" to="movie/2/history" class="choice__movie">
-      <div class="choice__title">
-        <span class="choice__number">ii</span>
-        <div class="choice__reveal">
-          <span class="choice__star choice__star--top"><span>StaR</span></span>
           <span class="choice__name">
-            attack of the clones
+            {{ choice.title }}
           </span>
-          <span class="choice__star choice__star--bottom"
-            ><span>Wars</span></span
-          >
-        </div>
-      </div>
-    </router-link>
-    <router-link tag="li" to="movie/3/history" class="choice__movie">
-      <div class="choice__title">
-        <span class="choice__number">iii</span>
-        <div class="choice__reveal">
-          <span class="choice__star choice__star--top"><span>StaR</span></span>
-          <span class="choice__name">
-            revenge of the sith
+          <span class="choice__star choice__star--bottom">
+            <span>Wars</span>
           </span>
-          <span class="choice__star choice__star--bottom"
-            ><span>Wars</span></span
-          >
-        </div>
-      </div>
-    </router-link>
-    <router-link tag="li" to="movie/4/history" class="choice__movie">
-      <div class="choice__title">
-        <span class="choice__number">iv</span>
-        <div class="choice__reveal">
-          <span class="choice__star choice__star--top"><span>StaR</span></span>
-          <span class="choice__name">
-            a new hope
-          </span>
-          <span class="choice__star choice__star--bottom"
-            ><span>Wars</span></span
-          >
-        </div>
-      </div>
-    </router-link>
-    <router-link tag="li" to="movie/5/history" class="choice__movie">
-      <div class="choice__title">
-        <span class="choice__number">v</span>
-        <div class="choice__reveal">
-          <span class="choice__star choice__star--top"><span>StaR</span></span>
-          <span class="choice__name">
-            the empire strike back
-          </span>
-          <span class="choice__star choice__star--bottom"
-            ><span>Wars</span></span
-          >
-        </div>
-      </div>
-    </router-link>
-    <router-link tag="li" to="movie/6/history" class="choice__movie">
-      <div class="choice__title">
-        <span class="choice__number">vi</span>
-        <div class="choice__reveal">
-          <span class="choice__star choice__star--top"><span>StaR</span></span>
-          <span class="choice__name">
-            return of the jedi
-          </span>
-          <span class="choice__star choice__star--bottom"
-            ><span>Wars</span></span
-          >
         </div>
       </div>
     </router-link>
@@ -88,9 +26,49 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from '@vue/composition-api'
+
+export default defineComponent({
   name: 'Choice',
-}
+  setup() {
+    const choices = [
+      {
+        title: 'the phantom menace',
+        path: 'movie/1/history',
+        number: 'i',
+      },
+      {
+        title: 'attack of the clones',
+        path: 'movie/2/history',
+        number: 'ii',
+      },
+      {
+        title: 'revenge of the sith',
+        path: 'movie/3/history',
+        number: 'iii',
+      },
+      {
+        title: 'a new hope',
+        path: 'movie/4/history',
+        number: 'iv',
+      },
+      {
+        title: 'the empire strike back',
+        path: 'movie/5/history',
+        number: 'v',
+      },
+      {
+        title: 'return of the jedi',
+        path: 'movie/6/history',
+        number: 'vi',
+      },
+    ]
+
+    return {
+      choices,
+    }
+  },
+})
 </script>
 
 <style lang="scss">
