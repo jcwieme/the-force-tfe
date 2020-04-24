@@ -16,8 +16,8 @@ export default {
   color: white;
   font-family: star_jediregular;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  width: calc(100vw * 0.021);
+  height: calc(100vw * 0.021);
   transform: scale(0);
   transition: transform 0.1s;
 
