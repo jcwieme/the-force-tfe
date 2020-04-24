@@ -9,20 +9,24 @@
 </template>
 
 <script>
+import { defineComponent, computed } from '@vue/composition-api'
 import * as utils from '@/tools/utils'
-export default {
+export default defineComponent({
   name: 'Words',
-  data() {
-    return { keyUp: true }
-  },
-  computed: {
-    words: function() {
+  setup(props, ctx) {
+    const words = computed(() => {
       return utils
-        .sortWords(this.$store.state.movies[this.$route.params.id - 1].dialogs)
+        .sortWords(
+          ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].dialogs
+        )
         .slice(0, 20)
-    },
+    })
+
+    return {
+      words,
+    }
   },
-}
+})
 </script>
 
 <style lang="scss" scoped>
