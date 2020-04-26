@@ -411,7 +411,7 @@
     },
     {
       "from": "OBI-WAN",
-      "to": "OBI-WAN",
+      "to": "ANAKIN",
       "text": "The Chancellor's signal is coming from right there. The observation platform at the top of that spire.",
       "where": "9 INT. MAIN HANGAR-TRADE FEDERATION CRUISER",
       "number": 17,

@@ -386,6 +386,8 @@ export default defineComponent({
     }
 
     const drawLinks = data => {
+      const maxNumber = Math.max(...data.links.map(s => s.number))
+
       var gLinks = setupGraphic.variables.svg.append('g').attr('id', 'gLinks')
       // set the links
       setupGraphic.variables.links = gLinks
@@ -422,26 +424,85 @@ export default defineComponent({
                 setupGraphic.circle.angle[d.target - 1] -
                   setupGraphic.circle.quarterAngle
               )
-          var dx = endX - startX
-          var dy = endY - startY
-          var dr = Math.sqrt(dx * dx + dy * dy)
 
-          var curveDirection = 0
+          var cxEnd = 0
+          var cyEnd = 0
+          var cxStart = 0
+          var cyStart = 0
 
-          if (d.source + 30 < setupGraphic.variables.allNodes.length) {
-            if (d.target > d.source && d.target <= d.source + 30) {
-              curveDirection = 0
-            } else {
-              curveDirection = 1
-            }
-          } else {
+          var sourceUpEight =
+            d.source + setupGraphic.variables.allNodes.length / 8 >
+            setupGraphic.variables.allNodes.length
+              ? d.source +
+                setupGraphic.variables.allNodes.length / 8 -
+                setupGraphic.variables.allNodes.length
+              : d.source + setupGraphic.variables.allNodes.length / 8
+          var sourceDownEight =
+            d.source - setupGraphic.variables.allNodes.length / 8 < 0
+              ? d.source -
+                setupGraphic.variables.allNodes.length / 8 +
+                (setupGraphic.variables.allNodes.length + d.source)
+              : d.source - setupGraphic.variables.allNodes.length / 8
+
+          if (
+            d.source + setupGraphic.variables.allNodes.length / 8 >
+            setupGraphic.variables.allNodes.length
+          ) {
             if (
-              d.target < d.source &&
-              d.target >= d.source + 30 - setupGraphic.variables.allNodes.length
+              (d.target < d.source && d.target >= sourceDownEight) ||
+              (d.target > d.source &&
+                d.target <= setupGraphic.variables.allNodes.length) ||
+              (d.target > 0 && d.target <= sourceUpEight)
             ) {
-              curveDirection = 1
+              cxStart = (setupGraphic.circle.originX + startX) / 2
+              cyStart = (setupGraphic.circle.originY + startY) / 2
+              cxEnd = (setupGraphic.circle.originX + endX) / 2
+              cyEnd = (setupGraphic.circle.originY + endY) / 2
             } else {
-              curveDirection = 0
+              cxStart = setupGraphic.circle.originX
+              cyStart = setupGraphic.circle.originY
+              cxEnd = setupGraphic.circle.originX
+              cyEnd = setupGraphic.circle.originY
+            }
+          }
+
+          if (d.source - setupGraphic.variables.allNodes.length / 8 < 0) {
+            if (
+              (d.target > d.source && d.target <= sourceUpEight) ||
+              (d.target < d.source && d.target >= 0) ||
+              (d.target <= setupGraphic.variables.allNodes.length &&
+                d.target >= sourceDownEight)
+            ) {
+              cxStart = (setupGraphic.circle.originX + startX) / 2
+              cyStart = (setupGraphic.circle.originY + startY) / 2
+              cxEnd = (setupGraphic.circle.originX + endX) / 2
+              cyEnd = (setupGraphic.circle.originY + endY) / 2
+            } else {
+              cxStart = setupGraphic.circle.originX
+              cyStart = setupGraphic.circle.originY
+              cxEnd = setupGraphic.circle.originX
+              cyEnd = setupGraphic.circle.originY
+            }
+          }
+
+          if (
+            d.source + setupGraphic.variables.allNodes.length / 8 <=
+              setupGraphic.variables.allNodes.length &&
+            d.source - setupGraphic.variables.allNodes.length / 8 >= 0
+          ) {
+            if (
+              (d.target > d.source && d.target <= sourceUpEight) ||
+              (d.target < d.source && d.target >= sourceDownEight)
+            ) {
+              cxStart = (setupGraphic.circle.originX + startX) / 2
+              cyStart = (setupGraphic.circle.originY + startY) / 2
+              cxEnd = (setupGraphic.circle.originX + endX) / 2
+              cyEnd = (setupGraphic.circle.originY + endY) / 2
+            } else {
+              cxStart = setupGraphic.circle.originX
+              cyStart = setupGraphic.circle.originY
+              cxEnd = setupGraphic.circle.originX
+              cyEnd = setupGraphic.circle.originY
             }
           }
 
@@ -450,13 +511,15 @@ export default defineComponent({
             startX +
             ' ' +
             startY +
-            ' A ' +
-            dr +
+            ' C ' +
+            cxStart +
             ' ' +
-            dr +
-            ' 0 0 ' +
-            curveDirection +
+            cyStart +
+            ', ' +
+            cxEnd +
             ' ' +
+            cyEnd +
+            ', ' +
             endX +
             ' ' +
             endY
@@ -481,7 +544,7 @@ export default defineComponent({
           return d.source === 1 || d.target === 1 ? '1' : '0.2'
         })
         .attr('stroke-width', d => {
-          return d.source === 1 || d.target === 1 ? '2' : '0.5'
+          return (d.number / maxNumber) * 3 + 1
         })
         .style('filter', d => {
           if (d.source === 1 || d.target === 1) {
@@ -528,41 +591,106 @@ export default defineComponent({
                 setupGraphic.circle.angle[d.target - 1] -
                   setupGraphic.circle.quarterAngle
               )
-          var dx = endX - startX
-          var dy = endY - startY
-          var dr = Math.sqrt(dx * dx + dy * dy)
 
-          var curveDirection = 0
+          var cxEnd = 0
+          var cyEnd = 0
+          var cxStart = 0
+          var cyStart = 0
 
-          if (d.source + 30 < setupGraphic.variables.allNodes.length) {
-            if (d.target > d.source && d.target <= d.source + 30) {
-              curveDirection = 0
-            } else {
-              curveDirection = 1
-            }
-          } else {
+          var sourceUpEight =
+            d.source + setupGraphic.variables.allNodes.length / 8 >
+            setupGraphic.variables.allNodes.length
+              ? d.source +
+                setupGraphic.variables.allNodes.length / 8 -
+                setupGraphic.variables.allNodes.length
+              : d.source + setupGraphic.variables.allNodes.length / 8
+          var sourceDownEight =
+            d.source - setupGraphic.variables.allNodes.length / 8 < 0
+              ? d.source -
+                setupGraphic.variables.allNodes.length / 8 +
+                (setupGraphic.variables.allNodes.length + d.source)
+              : d.source - setupGraphic.variables.allNodes.length / 8
+
+          if (
+            d.source + setupGraphic.variables.allNodes.length / 8 >
+            setupGraphic.variables.allNodes.length
+          ) {
             if (
-              d.target < d.source &&
-              d.target >= d.source + 30 - setupGraphic.variables.allNodes.length
+              (d.target < d.source && d.target >= sourceDownEight) ||
+              (d.target > d.source &&
+                d.target <= setupGraphic.variables.allNodes.length) ||
+              (d.target > 0 && d.target <= sourceUpEight)
             ) {
-              curveDirection = 1
+              cxStart = (setupGraphic.circle.originX + startX) / 2
+              cyStart = (setupGraphic.circle.originY + startY) / 2
+              cxEnd = (setupGraphic.circle.originX + endX) / 2
+              cyEnd = (setupGraphic.circle.originY + endY) / 2
             } else {
-              curveDirection = 0
+              cxStart = setupGraphic.circle.originX
+              cyStart = setupGraphic.circle.originY
+              cxEnd = setupGraphic.circle.originX
+              cyEnd = setupGraphic.circle.originY
             }
           }
+
+          if (d.source - setupGraphic.variables.allNodes.length / 8 < 0) {
+            if (
+              (d.target > d.source && d.target <= sourceUpEight) ||
+              (d.target < d.source && d.target >= 0) ||
+              (d.target <= setupGraphic.variables.allNodes.length &&
+                d.target >= sourceDownEight)
+            ) {
+              cxStart = (setupGraphic.circle.originX + startX) / 2
+              cyStart = (setupGraphic.circle.originY + startY) / 2
+              cxEnd = (setupGraphic.circle.originX + endX) / 2
+              cyEnd = (setupGraphic.circle.originY + endY) / 2
+            } else {
+              cxStart = setupGraphic.circle.originX
+              cyStart = setupGraphic.circle.originY
+              cxEnd = setupGraphic.circle.originX
+              cyEnd = setupGraphic.circle.originY
+            }
+          }
+
+          if (
+            d.source + setupGraphic.variables.allNodes.length / 8 <=
+              setupGraphic.variables.allNodes.length &&
+            d.source - setupGraphic.variables.allNodes.length / 8 >= 0
+          ) {
+            if (
+              (d.target > d.source && d.target <= sourceUpEight) ||
+              (d.target < d.source && d.target >= sourceDownEight)
+            ) {
+              cxStart = (setupGraphic.circle.originX + startX) / 2
+              cyStart = (setupGraphic.circle.originY + startY) / 2
+              cxEnd = (setupGraphic.circle.originX + endX) / 2
+              cyEnd = (setupGraphic.circle.originY + endY) / 2
+            } else {
+              cxStart = setupGraphic.circle.originX
+              cyStart = setupGraphic.circle.originY
+              cxEnd = setupGraphic.circle.originX
+              cyEnd = setupGraphic.circle.originY
+            }
+          }
+          // cxStart = setupGraphic.circle.originX
+          // cyStart = setupGraphic.circle.originY
+          // cxEnd = setupGraphic.circle.originX
+          // cyEnd = setupGraphic.circle.originY
 
           return (
             'M ' +
             startX +
             ' ' +
             startY +
-            ' A ' +
-            dr +
+            ' C ' +
+            cxStart +
             ' ' +
-            dr +
-            ' 0 0 ' +
-            curveDirection +
+            cyStart +
+            ', ' +
+            cxEnd +
             ' ' +
+            cyEnd +
+            ', ' +
             endX +
             ' ' +
             endY
@@ -800,9 +928,6 @@ export default defineComponent({
         })
         .style('stroke-opacity', function(link_d) {
           return link_d.source === id || link_d.target === id ? '1' : '0.2'
-        })
-        .style('stroke-width', function(link_d) {
-          return link_d.source === id || link_d.target === id ? 2 : 1
         })
         .style('filter', x => {
           if (x.source === id || x.target === id) {
