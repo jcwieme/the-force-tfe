@@ -7,29 +7,20 @@
       :to="choice.path"
       class="choice__movie"
     >
-      <div class="choice__title">
-        <span class="choice__number">{{ choice.number }}</span>
-        <div class="choice__reveal">
-          <span class="choice__star choice__star--top">
-            <span>StaR</span>
-          </span>
-          <span class="choice__name">
-            {{ choice.title }}
-          </span>
-          <span class="choice__star choice__star--bottom">
-            <span>Wars</span>
-          </span>
-        </div>
-      </div>
+      <comp-choice :choice="choice" />
     </router-link>
   </ul>
 </template>
 
 <script>
 import { defineComponent } from '@vue/composition-api'
+import compChoice from '@/components/comp-choice'
 
 export default defineComponent({
   name: 'Choice',
+  components: {
+    compChoice,
+  },
   setup() {
     const choices = [
       {
