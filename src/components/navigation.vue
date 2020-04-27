@@ -146,6 +146,14 @@ export default defineComponent({
     })
 
     const toggleNav = () => {
+      let chapter = document.querySelector(
+        `.${ctx.root.$route.name.toLowerCase()}`
+      )
+      if (chapter.classList.contains('blur')) {
+        chapter.classList.remove('blur')
+      } else {
+        chapter.classList.add('blur')
+      }
       isNavOpen.value = !isNavOpen.value
     }
 
@@ -171,16 +179,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.st0 {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 4;
-}
-.st1 {
-  fill-rule: evenodd;
-  clip-rule: evenodd;
-  fill: #ffffff;
-}
 .nav {
   color: white;
   font-family: star_jediregular;

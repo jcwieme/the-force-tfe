@@ -209,9 +209,7 @@ body {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition-duration: 0.3s;
-  transition-property: opacity;
-  transition-timing-function: ease;
+  transition: all 0.3s ease;
 }
 
 .fade-enter,
@@ -236,5 +234,8 @@ body {
   height: 100vh;
   width: 100vw;
   z-index: 1;
+}
+.blur {
+  filter: blur(3px);
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="data-viz">
+  <div class="data-viz dialogues">
     <number-bubble />
     <d3-dialogues :data-dialogues="movieChoice" />
   </div>
