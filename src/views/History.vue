@@ -20,6 +20,7 @@ import {
   ref,
   onUpdated,
   onBeforeUpdate,
+  watch,
 } from '@vue/composition-api'
 
 import compHistory from '@/components/comp-history'
@@ -77,6 +78,10 @@ export default defineComponent({
     const closeWord = () => {
       open.value = !open.value
     }
+
+    watch('$route.params.id', () => {
+      open.value = false
+    })
 
     return {
       text,
