@@ -430,34 +430,61 @@ export default defineComponent({
           var cxStart = 0
           var cyStart = 0
 
-          var sourceUpEight =
-            d.source + setupGraphic.variables.allNodes.length / 8 >
+          // Faire un système de ratio ? En fonction de sa place ? Comment calculer la place et comment avoir la distance la plus proche ?
+          // Calculer la distance entre X et Cx Puis diviser cette distance par la place de d.target
+          // ratio a:b
+          // rloc = (x1 + b•(x2 - x1)/(a + b), y1 + b•(y2 - y1)/(a + b))
+          // rloc X = (x1 + b•(x2 - x1)/(a + b)
+          // rloc Y = y1 + b•(y2 - y1)/(a + b))
+
+          let b = Math.floor(setupGraphic.variables.allNodes.length / 4)
+          let a = 0
+
+          var sourceUpFour =
+            d.source + setupGraphic.variables.allNodes.length / 4 >
             setupGraphic.variables.allNodes.length
               ? d.source +
-                setupGraphic.variables.allNodes.length / 8 -
+                setupGraphic.variables.allNodes.length / 4 -
                 setupGraphic.variables.allNodes.length
-              : d.source + setupGraphic.variables.allNodes.length / 8
-          var sourceDownEight =
-            d.source - setupGraphic.variables.allNodes.length / 8 < 0
+              : d.source + setupGraphic.variables.allNodes.length / 4
+          var sourceDownFour =
+            d.source - setupGraphic.variables.allNodes.length / 4 < 0
               ? d.source -
-                setupGraphic.variables.allNodes.length / 8 +
+                setupGraphic.variables.allNodes.length / 4 +
                 (setupGraphic.variables.allNodes.length + d.source)
-              : d.source - setupGraphic.variables.allNodes.length / 8
+              : d.source - setupGraphic.variables.allNodes.length / 4
 
           if (
-            d.source + setupGraphic.variables.allNodes.length / 8 >
+            d.source + setupGraphic.variables.allNodes.length / 4 >
             setupGraphic.variables.allNodes.length
           ) {
             if (
-              (d.target < d.source && d.target >= sourceDownEight) ||
+              (d.target < d.source && d.target >= sourceDownFour) ||
               (d.target > d.source &&
                 d.target <= setupGraphic.variables.allNodes.length) ||
-              (d.target > 0 && d.target <= sourceUpEight)
+              (d.target > 0 && d.target <= sourceUpFour)
             ) {
-              cxStart = (setupGraphic.circle.originX + startX) / 2
-              cyStart = (setupGraphic.circle.originY + startY) / 2
-              cxEnd = (setupGraphic.circle.originX + endX) / 2
-              cyEnd = (setupGraphic.circle.originY + endY) / 2
+              a = d.target - d.source + setupGraphic.variables.allNodes.length
+
+              a = Math.abs(a - b)
+
+              if (a === b) {
+                cxStart = setupGraphic.circle.originX
+                cyStart = setupGraphic.circle.originY
+                cxEnd = setupGraphic.circle.originX
+                cyEnd = setupGraphic.circle.originY
+              } else {
+                cxEnd =
+                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
+                cyEnd =
+                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxStart =
+                  startX +
+                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                cyStart =
+                  startY +
+                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+              }
             } else {
               cxStart = setupGraphic.circle.originX
               cyStart = setupGraphic.circle.originY
@@ -466,17 +493,41 @@ export default defineComponent({
             }
           }
 
-          if (d.source - setupGraphic.variables.allNodes.length / 8 < 0) {
+          if (d.source - setupGraphic.variables.allNodes.length / 4 < 0) {
             if (
-              (d.target > d.source && d.target <= sourceUpEight) ||
+              (d.target > d.source && d.target <= sourceUpFour) ||
               (d.target < d.source && d.target >= 0) ||
               (d.target <= setupGraphic.variables.allNodes.length &&
-                d.target >= sourceDownEight)
+                d.target >= sourceDownFour)
             ) {
-              cxStart = (setupGraphic.circle.originX + startX) / 2
-              cyStart = (setupGraphic.circle.originY + startY) / 2
-              cxEnd = (setupGraphic.circle.originX + endX) / 2
-              cyEnd = (setupGraphic.circle.originY + endY) / 2
+              a =
+                Math.abs(d.target - d.source) > b
+                  ? Math.abs(
+                      d.target -
+                        d.source -
+                        setupGraphic.variables.allNodes.length
+                    )
+                  : Math.abs(d.target - d.source)
+
+              a = Math.abs(a - b)
+
+              if (a === b) {
+                cxStart = setupGraphic.circle.originX
+                cyStart = setupGraphic.circle.originY
+                cxEnd = setupGraphic.circle.originX
+                cyEnd = setupGraphic.circle.originY
+              } else {
+                cxEnd =
+                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
+                cyEnd =
+                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxStart =
+                  startX +
+                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                cyStart =
+                  startY +
+                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+              }
             } else {
               cxStart = setupGraphic.circle.originX
               cyStart = setupGraphic.circle.originY
@@ -486,18 +537,35 @@ export default defineComponent({
           }
 
           if (
-            d.source + setupGraphic.variables.allNodes.length / 8 <=
+            d.source + setupGraphic.variables.allNodes.length / 4 <=
               setupGraphic.variables.allNodes.length &&
-            d.source - setupGraphic.variables.allNodes.length / 8 >= 0
+            d.source - setupGraphic.variables.allNodes.length / 4 >= 0
           ) {
             if (
-              (d.target > d.source && d.target <= sourceUpEight) ||
-              (d.target < d.source && d.target >= sourceDownEight)
+              (d.target > d.source && d.target <= sourceUpFour) ||
+              (d.target < d.source && d.target >= sourceDownFour)
             ) {
-              cxStart = (setupGraphic.circle.originX + startX) / 2
-              cyStart = (setupGraphic.circle.originY + startY) / 2
-              cxEnd = (setupGraphic.circle.originX + endX) / 2
-              cyEnd = (setupGraphic.circle.originY + endY) / 2
+              a = Math.abs(d.target - d.source - b)
+
+              a = Math.abs(a - b)
+
+              if (a === b || a + 1 === b) {
+                cxStart = setupGraphic.circle.originX
+                cyStart = setupGraphic.circle.originY
+                cxEnd = setupGraphic.circle.originX
+                cyEnd = setupGraphic.circle.originY
+              } else {
+                cxEnd =
+                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
+                cyEnd =
+                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxStart =
+                  startX +
+                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                cyStart =
+                  startY +
+                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+              }
             } else {
               cxStart = setupGraphic.circle.originX
               cyStart = setupGraphic.circle.originY
@@ -541,10 +609,10 @@ export default defineComponent({
         .style('fill', 'none')
         .attr('stroke', setupGraphic.yellow)
         .attr('stroke-opacity', d => {
-          return d.source === 1 || d.target === 1 ? '1' : '0.2'
+          return d.source === 1 || d.target === 1 ? '1' : '0.1'
         })
         .attr('stroke-width', d => {
-          return (d.number / maxNumber) * 3 + 1
+          return (d.number / maxNumber) * 5 + 1
         })
         .style('filter', d => {
           if (d.source === 1 || d.target === 1) {
@@ -597,34 +665,54 @@ export default defineComponent({
           var cxStart = 0
           var cyStart = 0
 
-          var sourceUpEight =
-            d.source + setupGraphic.variables.allNodes.length / 8 >
+          let b = Math.floor(setupGraphic.variables.allNodes.length / 4)
+          let a = 0
+
+          var sourceUpFour =
+            d.source + setupGraphic.variables.allNodes.length / 4 >
             setupGraphic.variables.allNodes.length
               ? d.source +
-                setupGraphic.variables.allNodes.length / 8 -
+                setupGraphic.variables.allNodes.length / 4 -
                 setupGraphic.variables.allNodes.length
-              : d.source + setupGraphic.variables.allNodes.length / 8
-          var sourceDownEight =
-            d.source - setupGraphic.variables.allNodes.length / 8 < 0
+              : d.source + setupGraphic.variables.allNodes.length / 4
+          var sourceDownFour =
+            d.source - setupGraphic.variables.allNodes.length / 4 < 0
               ? d.source -
-                setupGraphic.variables.allNodes.length / 8 +
+                setupGraphic.variables.allNodes.length / 4 +
                 (setupGraphic.variables.allNodes.length + d.source)
-              : d.source - setupGraphic.variables.allNodes.length / 8
+              : d.source - setupGraphic.variables.allNodes.length / 4
 
           if (
-            d.source + setupGraphic.variables.allNodes.length / 8 >
+            d.source + setupGraphic.variables.allNodes.length / 4 >
             setupGraphic.variables.allNodes.length
           ) {
             if (
-              (d.target < d.source && d.target >= sourceDownEight) ||
+              (d.target < d.source && d.target >= sourceDownFour) ||
               (d.target > d.source &&
                 d.target <= setupGraphic.variables.allNodes.length) ||
-              (d.target > 0 && d.target <= sourceUpEight)
+              (d.target > 0 && d.target <= sourceUpFour)
             ) {
-              cxStart = (setupGraphic.circle.originX + startX) / 2
-              cyStart = (setupGraphic.circle.originY + startY) / 2
-              cxEnd = (setupGraphic.circle.originX + endX) / 2
-              cyEnd = (setupGraphic.circle.originY + endY) / 2
+              a = d.target - d.source + setupGraphic.variables.allNodes.length
+
+              a = Math.abs(a - b)
+
+              if (a === b) {
+                cxStart = setupGraphic.circle.originX
+                cyStart = setupGraphic.circle.originY
+                cxEnd = setupGraphic.circle.originX
+                cyEnd = setupGraphic.circle.originY
+              } else {
+                cxEnd =
+                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
+                cyEnd =
+                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxStart =
+                  startX +
+                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                cyStart =
+                  startY +
+                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+              }
             } else {
               cxStart = setupGraphic.circle.originX
               cyStart = setupGraphic.circle.originY
@@ -633,17 +721,41 @@ export default defineComponent({
             }
           }
 
-          if (d.source - setupGraphic.variables.allNodes.length / 8 < 0) {
+          if (d.source - setupGraphic.variables.allNodes.length / 4 < 0) {
             if (
-              (d.target > d.source && d.target <= sourceUpEight) ||
+              (d.target > d.source && d.target <= sourceUpFour) ||
               (d.target < d.source && d.target >= 0) ||
               (d.target <= setupGraphic.variables.allNodes.length &&
-                d.target >= sourceDownEight)
+                d.target >= sourceDownFour)
             ) {
-              cxStart = (setupGraphic.circle.originX + startX) / 2
-              cyStart = (setupGraphic.circle.originY + startY) / 2
-              cxEnd = (setupGraphic.circle.originX + endX) / 2
-              cyEnd = (setupGraphic.circle.originY + endY) / 2
+              a =
+                Math.abs(d.target - d.source) > b
+                  ? Math.abs(
+                      d.target -
+                        d.source -
+                        setupGraphic.variables.allNodes.length
+                    )
+                  : Math.abs(d.target - d.source)
+
+              a = Math.abs(a - b)
+
+              if (a === b) {
+                cxStart = setupGraphic.circle.originX
+                cyStart = setupGraphic.circle.originY
+                cxEnd = setupGraphic.circle.originX
+                cyEnd = setupGraphic.circle.originY
+              } else {
+                cxEnd =
+                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
+                cyEnd =
+                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxStart =
+                  startX +
+                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                cyStart =
+                  startY +
+                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+              }
             } else {
               cxStart = setupGraphic.circle.originX
               cyStart = setupGraphic.circle.originY
@@ -653,18 +765,35 @@ export default defineComponent({
           }
 
           if (
-            d.source + setupGraphic.variables.allNodes.length / 8 <=
+            d.source + setupGraphic.variables.allNodes.length / 4 <=
               setupGraphic.variables.allNodes.length &&
-            d.source - setupGraphic.variables.allNodes.length / 8 >= 0
+            d.source - setupGraphic.variables.allNodes.length / 4 >= 0
           ) {
             if (
-              (d.target > d.source && d.target <= sourceUpEight) ||
-              (d.target < d.source && d.target >= sourceDownEight)
+              (d.target > d.source && d.target <= sourceUpFour) ||
+              (d.target < d.source && d.target >= sourceDownFour)
             ) {
-              cxStart = (setupGraphic.circle.originX + startX) / 2
-              cyStart = (setupGraphic.circle.originY + startY) / 2
-              cxEnd = (setupGraphic.circle.originX + endX) / 2
-              cyEnd = (setupGraphic.circle.originY + endY) / 2
+              a = Math.abs(d.target - d.source - b)
+
+              a = Math.abs(a - b)
+
+              if (a === b || a + 1 === b) {
+                cxStart = setupGraphic.circle.originX
+                cyStart = setupGraphic.circle.originY
+                cxEnd = setupGraphic.circle.originX
+                cyEnd = setupGraphic.circle.originY
+              } else {
+                cxEnd =
+                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
+                cyEnd =
+                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxStart =
+                  startX +
+                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                cyStart =
+                  startY +
+                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+              }
             } else {
               cxStart = setupGraphic.circle.originX
               cyStart = setupGraphic.circle.originY
@@ -672,10 +801,6 @@ export default defineComponent({
               cyEnd = setupGraphic.circle.originY
             }
           }
-          // cxStart = setupGraphic.circle.originX
-          // cyStart = setupGraphic.circle.originY
-          // cxEnd = setupGraphic.circle.originX
-          // cyEnd = setupGraphic.circle.originY
 
           return (
             'M ' +
@@ -927,7 +1052,7 @@ export default defineComponent({
           }
         })
         .style('stroke-opacity', function(link_d) {
-          return link_d.source === id || link_d.target === id ? '1' : '0.2'
+          return link_d.source === id || link_d.target === id ? '1' : '0.1'
         })
         .style('filter', x => {
           if (x.source === id || x.target === id) {
