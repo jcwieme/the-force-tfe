@@ -112,21 +112,13 @@ export default defineComponent({
         .title
     })
     const left = computed(() => {
-      if (ctx.root.$route.params.id === '1') {
-        return false
-      } else {
-        return true
-      }
+      return ctx.root.$store.state.arrowLeft
     })
     const right = computed(() => {
-      if (ctx.root.$route.params.id === '6') {
-        return false
-      } else {
-        return true
-      }
+      return ctx.root.$store.state.arrowRight
     })
     const down = computed(() => {
-      if (ctx.root.$route.name === 'Credits') {
+      if (ctx.root.$route.name === 'Numbers') {
         return false
       } else {
         return true

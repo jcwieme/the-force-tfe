@@ -58,9 +58,13 @@ export default defineComponent({
 
     onMounted(() => {
       if (ctx.root.$store.state.activeMovie) {
-        document
-          .querySelector(`.choice__movie--${ctx.root.$store.state.activeMovie}`)
-          .classList.add('choice__movie--actif')
+        setTimeout(() => {
+          document
+            .querySelector(
+              `.choice__movie--${ctx.root.$store.state.activeMovie}`
+            )
+            .classList.add('choice__movie--actif')
+        }, 250)
       }
 
       document.querySelectorAll('.choice__movie').forEach(choice => {
@@ -208,6 +212,7 @@ export default defineComponent({
     }
   }
   &__name {
+    text-align: center;
     font-size: 18px;
     color: white;
     opacity: 0;

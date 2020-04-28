@@ -53,6 +53,14 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.params.id) {
     store.commit('setActiveMovie', to.params.id - 1)
+
+    if (to.params.id === '6' && from.name === 'Choice') {
+      store.commit('falseArrowRight')
+    }
+
+    if (to.params.id === '1' && from.name === 'Choice') {
+      store.commit('falseArrowLeft')
+    }
   }
   next()
 })

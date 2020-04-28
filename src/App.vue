@@ -47,6 +47,11 @@ export default defineComponent({
       }
     })
 
+    if (ctx.root.$store.state.activeMovie === 5) {
+      ctx.root.$store.commit('falseArrowRight')
+      ctx.root.$store.commit('trueArrowLeft')
+    }
+
     onMounted(() => {
       screen.value = checkSize()
 
@@ -67,6 +72,12 @@ export default defineComponent({
                 name: ctx.root.$route.name,
                 params: { id: next },
               })
+              if (next === 6) {
+                ctx.root.$store.commit('falseArrowRight')
+              }
+              if (next === 2) {
+                ctx.root.$store.commit('trueArrowLeft')
+              }
             }
           }
           // left
@@ -77,31 +88,47 @@ export default defineComponent({
                 name: ctx.root.$route.name,
                 params: { id: before },
               })
+              if (before === 1) {
+                ctx.root.$store.commit('falseArrowLeft')
+              }
+              if (before === 5) {
+                ctx.root.$store.commit('trueArrowRight')
+              }
             }
           }
           // down
           if (e.keyCode === 40) {
-            switch (ctx.root.$route.name) {
-              case 'History':
-                ctx.root.$router.push({
-                  name: 'Dialogues',
-                })
-                break
-              case 'Dialogues':
-                ctx.root.$router.push({
-                  name: 'Words',
-                })
-                break
-              case 'Words':
-                ctx.root.$router.push({
-                  name: 'Numbers',
-                })
-                break
-              case 'Numbers':
-                ctx.root.$router.push({
-                  name: 'Credits',
-                })
-                break
+            if (ctx.root.$route.name !== 'Numbers') {
+              switch (ctx.root.$route.name) {
+                case 'History':
+                  ctx.root.$router.push({
+                    name: 'Dialogues',
+                  })
+                  break
+                case 'Dialogues':
+                  ctx.root.$router.push({
+                    name: 'Words',
+                  })
+                  break
+                case 'Words':
+                  ctx.root.$router.push({
+                    name: 'Numbers',
+                  })
+                  break
+              }
+            }
+
+            let movieNumber = ctx.root.$store.state.activeMovie + 1
+
+            if (movieNumber === 1) {
+              ctx.root.$store.commit('falseArrowLeft')
+            } else {
+              ctx.root.$store.commit('trueArrowLeft')
+            }
+            if (movieNumber === 6) {
+              ctx.root.$store.commit('falseArrowRight')
+            } else {
+              ctx.root.$store.commit('trueArrowRight')
             }
           }
           // up
@@ -127,18 +154,13 @@ export default defineComponent({
                   name: 'Words',
                 })
                 break
-              case 'Credits':
-                ctx.root.$router.push({
-                  name: 'Numbers',
-                })
-                break
             }
           }
         }
 
         if (
           ctx.root.$route.name === 'Choice' &&
-          ctx.root.$store.state.activeMovie
+          ctx.root.$store.state.activeMovie !== null
         ) {
           let movies = document.querySelectorAll('.choice__movie')
 
@@ -158,7 +180,7 @@ export default defineComponent({
           // left
           if (e.keyCode === 37) {
             let movieNumber = ctx.root.$store.state.activeMovie - 1
-            if (ctx.root.$store.state.activeMovie !== 0) {
+            if (ctx.root.$store.state.activeMovie >= 0) {
               ctx.root.$store.commit('setActiveMovie', movieNumber)
               movies.forEach(movie => {
                 movie.classList.remove('choice__movie--actif')
@@ -168,6 +190,17 @@ export default defineComponent({
                 .classList.add('choice__movie--actif')
             }
           }
+
+          // if (e.keyCode === 38) {
+          //   let movieNumber = ctx.root.$store.state.activeMovie
+          //   movies.forEach(movie => {
+          //     movie.classList.remove('choice__movie--actif')
+          //   })
+          //   document
+          //     .querySelector(`.choice__movie--${movieNumber}`)
+          //     .classList.add('choice__movie--actif')
+          // }
+
           // down
           if (e.keyCode === 40) {
             let movieNumber = ctx.root.$store.state.activeMovie + 1
@@ -177,6 +210,17 @@ export default defineComponent({
                 id: movieNumber,
               },
             })
+
+            if (movieNumber === 1) {
+              ctx.root.$store.commit('falseArrowLeft')
+            } else {
+              ctx.root.$store.commit('trueArrowLeft')
+            }
+            if (movieNumber === 6) {
+              ctx.root.$store.commit('falseArrowRight')
+            } else {
+              ctx.root.$store.commit('trueArrowRight')
+            }
           }
         }
 
@@ -193,6 +237,11 @@ export default defineComponent({
           keyUp.value = true
         }
       })
+
+      if (ctx.root.$store.state.activeMovie === 0) {
+        ctx.root.$store.commit('falseArrowLeft')
+        ctx.root.$store.commit('trueArrowRight')
+      }
     })
 
     const onResize = () => {
