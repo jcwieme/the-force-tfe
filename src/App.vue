@@ -239,6 +239,13 @@ export default defineComponent({
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'roboto-black';
+  src: url('./assets/fonts/Roboto-Black.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-color: #18181c;
   color: white;

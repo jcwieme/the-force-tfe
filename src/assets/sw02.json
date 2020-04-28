@@ -2892,7 +2892,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Then we'd be living a lie - one we could not keep even if we wanted to. I could not do that. Could you, Anakin? Could you live like that?",
+      "text": "Then we would be living a lie - one we could not keep even if we wanted to. I could not do that. Could you, Anakin? Could you live like that?",
       "where": "INT. NABOO LAKE RETREAT, LODGE, FIREPLACE ALCOVE - TWILIGHT",
       "number": 28,
       "time": 252
@@ -3324,7 +3324,7 @@
     {
       "from": "THREEPIO",
       "to": "PADME",
-      "text": "I think we'd better go inside.",
+      "text": "I think we would better go inside.",
       "where": "EXT. TATOOINE, DESERT, HOMESTEAD MOISTURE FARM - LATE DAY",
       "number": 6,
       "time": 54

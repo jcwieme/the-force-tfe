@@ -19,12 +19,13 @@ export default defineComponent({
   },
   setup(props, ctx) {
     const title = computed(() => {
-      return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].title
+      return ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie]
+        .title
     })
 
     const movieChoice = computed(() => {
       return utils.filterMovies(
-        ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].dialogs,
+        ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie].dialogs,
         ctx.root.$route.params.id
       )
     })

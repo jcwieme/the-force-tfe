@@ -1172,7 +1172,7 @@
     {
       "from": "RIEEKAN",
       "to": "LEIA",
-      "text": "We'd better start the evacuation.",
+      "text": "we would better start the evacuation.",
       "where": "INT. HOTH - REBEL BASE - COMMAND CENTER",
       "number": 5,
       "time": 45
@@ -3580,7 +3580,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": ". I think we'd better replace the negative power coupling.",
+      "text": ". I think we would better replace the negative power coupling.",
       "where": "INT. MILLENNIUM FALCON - MAIN HOLD AREA",
       "number": 9,
       "time": 81

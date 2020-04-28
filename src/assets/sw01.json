@@ -52,7 +52,7 @@
     {
       "from": "NUTE",
       "to": "REPUBLIC PILOT",
-      "text": "Yes, yes, of course as you know, our blockade is perfectly legal, and we'd be happy to receive the Ambassador. Happy to.",
+      "text": "Yes, yes, of course as you know, our blockade is perfectly legal, and we would be happy to receive the Ambassador. Happy to.",
       "where": "INT. REPUBLIC CRUISER - COCKPIT",
       "number": 22,
       "time": 198
@@ -2588,7 +2588,7 @@
     {
       "from": "PANAKA",
       "to": "OBI-WAN",
-      "text": "It looks pretty bad. We'd better seal the ship.",
+      "text": "It looks pretty bad. we would better seal the ship.",
       "where": "EXT. TATOOINE - DESERT - SPACESHIP - DAY",
       "number": 9,
       "time": 81
