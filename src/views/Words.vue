@@ -19,7 +19,7 @@ export default defineComponent({
         .sortWords(
           ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].dialogs
         )
-        .slice(0, 20)
+        .slice(0, 160)
     })
 
     return {
@@ -38,8 +38,8 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   ul {
-    width: 25%;
-    column-count: 4;
+    width: 55%;
+    column-count: 6;
   }
   div {
     color: white;

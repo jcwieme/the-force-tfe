@@ -6,6 +6,7 @@
       tag="li"
       :to="choice.path"
       class="choice__movie"
+      :class="'choice__movie--' + index"
     >
       <comp-choice :choice="choice" />
     </router-link>
@@ -13,7 +14,7 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, onMounted } from '@vue/composition-api'
 import compChoice from '@/components/comp-choice'
 
 export default defineComponent({
@@ -21,7 +22,7 @@ export default defineComponent({
   components: {
     compChoice,
   },
-  setup() {
+  setup(props, ctx) {
     const choices = [
       {
         title: 'the phantom menace',
@@ -54,6 +55,26 @@ export default defineComponent({
         number: 'vi',
       },
     ]
+
+    onMounted(() => {
+      if (ctx.root.$store.state.activeMovie) {
+        document
+          .querySelector(`.choice__movie--${ctx.root.$store.state.activeMovie}`)
+          .classList.add('choice__movie--actif')
+      }
+
+      document.querySelectorAll('.choice__movie').forEach(choice => {
+        choice.addEventListener('mouseover', e => {
+          document.querySelectorAll('.choice__movie').forEach(choice => {
+            choice.classList.remove('choice__movie--actif')
+          })
+          e.currentTarget.classList.add('choice__movie--actif')
+        })
+        choice.addEventListener('mouseout', e => {
+          e.currentTarget.classList.remove('choice__movie--actif')
+        })
+      })
+    })
 
     return {
       choices,
@@ -95,7 +116,7 @@ export default defineComponent({
       border: none;
     }
 
-    &:hover {
+    &--actif {
       width: 60%;
 
       .choice__number {

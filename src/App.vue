@@ -26,7 +26,7 @@
 
 <script>
 import { defineComponent, ref, computed, onMounted } from '@vue/composition-api'
-import Navigation from '@/components/navigation'
+import Navigation from '@/components/comp-navigation'
 
 export default defineComponent({
   name: 'Application',
@@ -58,6 +58,7 @@ export default defineComponent({
           ctx.root.$route.name !== 'Choice' ||
           ctx.root.$route.name !== 'Loader'
         ) {
+          // right
           if (e.keyCode === 39) {
             if (ctx.root.$route.params.id < 6 && keyUp.value === true) {
               let next = ctx.root.$route.params.id
@@ -68,6 +69,7 @@ export default defineComponent({
               })
             }
           }
+          // left
           if (e.keyCode === 37) {
             if (ctx.root.$route.params.id > 1 && keyUp.value === true) {
               let before = ctx.root.$route.params.id - 1
@@ -77,6 +79,7 @@ export default defineComponent({
               })
             }
           }
+          // down
           if (e.keyCode === 40) {
             switch (ctx.root.$route.name) {
               case 'History':
@@ -101,6 +104,7 @@ export default defineComponent({
                 break
             }
           }
+          // up
           if (e.keyCode === 38) {
             switch (ctx.root.$route.name) {
               case 'History':
@@ -129,6 +133,50 @@ export default defineComponent({
                 })
                 break
             }
+          }
+        }
+
+        if (
+          ctx.root.$route.name === 'Choice' &&
+          ctx.root.$store.state.activeMovie
+        ) {
+          let movies = document.querySelectorAll('.choice__movie')
+
+          // right
+          if (e.keyCode === 39) {
+            let movieNumber = ctx.root.$store.state.activeMovie + 1
+            if (ctx.root.$store.state.activeMovie !== 5) {
+              ctx.root.$store.commit('setActiveMovie', movieNumber)
+              movies.forEach(movie => {
+                movie.classList.remove('choice__movie--actif')
+              })
+              document
+                .querySelector(`.choice__movie--${movieNumber}`)
+                .classList.add('choice__movie--actif')
+            }
+          }
+          // left
+          if (e.keyCode === 37) {
+            let movieNumber = ctx.root.$store.state.activeMovie - 1
+            if (ctx.root.$store.state.activeMovie !== 0) {
+              ctx.root.$store.commit('setActiveMovie', movieNumber)
+              movies.forEach(movie => {
+                movie.classList.remove('choice__movie--actif')
+              })
+              document
+                .querySelector(`.choice__movie--${movieNumber}`)
+                .classList.add('choice__movie--actif')
+            }
+          }
+          // down
+          if (e.keyCode === 40) {
+            let movieNumber = ctx.root.$store.state.activeMovie + 1
+            ctx.root.$router.push({
+              name: 'History',
+              params: {
+                id: movieNumber,
+              },
+            })
           }
         }
 

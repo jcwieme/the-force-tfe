@@ -46,7 +46,7 @@
             :to="{ path: route.path }"
             :data-number="route.number"
             tag="li"
-            @click.native="toggleNav"
+            @click.native="closeNav"
             >{{ route.title }}</router-link
           >
         </ul>
@@ -104,21 +104,22 @@ export default defineComponent({
     })
     const number = computed(() => {
       return ctx.root.$store.state.movies[
-        ctx.root.$route.params.id - 1
+        ctx.root.$store.state.activeMovie
       ].number.toLowerCase()
     })
     const title = computed(() => {
-      return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].title
+      return ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie]
+        .title
     })
     const left = computed(() => {
-      if (ctx.root.$route.params.id === 1) {
+      if (ctx.root.$route.params.id === '1') {
         return false
       } else {
         return true
       }
     })
     const right = computed(() => {
-      if (ctx.root.$route.params.id === 6) {
+      if (ctx.root.$route.params.id === '6') {
         return false
       } else {
         return true
@@ -131,6 +132,7 @@ export default defineComponent({
         return true
       }
     })
+
     const chapter = computed(() => {
       if (ctx.root.$route.name === 'History') {
         return '02'
@@ -138,13 +140,10 @@ export default defineComponent({
         return '03'
       } else if (ctx.root.$route.name === 'Words') {
         return '04'
-      } else if (ctx.root.$route.name === 'Numbers') {
-        return '05'
       } else {
-        return '06'
+        return '05'
       }
     })
-
     const toggleNav = () => {
       let chapter = document.querySelector(
         `.${ctx.root.$route.name.toLowerCase()}`
@@ -154,6 +153,10 @@ export default defineComponent({
       } else {
         chapter.classList.add('blur')
       }
+      isNavOpen.value = !isNavOpen.value
+    }
+
+    const closeNav = () => {
       isNavOpen.value = !isNavOpen.value
     }
 
@@ -173,6 +176,7 @@ export default defineComponent({
       down,
       chapter,
       toggleNav,
+      closeNav,
     }
   },
 })

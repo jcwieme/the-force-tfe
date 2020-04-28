@@ -12,7 +12,7 @@
     {
       "from": "LIEUTENANT",
       "to": "CORDÉ",
-      "text": "Senator, we're making our final approach into Coruscant.",
+      "text": "Senator, we are making our final approach into Coruscant.",
       "where": "INT. SPACESHIP",
       "number": 8,
       "time": 72
@@ -44,7 +44,7 @@
     {
       "from": "CORDÉ",
       "to": "PADME",
-      "text": "I'm sorry, I've failed you, Senator.",
+      "text": "I am sorry, I have failed you, Senator.",
       "where": "EXT. CORUSCANT, LANDING PLATFORM - DAY",
       "number": 6,
       "time": 54
@@ -84,7 +84,7 @@
     {
       "from": "PALPATINE",
       "to": "MACE WINDU",
-      "text": "I don't know how much longer I can hold off the vote, my friends. More and more star systems are joining the separatists.",
+      "text": "I do not know how much longer I can hold off the vote, my friends. More and more star systems are joining the separatists.",
       "where": "INT. CHANCELLOR'S OFFICE - DAY",
       "number": 23,
       "time": 207
@@ -108,7 +108,7 @@
     {
       "from": "MACE WINDU",
       "to": "PALPATINE",
-      "text": "But if they do, you must realise there aren't enough Jedi to protect the Republic. We are keepers of the peace, not soldiers.",
+      "text": "But if they do, you must realise there are not enough Jedi to protect the Republic. We are keepers of the peace, not soldiers.",
       "where": "INT. CHANCELLOR'S OFFICE - DAY",
       "number": 23,
       "time": 207
@@ -180,7 +180,7 @@
     {
       "from": "PADME",
       "to": "MACE WINDU",
-      "text": "I don't wish to disagree but I think that Count Dooku was behind it.",
+      "text": "I do not wish to disagree but I think that Count Dooku was behind it.",
       "where": "INT. CHANCELLOR'S OFFICE - DAY",
       "number": 14,
       "time": 126
@@ -188,7 +188,7 @@
     {
       "from": "MACE WINDU",
       "to": "PADME",
-      "text": "You know, milady, COUNT DOOKU was once a Jedi. He wouldn't assassinate anyone, it is not in his character.",
+      "text": "You know, milady, COUNT DOOKU was once a Jedi. He would not assassinate anyone, it is not in his character.",
       "where": "INT. CHANCELLOR'S OFFICE - DAY",
       "number": 19,
       "time": 171
@@ -244,7 +244,7 @@
     {
       "from": "MACE WINDU",
       "to": "PALPATINE",
-      "text": "That's possible. He has just returned from a Border dispute on Ansion.",
+      "text": "that is possible. He has just returned from a Border dispute on Ansion.",
       "where": "INT. CHANCELLOR'S OFFICE - DAY",
       "number": 12,
       "time": 108
@@ -284,7 +284,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "I haven't felt you this tense since we fell into that nest of gundarks.",
+      "text": "I have not felt you this tense since we fell into that nest of gundarks.",
       "where": "INT. SENATE BUILDING, APARTMENT CORRIDOR - EVENING",
       "number": 14,
       "time": 126
@@ -308,7 +308,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "You're sweating. Relax. Take a deep breath.",
+      "text": "you are sweating. Relax. Take a deep breath.",
       "where": "INT. SENATE BUILDING, APARTMENT CORRIDOR - EVENING",
       "number": 7,
       "time": 63
@@ -316,7 +316,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "I haven't seen her in ten years, Master.",
+      "text": "I have not seen her in ten years, Master.",
       "where": "INT. SENATE BUILDING, APARTMENT CORRIDOR - EVENING",
       "number": 8,
       "time": 72
@@ -332,7 +332,7 @@
     {
       "from": "OBI-WAN",
       "to": "JAR JAR",
-      "text": "It's Good to see you, too, Jar Jar.",
+      "text": "it is Good to see you, too, Jar Jar.",
       "where": "INT. SENATE BUILDING, APARTMENT CORRIDOR - EVENING",
       "number": 8,
       "time": 72
@@ -340,7 +340,7 @@
     {
       "from": "JAR JAR",
       "to": "PADME",
-      "text": "Lookie lookie Oops! Oh, dear, I'm afraid I've forgotten myself again.",
+      "text": "Lookie lookie Oops! Oh, dear, I am afraid I have forgotten myself again.",
       "where": "INT. SENATE BUILDING, APARTMENT - EVENING",
       "number": 11,
       "time": 99
@@ -348,7 +348,7 @@
     {
       "from": "OBI-WAN",
       "to": "PADME",
-      "text": "It's a great pleasure to see you again, milady.",
+      "text": "it is a great pleasure to see you again, milady.",
       "where": "INT. SENATE BUILDING, APARTMENT - EVENING",
       "number": 9,
       "time": 81
@@ -364,7 +364,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Ani? My goodness you've grown.",
+      "text": "Ani? My goodness you have grown.",
       "where": "INT. SENATE BUILDING, APARTMENT - EVENING",
       "number": 5,
       "time": 45
@@ -380,7 +380,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Oh Ani, you'll always be that little boy I knew on Tatooine.",
+      "text": "Oh Ani, you will always be that little boy I knew on Tatooine.",
       "where": "INT. SENATE BUILDING, APARTMENT - EVENING",
       "number": 12,
       "time": 108
@@ -396,7 +396,7 @@
     {
       "from": "CAPTAIN TYPHO",
       "to": "OBI-WAN",
-      "text": "I'm Captain Typho of Her Majesty's security service. Queen Jamillia has been informed of your assignment. I am very grateful you are here, Master Kenobi. The situation is more dangerous than the Senator will admit.",
+      "text": "I am Captain Typho of Her Majesty's security service. Queen Jamillia has been informed of your assignment. I am very grateful you are here, Master Kenobi. The situation is more dangerous than the Senator will admit.",
       "where": "INT. SENATE BUILDING, APARTMENT - EVENING",
       "number": 35,
       "time": 315
@@ -404,7 +404,7 @@
     {
       "from": "PADME",
       "to": "CAPTAIN TYPHO",
-      "text": "I don't need more security, I need answers. I want to know who is trying to kill me.",
+      "text": "I do not need more security, I need answers. I want to know who is trying to kill me.",
       "where": "INT. SENATE BUILDING, APARTMENT - EVENING",
       "number": 18,
       "time": 162
@@ -412,7 +412,7 @@
     {
       "from": "OBI-WAN",
       "to": "PADME",
-      "text": "We're here to protect you Senator, not to start an investigation.",
+      "text": "we are here to protect you Senator, not to start an investigation.",
       "where": "INT. SENATE BUILDING, APARTMENT - EVENING",
       "number": 11,
       "time": 99
@@ -468,7 +468,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Why else do you think we were assigned to her, if not to find the killer? Protection is a job for local security not Jedi. It's overkill, Master. Investigation is implied in our mandate.",
+      "text": "Why else do you think we were assigned to her, if not to find the killer? Protection is a job for local security not Jedi. it is overkill, Master. Investigation is implied in our mandate.",
       "where": "INT. SENATE BUILDING, APARTMENT - EVENING",
       "number": 34,
       "time": 306
@@ -492,7 +492,7 @@
     {
       "from": "CAPTAIN TYPHO",
       "to": "OBI-WAN",
-      "text": "Well, I know I feel a lot better having you here. I'll have an officer on every floor and I'll be at the command centre downstairs.",
+      "text": "Well, I know I feel a lot better having you here. I will have an officer on every floor and I will be at the command centre downstairs.",
       "where": "INT. SENATE BUILDING, APARTMENT - EVENING",
       "number": 26,
       "time": 234
@@ -508,7 +508,7 @@
     {
       "from": "ANAKIN",
       "to": "JAR JAR",
-      "text": "She didn't even recognize me, Jar Jar. I thought about her every day since we parted and she's forgotten me completely.",
+      "text": "She did not even recognize me, Jar Jar. I thought about her every day since we parted and she is forgotten me completely.",
       "where": "INT. SENATE BUILDING, APARTMENT - EVENING",
       "number": 21,
       "time": 189
@@ -524,7 +524,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Anakin, you're focusing on the Negative again. Be mindful of your thoughts. She was glad to see us. Now lets check the security here.",
+      "text": "Anakin, you are focusing on the Negative again. Be mindful of your thoughts. She was glad to see us. Now lets check the security here.",
       "where": "INT. SENATE BUILDING, APARTMENT - EVENING",
       "number": 24,
       "time": 216
@@ -540,7 +540,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Quiet as a tomb. I don't like just waiting here for something to happen to her.",
+      "text": "Quiet as a tomb. I do not like just waiting here for something to happen to her.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN R0OM - NIGHT",
       "number": 16,
       "time": 144
@@ -548,7 +548,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "What's going on?",
+      "text": "what is going on?",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN R0OM - NIGHT",
       "number": 3,
       "time": 27
@@ -556,7 +556,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "She covered that camera. I don't think she liked me watching her.",
+      "text": "She covered that camera. I do not think she liked me watching her.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN R0OM - NIGHT",
       "number": 12,
       "time": 108
@@ -572,7 +572,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "She programmed ARTOO to warn us if there's an intruder.",
+      "text": "She programmed ARTOO to warn us if there is an intruder.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN R0OM - NIGHT",
       "number": 10,
       "time": 90
@@ -580,7 +580,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "It's not an intruder I'm worried about. There are many other ways to kill a Senator.",
+      "text": "it is not an intruder I am worried about. There are many other ways to kill a Senator.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN R0OM - NIGHT",
       "number": 16,
       "time": 144
@@ -588,7 +588,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "I know, but we also want to catch this assassin. Don't we, Master?",
+      "text": "I know, but we also want to catch this assassin. do not we, Master?",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN R0OM - NIGHT",
       "number": 13,
       "time": 117
@@ -596,7 +596,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "You're using her as bait?",
+      "text": "you are using her as bait?",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN R0OM - NIGHT",
       "number": 5,
       "time": 45
@@ -604,7 +604,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "It was her idea. Don't worry. No harm will come to her. I can sense everything going on in that room. Trust me.",
+      "text": "It was her idea. do not worry. No harm will come to her. I can sense everything going on in that room. Trust me.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN R0OM - NIGHT",
       "number": 23,
       "time": 207
@@ -612,7 +612,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "It's too risky and your senses aren't that attuned, young apprentice.",
+      "text": "it is too risky and your senses are not that attuned, young apprentice.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN R0OM - NIGHT",
       "number": 11,
       "time": 99
@@ -644,7 +644,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "I don't sleep well, anymore.",
+      "text": "I do not sleep well, anymore.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN ROOM - NIGHT",
       "number": 5,
       "time": 45
@@ -660,7 +660,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "I don't know why I keep dreaming about her now. I haven't seen her since I was little.",
+      "text": "I do not know why I keep dreaming about her now. I have not seen her since I was little.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN ROOM - NIGHT",
       "number": 18,
       "time": 162
@@ -668,7 +668,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Dreams pass in time.",
+      "text": "dream pass in time.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN ROOM - NIGHT",
       "number": 4,
       "time": 36
@@ -676,7 +676,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "I'd rather dream of PADME. Just Being around her again is intoxicating.",
+      "text": "I would rather dream of PADME. Just Being around her again is intoxicating.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN ROOM - NIGHT",
       "number": 12,
       "time": 108
@@ -684,7 +684,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Mind your thoughts, Anakin, they betray you. You've made a commitment to the Jedi order a commitment not easily broken and don't forget she's a politician. They're not to be trusted.",
+      "text": "Mind your thoughts, Anakin, they betray you. you have made a commitment to the Jedi order a commitment not easily broken and do not forget she is a politician. they are not to be trusted.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN ROOM - NIGHT",
       "number": 31,
       "time": 279
@@ -692,7 +692,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "She's not like the others in the Senate, Master.",
+      "text": "She is not like the others in the Senate, Master.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN ROOM - NIGHT",
       "number": 9,
       "time": 81
@@ -700,7 +700,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "It's been my experience that Senators are only focused on pleasing those who fund their campaigns and they are more than willing to forget the niceties of democracy to get those funds.",
+      "text": "it is been my experience that Senators are only focused on pleasing those who fund their campaigns and they are more than willing to forget the niceties of democracy to get those funds.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN ROOM - NIGHT",
       "number": 32,
       "time": 288
@@ -708,7 +708,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Not another lecture, Master. Not on the economics of politics It's too early in the morning and besides, you're generalizing. The Chancellor doesn't appear to be corrupt.",
+      "text": "Not another lecture, Master. Not on the economics of politics it is too early in the morning and besides, you are generalizing. The Chancellor does not appear to be corrupt.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN ROOM - NIGHT",
       "number": 27,
       "time": 243
@@ -716,7 +716,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Palpatine is a politician, I've observed that he is very clever at following the passions and prejudices of the Senators.",
+      "text": "Palpatine is a politician, I have observed that he is very clever at following the passions and prejudices of the Senators.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT, MAIN ROOM - NIGHT",
       "number": 20,
       "time": 180
@@ -756,7 +756,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Oh, you know, Master, I couldn't find a speeder I really liked, with an open cockpit and with the right speed capabilities.",
+      "text": "Oh, you know, Master, I could not find a speeder I really liked, with an open cockpit and with the right speed capabilities.",
       "where": "EXT. CITYSCAPE, CORUSCANT - NIGHT",
       "number": 22,
       "time": 198
@@ -764,7 +764,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "If you'd spend as much time working on your saber skills as you do on your wit, young Padawan, you would rival Master Yoda as a swordsman.",
+      "text": "If you would spend as much time working on your saber skills as you do on your wit, young Padawan, you would rival Master Yoda as a swordsman.",
       "where": "EXT. CITYSCAPE, CORUSCANT - NIGHT",
       "number": 27,
       "time": 243
@@ -780,7 +780,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Only in your mind, my very young apprentice! Pull up, Anakin. Pull up! You know I don't like it when you do that.",
+      "text": "Only in your mind, my very young apprentice! Pull up, Anakin. Pull up! You know I do not like it when you do that.",
       "where": "EXT. CITYSCAPE, CORUSCANT - NIGHT",
       "number": 23,
       "time": 207
@@ -788,7 +788,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Sorry, I forgot you don't like flying, Master.",
+      "text": "Sorry, I forgot you do not like flying, Master.",
       "where": "EXT. CITYSCAPE, CORUSCANT - NIGHT",
       "number": 8,
       "time": 72
@@ -796,7 +796,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "I don't mind flying but what you're doing is suicide! It's dangerous near those power couplings! Slow down! Where are you going? He went down there, the other way.",
+      "text": "I do not mind flying but what you are doing is suicide! it is dangerous near those power couplings! Slow down! Where are you going? He went down there, the other way.",
       "where": "EXT. CITYSCAPE, CORUSCANT - NIGHT",
       "number": 29,
       "time": 261
@@ -828,7 +828,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "That was some shortcut, Anakin. He went completely the other way. Once again you've proved.",
+      "text": "That was some shortcut, Anakin. He went completely the other way. Once again you have proved.",
       "where": "EXT. CITYSCAPE, CORUSCANT - NIGHT",
       "number": 15,
       "time": 135
@@ -940,7 +940,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Don't say that Master You're the closest thing I have to a father I love you. I don't want to cause you pain.",
+      "text": "do not say that Master you are the closest thing I have to a father I love you. I do not want to cause you pain.",
       "where": "INT. NIGHTCLUB - NIGHT",
       "number": 23,
       "time": 207
@@ -948,7 +948,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Then why don't you listen to me?",
+      "text": "Then why do not you listen to me?",
       "where": "INT. NIGHTCLUB - NIGHT",
       "number": 7,
       "time": 63
@@ -972,7 +972,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "I think he's a she and I think she is a changeling.",
+      "text": "I think he is a she and I think she is a changeling.",
       "where": "INT. NIGHTCLUB - NIGHT",
       "number": 12,
       "time": 108
@@ -1012,7 +1012,7 @@
     {
       "from": "OBI-WAN",
       "to": "ELAN SLEAZEBAGGANO",
-      "text": "You don't want to sell me death sticks.",
+      "text": "You do not want to sell me death sticks.",
       "where": "INT. NIGHTCLUB - NIGHT",
       "number": 8,
       "time": 72
@@ -1020,7 +1020,7 @@
     {
       "from": "ELAN SLEAZEBAGGANO",
       "to": "OBI-WAN",
-      "text": "I don't want to sell you death- sticks.",
+      "text": "I do not want to sell you death- sticks.",
       "where": "INT. NIGHTCLUB - NIGHT",
       "number": 8,
       "time": 72
@@ -1116,7 +1116,7 @@
     {
       "from": "MACE WINDU",
       "to": "OBI-WAN",
-      "text": "Most importantly, find out who he's working for.",
+      "text": "Most importantly, find out who he is working for.",
       "where": "INT. JEDI BUILDING - DAY",
       "number": 8,
       "time": 72
@@ -1140,7 +1140,7 @@
     {
       "from": "MACE WINDU",
       "to": "ANAKIN",
-      "text": "Anakin, escort the senator back to her home planet of Naboo. She'll be safer there. And don't use registered transport. Travel as refugees.",
+      "text": "Anakin, escort the senator back to her home planet of Naboo. SHe will be safer there. And do not use registered transport. Travel as refugees.",
       "where": "INT. JEDI BUILDING - DAY",
       "number": 23,
       "time": 207
@@ -1188,7 +1188,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "And so, they've finally given you an assignment. Your patience has paid off.",
+      "text": "And so, they have finally given you an assignment. Your patience has paid off.",
       "where": "INT. SENATE BUILDING, APARTMENT - DAY",
       "number": 13,
       "time": 117
@@ -1204,7 +1204,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "You don't need guidance, Anakin. In time, you will learn to trust your feelings. Then you will be invincible. I have said it many times: You are the most gifted Jedi I have ever met.",
+      "text": "You do not need guidance, Anakin. In time, you will learn to trust your feelings. Then you will be invincible. I have said it many times: You are the most gifted Jedi I have ever met.",
       "where": "INT. SENATE BUILDING, APARTMENT - DAY",
       "number": 35,
       "time": 315
@@ -1276,7 +1276,7 @@
     {
       "from": "PADME",
       "to": "JAR JAR",
-      "text": "I'm taking an extended leave of absence. It will be your responsibility to take my place in the senate. Representative Binks. I know I can count on you.",
+      "text": "I am taking an extended leave of absence. It will be your responsibility to take my place in the senate. Representative Binks. I know I can count on you.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT - DAY",
       "number": 28,
       "time": 252
@@ -1292,7 +1292,7 @@
     {
       "from": "PADME",
       "to": "JAR JAR",
-      "text": "You're a good friend, Jar Jar. I don't wish to hold you up. I'm sure you have a great deal to do.",
+      "text": "you are a good friend, Jar Jar. I do not wish to hold you up. I am sure you have a great deal to do.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT - DAY",
       "number": 22,
       "time": 198
@@ -1316,7 +1316,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Don't worry. Now that the Council has ordered an investigation, it won't take Master Obi-Wan long to find that bounty hunter.",
+      "text": "do not worry. Now that the Council has ordered an investigation, it will not take Master Obi-Wan long to find that bounty hunter.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT - DAY",
       "number": 21,
       "time": 189
@@ -1324,7 +1324,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I haven't worked for a year to defeat the \"Military Creation Act\" not to be here when its fate is decided.",
+      "text": "I have not worked for a year to defeat the \"Military Creation Act\" not to be here when its fate is decided.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT - DAY",
       "number": 21,
       "time": 189
@@ -1340,7 +1340,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I'm sorry, Anakin. It's impossible to deny you've that you've grown up.",
+      "text": "I am sorry, Anakin. it is impossible to deny you have that you have grown up.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT - DAY",
       "number": 12,
       "time": 108
@@ -1348,7 +1348,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Master Obi-Wan manages not to see it. Don't get me wrong Obi-Wan is a great mentor. As wise as Master Yoda and as powerful as Master Windu. I am truly thankful to be his apprentice. Only although I'm a Padawan learner, in some ways a lot of ways I'm ahead of him. I'm ready for the trials. I know I am! He knows it too. He believes I'm too unpredictable Other Jedi my age have gone through the trials and made it I know I started my training late but he won't let me move on.",
+      "text": "Master Obi-Wan manages not to see it. do not get me wrong Obi-Wan is a great mentor. As wise as Master Yoda and as powerful as Master Windu. I am truly thankful to be his apprentice. Only although I am a Padawan learner, in some ways a lot of ways I am ahead of him. I am ready for the trials. I know I am! He knows it too. He believes I am too unpredictable Other Jedi my age have gone through the trials and made it I know I started my training late but he will not let me move on.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT - DAY",
       "number": 96,
       "time": 864
@@ -1364,7 +1364,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "It's worse he's overly critical. He never listens! He just doesn't understand! It's not fair!",
+      "text": "it is worse he is overly critical. He never listens! He just does not understand! it is not fair!",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT - DAY",
       "number": 15,
       "time": 135
@@ -1372,7 +1372,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "All mentors have a way of seeing more of our faults than we would like. It's the only way we grow.",
+      "text": "All mentors have a way of seeing more of our faults than we would like. it is the only way we grow.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT - DAY",
       "number": 21,
       "time": 189
@@ -1388,7 +1388,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Anakin. Don't try to grow up too fast.",
+      "text": "Anakin. do not try to grow up too fast.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT - DAY",
       "number": 8,
       "time": 72
@@ -1404,7 +1404,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Please don't look at me like that.",
+      "text": "Please do not look at me like that.",
       "where": "INT. SENATE BUILDING, PADME'S APARTMENT - DAY",
       "number": 7,
       "time": 63
@@ -1452,7 +1452,7 @@
     {
       "from": "DORME",
       "to": "PADME",
-      "text": "He'll be safe with me.",
+      "text": "He will be safe with me.",
       "where": "INT. CORUSCANT, SPACEPORT FREIGHTER DOCKS, TRANSPORT BUS - DAY",
       "number": 5,
       "time": 45
@@ -1460,7 +1460,7 @@
     {
       "from": "PADME",
       "to": "DORME",
-      "text": "You'll be fine.",
+      "text": "you will be fine.",
       "where": "INT. CORUSCANT, SPACEPORT FREIGHTER DOCKS, TRANSPORT BUS - DAY",
       "number": 3,
       "time": 27
@@ -1468,7 +1468,7 @@
     {
       "from": "DORME",
       "to": "PADME",
-      "text": "It's not me, milady. I worry about you. What if they realise I'm not you?",
+      "text": "it is not me, milady. I worry about you. What if they realise I am not you?",
       "where": "INT. CORUSCANT, SPACEPORT FREIGHTER DOCKS, TRANSPORT BUS - DAY",
       "number": 15,
       "time": 135
@@ -1500,7 +1500,7 @@
     {
       "from": "OBI-WAN",
       "to": "PADME",
-      "text": "I will get to the bottom of this plot quickly, milady. You'll be back here in no time.",
+      "text": "I will get to the bottom of this plot quickly, milady. you will be back here in no time.",
       "where": "INT. CORUSCANT, SPACEPORT FREIGHTER DOCKS, TRANSPORT BUS - DAY",
       "number": 18,
       "time": 162
@@ -1548,7 +1548,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Suddenly, I'm afraid",
+      "text": "Suddenly, I am afraid",
       "where": "INT. CORUSCANT, SPACEPORT FREIGHTER DOCKS, TRANSPORT BUS - DAY",
       "number": 3,
       "time": 27
@@ -1556,7 +1556,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I'm kinda scared too. This is my first assignment on my own. Don't worry. We have ARTOO with us.",
+      "text": "I am kinda scared too. This is my first assignment on my own. do not worry. We have ARTOO with us.",
       "where": "INT. CORUSCANT, SPACEPORT FREIGHTER DOCKS, TRANSPORT BUS - DAY",
       "number": 19,
       "time": 171
@@ -1572,7 +1572,7 @@
     {
       "from": "OBI-WAN",
       "to": "CAPTAIN TYPHO",
-      "text": "I hope he doesn't try anything foolish.",
+      "text": "I hope he does not try anything foolish.",
       "where": "INT. CORUSCANT, SPACEPORT FREIGHTER DOCKS, TRANSPORT BUS - DAY",
       "number": 7,
       "time": 63
@@ -1580,7 +1580,7 @@
     {
       "from": "CAPTAIN TYPHO",
       "to": "OBI-WAN",
-      "text": "I'd be more concerned about her doing something, than him.",
+      "text": "I would be more concerned about her doing something, than him.",
       "where": "INT. CORUSCANT, SPACEPORT FREIGHTER DOCKS, TRANSPORT BUS - DAY",
       "number": 10,
       "time": 90
@@ -1652,7 +1652,7 @@
     {
       "from": "DEXTER JETTSTER",
       "to": "OBI-WAN",
-      "text": "Well, whattaya know. I ain't seen one of these since I was prospecting on Subterrel beyond the Outer Rim!",
+      "text": "Well, whattaya know. I is not seen one of these since I was prospecting on Subterrel beyond the Outer Rim!",
       "where": "INT. CORUSCANT, DEX'S DINER - MORNING",
       "number": 19,
       "time": 171
@@ -1676,7 +1676,7 @@
     {
       "from": "OBI-WAN",
       "to": "DEXTER JETTSTER",
-      "text": "Kamino Kyberdart I wonder why it didn't show up in any analysis archive.",
+      "text": "Kamino Kyberdart I wonder why it did not show up in any analysis archive.",
       "where": "INT. CORUSCANT, DEX'S DINER - MORNING",
       "number": 13,
       "time": 117
@@ -1684,7 +1684,7 @@
     {
       "from": "DEXTER JETTSTER",
       "to": "OBI-WAN",
-      "text": "It's these funny little cuts on the side give it away Those analysis droids you've got over there only focus on symbols, you know. I should think you Jedi would have more respect for the difference between knowledge and wisdom.",
+      "text": "it is these funny little cuts on the side give it away Those analysis droids you have got over there only focus on symbols, you know. I should think you Jedi would have more respect for the difference between knowledge and wisdom.",
       "where": "INT. CORUSCANT, DEX'S DINER - MORNING",
       "number": 40,
       "time": 360
@@ -1692,7 +1692,7 @@
     {
       "from": "OBI-WAN",
       "to": "DEXTER JETTSTER",
-      "text": "Well, Dex, if droids could think, we wouldn't be here, would we? Kamino doesn't sound familiar. Is it part of the Republic?",
+      "text": "Well, Dex, if droids could think, we would not be here, would we? Kamino does not sound familiar. Is it part of the Republic?",
       "where": "INT. CORUSCANT, DEX'S DINER - MORNING",
       "number": 22,
       "time": 198
@@ -1700,7 +1700,7 @@
     {
       "from": "DEXTER JETTSTER",
       "to": "OBI-WAN",
-      "text": "No, it's beyond the Outer Rim. I'd say about twelve parsecs outside the Rishi Maze, toward the south. It should be easy to find, even for those droids in your archive to find. Those Kaminoans keep to themselves. They're cloners. Damned good ones, too.",
+      "text": "No, it is beyond the Outer Rim. I would say about twelve parsecs outside the Rishi Maze, toward the south. It should be easy to find, even for those droids in your archive to find. Those Kaminoans keep to themselves. they are cloners. Damned good ones, too.",
       "where": "INT. CORUSCANT, DEX'S DINER - MORNING",
       "number": 44,
       "time": 396
@@ -1764,7 +1764,7 @@
     {
       "from": "OBI-WAN",
       "to": "JOCASTA NU",
-      "text": "Yes, I'm trying to find a planet system called Kamino. It doesn't seem to show upon any of the archive charts.",
+      "text": "Yes, I am trying to find a planet system called Kamino. It does not seem to show upon any of the archive charts.",
       "where": "INT. JEDI TEMPLE, ARCHIVES LIBRARY - DAY",
       "number": 21,
       "time": 189
@@ -1772,7 +1772,7 @@
     {
       "from": "JOCASTA NU",
       "to": "OBI-WAN",
-      "text": "Kamino? It's not a system I'M familiar with Let me see. Are you sure you have the right co-ordinates?",
+      "text": "Kamino? it is not a system I am familiar with Let me see. Are you sure you have the right co-ordinates?",
       "where": "INT. JEDI TEMPLE, ARCHIVES LIBRARY - DAY",
       "number": 19,
       "time": 171
@@ -1788,7 +1788,7 @@
     {
       "from": "JOCASTA NU",
       "to": "OBI-WAN",
-      "text": "It ought to be. Unless it was very recent. I hate to say it, but it looks like the system you're searching for doesn't exist. That's impossible perhaps the archives are incomplete.",
+      "text": "It ought to be. Unless it was very recent. I hate to say it, but it looks like the system you are searching for does not exist. that is impossible perhaps the archives are incomplete.",
       "where": "INT. JEDI TEMPLE, ARCHIVES LIBRARY - DAY",
       "number": 32,
       "time": 288
@@ -1828,7 +1828,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Attachment is forbidden. Possession is forbidden. Compassion, which I would define as unconditional love, is central to a Jedi's life, so you might say we're encouraged to love.",
+      "text": "Attachment is forbidden. Possession is forbidden. Compassion, which I would define as unconditional love, is central to a Jedi life, so you might say we are encouraged to love.",
       "where": "INT. STARFREIGHTER, STORAGE HOLD - DAY",
       "number": 28,
       "time": 252
@@ -1844,7 +1844,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "You haven't changed a bit. You're exactly the way I remember you in my dreams. I doubt if Naboo has changed much either.",
+      "text": "You have not changed a bit. you are exactly the way I remember you in my dream. I doubt if Naboo has changed much either.",
       "where": "INT. STARFREIGHTER, STORAGE HOLD - DAY",
       "number": 23,
       "time": 207
@@ -1852,7 +1852,7 @@
     {
       "from": "YODA",
       "to": "CHILDREN",
-      "text": "Don't think feel be as one with the Force. Help you, it will. Younglings - enough! A visitor we have. Welcome him.",
+      "text": "do not think feel be as one with the Force. Help you, it will. Younglings - enough! A visitor we have. Welcome him.",
       "where": "INT. JEDI TEMPLE, TRAINING VERANDA - DAY",
       "number": 22,
       "time": 198
@@ -1956,7 +1956,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I wasn't the youngest queen ever elected but now that I think back on it, I'm not sure I was old enough. I'm not sure I was ready.",
+      "text": "I was not the youngest queen ever elected but now that I think back on it, I am not sure I was old enough. I am not sure I was ready.",
       "where": "EXT. NABOO PALACE, GRAND COURTYARD (NABOO) - AFTERNOON",
       "number": 28,
       "time": 252
@@ -1972,7 +1972,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Truthfully, I was relieved when my two terms were up. The new Queen asked me to serve as Senator, I couldn't refuse her.",
+      "text": "Truthfully, I was relieved when my two terms were up. The new Queen asked me to serve as Senator, I could not refuse her.",
       "where": "EXT. NABOO PALACE, GRAND COURTYARD (NABOO) - AFTERNOON",
       "number": 23,
       "time": 207
@@ -1980,7 +1980,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I agree! I think the Republic needs you I'm glad you chose to serve.",
+      "text": "I agree! I think the Republic needs you I am glad you chose to serve.",
       "where": "EXT. NABOO PALACE, GRAND COURTYARD (NABOO) - AFTERNOON",
       "number": 14,
       "time": 126
@@ -1988,7 +1988,7 @@
     {
       "from": "PADME",
       "to": "QUEEN JAMILLIA",
-      "text": "If the senate votes to create an army, it's sure to push us into a civil war.",
+      "text": "If the senate votes to create an army, it is sure to push us into a civil war.",
       "where": "INT. NABOO PALACE, THRONE ROOM - AFTERNOON",
       "number": 17,
       "time": 153
@@ -1996,7 +1996,7 @@
     {
       "from": "BIBBLE",
       "to": "PADME",
-      "text": "It's unthinkable! There hasn't been a full-scale war since the formation of the Republic.",
+      "text": "it is unthinkable! There has not been a full-scale war since the formation of the Republic.",
       "where": "INT. NABOO PALACE, THRONE ROOM - AFTERNOON",
       "number": 14,
       "time": 126
@@ -2012,7 +2012,7 @@
     {
       "from": "PADME",
       "to": "QUEEN JAMILLIA",
-      "text": "Not if they feel threatened. The separatists don't have an army, but if they are provoked, they will move to defend themselves. I'm sure of that. And with no time or money to build an army, my guess is they will turn to the Commerce Guilds or the Trade Federation for help.",
+      "text": "Not if they feel threatened. The separatists do not have an army, but if they are provoked, they will move to defend themselves. I am sure of that. And with no time or money to build an army, my guess is they will turn to the Commerce Guilds or the Trade Federation for help.",
       "where": "INT. NABOO PALACE, THRONE ROOM - AFTERNOON",
       "number": 52,
       "time": 468
@@ -2020,7 +2020,7 @@
     {
       "from": "BIBBLE",
       "to": "QUEEN JAMILLIA",
-      "text": "It's outrageous! After all of those hearings, and the four trials in the Supreme Court, NUTE is still the Viceroy of the Trade Federation. Do those money mongers control everything?",
+      "text": "it is outrageous! After all of those hearings, and the four trials in the Supreme Court, NUTE is still the Viceroy of the Trade Federation. Do those money mongers control everything?",
       "where": "INT. NABOO PALACE, THRONE ROOM - AFTERNOON",
       "number": 30,
       "time": 270
@@ -2036,7 +2036,7 @@
     {
       "from": "PADME",
       "to": "QUEEN JAMILLIA",
-      "text": "Let's pray that day never comes.",
+      "text": "let  is pray that day never comes.",
       "where": "INT. NABOO PALACE, THRONE ROOM - AFTERNOON",
       "number": 6,
       "time": 54
@@ -2060,7 +2060,7 @@
     {
       "from": "PADME",
       "to": "BIBBLE",
-      "text": "Anakin's not a Jedi yet, Counsellor. He's still a Padawan learner. I was thinking",
+      "text": "Anakin's not a Jedi yet, Counsellor. he is still a Padawan learner. I was thinking",
       "where": "INT. NABOO PALACE, THRONE ROOM - AFTERNOON",
       "number": 14,
       "time": 126
@@ -2092,7 +2092,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Ani, my life is at risk, and this is my home. I know it very well that is why we're here. I think it would be wise for you to take advantage of my knowledge in this instance.",
+      "text": "Ani, my life is at risk, and this is my home. I know it very well that is why we are here. I think it would be wise for you to take advantage of my knowledge in this instance.",
       "where": "INT. NABOO PALACE, THRONE ROOM - AFTERNOON",
       "number": 38,
       "time": 342
@@ -2108,7 +2108,7 @@
     {
       "from": "QUEEN JAMILLIA",
       "to": "PADME",
-      "text": "Perfect. It's settled then.",
+      "text": "Perfect. it is settled then.",
       "where": "INT. NABOO PALACE, THRONE ROOM - AFTERNOON",
       "number": 4,
       "time": 36
@@ -2124,7 +2124,7 @@
     {
       "from": "OBI-WAN",
       "to": "TAUN WE",
-      "text": "I'm expected?",
+      "text": "I am expected?",
       "where": "INT. TIPOCA CITY, CORRIDOR ENTRANCE",
       "number": 2,
       "time": 18
@@ -2180,7 +2180,7 @@
     {
       "from": "OBI-WAN",
       "to": "LAMA SU",
-      "text": "I'm sorry Master - ?",
+      "text": "I am sorry Master - ?",
       "where": "INT. TIPOCA CITY, PRIME MINISTER OFFICE - DAY",
       "number": 5,
       "time": 45
@@ -2188,7 +2188,7 @@
     {
       "from": "LAMA SU",
       "to": "OBI-WAN",
-      "text": "Jedi Master Sifo-Dyas. He's still a leading member of the Jedi Council, is he not?",
+      "text": "Jedi Master Sifo-Dyas. he is still a leading member of the Jedi Council, is he not?",
       "where": "INT. TIPOCA CITY, PRIME MINISTER OFFICE - DAY",
       "number": 15,
       "time": 135
@@ -2204,7 +2204,7 @@
     {
       "from": "LAMA SU",
       "to": "OBI-WAN",
-      "text": "I'm so sorry to hear that. But I'm sure he would have been proud of the army we've built for him.",
+      "text": "I am so sorry to hear that. But I am sure he would have been proud of the army we have built for him.",
       "where": "INT. TIPOCA CITY, PRIME MINISTER OFFICE - DAY",
       "number": 21,
       "time": 189
@@ -2220,7 +2220,7 @@
     {
       "from": "LAMA SU",
       "to": "OBI-WAN",
-      "text": "Yes, a clone army, and I must say one of the finest we've ever created.",
+      "text": "Yes, a clone army, and I must say one of the finest we have ever created.",
       "where": "INT. TIPOCA CITY, PRIME MINISTER OFFICE - DAY",
       "number": 15,
       "time": 135
@@ -2244,7 +2244,7 @@
     {
       "from": "OBI-WAN",
       "to": "LAMA SU",
-      "text": "That's why I'm here.",
+      "text": "that is why I am here.",
       "where": "INT. TIPOCA CITY, PRIME MINISTER OFFICE - DAY",
       "number": 4,
       "time": 36
@@ -2268,7 +2268,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I shouldn't have done that.",
+      "text": "I should not have done that.",
       "where": "EXT. NABOO LAKE RETREAT, LODGE, GARDEN TERRACEM LATE AFTERNOON",
       "number": 5,
       "time": 45
@@ -2276,7 +2276,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I'm sorry.",
+      "text": "I am sorry.",
       "where": "EXT. NABOO LAKE RETREAT, LODGE, GARDEN TERRACEM LATE AFTERNOON",
       "number": 2,
       "time": 18
@@ -2292,7 +2292,7 @@
     {
       "from": "LAMA SU",
       "to": "OBI-WAN",
-      "text": "I'd hoped you would be pleased.",
+      "text": "I would hoped you would be pleased.",
       "where": "EXT. TIPOCA CITY, PARADE GROUND (RAINSTORM) - DAY",
       "number": 6,
       "time": 54
@@ -2316,7 +2316,7 @@
     {
       "from": "LAMA SU",
       "to": "OBI-WAN",
-      "text": "Oh, yes, it's essential. Otherwise, a mature clone would take a lifetime to grow. Now we can do it in half the time.",
+      "text": "Oh, yes, it is essential. Otherwise, a mature clone would take a lifetime to grow. Now we can do it in half the time.",
       "where": "INT. TIPOCA CITY, CLONE CENTER, COMMINSSARY - DAY",
       "number": 23,
       "time": 207
@@ -2364,7 +2364,7 @@
     {
       "from": "LAMA SU",
       "to": "OBI-WAN",
-      "text": "Oh, we keep him here. After a few hundred thousand clones, the genetic pattern starts to fade, so we take a fresh supply. He lives here, but he's free to come and go as he pleases.",
+      "text": "Oh, we keep him here. After a few hundred thousand clones, the genetic pattern starts to fade, so we take a fresh supply. He lives here, but he is free to come and go as he pleases.",
       "where": "INT. TIPOCA CITY, CLONE CENTER, COMMINSSARY - DAY",
       "number": 36,
       "time": 324
@@ -2412,7 +2412,7 @@
     {
       "from": "LAMA SU",
       "to": "OBI-WAN",
-      "text": "Magnificent, aren't they?",
+      "text": "Magnificent, are not they?",
       "where": "INT. TIPOCA CITY, CLONE CENTER, BARRACKS - DAY",
       "number": 3,
       "time": 27
@@ -2420,7 +2420,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I don't know",
+      "text": "I do not know",
       "where": "EXT. NABOO, MOUNTAIN MEADOW - LATER AFTERNOON",
       "number": 3,
       "time": 27
@@ -2428,7 +2428,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Sure you do you just don't want to tell me.",
+      "text": "Sure you do you just do not want to tell me.",
       "where": "EXT. NABOO, MOUNTAIN MEADOW - LATER AFTERNOON",
       "number": 10,
       "time": 90
@@ -2484,7 +2484,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "You really don't like politicians, do you?",
+      "text": "You really do not like politicians, do you?",
       "where": "EXT. NABOO, MOUNTAIN MEADOW - LATER AFTERNOON",
       "number": 7,
       "time": 63
@@ -2492,7 +2492,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I like two or three, but I'm not really sure about one of them. I don't think the system works.",
+      "text": "I like two or three, but I am not really sure about one of them. I do not think the system works.",
       "where": "EXT. NABOO, MOUNTAIN MEADOW - LATER AFTERNOON",
       "number": 20,
       "time": 180
@@ -2508,7 +2508,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "We need a system where the politicians sit down and discuss the problems, agree what's in the best interests of all the people, and then do it.",
+      "text": "We need a system where the politicians sit down and discuss the problems, agree what is in the best interests of all the people, and then do it.",
       "where": "EXT. NABOO, MOUNTAIN MEADOW - LATER AFTERNOON",
       "number": 27,
       "time": 243
@@ -2516,7 +2516,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "That is exactly what we do. The trouble is that people don't wlways agree. In fact, they hardly ever do.",
+      "text": "That is exactly what we do. The trouble is that people do not wlways agree. In fact, they hardly ever do.",
       "where": "EXT. NABOO, MOUNTAIN MEADOW - LATER AFTERNOON",
       "number": 20,
       "time": 180
@@ -2532,7 +2532,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "By whom? Who's going to make them?",
+      "text": "By whom? who is going to make them?",
       "where": "EXT. NABOO, MOUNTAIN MEADOW - LATER AFTERNOON",
       "number": 7,
       "time": 63
@@ -2540,7 +2540,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I don't know. Someone.",
+      "text": "I do not know. Someone.",
       "where": "EXT. NABOO, MOUNTAIN MEADOW - LATER AFTERNOON",
       "number": 4,
       "time": 36
@@ -2596,7 +2596,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "You're making fun of me.",
+      "text": "you are making fun of me.",
       "where": "EXT. NABOO, MOUNTAIN MEADOW - LATER AFTERNOON",
       "number": 5,
       "time": 45
@@ -2604,7 +2604,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Oh no, I'd be much too frightened to tease a Senator.",
+      "text": "Oh no, I would be much too frightened to tease a Senator.",
       "where": "EXT. NABOO, MOUNTAIN MEADOW - LATER AFTERNOON",
       "number": 11,
       "time": 99
@@ -2652,7 +2652,7 @@
     {
       "from": "TAUN WE",
       "to": "JANGO FETT",
-      "text": "This is Jedi Master, OBI-WAN Kenobi. He's come to check on our progress.",
+      "text": "This is Jedi Master, OBI-WAN Kenobi. he is come to check on our progress.",
       "where": "INT. TIPOCA CITY, FETT APARTMENT - DAY",
       "number": 13,
       "time": 117
@@ -2668,7 +2668,7 @@
     {
       "from": "JANGO FETT",
       "to": "OBI-WAN",
-      "text": "I'm just a simple man, trying to make my way in the universe, Master Jedi.",
+      "text": "I am just a simple man, trying to make my way in the universe, Master Jedi.",
       "where": "INT. TIPOCA CITY, FETT APARTMENT - DAY",
       "number": 15,
       "time": 135
@@ -2764,7 +2764,7 @@
     {
       "from": "OBI-WAN",
       "to": "JANGO FETT",
-      "text": "It seems to me it's your army - being that they are all clones of you.",
+      "text": "It seems to me it is your army - being that they are all clones of you.",
       "where": "INT. TIPOCA CITY, FETT APARTMENT - DAY",
       "number": 16,
       "time": 144
@@ -2772,7 +2772,7 @@
     {
       "from": "JANGO FETT",
       "to": "OBI-WAN",
-      "text": "They'll do their job well, I'll guarantee that.",
+      "text": "they will do their job well, I will guarantee that.",
       "where": "INT. TIPOCA CITY, FETT APARTMENT - DAY",
       "number": 8,
       "time": 72
@@ -2804,7 +2804,7 @@
     {
       "from": "JANGO FETT",
       "to": "BOBA FETT",
-      "text": "Pack your things. We're leaving.",
+      "text": "Pack your things. we are leaving.",
       "where": "INT. TIPOCA CITY, FETT APARTMENT - DAY",
       "number": 5,
       "time": 45
@@ -2820,7 +2820,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "\"Aggressive negotiations\"? What's that?",
+      "text": "\"Aggressive negotiations\"? what is that?",
       "where": "INT. NABOO LAKE RETREAT, EAT - TWILIGHT",
       "number": 4,
       "time": 36
@@ -2836,7 +2836,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "From the moment I met you, all those years ago, a day hasn't gone by when I haven't thought of you. And now that I'm close to you again, I'm in agony. The closer I get to you, the worse it gets. The thought of not being with you mskes my stomach turn over - my mouth goes dry. I feel dizzy. I can't breathe. I'm haunted by the kiss you should never have given me. My heart is beating, hoping that kiss will not become a scar. You are in my very soul, tormenting me. What can I do? I will do anything you ask. If you are suffering as much as I am, tell me.",
+      "text": "From the moment I met you, all those years ago, a day has not gone by when I have not thought of you. And now that I am close to you again, I am in agony. The closer I get to you, the worse it gets. The thought of not being with you mskes my stomach turn over - my mouth goes dry. I feel dizzy. I can not breathe. I am haunted by the kiss you should never have given me. My heart is beating, hoping that kiss will not become a scar. You are in my very soul, tormenting me. What can I do? I will do anything you ask. If you are suffering as much as I am, tell me.",
       "where": "INT. NABOO LAKE RETREAT, LODGE, FIREPLACE ALCOVE - TWILIGHT",
       "number": 117,
       "time": 1053
@@ -2844,7 +2844,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I can't. We can't. It's just not possible.",
+      "text": "I can not. We can not. it is just not possible.",
       "where": "INT. NABOO LAKE RETREAT, LODGE, FIREPLACE ALCOVE - TWILIGHT",
       "number": 8,
       "time": 72
@@ -2860,7 +2860,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "You listen. We live in a real world. Come back to it. You're studying to become a Jedi Knight. I'm a Senator. If you follow your thoughts through to conclusion, they will take us to a place we cannot go regardless of the way we feel about each other.",
+      "text": "You listen. We live in a real world. Come back to it. you are studying to become a Jedi Knight. I am a Senator. If you follow your thoughts through to conclusion, they will take us to a place we can not go regardless of the way we feel about each other.",
       "where": "INT. NABOO LAKE RETREAT, LODGE, FIREPLACE ALCOVE - TWILIGHT",
       "number": 49,
       "time": 441
@@ -2868,7 +2868,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Then you do feel something! That is something I know I cannot do. Believe me, I wish that I could just wish away my feelings but I can't.",
+      "text": "Then you do feel something! That is something I know I can not do. Believe me, I wish that I could just wish away my feelings but I can not.",
       "where": "INT. NABOO LAKE RETREAT, LODGE, FIREPLACE ALCOVE - TWILIGHT",
       "number": 28,
       "time": 252
@@ -2884,7 +2884,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "It wouldn't have to be that way we could keep it a secret.",
+      "text": "It would not have to be that way we could keep it a secret.",
       "where": "INT. NABOO LAKE RETREAT, LODGE, FIREPLACE ALCOVE - TWILIGHT",
       "number": 13,
       "time": 117
@@ -2892,7 +2892,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Then we'd be living a lie - one we couldn't keep even if we wanted to. I couldn't do that. Could you, Anakin? Could you live like that?",
+      "text": "Then we'd be living a lie - one we could not keep even if we wanted to. I could not do that. Could you, Anakin? Could you live like that?",
       "where": "INT. NABOO LAKE RETREAT, LODGE, FIREPLACE ALCOVE - TWILIGHT",
       "number": 28,
       "time": 252
@@ -2900,7 +2900,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "No, you're right. It would destroy us",
+      "text": "No, you are right. It would destroy us",
       "where": "INT. NABOO LAKE RETREAT, LODGE, FIREPLACE ALCOVE - TWILIGHT",
       "number": 7,
       "time": 63
@@ -2916,7 +2916,7 @@
     {
       "from": "OBI-WAN",
       "to": "LAMA SU",
-      "text": "I won't forget. Thank you.",
+      "text": "I will not forget. Thank you.",
       "where": "INT. TIPOCA CITY, CORRIDOR - DAY",
       "number": 5,
       "time": 45
@@ -3012,7 +3012,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Don't go.",
+      "text": "do not go.",
       "where": "EXT. NABOO LAKE RETREAT, LODGE, BALCONY OVERLOOKING GARDENS - MORNING",
       "number": 2,
       "time": 18
@@ -3020,7 +3020,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I don't want to disturb you.",
+      "text": "I do not want to disturb you.",
       "where": "EXT. NABOO LAKE RETREAT, LODGE, BALCONY OVERLOOKING GARDENS - MORNING",
       "number": 6,
       "time": 54
@@ -3044,7 +3044,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Jedi don't have nightmares.",
+      "text": "Jedi do not have nightmares.",
       "where": "EXT. NABOO LAKE RETREAT, LODGE, BALCONY OVERLOOKING GARDENS - MORNING",
       "number": 4,
       "time": 36
@@ -3060,7 +3060,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I saw my mother. I saw her as clearly as I see you now. She's suffering, Padme. She is in pain They're killing her! I know I'm disobeying my mandate to protect you, Senator. I know I will be punished and possibly thrown out of the Jedi Order, but I must go. I have to help her! I'm sorry, Padme. I don't have a choice.",
+      "text": "I saw my mother. I saw her as clearly as I see you now. She is suffering, Padme. She is in pain they are killing her! I know I am disobeying my mandate to protect you, Senator. I know I will be punished and possibly thrown out of the Jedi Order, but I must go. I have to help her! I am sorry, Padme. I do not have a choice.",
       "where": "EXT. NABOO LAKE RETREAT, LODGE, BALCONY OVERLOOKING GARDENS - MORNING",
       "number": 65,
       "time": 585
@@ -3068,7 +3068,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I'll go with you.",
+      "text": "I will go with you.",
       "where": "EXT. NABOO LAKE RETREAT, LODGE, BALCONY OVERLOOKING GARDENS - MORNING",
       "number": 4,
       "time": 36
@@ -3076,7 +3076,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I'm sorry. I don't have a choice.",
+      "text": "I am sorry. I do not have a choice.",
       "where": "EXT. NABOO LAKE RETREAT, LODGE, BALCONY OVERLOOKING GARDENS - MORNING",
       "number": 7,
       "time": 63
@@ -3132,7 +3132,7 @@
     {
       "from": "WATTO",
       "to": "ANAKIN",
-      "text": "Shut down. What? I don't know you What can I do for you? You look like a Jedi. Whatever it is I didn't do it.",
+      "text": "Shut down. What? I do not know you What can I do for you? You look like a Jedi. Whatever it is I did not do it.",
       "where": "EXT. TATOOINE, MOS ESPA STREETS AND WATTO'S SHIP - DAY",
       "number": 25,
       "time": 225
@@ -3140,7 +3140,7 @@
     {
       "from": "ANAKIN",
       "to": "WATTO",
-      "text": "Let me help you with that. I'm looking for Shmi Skywalker.",
+      "text": "Let me help you with that. I am looking for Shmi Skywalker.",
       "where": "EXT. TATOOINE, MOS ESPA STREETS AND WATTO'S SHIP - DAY",
       "number": 11,
       "time": 99
@@ -3164,7 +3164,7 @@
     {
       "from": "WATTO",
       "to": "ANAKIN",
-      "text": "Oh, yeah. Shmi she's not mine no more. I sold her.",
+      "text": "Oh, yeah. Shmi she is not mine no more. I sold her.",
       "where": "EXT. TATOOINE, MOS ESPA STREETS AND WATTO'S SHIP - DAY",
       "number": 11,
       "time": 99
@@ -3204,7 +3204,7 @@
     {
       "from": "ANAKIN",
       "to": "WATTO",
-      "text": "I'd like to know.",
+      "text": "I would like to know.",
       "where": "EXT. TATOOINE, MOS ESPA STREETS AND WATTO'S SHIP - DAY",
       "number": 4,
       "time": 36
@@ -3212,7 +3212,7 @@
     {
       "from": "WATTO",
       "to": "ANAKIN",
-      "text": "Yeah sure absolutely. Let's go look in my records.",
+      "text": "Yeah sure absolutely. let  is go look in my records.",
       "where": "EXT. TATOOINE, MOS ESPA STREETS AND WATTO'S SHIP - DAY",
       "number": 9,
       "time": 81
@@ -3228,7 +3228,7 @@
     {
       "from": "JANGO FETT",
       "to": "BOBA FETT",
-      "text": "Stay calm, son. He must have put a homing device on our hull. Hang on, son. We'll move into the asteroid field and we'll have a couple of surprises for him. He doesn't seem to take a hint, this guy. Watch out!",
+      "text": "Stay calm, son. He must have put a homing device on our hull. Hang on, son. we will move into the asteroid field and we will have a couple of surprises for him. He does not seem to take a hint, this guy. Watch out!",
       "where": "EXT. SPACE, GEONOSIS",
       "number": 42,
       "time": 378
@@ -3244,7 +3244,7 @@
     {
       "from": "JANGO FETT",
       "to": "BOBA FETT",
-      "text": "We won't see him again.",
+      "text": "We will not see him again.",
       "where": "EXT. SPACE, GEONOSIS",
       "number": 5,
       "time": 45
@@ -3300,7 +3300,7 @@
     {
       "from": "ANAKIN",
       "to": "THREEPIO",
-      "text": "I've come to see my mother.",
+      "text": "I have come to see my mother.",
       "where": "EXT. TATOOINE, DESERT, HOMESTEAD MOISTURE FARM - LATE DAY",
       "number": 6,
       "time": 54
@@ -3308,7 +3308,7 @@
     {
       "from": "THREEPIO",
       "to": "ANAKIN",
-      "text": "Oh, dear! I'm so terribly sorry, Master Ani.",
+      "text": "Oh, dear! I am so terribly sorry, Master Ani.",
       "where": "EXT. TATOOINE, DESERT, HOMESTEAD MOISTURE FARM - LATE DAY",
       "number": 8,
       "time": 72
@@ -3316,7 +3316,7 @@
     {
       "from": "PADME",
       "to": "THREEPIO",
-      "text": "THREEPIO, what's happened?",
+      "text": "THREEPIO, what is happened?",
       "where": "EXT. TATOOINE, DESERT, HOMESTEAD MOISTURE FARM - LATE DAY",
       "number": 3,
       "time": 27
@@ -3340,7 +3340,7 @@
     {
       "from": "ANAKIN",
       "to": "OWEN",
-      "text": "I'm Anakin Skywalker. I'm here looking for my mother.",
+      "text": "I am Anakin Skywalker. I am here looking for my mother.",
       "where": "EXT. TATOOINE, HOMESTEAD, COURTYARD - LATE DAY",
       "number": 9,
       "time": 81
@@ -3348,7 +3348,7 @@
     {
       "from": "OWEN",
       "to": "ANAKIN",
-      "text": "Owen Lars I guess I'm your step-brother. This is my girlfriend, Beru.",
+      "text": "Owen Lars I guess I am your step-brother. This is my girlfriend, Beru.",
       "where": "EXT. TATOOINE, HOMESTEAD, COURTYARD - LATE DAY",
       "number": 12,
       "time": 108
@@ -3364,7 +3364,7 @@
     {
       "from": "PADME",
       "to": "BERU",
-      "text": "I'm Padme.",
+      "text": "I am Padme.",
       "where": "EXT. TATOOINE, HOMESTEAD, COURTYARD - LATE DAY",
       "number": 2,
       "time": 18
@@ -3388,7 +3388,7 @@
     {
       "from": "CLIEGG",
       "to": "ANAKIN",
-      "text": "No, she's not. Cliegg Lars. Shmi is my wife Come on inside. We have a lot to talk about.",
+      "text": "No, she is not. Cliegg Lars. Shmi is my wife Come on inside. We have a lot to talk about.",
       "where": "EXT. TATOOINE, HOMESTEAD, COURTYARD - LATE DAY",
       "number": 19,
       "time": 171
@@ -3396,7 +3396,7 @@
     {
       "from": "CLIEGG",
       "to": "ANAKIN",
-      "text": "It was just before dawn. They came out of nowhere. A hunting party of Tusekn Raiders. Your mother had gone out early, like she always did, to pick mushrooms that grow on the vaporatos. From the tracks, she was about halfway when they took her. Those Tuskens walk like men, but they're vicious, mindless monsters. Thirty of us went out after her. Four of us came back. Three more are still out there looking. I'd be with them, only I just couldn't ride any more until I heal. This isn't the way I wanted to meet you, son. This isn't how your mother and I planned it. I don't want to give up on her, but she's been gone a month. There's little hope she's lasted this long.",
+      "text": "It was just before dawn. They came out of nowhere. A hunting party of Tusekn Raiders. Your mother had gone out early, like she always did, to pick mushrooms that grow on the vaporatos. From the tracks, she was about halfway when they took her. Those Tuskens walk like men, but they are vicious, mindless monsters. Thirty of us went out after her. Four of us came back. Three more are still out there looking. I would be with them, only I just could not ride any more until I heal. This is not the way I wanted to meet you, son. This is not how your mother and I planned it. I do not want to give up on her, but she is been gone a month. there is little hope she is lasted this long.",
       "where": "INT. TATOOINE, HOMESTEAD, KITCHEN - LATE DAY",
       "number": 128,
       "time": 1152
@@ -3420,7 +3420,7 @@
     {
       "from": "CLIEGG",
       "to": "ANAKIN",
-      "text": "She's dead, son. Accept it.",
+      "text": "She is dead, son. Accept it.",
       "where": "INT. TATOOINE, HOMESTEAD, KITCHEN - LATE DAY",
       "number": 5,
       "time": 45
@@ -3428,7 +3428,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "You are going to have to stay here. These are good people, Padme. You'll be safe.",
+      "text": "You are going to have to stay here. These are good people, Padme. you will be safe.",
       "where": "EXT. TATOOINE, HOMESTEAD, MOISTURE FARM - LATE DAY",
       "number": 16,
       "time": 144
@@ -3444,7 +3444,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I won't be long.",
+      "text": "I will not be long.",
       "where": "EXT. TATOOINE, HOMESTEAD, MOISTURE FARM - LATE DAY",
       "number": 4,
       "time": 36
@@ -3500,7 +3500,7 @@
     {
       "from": "SHMI",
       "to": "ANAKIN",
-      "text": "I’m so glad to see you, you look so handsome. My son. My grown-up son. I'm so proud of you, Ani.",
+      "text": "I’m so glad to see you, you look so handsome. My son. My grown-up son. I am so proud of you, Ani.",
       "where": "INT. TUSKEN RAIDER HUTT - NIGHT",
       "number": 21,
       "time": 189
@@ -3556,7 +3556,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "The shifter broke. Life seems so much simpler when you're fixing things. I'm good at fixing things. Always was. But I couldn't. Why'd she have to die? Why couldn't I save her? I know I could have!",
+      "text": "The shifter broke. Life seems so much simpler when you are fixing things. I am good at fixing things. Always was. But I could not. Why'd she have to die? Why could not I save her? I know I could have!",
       "where": "INT. TATOOINE, HOMESTEAD - GARAGE (FULL MOON) - NIGHT",
       "number": 37,
       "time": 333
@@ -3564,7 +3564,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Sometimes there are things no one can fix. You're not all-powerful, Ani.",
+      "text": "Sometimes there are things no one can fix. you are not all-powerful, Ani.",
       "where": "INT. TATOOINE, HOMESTEAD - GARAGE (FULL MOON) - NIGHT",
       "number": 12,
       "time": 108
@@ -3572,7 +3572,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Well, I should be! Someday I will be. I will be the most powerful Jedi ever. I promise you. I will even learn to stop people from dying. It's all Obi-Wan's fault! He's jealous! He's holding me back!",
+      "text": "Well, I should be! Someday I will be. I will be the most powerful Jedi ever. I promise you. I will even learn to stop people from dying. it is all Obi-Wan's fault! he is jealous! he is holding me back!",
       "where": "INT. TATOOINE, HOMESTEAD - GARAGE (FULL MOON) - NIGHT",
       "number": 38,
       "time": 342
@@ -3580,7 +3580,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "What's wrong, Ani?",
+      "text": "what is wrong, Ani?",
       "where": "INT. TATOOINE, HOMESTEAD - GARAGE (FULL MOON) - NIGHT",
       "number": 3,
       "time": 27
@@ -3588,7 +3588,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I killed them. I killed them all. They're dead. Every single one of them. And not just the men but the women and the children too. They're like animals and I slaughtered them like animals! I hate them!",
+      "text": "I killed them. I killed them all. they are dead. Every single one of them. And not just the men but the women and the children too. they are like animals and I slaughtered them like animals! I hate them!",
       "where": "INT. TATOOINE, HOMESTEAD - GARAGE (FULL MOON) - NIGHT",
       "number": 38,
       "time": 342
@@ -3604,7 +3604,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I'm a Jedi. I know I'm better than this.",
+      "text": "I am a Jedi. I know I am better than this.",
       "where": "INT. TATOOINE, HOMESTEAD - GARAGE (FULL MOON) - NIGHT",
       "number": 9,
       "time": 81
@@ -3612,7 +3612,7 @@
     {
       "from": "CLIEGG",
       "to": "SHMI",
-      "text": "I know wherever you are it's become a better place. You were the most loving partner a man could ever have. Good-bye, my darling wife. And thank you.",
+      "text": "I know wherever you are it is become a better place. You were the most loving partner a man could ever have. Good-bye, my darling wife. And thank you.",
       "where": "INT. TATOOINE, HOMESTEAD - GARAGE (FULL MOON) - NIGHT",
       "number": 28,
       "time": 252
@@ -3620,7 +3620,7 @@
     {
       "from": "ANAKIN",
       "to": "SHMI",
-      "text": "I wasn't strong enough. But I promise I won't fail again. I miss you so much.",
+      "text": "I was not strong enough. But I promise I will not fail again. I miss you so much.",
       "where": "INT. TATOOINE, HOMESTEAD - GARAGE (FULL MOON) - NIGHT",
       "number": 16,
       "time": 144
@@ -3684,7 +3684,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "They'll never get there in time to save him. They have to come halfway across the galaxy. Look. Geonosis is less than a parsec away.",
+      "text": "they will never get there in time to save him. They have to come halfway across the galaxy. Look. Geonosis is less than a parsec away.",
       "where": "INT. TATOOINE, HOMESTEAD, GARAGE - DAY",
       "number": 25,
       "time": 225
@@ -3692,7 +3692,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "If he's still alive.",
+      "text": "If he is still alive.",
       "where": "INT. TATOOINE, HOMESTEAD, GARAGE - DAY",
       "number": 4,
       "time": 36
@@ -3700,7 +3700,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Are you just gonna sit here and let him die? He's your friend, your mentor.",
+      "text": "Are you just gonna sit here and let him die? he is your friend, your mentor.",
       "where": "INT. TATOOINE, HOMESTEAD, GARAGE - DAY",
       "number": 15,
       "time": 135
@@ -3708,7 +3708,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "He's like my father! But you heard Master Windu. He gave me strict orders to stay here.",
+      "text": "he is like my father! But you heard Master Windu. He gave me strict orders to stay here.",
       "where": "INT. TATOOINE, HOMESTEAD, GARAGE - DAY",
       "number": 17,
       "time": 153
@@ -3716,7 +3716,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "He gave you strict orders to protect me and I'm going to help Obi-Wan. If you plan to protect me, you'll just have to come along.",
+      "text": "He gave you strict orders to protect me and I am going to help Obi-Wan. If you plan to protect me, you will just have to come along.",
       "where": "INT. TATOOINE, HOMESTEAD, GARAGE - DAY",
       "number": 26,
       "time": 234
@@ -3732,7 +3732,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "I'm not worried, R2. It's just I've never flown before.",
+      "text": "I am not worried, R2. it is just I have never flown before.",
       "where": "INT. TATOOINE, HOMESTEAD, GARAGE - DAY",
       "number": 10,
       "time": 90
@@ -3756,7 +3756,7 @@
     {
       "from": "MACE WINDU",
       "to": "BAIL ORGANA",
-      "text": "We must stop them soon before they're fully ready.",
+      "text": "We must stop them soon before they are fully ready.",
       "where": "INT. CORUSCANT, CHANCELLOR'S OFFICE",
       "number": 9,
       "time": 81
@@ -3836,7 +3836,7 @@
     {
       "from": "OBI-WAN",
       "to": "COUNT DOOKU",
-      "text": "Well, I hope it doesn't take too long. I have work to do.",
+      "text": "Well, I hope it does not take too long. I have work to do.",
       "where": "INT. GEONOSIS, CENTRAL SQUARE - DAY",
       "number": 13,
       "time": 117
@@ -3852,7 +3852,7 @@
     {
       "from": "OBI-WAN",
       "to": "COUNT DOOKU",
-      "text": "I've been tracking a bounty hunter named Jango Fett. Do you know him?",
+      "text": "I have been tracking a bounty hunter named Jango Fett. Do you know him?",
       "where": "INT. GEONOSIS, CENTRAL SQUARE - DAY",
       "number": 13,
       "time": 117
@@ -3860,7 +3860,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "OBI-WAN",
-      "text": "There are no bounty hunters here that I am aware of. The Geonosians don't trust them.",
+      "text": "There are no bounty hunters here that I am aware of. The Geonosians do not trust them.",
       "where": "INT. GEONOSIS, CENTRAL SQUARE - DAY",
       "number": 16,
       "time": 144
@@ -3876,7 +3876,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "OBI-WAN",
-      "text": "It's a great pity our paths have never crossed before, Obi-Wan. Qui-Gon always spoke very highly of you. I wish he were still alive. I could use his help right now.",
+      "text": "it is a great pity our paths have never crossed before, Obi-Wan. Qui-Gon always spoke very highly of you. I wish he were still alive. I could use his help right now.",
       "where": "INT. GEONOSIS, CENTRAL SQUARE - DAY",
       "number": 31,
       "time": 279
@@ -3892,7 +3892,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "OBI-WAN",
-      "text": "Don't be so sure, my young Jedi. You forget that he was once my apprentice just as you were once his. He knew all about the corruption in the senate but he wouldn't have gone along with it if he had learned the truth as I have.",
+      "text": "do not be so sure, my young Jedi. You forget that he was once my apprentice just as you were once his. He knew all about the corruption in the senate but he would not have gone along with it if he had learned the truth as I have.",
       "where": "INT. GEONOSIS, CENTRAL SQUARE - DAY",
       "number": 47,
       "time": 423
@@ -3916,7 +3916,7 @@
     {
       "from": "OBI-WAN",
       "to": "COUNT DOOKU",
-      "text": "No, that's not possible. The Jedi would be aware of it.",
+      "text": "No, that is not possible. The Jedi would be aware of it.",
       "where": "INT. GEONOSIS, CENTRAL SQUARE - DAY",
       "number": 11,
       "time": 99
@@ -3932,7 +3932,7 @@
     {
       "from": "OBI-WAN",
       "to": "COUNT DOOKU",
-      "text": "I don't believe you.",
+      "text": "I do not believe you.",
       "where": "INT. GEONOSIS, CENTRAL SQUARE - DAY",
       "number": 4,
       "time": 36
@@ -3996,7 +3996,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "See those columns of steam straight ahead? They're exhaust vents of some type.",
+      "text": "See those columns of steam straight ahead? they are exhaust vents of some type.",
       "where": "INT. COCKPIT, NAOO STARFIGHTER - DAY",
       "number": 13,
       "time": 117
@@ -4012,7 +4012,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Look, whatever happens out there, follow my lead. I'm not interested in getting into a war here. As a member of the senate maybe I can find a diplomatic solution to this mess.",
+      "text": "Look, whatever happens out there, follow my lead. I am not interested in getting into a war here. As a member of the senate maybe I can find a diplomatic solution to this mess.",
       "where": "INT. COCKPIT, NAOO STARFIGHTER - DAY",
       "number": 33,
       "time": 297
@@ -4020,7 +4020,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Don't worry. I've given up trying to argue with you.",
+      "text": "do not worry. I have given up trying to argue with you.",
       "where": "INT. COCKPIT, NAOO STARFIGHTER - DAY",
       "number": 10,
       "time": 90
@@ -4100,7 +4100,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "Where are you going now? You don't know what's out there. Have you no sense at all?",
+      "text": "Where are you going now? You do not know what is out there. Have you no sense at all?",
       "where": "INT. COCKPIT, NAOO STARFIGHTER - DAY",
       "number": 17,
       "time": 153
@@ -4148,7 +4148,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "Do you know where you're going?",
+      "text": "Do you know where you are going?",
       "where": "INT. GEONOSIS, CORRIDORS - DAY",
       "number": 6,
       "time": 54
@@ -4196,7 +4196,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "You'll get your chance, I'm scrap. I want to go home! What did I do to deserve this?",
+      "text": "you will get your chance, I am scrap. I want to go home! What did I do to deserve this?",
       "where": "INT. GEONOSIS, CORRIDORS - DAY",
       "number": 18,
       "time": 162
@@ -4212,7 +4212,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "I wonder what happened to poor little R2. He's always getting himself into trouble. Oh, no! Uh-oh. I'm so confused.",
+      "text": "I wonder what happened to poor little R2. he is always getting himself into trouble. Oh, no! Uh-oh. I am so confused.",
       "where": "INT. GEONOSIS, CORRIDORS - DAY",
       "number": 20,
       "time": 180
@@ -4220,7 +4220,7 @@
     {
       "from": "JANGO FETT",
       "to": "ANAKIN",
-      "text": "Don't move, Jedi! Take him away.",
+      "text": "do not move, Jedi! Take him away.",
       "where": "INT. GEONOSIS, CORRIDORS - DAY",
       "number": 6,
       "time": 54
@@ -4228,7 +4228,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Don't be afraid.",
+      "text": "do not be afraid.",
       "where": "INT. GEONOSIS TUNNEL TO EXECUTION ARENA - DAY",
       "number": 3,
       "time": 27
@@ -4236,7 +4236,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I'm not afraid to die. I've been dying a little bit each day since you came back into my life.",
+      "text": "I am not afraid to die. I have been dying a little bit each day since you came back into my life.",
       "where": "INT. GEONOSIS TUNNEL TO EXECUTION ARENA - DAY",
       "number": 20,
       "time": 180
@@ -4292,7 +4292,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "It looks like you're going a good job so far.",
+      "text": "It looks like you are going a good job so far.",
       "where": "INT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 10,
       "time": 90
@@ -4324,7 +4324,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "It looks like she's already on top of things.",
+      "text": "It looks like she is already on top of things.",
       "where": "INT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 9,
       "time": 81
@@ -4332,7 +4332,7 @@
     {
       "from": "NUTE",
       "to": "COUNT DOOKU",
-      "text": "Foul! She can't do that shoot her or something!",
+      "text": "Foul! She can not do that shoot her or something!",
       "where": "INT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 9,
       "time": 81
@@ -4348,7 +4348,7 @@
     {
       "from": "NUTE",
       "to": "COUNT DOOKU",
-      "text": "This isn't how it's supposed to be! Jango, finish her off.",
+      "text": "This is not how it is supposed to be! Jango, finish her off.",
       "where": "INT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 11,
       "time": 99
@@ -4356,7 +4356,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "NUTE",
-      "text": "Patiece, Viceroy she will die. Maybe this is the way it's supposed to end.",
+      "text": "Patiece, Viceroy she will die. Maybe this is the way it is supposed to end.",
       "where": "INT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 14,
       "time": 126
@@ -4364,7 +4364,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "MACE WINDU",
-      "text": "Master Windu, how pleasant of you to join us. You're just in time for the moment of truth. I would think these two new boys of yours could use a little more training.",
+      "text": "Master Windu, how pleasant of you to join us. you are just in time for the moment of truth. I would think these two new boys of yours could use a little more training.",
       "where": "EXT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 33,
       "time": 297
@@ -4380,7 +4380,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "MACE WINDU",
-      "text": "Brave, but stupid, my old Jedi friend. You're impossibly outnumbered.",
+      "text": "Brave, but stupid, my old Jedi friend. you are impossibly outnumbered.",
       "where": "EXT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 10,
       "time": 90
@@ -4388,7 +4388,7 @@
     {
       "from": "MACE WINDU",
       "to": "COUNT DOOKU",
-      "text": "I don't think so. One Jedi has to be worth a hundred Geonosians.",
+      "text": "I do not think so. One Jedi has to be worth a hundred Geonosians.",
       "where": "EXT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 13,
       "time": 117
@@ -4396,7 +4396,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "MACE WINDU",
-      "text": "We'll see.",
+      "text": "we will see.",
       "where": "EXT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 2,
       "time": 18
@@ -4444,7 +4444,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "What are you doing? Stop that! You're going to strain something. My neck!",
+      "text": "What are you doing? Stop that! you are going to strain something. My neck!",
       "where": "INT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 13,
       "time": 117
@@ -4460,7 +4460,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "Now where are you taking me? This is such a drag! I'm quite beside myself.",
+      "text": "Now where are you taking me? This is such a drag! I am quite beside myself.",
       "where": "INT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 15,
       "time": 135
@@ -4476,7 +4476,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "R2, please be careful! You're singeing my circuits!",
+      "text": "R2, please be careful! you are singeing my circuits!",
       "where": "INT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 8,
       "time": 72
@@ -4516,7 +4516,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "MACE WINDU",
-      "text": "Then, I'm sorry, old friend. You will have to be destroyed.",
+      "text": "Then, I am sorry, old friend. You will have to be destroyed.",
       "where": "EXT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 11,
       "time": 99
@@ -4556,7 +4556,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "I've had the most peculiar dream!",
+      "text": "I have had the most peculiar dream!",
       "where": "EXT. GEONOSIS, EXECUTION ARENA - DAY",
       "number": 6,
       "time": 54
@@ -4596,7 +4596,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "NUTE",
-      "text": "That doesn't seem possible. How could the Jedi come up with an army so quickly?",
+      "text": "That does not seem possible. How could the Jedi come up with an army so quickly?",
       "where": "INT. GEONOSIS, CONTROL - DAY",
       "number": 15,
       "time": 135
@@ -4652,7 +4652,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "It's Dooku, go after him! Padme!",
+      "text": "it is Dooku, go after him! Padme!",
       "where": "INT. GUNSHIP NUMBER TWO - DAY",
       "number": 6,
       "time": 54
@@ -4660,7 +4660,7 @@
     {
       "from": "PADME",
       "to": "OBI-WAN",
-      "text": "We're gonna need some help!",
+      "text": "we are gonna need some help!",
       "where": "INT. GUNSHIP NUMBER TWO - DAY",
       "number": 5,
       "time": 45
@@ -4668,7 +4668,7 @@
     {
       "from": "OBI-WAN",
       "to": "PADME",
-      "text": "There isn't time! Anakin and I can handle this!",
+      "text": "There is not time! Anakin and I can handle this!",
       "where": "INT. GUNSHIP NUMBER TWO - DAY",
       "number": 9,
       "time": 81
@@ -4700,7 +4700,7 @@
     {
       "from": "ANAKIN",
       "to": "CLONE",
-      "text": "No we're not! Land this ship!",
+      "text": "No we are not! Land this ship!",
       "where": "INT. GUNSHIP NUMBER TWO - DAY",
       "number": 6,
       "time": 54
@@ -4708,7 +4708,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Don't let your personal feelings get in the way. We've got a job to do.",
+      "text": "do not let your personal feelings get in the way. we have got a job to do.",
       "where": "INT. GUNSHIP NUMBER TWO - DAY",
       "number": 15,
       "time": 135
@@ -4716,7 +4716,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "I don't care! Go back.",
+      "text": "I do not care! Go back.",
       "where": "INT. GUNSHIP NUMBER TWO - DAY",
       "number": 5,
       "time": 45
@@ -4724,7 +4724,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "I can't take Dooku alone! I need you! If we catch him, we can end this war right now! We have a job to do! What do you think Padmé would do were she in your position?",
+      "text": "I can not take Dooku alone! I need you! If we catch him, we can end this war right now! We have a job to do! What do you think Padmé would do were she in your position?",
       "where": "INT. GUNSHIP NUMBER TWO - DAY",
       "number": 37,
       "time": 333
@@ -4740,7 +4740,7 @@
     {
       "from": "ANAKIN",
       "to": "COUNT DOOKU",
-      "text": "You'll pay for all the Jedi you've killed today, Dooku.",
+      "text": "you will pay for all the Jedi you have killed today, Dooku.",
       "where": "INT. GEONOSIS, SECRET HANGER TOWER - LATE DAY",
       "number": 10,
       "time": 90
@@ -4748,7 +4748,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "We'll take him together.",
+      "text": "we will take him together.",
       "where": "INT. GEONOSIS, SECRET HANGER TOWER - LATE DAY",
       "number": 4,
       "time": 36
@@ -4756,7 +4756,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "I'm taking him now!",
+      "text": "I am taking him now!",
       "where": "INT. GEONOSIS, SECRET HANGER TOWER - LATE DAY",
       "number": 4,
       "time": 36
@@ -4772,7 +4772,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "OBI-WAN",
-      "text": "Kenobi, isn't it? As you can see, my Jedi powers are far beyond yours. Now, back down.",
+      "text": "Kenobi, is not it? As you can see, my Jedi powers are far beyond yours. Now, back down.",
       "where": "INT. GEONOSIS, SECRET HANGER TOWER - LATE DAY",
       "number": 17,
       "time": 153
@@ -4780,7 +4780,7 @@
     {
       "from": "OBI-WAN",
       "to": "COUNT DOOKU",
-      "text": "I don't think so.",
+      "text": "I do not think so.",
       "where": "INT. GEONOSIS, SECRET HANGER TOWER - LATE DAY",
       "number": 4,
       "time": 36
@@ -4796,7 +4796,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "ANAKIN",
-      "text": "That's brave of you, boy - but foolish. I would have thought you'd have learnt your lesson.",
+      "text": "that is brave of you, boy - but foolish. I would have thought you would have learnt your lesson.",
       "where": "INT. GEONOSIS, SECRET HANGER TOWER - LATE DAY",
       "number": 17,
       "time": 153
@@ -4804,7 +4804,7 @@
     {
       "from": "ANAKIN",
       "to": "COUNT DOOKU",
-      "text": "I'm a slow learner.",
+      "text": "I am a slow learner.",
       "where": "INT. GEONOSIS, SECRET HANGER TOWER - LATE DAY",
       "number": 4,
       "time": 36
@@ -4836,7 +4836,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "YODA",
-      "text": "I've become more powerful than any Jedi. Even you.",
+      "text": "I have become more powerful than any Jedi. Even you.",
       "where": "INT. GEONOSIS, SECRET HANGER TOWER - LATE DAY",
       "number": 9,
       "time": 81
@@ -4852,7 +4852,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "YODA",
-      "text": "It is obvious that this contest cannot be decided by our knowledge of the Force but by our skills with a lightsaber.",
+      "text": "It is obvious that this contest can not be decided by our knowledge of the Force but by our skills with a lightsaber.",
       "where": "INT. GEONOSIS, SECRET HANGER TOWER - LATE DAY",
       "number": 22,
       "time": 198
@@ -4916,7 +4916,7 @@
     {
       "from": "MACE WINDU",
       "to": "OBI-WAN",
-      "text": "It doesn't feel right.",
+      "text": "It does not feel right.",
       "where": "INT. JEDI TEMPLE, COUNCIL CHAMBER - SUNSET",
       "number": 4,
       "time": 36

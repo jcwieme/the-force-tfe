@@ -12,7 +12,7 @@
     {
       "from": "IMPERIAL CAPTAIN",
       "to": "IMPERIAL CONTROLLER",
-      "text": "Command station, this is ST 321. Code Clearance Blue. We're starting our approach. Deactivate the security shield.",
+      "text": "Command station, this is ST 321. Code Clearance Blue. we are starting our approach. Deactivate the security shield.",
       "where": "2 INT IMPERIAL SHUTTLE - COCKPIT The IMPERIAL CAPTAIN makes contact with the Death Star",
       "number": 17,
       "time": 153
@@ -28,7 +28,7 @@
     {
       "from": "IMPERIAL CAPTAIN",
       "to": "IMPERIAL CONTROLLER",
-      "text": "We're starting our approach.",
+      "text": "we are starting our approach.",
       "where": "2 INT IMPERIAL SHUTTLE - COCKPIT The IMPERIAL CAPTAIN makes contact with the Death Star",
       "number": 4,
       "time": 36
@@ -36,7 +36,7 @@
     {
       "from": "IMPERIAL OFFICER",
       "to": "IMPERIAL CONTROLLER",
-      "text": "Inform the commander that Lord Vader's shuttle has arrived.",
+      "text": "Inform the commander that Lord Vader shuttle has arrived.",
       "where": "3 INT DEATH STAR - CONTROL ROOM",
       "number": 9,
       "time": 81
@@ -52,7 +52,7 @@
     {
       "from": "JERJERROD",
       "to": "DARTH VADER",
-      "text": "Lord Vader, this is an unexpected pleasure. We're honored by your presence.",
+      "text": "Lord Vader, this is an unexpected pleasure. we are honored by your presence.",
       "where": "4 INT DEATH STAR - MAIN DOCKING BAY",
       "number": 12,
       "time": 108
@@ -60,7 +60,7 @@
     {
       "from": "DARTH VADER",
       "to": "JERJERROD",
-      "text": "You may dispense with the pleasantries, Commander. I'm here to put you back on schedule.",
+      "text": "You may dispense with the pleasantries, Commander. I am here to put you back on schedule.",
       "where": "4 INT DEATH STAR - MAIN DOCKING BAY",
       "number": 15,
       "time": 135
@@ -148,7 +148,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "Of course I'm worried. And you should be, too. Lando Calrissian and poor Chewbacca never returned from this awful place.",
+      "text": "Of course I am worried. And you should be, too. Lando Calrissian and poor Chewbacca never returned from this awful place.",
       "where": "5 EXT ROAD to JABBA'S PALACE - TAtoOINE",
       "number": 20,
       "time": 180
@@ -164,7 +164,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "Don't be so sure. If I told you half the things I've heard about this Jabba the Hutt, you'd probably short-circuit.",
+      "text": "do not be so sure. If I told you half the things I have heard about this Jabba the Hutt, you would probably short-circuit.",
       "where": "5 EXT ROAD to JABBA'S PALACE - TAtoOINE",
       "number": 21,
       "time": 189
@@ -196,7 +196,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "There doesn't seem to be anyone there. Let's go back and tell Master Luke.",
+      "text": "There does not seem to be anyone there. let  is go back and tell Master Luke.",
       "where": "6 EXT JABBA'S PALACE - GATE",
       "number": 14,
       "time": 126
@@ -212,7 +212,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "I don't think they're going to let us in, ARTOO. We'd better go.",
+      "text": "I do not think they are going to let us in, ARTOO. We'd better go.",
       "where": "6 EXT JABBA'S PALACE - GATE",
       "number": 13,
       "time": 117
@@ -228,7 +228,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "ARTOO, wait. Oh, dear! ARTOO. ARTOO, I really don't think we should rush into all this.",
+      "text": "ARTOO, wait. Oh, dear! ARTOO. ARTOO, I really do not think we should rush into all this.",
       "where": "6 EXT JABBA'S PALACE - GATE",
       "number": 16,
       "time": 144
@@ -260,7 +260,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "Just you deliver Master Luke's message and get us out of here. Oh my! Oh! Oh, no.",
+      "text": "Just you deliver Master Luke is message and get us out of here. Oh my! Oh! Oh, no.",
       "where": "7 INT JABBA'S PALACE - HALLWAY",
       "number": 17,
       "time": 153
@@ -332,7 +332,7 @@
     {
       "from": "THREEPIO",
       "to": "BIB",
-      "text": "I'm terribly sorry. I'm afraid he's ever so stubborn about these sort of things.",
+      "text": "I am terribly sorry. I am afraid he is ever so stubborn about these sort of things.",
       "where": "7 INT JABBA'S PALACE - HALLWAY",
       "number": 14,
       "time": 126
@@ -388,7 +388,7 @@
     {
       "from": "LUKE",
       "to": "JABBA",
-      "text": "Greetings, Exalted One. Allow me to introduce myself. I am Luke Skywalker, Jedi Knight and friend to Captain Solo. I know that you are powerful, mighty Jabba, and that your anger with Solo must be equally powerful. I seek an audience with Your Greatness to bargain for Solo's life. With your wisdom, I'm sure that we can work out an arrangement which will be mutually beneficial and enable us to avoid any unpleasant confrontation. As a token of my goodwill, I present to you a gift: these two droids.",
+      "text": "Greetings, Exalted One. Allow me to introduce myself. I am Luke Skywalker, Jedi Knight and friend to Captain Solo. I know that you are powerful, mighty Jabba, and that your anger with Solo must be equally powerful. I seek an audience with Your Greatness to bargain for Solo's life. With your wisdom, I am sure that we can work out an arrangement which will be mutually beneficial and enable us to avoid any unpleasant confrontation. As a token of my goodwill, I present to you a gift: these two droids.",
       "where": "8 INT JABBA'S THRONE ROOM",
       "number": 89,
       "time": 801
@@ -412,7 +412,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "This can't be! ARTOO, you're playing the wrong message.",
+      "text": "This can not be! ARTOO, you are playing the wrong message.",
       "where": "8 INT JABBA'S THRONE ROOM",
       "number": 9,
       "time": 81
@@ -428,7 +428,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "We're doomed.",
+      "text": "we are doomed.",
       "where": "8 INT JABBA'S THRONE ROOM",
       "number": 2,
       "time": 18
@@ -444,7 +444,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "ARTOO, look! Captain Solo. And he's still frozen in carbonite.",
+      "text": "ARTOO, look! Captain Solo. And he is still frozen in carbonite.",
       "where": "8 INT JABBA'S THRONE ROOM",
       "number": 10,
       "time": 90
@@ -476,7 +476,7 @@
     {
       "from": "THREEPIO",
       "to": "NINEDENINE",
-      "text": "I am See-Threepio, human-cy.",
+      "text": "I am Threepio, human-cy.",
       "where": "10 INT BOILER ROOM",
       "number": 4,
       "time": 36
@@ -540,7 +540,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "ARTOO, don't leave me! Ohhh!",
+      "text": "ARTOO, do not leave me! Ohhh!",
       "where": "10 INT BOILER ROOM",
       "number": 5,
       "time": 45
@@ -556,7 +556,7 @@
     {
       "from": "NINEDENINE",
       "to": "ARTOO",
-      "text": "You're a feisty little one, but you'll soon learn some respect. I have need for you on the master's Sail Barge. And I think you'll fit in nicely.",
+      "text": "you are a feisty little one, but you will soon learn some respect. I have need for you on the master's Sail Barge. And I think you will fit in nicely.",
       "where": "10 INT BOILER ROOM",
       "number": 28,
       "time": 252
@@ -620,7 +620,7 @@
     {
       "from": "THREEPIO",
       "to": "JABBA",
-      "text": "Because he's holding a thermal detonator.",
+      "text": "Because he is holding a thermal detonator.",
       "where": "11 INT JABBA'S THRONE ROOM",
       "number": 6,
       "time": 54
@@ -660,7 +660,7 @@
     {
       "from": "BOUSHH",
       "to": "HAN SOLO",
-      "text": "Just relax for a moment. You're free of the carbonite.",
+      "text": "Just relax for a moment. you are free of the carbonite.",
       "where": "14 INT JABBA'S THRONE ROOM - NIGHT",
       "number": 10,
       "time": 90
@@ -676,7 +676,7 @@
     {
       "from": "HAN SOLO",
       "to": "BOUSHH",
-      "text": "I can't see.",
+      "text": "I can not see.",
       "where": "14 INT JABBA'S THRONE ROOM - NIGHT",
       "number": 3,
       "time": 27
@@ -740,7 +740,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "What's that? I know that laugh.",
+      "text": "what is that? I know that laugh.",
       "where": "14 INT JABBA'S THRONE ROOM - NIGHT",
       "number": 6,
       "time": 54
@@ -748,7 +748,7 @@
     {
       "from": "HAN SOLO",
       "to": "JABBA",
-      "text": "Hey, Jabba. Look, Jabba, I was just on my way to pay you back, but I got a little sidetracked. It's not my fault.",
+      "text": "Hey, Jabba. Look, Jabba, I was just on my way to pay you back, but I got a little sidetracked. it is not my fault.",
       "where": "14 INT JABBA'S THRONE ROOM - NIGHT",
       "number": 24,
       "time": 216
@@ -756,7 +756,7 @@
     {
       "from": "JABBA",
       "to": "HAN SOLO",
-      "text": "It's too late for that, Solo. You may have been a good smuggler, but now you're Bantha fodder.",
+      "text": "it is too late for that, Solo. You may have been a good smuggler, but now you are Bantha fodder.",
       "where": "14 INT JABBA'S THRONE ROOM - NIGHT",
       "number": 18,
       "time": 162
@@ -772,7 +772,7 @@
     {
       "from": "HAN SOLO",
       "to": "JABBA",
-      "text": "Jabba. I'll pay you triple! You're throwing away a fortune here. Don't be a fool!",
+      "text": "Jabba. I will pay you triple! you are throwing away a fortune here. do not be a fool!",
       "where": "14 INT JABBA'S THRONE ROOM - NIGHT",
       "number": 15,
       "time": 135
@@ -780,7 +780,7 @@
     {
       "from": "LEIA",
       "to": "JABBA",
-      "text": "We have powerful friends. You're gonna regret this.",
+      "text": "We have powerful friends. you are gonna regret this.",
       "where": "14 INT JABBA'S THRONE ROOM - NIGHT",
       "number": 8,
       "time": 72
@@ -788,7 +788,7 @@
     {
       "from": "JABBA",
       "to": "LEIA",
-      "text": "I'm sure.",
+      "text": "I am sure.",
       "where": "14 INT JABBA'S THRONE ROOM - NIGHT",
       "number": 2,
       "time": 18
@@ -804,7 +804,7 @@
     {
       "from": "THREEPIO",
       "to": "LEIA",
-      "text": "Ohhh, I can't bear to watch.",
+      "text": "Ohhh, I can not bear to watch.",
       "where": "14 INT JABBA'S THRONE ROOM - NIGHT",
       "number": 6,
       "time": 54
@@ -844,7 +844,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "Wait. I can't see, pal. What's goin' on?",
+      "text": "Wait. I can not see, pal. what is goin' on?",
       "where": "15 INT DUNGEON CELL",
       "number": 8,
       "time": 72
@@ -860,7 +860,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "Luke? Luke's crazy. He can't even take care of himself, much less rescue anybody.",
+      "text": "Luke? Luke is crazy. He can not even take care of himself, much less rescue anybody.",
       "where": "15 INT DUNGEON CELL",
       "number": 14,
       "time": 126
@@ -876,7 +876,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "A.Jedi Knight? I--I'm out of it for a little while, everybody gets delusions of grandeur.",
+      "text": "A.Jedi Knight? I--I am out of it for a little while, everybody gets delusions of grandeur.",
       "where": "15 INT DUNGEON CELL",
       "number": 16,
       "time": 144
@@ -892,7 +892,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "I'm all right, pal. I'm all right.",
+      "text": "I am all right, pal. I am all right.",
       "where": "15 INT DUNGEON CELL",
       "number": 7,
       "time": 63
@@ -932,7 +932,7 @@
     {
       "from": "THREEPIO",
       "to": "BIB",
-      "text": "At last! Master Luke's come to rescue me.",
+      "text": "At last! Master Luke is come to rescue me.",
       "where": "17 INT JABBA'S THRONE ROOM",
       "number": 8,
       "time": 72
@@ -980,7 +980,7 @@
     {
       "from": "JABBA",
       "to": "BIB",
-      "text": "You weak-minded fool! He's using an old Jedi mind trick.",
+      "text": "You weak-minded fool! he is using an old Jedi mind trick.",
       "where": "17 INT JABBA'S THRONE ROOM",
       "number": 10,
       "time": 90
@@ -1004,7 +1004,7 @@
     {
       "from": "LUKE",
       "to": "JABBA",
-      "text": "Nevertheless, I'm taking Captain Solo and his friends. You can either profit by this. or be destroyed! It's your choice. But I warn you not to underestimate my powers.",
+      "text": "Nevertheless, I am taking Captain Solo and his friends. You can either profit by this. or be destroyed! it is your choice. But I warn you not to underestimate my powers.",
       "where": "17 INT JABBA'S THRONE ROOM",
       "number": 29,
       "time": 261
@@ -1012,7 +1012,7 @@
     {
       "from": "THREEPIO",
       "to": "LUKE",
-      "text": "Master Luke, you're standing on.",
+      "text": "Master Luke, you are standing on.",
       "where": "17 INT JABBA'S THRONE ROOM",
       "number": 5,
       "time": 45
@@ -1076,7 +1076,7 @@
     {
       "from": "LUKE",
       "to": "HAN SOLO",
-      "text": "Wouldn't miss it.",
+      "text": "would not miss it.",
       "where": "22 INT THRONE ROOM",
       "number": 3,
       "time": 27
@@ -1100,7 +1100,7 @@
     {
       "from": "HAN SOLO",
       "to": "LUKE",
-      "text": "That bad, huh? Where's Leia?",
+      "text": "That bad, huh? where is Leia?",
       "where": "22 INT THRONE ROOM",
       "number": 5,
       "time": 45
@@ -1108,7 +1108,7 @@
     {
       "from": "LEIA",
       "to": "HAN SOLO",
-      "text": "I'm here.",
+      "text": "I am here.",
       "where": "22 INT THRONE ROOM",
       "number": 2,
       "time": 18
@@ -1140,7 +1140,7 @@
     {
       "from": "HAN SOLO",
       "to": "LUKE",
-      "text": "Doesn't sound so bad.",
+      "text": "does not sound so bad.",
       "where": "22 INT THRONE ROOM",
       "number": 4,
       "time": 36
@@ -1156,7 +1156,7 @@
     {
       "from": "HAN SOLO",
       "to": "THREEPIO",
-      "text": "On second thought, let's pass on that, huh?",
+      "text": "On second thought, let  is pass on that, huh?",
       "where": "22 INT THRONE ROOM",
       "number": 8,
       "time": 72
@@ -1172,7 +1172,7 @@
     {
       "from": "LUKE",
       "to": "JABBA",
-      "text": "You should have bargained, Jabba. That's the last mistake you'll ever make.",
+      "text": "You should have bargained, Jabba. that is the last mistake you will ever make.",
       "where": "22 INT THRONE ROOM",
       "number": 12,
       "time": 108
@@ -1188,7 +1188,7 @@
     {
       "from": "LUKE",
       "to": "HAN SOLO",
-      "text": "There's nothing to see. I used to live here, you know.",
+      "text": "there is nothing to see. I used to live here, you know.",
       "where": "23 EXT TAtoOINE SEA - SKIFF",
       "number": 11,
       "time": 99
@@ -1196,7 +1196,7 @@
     {
       "from": "HAN SOLO",
       "to": "LUKE",
-      "text": "You're gonna die here, you know. Convenient.",
+      "text": "you are gonna die here, you know. Convenient.",
       "where": "23 EXT TAtoOINE SEA - SKIFF",
       "number": 7,
       "time": 63
@@ -1204,7 +1204,7 @@
     {
       "from": "LUKE",
       "to": "HAN SOLO",
-      "text": "Just stick close to Chewie and Lando. I've taken care of everything.",
+      "text": "Just stick close to Chewie and Lando. I have taken care of everything.",
       "where": "23 EXT TAtoOINE SEA - SKIFF",
       "number": 12,
       "time": 108
@@ -1228,7 +1228,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "Oh, I'm terribly sor. ARTOO! What are you doing here?",
+      "text": "Oh, I am terribly sor. ARTOO! What are you doing here?",
       "where": "24 INT BARGE OBSERVATION DECK",
       "number": 10,
       "time": 90
@@ -1244,7 +1244,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "Well, I can see you're serving drinks, but this place is dangerous. They're going to execute Master Luke and, if we're not careful, us too!",
+      "text": "Well, I can see you are serving drinks, but this place is dangerous. they are going to execute Master Luke and, if we are not careful, us too!",
       "where": "24 INT BARGE OBSERVATION DECK",
       "number": 25,
       "time": 225
@@ -1276,7 +1276,7 @@
     {
       "from": "HAN SOLO",
       "to": "THREEPIO",
-      "text": "Threepio, you tell that slimy piece of. worm-ridden filth he'll get no such pleasure from us. Right?",
+      "text": "Threepio, you tell that slimy piece of. worm-ridden filth He will get no such pleasure from us. Right?",
       "where": "27 EXT SKIFF",
       "number": 17,
       "time": 153
@@ -1348,7 +1348,7 @@
     {
       "from": "HAN SOLO",
       "to": "LANDO",
-      "text": "I'm okay, pal.",
+      "text": "I am okay, pal.",
       "where": "35 EXT SKIFF",
       "number": 3,
       "time": 27
@@ -1412,7 +1412,7 @@
     {
       "from": "HAN SOLO",
       "to": "LANDO",
-      "text": "I'm trying!",
+      "text": "I am trying!",
       "where": "37 EXT SKIFF",
       "number": 2,
       "time": 18
@@ -1420,7 +1420,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "Whoa! Whoa! Grab me, Chewie! I'm slipping.",
+      "text": "Whoa! Whoa! Grab me, Chewie! I am slipping.",
       "where": "37 EXT SKIFF",
       "number": 7,
       "time": 63
@@ -1468,7 +1468,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "Chewie! Chewie, give me the gun. Don't move, Lando.",
+      "text": "Chewie! Chewie, give me the gun. do not move, Lando.",
       "where": "37 EXT SKIFF",
       "number": 9,
       "time": 81
@@ -1484,7 +1484,7 @@
     {
       "from": "HAN SOLO",
       "to": "LANDO",
-      "text": "It's all right. Trust me. Don't move.",
+      "text": "it is all right. Trust me. do not move.",
       "where": "37 EXT SKIFF",
       "number": 7,
       "time": 63
@@ -1548,7 +1548,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "ARTOO, where are we going? I couldn't possibly jump.",
+      "text": "ARTOO, where are we going? I could not possibly jump.",
       "where": "40 EXT UPPER DECK - SAIL BARGE",
       "number": 9,
       "time": 81
@@ -1572,7 +1572,7 @@
     {
       "from": "LUKE",
       "to": "LANDO",
-      "text": "Let's go! And don't forget the droids.",
+      "text": "let  is go! And do not forget the droids.",
       "where": "41 EXT SKIFF",
       "number": 7,
       "time": 63
@@ -1580,7 +1580,7 @@
     {
       "from": "LANDO",
       "to": "LUKE",
-      "text": "We're on our way.",
+      "text": "we are on our way.",
       "where": "41 EXT SKIFF",
       "number": 4,
       "time": 36
@@ -1588,7 +1588,7 @@
     {
       "from": "LUKE",
       "to": "LEIA",
-      "text": "I'll meet you back at the fleet.",
+      "text": "I will meet you back at the fleet.",
       "where": "45 INT X-WING - COCKPIT",
       "number": 7,
       "time": 63
@@ -1628,7 +1628,7 @@
     {
       "from": "LUKE",
       "to": "ARTOO",
-      "text": "That's right, ARTOO. We're going to the Dagobah system. I have a promise to keep. to an old friend.",
+      "text": "that is right, ARTOO. we are going to the Dagobah system. I have a promise to keep. to an old friend.",
       "where": "45 INT X-WING - COCKPIT",
       "number": 19,
       "time": 171
@@ -1732,7 +1732,7 @@
     {
       "from": "LUKE",
       "to": "YODA",
-      "text": "Master Yoda, you can't die.",
+      "text": "Master Yoda, you can not die.",
       "where": "50 INT YODA'S HOUSE",
       "number": 5,
       "time": 45
@@ -1748,7 +1748,7 @@
     {
       "from": "LUKE",
       "to": "YODA",
-      "text": "But I need your help. I've come back to complete the training.",
+      "text": "But I need your help. I have come back to complete the training.",
       "where": "50 INT YODA'S HOUSE",
       "number": 12,
       "time": 108
@@ -1852,7 +1852,7 @@
     {
       "from": "LUKE",
       "to": "YODA",
-      "text": "Well, I'm sorry.",
+      "text": "Well, I am sorry.",
       "where": "50 INT YODA'S HOUSE",
       "number": 3,
       "time": 27
@@ -1860,7 +1860,7 @@
     {
       "from": "YODA",
       "to": "LUKE",
-      "text": "Remember, a Jedi's strength flows from the Force. But beware. Anger, fear, aggression. The dark side are they. Once you start down the dark path, forever will it dominate your destiny.",
+      "text": "Remember, a Jedi strength flows from the Force. But beware. Anger, fear, aggression. The dark side are they. Once you start down the dark path, forever will it dominate your destiny.",
       "where": "50 INT YODA'S HOUSE",
       "number": 31,
       "time": 279
@@ -1884,7 +1884,7 @@
     {
       "from": "LUKE",
       "to": "ARTOO",
-      "text": "I can't do it, ARTOO. I can't go on alone.",
+      "text": "I can not do it, ARTOO. I can not go on alone.",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 10,
       "time": 90
@@ -1900,7 +1900,7 @@
     {
       "from": "LUKE",
       "to": "OBI-WAN",
-      "text": "Obi-Wan! Why didn't you tell me?",
+      "text": "Obi-Wan! Why did not you tell me?",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 6,
       "time": 54
@@ -1932,7 +1932,7 @@
     {
       "from": "OBI-WAN",
       "to": "LUKE",
-      "text": "Luke, you're going to find that many of the truths we cling to depend greatly on our own point of view.",
+      "text": "Luke, you are going to find that many of the truths we cling to depend greatly on our own point of view.",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 21,
       "time": 189
@@ -1940,7 +1940,7 @@
     {
       "from": "OBI-WAN",
       "to": "LUKE",
-      "text": "I don't blame you for being angry. If I was wrong in what I did, it certainly wouldn't have been for the first time. You see, what happened to your father was my fault.",
+      "text": "I do not blame you for being angry. If I was wrong in what I did, it certainly would not have been for the first time. You see, what happened to your father was my fault.",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 34,
       "time": 306
@@ -1964,7 +1964,7 @@
     {
       "from": "LUKE",
       "to": "OBI-WAN",
-      "text": "There's still good in him.",
+      "text": "there is still good in him.",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 5,
       "time": 45
@@ -1972,7 +1972,7 @@
     {
       "from": "OBI-WAN",
       "to": "LUKE",
-      "text": "I also thought he could be turned back to the good side. It couldn't be done. He is more machine now than man. Twisted and evil.",
+      "text": "I also thought he could be turned back to the good side. It could not be done. He is more machine now than man. Twisted and evil.",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 26,
       "time": 234
@@ -1980,7 +1980,7 @@
     {
       "from": "LUKE",
       "to": "OBI-WAN",
-      "text": "I can't do it, Ben.",
+      "text": "I can not do it, Ben.",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 5,
       "time": 45
@@ -1988,7 +1988,7 @@
     {
       "from": "OBI-WAN",
       "to": "LUKE",
-      "text": "You cannot escape your destiny.",
+      "text": "You can not escape your destiny.",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 5,
       "time": 45
@@ -1996,7 +1996,7 @@
     {
       "from": "LUKE",
       "to": "OBI-WAN",
-      "text": "I tried to stop him once. I couldn't do it.",
+      "text": "I tried to stop him once. I could not do it.",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 10,
       "time": 90
@@ -2036,7 +2036,7 @@
     {
       "from": "OBI-WAN",
       "to": "LUKE",
-      "text": "to be a Jedi, Luke, you must confront and then go beyond the dark side - the side your father couldn't get past. Impatience is the easiest door - for you, like your father. Only, your father was seduced by what he found on the other side of the door, and you have held firm. You're no longer so reckless now, Luke. You are strong and patient. And now, you must face Darth Vader again!",
+      "text": "to be a Jedi, Luke, you must confront and then go beyond the dark side - the side your father could not get past. Impatience is the easiest door - for you, like your father. Only, your father was seduced by what he found on the other side of the door, and you have held firm. you are no longer so reckless now, Luke. You are strong and patient. And now, you must face Darth Vader again!",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 75,
       "time": 675
@@ -2044,7 +2044,7 @@
     {
       "from": "LUKE",
       "to": "OBI-WAN",
-      "text": "I can't kill my own father.",
+      "text": "I can not kill my own father.",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 6,
       "time": 54
@@ -2108,7 +2108,7 @@
     {
       "from": "OBI-WAN",
       "to": "LUKE",
-      "text": "When your father left, he didn't know your mother was pregnant. Your mother and I knew he would find out eventually, but we wanted to keep you both as safe as possible, for as long as possible. So I took you to live with my brother Owen on Tatooine. and your mother took Leia to live as the daughter of Senator Organa, on Alderaan.",
+      "text": "When your father left, he did not know your mother was pregnant. Your mother and I knew he would find out eventually, but we wanted to keep you both as safe as possible, for as long as possible. So I took you to live with my brother Owen on Tatooine. and your mother took Leia to live as the daughter of Senator Organa, on Alderaan.",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 64,
       "time": 576
@@ -2116,7 +2116,7 @@
     {
       "from": "OBI-WAN",
       "to": "LUKE",
-      "text": "The Organa household was high-born and politically quite powerful in that system. Leia became a princess by virtue of lineage. no one knew she'd been adopted, of course. But it was a title without real power, since Alderaan had long been a democracy. Even so, the family continued to be politically powerful, and Leia, following in her foster father's path, became a senator as well. That's not all she became, of course. she became the leader of her cell in the Alliance against the corrupt Empire. And because she had diplomatic immunity, she was a vital link for getting information to the Rebel cause. That's what she was doing when her path crossed yours. for her foster parents had always told her to contact me on Tatooine, if her troubles became desperate.",
+      "text": "The Organa household was high-born and politically quite powerful in that system. Leia became a princess by virtue of lineage. no one knew she'd been adopted, of course. But it was a title without real power, since Alderaan had long been a democracy. Even so, the family continued to be politically powerful, and Leia, following in her foster father's path, became a senator as well. that is not all she became, of course. she became the leader of her cell in the Alliance against the corrupt Empire. And because she had diplomatic immunity, she was a vital link for getting information to the Rebel cause. that is what she was doing when her path crossed yours. for her foster parents had always told her to contact me on Tatooine, if her troubles became desperate.",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 132,
       "time": 1188
@@ -2124,7 +2124,7 @@
     {
       "from": "LUKE",
       "to": "OBI-WAN",
-      "text": "But you can't let her get involved now, Ben. Vader will destroy her.",
+      "text": "But you can not let her get involved now, Ben. Vader will destroy her.",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 13,
       "time": 117
@@ -2132,7 +2132,7 @@
     {
       "from": "OBI-WAN",
       "to": "LUKE",
-      "text": "She hasn't been trained in the ways of the Jedi the way you have, Luke. but the Force is strong with her, as it is with all of your family. There is no avoiding the battle. You must face and destroy Vader!",
+      "text": "She has not been trained in the ways of the Jedi the way you have, Luke. but the Force is strong with her, as it is with all of your family. There is no avoiding the battle. You must face and destroy Vader!",
       "where": "51 EXT DAGOBAH SWAMP - X-WING",
       "number": 42,
       "time": 378
@@ -2156,7 +2156,7 @@
     {
       "from": "HAN SOLO",
       "to": "LANDO",
-      "text": "Well, don't look at me, pal. I just said you were a fair pilot. I didn't know they were lookin' for somebody to lead this crazy attack.",
+      "text": "Well, do not look at me, pal. I just said you were a fair pilot. I did not know they were lookin' for somebody to lead this crazy attack.",
       "where": "53 INT HEADQUARTERS FRIGATE - MAIN BRIEFING ROOM",
       "number": 27,
       "time": 243
@@ -2164,7 +2164,7 @@
     {
       "from": "LANDO",
       "to": "HAN SOLO",
-      "text": "I'm surprised they didn't ask you to do it.",
+      "text": "I am surprised they did not ask you to do it.",
       "where": "53 INT HEADQUARTERS FRIGATE - MAIN BRIEFING ROOM",
       "number": 9,
       "time": 81
@@ -2172,7 +2172,7 @@
     {
       "from": "HAN SOLO",
       "to": "LANDO",
-      "text": "Well, who says they didn't. But I ain't crazy. You're the respectable one, remember?",
+      "text": "Well, who says they did not. But I is not crazy. you are the respectable one, remember?",
       "where": "53 INT HEADQUARTERS FRIGATE - MAIN BRIEFING ROOM",
       "number": 14,
       "time": 126
@@ -2188,7 +2188,7 @@
     {
       "from": "MON MOTHMA",
       "to": "REBEL PILOTS",
-      "text": "The data brought to us by the Bothan spies pinpoints the exact location of the Emperor's new battle station. We also know that the weapon systems of this Death Star are not yet operational. With the Imperial Fleet spread throughout the galaxy in a vain effort to engage us, it is relatively unprotected. But most important of all, we've learned that the Emperor himself is personally overseeing the final stages of the construction of this Death Star.",
+      "text": "The data brought to us by the Bothan spies pinpoints the exact location of the Emperor's new battle station. We also know that the weapon systems of this Death Star are not yet operational. With the Imperial Fleet spread throughout the galaxy in a vain effort to engage us, it is relatively unprotected. But most important of all, we have learned that the Emperor himself is personally overseeing the final stages of the construction of this Death Star.",
       "where": "53 INT HEADQUARTERS FRIGATE - MAIN BRIEFING ROOM",
       "number": 77,
       "time": 693
@@ -2236,7 +2236,7 @@
     {
       "from": "HAN SOLO",
       "to": "LANDO",
-      "text": "You're gonna need it.",
+      "text": "you are gonna need it.",
       "where": "53 INT HEADQUARTERS FRIGATE - MAIN BRIEFING ROOM",
       "number": 4,
       "time": 36
@@ -2284,7 +2284,7 @@
     {
       "from": "HAN SOLO",
       "to": "MADINE",
-      "text": "Uh, my team's ready. I don't have a command crew for the shuttle.",
+      "text": "Uh, my team's ready. I do not have a command crew for the shuttle.",
       "where": "53 INT HEADQUARTERS FRIGATE - MAIN BRIEFING ROOM",
       "number": 13,
       "time": 117
@@ -2292,7 +2292,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "Well, it's gonna be rough, pal. I didn't want to speak for you.",
+      "text": "Well, it is gonna be rough, pal. I did not want to speak for you.",
       "where": "53 INT HEADQUARTERS FRIGATE - MAIN BRIEFING ROOM",
       "number": 13,
       "time": 117
@@ -2308,7 +2308,7 @@
     {
       "from": "HAN SOLO",
       "to": "MADINE",
-      "text": "That's one.",
+      "text": "that is one.",
       "where": "53 INT HEADQUARTERS FRIGATE - MAIN BRIEFING ROOM",
       "number": 2,
       "time": 18
@@ -2324,7 +2324,7 @@
     {
       "from": "LUKE",
       "to": "HAN SOLO",
-      "text": "I'm with you, too!",
+      "text": "I am with you, too!",
       "where": "53 INT HEADQUARTERS FRIGATE - MAIN BRIEFING ROOM",
       "number": 4,
       "time": 36
@@ -2388,7 +2388,7 @@
     {
       "from": "HAN SOLO",
       "to": "LANDO",
-      "text": "Look. I want you to take her. I mean it. Take her. You need all the help you can get. She's the fastest ship in the fleet.",
+      "text": "Look. I want you to take her. I mean it. Take her. You need all the help you can get. She is the fastest ship in the fleet.",
       "where": "54 INT HEADQUARTERS FRIGATE - MAIN DOCKING BAY",
       "number": 27,
       "time": 243
@@ -2396,7 +2396,7 @@
     {
       "from": "LANDO",
       "to": "HAN SOLO",
-      "text": "All right, old buddy. You know, I know what she means to you. I'll take good care of her. She-she won't get a scratch. All right?",
+      "text": "All right, old buddy. You know, I know what she means to you. I will take good care of her. She-she will not get a scratch. All right?",
       "where": "54 INT HEADQUARTERS FRIGATE - MAIN DOCKING BAY",
       "number": 26,
       "time": 234
@@ -2444,7 +2444,7 @@
     {
       "from": "LUKE",
       "to": "HAN SOLO",
-      "text": "Yeah, she's comin' up.",
+      "text": "Yeah, she is comin' up.",
       "where": "55 INT IMPERIAL SHUTTLE - COCKPIT",
       "number": 4,
       "time": 36
@@ -2460,7 +2460,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "No. I don't think the Empire had Wookiees in mind when they designed her, Chewie.",
+      "text": "No. I do not think the Empire had Wookiees in mind when they designed her, Chewie.",
       "where": "55 INT IMPERIAL SHUTTLE - COCKPIT",
       "number": 15,
       "time": 135
@@ -2484,7 +2484,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "Yeah, I just got a funny feeling. Like I'm not gonna see her again.",
+      "text": "Yeah, I just got a funny feeling. Like I am not gonna see her again.",
       "where": "55 INT IMPERIAL SHUTTLE - COCKPIT",
       "number": 14,
       "time": 126
@@ -2500,7 +2500,7 @@
     {
       "from": "LEIA",
       "to": "HAN SOLO",
-      "text": "Come on, General, let's move.",
+      "text": "Come on, General, let  is move.",
       "where": "55 INT IMPERIAL SHUTTLE - COCKPIT",
       "number": 5,
       "time": 45
@@ -2508,7 +2508,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "Right. Chewie, let's see what this piece of junk can do. Ready, everybody?",
+      "text": "Right. Chewie, let  is see what this piece of junk can do. Ready, everybody?",
       "where": "55 INT IMPERIAL SHUTTLE - COCKPIT",
       "number": 13,
       "time": 117
@@ -2588,7 +2588,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "If they don't go for this, we're gonna have to get outta here pretty quick, Chewie.",
+      "text": "If they do not go for this, we are gonna have to get outta here pretty quick, Chewie.",
       "where": "59 INT StoLEN IMPERIAL SHUTTLE - COCKPIT",
       "number": 16,
       "time": 144
@@ -2644,7 +2644,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "It'll work. It'll work.",
+      "text": "it will work. it will work.",
       "where": "59 INT StoLEN IMPERIAL SHUTTLE - COCKPIT",
       "number": 4,
       "time": 36
@@ -2660,7 +2660,7 @@
     {
       "from": "LUKE",
       "to": "HAN SOLO",
-      "text": "Vader's on that ship.",
+      "text": "Vader is on that ship.",
       "where": "59 INT StoLEN IMPERIAL SHUTTLE - COCKPIT",
       "number": 4,
       "time": 36
@@ -2668,7 +2668,7 @@
     {
       "from": "HAN SOLO",
       "to": "LUKE",
-      "text": "Now don't get jittery, Luke. There are a lot of command ships. Keep your distance though, Chewie, but don't look like you're trying to keep your distance.",
+      "text": "Now do not get jittery, Luke. There are a lot of command ships. Keep your distance though, Chewie, but do not look like you are trying to keep your distance.",
       "where": "59 INT StoLEN IMPERIAL SHUTTLE - COCKPIT",
       "number": 27,
       "time": 243
@@ -2684,7 +2684,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "I don't know. Fly casual.",
+      "text": "I do not know. Fly casual.",
       "where": "59 INT StoLEN IMPERIAL SHUTTLE - COCKPIT",
       "number": 5,
       "time": 45
@@ -2692,7 +2692,7 @@
     {
       "from": "LUKE",
       "to": "HAN SOLO",
-      "text": "I'm endangering the mission. I shouldn't have come.",
+      "text": "I am endangering the mission. I should not have come.",
       "where": "59 INT StoLEN IMPERIAL SHUTTLE - COCKPIT",
       "number": 8,
       "time": 72
@@ -2700,7 +2700,7 @@
     {
       "from": "HAN SOLO",
       "to": "LUKE",
-      "text": "It's your imagination, kid. Come on. Let's keep a little optimism here.",
+      "text": "it is your imagination, kid. Come on. let  is keep a little optimism here.",
       "where": "59 INT StoLEN IMPERIAL SHUTTLE - COCKPIT",
       "number": 12,
       "time": 108
@@ -2748,7 +2748,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "They're not goin' for it, Chewie.",
+      "text": "they are not goin' for it, Chewie.",
       "where": "61 INT StoLEN IMPERIAL SHUTTLE - COCKPIT",
       "number": 6,
       "time": 54
@@ -2796,7 +2796,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "It'll take time. This whole party'll be for nothing if they see us.",
+      "text": "it will take time. This whole party'll be for nothing if they see us.",
       "where": "63 EXT FOREST LANDING SITE - ENDOR",
       "number": 13,
       "time": 117
@@ -2828,7 +2828,7 @@
     {
       "from": "HAN SOLO",
       "to": "LUKE",
-      "text": "Hey. it's me.",
+      "text": "Hey. it is me.",
       "where": "64 EXT FOREST CLEARING - CAMPSITE",
       "number": 3,
       "time": 27
@@ -2900,7 +2900,7 @@
     {
       "from": "LUKE",
       "to": "LEIA",
-      "text": "Keep on that one! I'll take these two!",
+      "text": "Keep on that one! I will take these two!",
       "where": "65 EXT FOREST - THE BIKE CHASE",
       "number": 8,
       "time": 72
@@ -2924,7 +2924,7 @@
     {
       "from": "HAN SOLO",
       "to": "LUKE",
-      "text": "Luke! Where's Leia?",
+      "text": "Luke! where is Leia?",
       "where": "66 EXT SCOUT CAMPSITE - FOREST",
       "number": 3,
       "time": 27
@@ -2932,7 +2932,7 @@
     {
       "from": "LUKE",
       "to": "HAN SOLO",
-      "text": "What? She didn't come back?",
+      "text": "What? She did not come back?",
       "where": "66 EXT SCOUT CAMPSITE - FOREST",
       "number": 5,
       "time": 45
@@ -2964,7 +2964,7 @@
     {
       "from": "HAN SOLO",
       "to": "REBEL FOREST",
-      "text": "Take the squad ahead. We'll meet at the shield generator at 0300.",
+      "text": "Take the squad ahead. we will meet at the shield generator at 0300.",
       "where": "66 EXT SCOUT CAMPSITE - FOREST",
       "number": 12,
       "time": 108
@@ -2972,7 +2972,7 @@
     {
       "from": "LUKE",
       "to": "ARTOO",
-      "text": "Come on, ARTOO. We'll need your scanners.",
+      "text": "Come on, ARTOO. we will need your scanners.",
       "where": "66 EXT SCOUT CAMPSITE - FOREST",
       "number": 7,
       "time": 63
@@ -2988,7 +2988,7 @@
     {
       "from": "THREEPIO",
       "to": "LUKE",
-      "text": "Don't worry, Master Luke. We know what to do.",
+      "text": "do not worry, Master Luke. We know what to do.",
       "where": "66 EXT SCOUT CAMPSITE - FOREST",
       "number": 9,
       "time": 81
@@ -3028,7 +3028,7 @@
     {
       "from": "LEIA",
       "to": "EWOK",
-      "text": "I'm not gonna hurt you.",
+      "text": "I am not gonna hurt you.",
       "where": "67 EXT FOREST CLEARING - LEIA'S CRASH SITE",
       "number": 5,
       "time": 45
@@ -3044,7 +3044,7 @@
     {
       "from": "LEIA",
       "to": "EWOK",
-      "text": "Well, looks like I'm stuck here. Trouble is, I don't know where here is.",
+      "text": "Well, looks like I am stuck here. Trouble is, I do not know where here is.",
       "where": "67 EXT FOREST CLEARING - LEIA'S CRASH SITE",
       "number": 14,
       "time": 126
@@ -3060,7 +3060,7 @@
     {
       "from": "LEIA",
       "to": "EWOK",
-      "text": "I promise I won't hurt you. Now come here.",
+      "text": "I promise I will not hurt you. Now come here.",
       "where": "67 EXT FOREST CLEARING - LEIA'S CRASH SITE",
       "number": 9,
       "time": 81
@@ -3084,7 +3084,7 @@
     {
       "from": "LEIA",
       "to": "EWOK",
-      "text": "That's right. Come on. Hmmm?",
+      "text": "that is right. Come on. Hmmm?",
       "where": "67 EXT FOREST CLEARING - LEIA'S CRASH SITE",
       "number": 5,
       "time": 45
@@ -3100,7 +3100,7 @@
     {
       "from": "LEIA",
       "to": "EWOK",
-      "text": "Look, it's a hat. It's not gonna hurt you. Look. You're a jittery little thing, aren't you?",
+      "text": "Look, it is a hat. it is not gonna hurt you. Look. you are a jittery little thing, are not you?",
       "where": "67 EXT FOREST CLEARING - LEIA'S CRASH SITE",
       "number": 17,
       "time": 153
@@ -3132,7 +3132,7 @@
     {
       "from": "LEIA",
       "to": "EWOK",
-      "text": "Come on, let's get outta here.",
+      "text": "Come on, let  is get outta here.",
       "where": "67 EXT FOREST CLEARING - LEIA'S CRASH SITE",
       "number": 6,
       "time": 54
@@ -3252,7 +3252,7 @@
     {
       "from": "LUKE",
       "to": "HAN SOLO",
-      "text": "There's two more wrecked speeders back there. And I found this.",
+      "text": "there is two more wrecked speeders back there. And I found this.",
       "where": "70 EXT FOREST CLEARING - LEIA'S CRASH SITE",
       "number": 11,
       "time": 99
@@ -3260,7 +3260,7 @@
     {
       "from": "THREEPIO",
       "to": "LUKE",
-      "text": "I'm afraid that ARTOO's sensors can find no trace of Princess Leia.",
+      "text": "I am afraid that ARTOO's sensors can find no trace of Princess Leia.",
       "where": "70 EXT FOREST CLEARING - LEIA'S CRASH SITE",
       "number": 12,
       "time": 108
@@ -3268,7 +3268,7 @@
     {
       "from": "HAN SOLO",
       "to": "LUKE",
-      "text": "I hope she's alright.",
+      "text": "I hope she is alright.",
       "where": "70 EXT FOREST CLEARING - LEIA'S CRASH SITE",
       "number": 4,
       "time": 36
@@ -3292,7 +3292,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "Hey, I don't get it.",
+      "text": "Hey, I do not get it.",
       "where": "71 EXT FOREST - DENSE FOLIAGE",
       "number": 5,
       "time": 45
@@ -3308,7 +3308,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "Nah, it's just a dead animal, Chewie.",
+      "text": "Nah, it is just a dead animal, Chewie.",
       "where": "71 EXT FOREST - DENSE FOLIAGE",
       "number": 7,
       "time": 63
@@ -3324,7 +3324,7 @@
     {
       "from": "LUKE",
       "to": "CHEWBACCA",
-      "text": "Chewie, wa-wait! Don't!",
+      "text": "Chewie, wa-wait! do not!",
       "where": "71 EXT FOREST - DENSE FOLIAGE",
       "number": 3,
       "time": 27
@@ -3348,7 +3348,7 @@
     {
       "from": "LUKE",
       "to": "HAN SOLO",
-      "text": "Will you take it easy? Let's just figure out a way to get out of this thing. Han, can you reach my lightsaber?",
+      "text": "Will you take it easy? let  is just figure out a way to get out of this thing. Han, can you reach my lightsaber?",
       "where": "71 EXT FOREST - DENSE FOLIAGE",
       "number": 23,
       "time": 207
@@ -3364,7 +3364,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "ARTOO, I'm not sure that's such a good idea. It's a very long dro-o-op!!",
+      "text": "ARTOO, I am not sure that is such a good idea. it is a very long dro-o-op!!",
       "where": "71 EXT FOREST - DENSE FOLIAGE",
       "number": 14,
       "time": 126
@@ -3388,7 +3388,7 @@
     {
       "from": "LUKE",
       "to": "HAN SOLO",
-      "text": "Han, don't. It'll be all right.",
+      "text": "Han, do not. it will be all right.",
       "where": "71 EXT FOREST - DENSE FOLIAGE",
       "number": 6,
       "time": 54
@@ -3412,7 +3412,7 @@
     {
       "from": "LUKE",
       "to": "THREEPIO",
-      "text": "Do you understand anything they're saying?",
+      "text": "Do you understand anything they are saying?",
       "where": "71 EXT FOREST - DENSE FOLIAGE",
       "number": 6,
       "time": 54
@@ -3436,7 +3436,7 @@
     {
       "from": "THREEPIO",
       "to": "HAN SOLO",
-      "text": "Hello, I think. I could be mistaken. They're using a very primitive dialect. But I do believe they think I am some sort of god.",
+      "text": "Hello, I think. I could be mistaken. they are using a very primitive dialect. But I do believe they think I am some sort of god.",
       "where": "71 EXT FOREST - DENSE FOLIAGE",
       "number": 25,
       "time": 225
@@ -3444,7 +3444,7 @@
     {
       "from": "HAN SOLO",
       "to": "THREEPIO",
-      "text": "Well, why don't you use your divine influence and get us out of this?",
+      "text": "Well, why do not you use your divine influence and get us out of this?",
       "where": "71 EXT FOREST - DENSE FOLIAGE",
       "number": 14,
       "time": 126
@@ -3452,7 +3452,7 @@
     {
       "from": "THREEPIO",
       "to": "HAN SOLO",
-      "text": "I beg your pardon, General Solo, but that just wouldn't be proper.",
+      "text": "I beg your pardon, General Solo, but that just would not be proper.",
       "where": "71 EXT FOREST - DENSE FOLIAGE",
       "number": 12,
       "time": 108
@@ -3468,7 +3468,7 @@
     {
       "from": "THREEPIO",
       "to": "HAN SOLO",
-      "text": "It's against my programming to impersonate a deity.",
+      "text": "it is against my programming to impersonate a deity.",
       "where": "71 EXT FOREST - DENSE FOLIAGE",
       "number": 8,
       "time": 72
@@ -3484,7 +3484,7 @@
     {
       "from": "HAN SOLO",
       "to": "THREEPIO",
-      "text": "My mistake. He's an old friend of mine.",
+      "text": "My mistake. he is an old friend of mine.",
       "where": "71 EXT FOREST - DENSE FOLIAGE",
       "number": 8,
       "time": 72
@@ -3524,7 +3524,7 @@
     {
       "from": "THREEPIO",
       "to": "HAN SOLO",
-      "text": "I'm rather embarrassed, General Solo, but it appears you are to be the main course at a banquet in my honor.",
+      "text": "I am rather embarrassed, General Solo, but it appears you are to be the main course at a banquet in my honor.",
       "where": "74 EXT EWOK VILLAGE SQUARE",
       "number": 21,
       "time": 189
@@ -3580,7 +3580,7 @@
     {
       "from": "HAN SOLO",
       "to": "LUKE",
-      "text": "Somehow, I got the feeling that didn't help us very much.",
+      "text": "Somehow, I got the feeling that did not help us very much.",
       "where": "74 EXT EWOK VILLAGE SQUARE",
       "number": 11,
       "time": 99
@@ -3588,7 +3588,7 @@
     {
       "from": "LUKE",
       "to": "THREEPIO",
-      "text": "Threepio, tell them if they don't do as you wish, you'll become angry and use your magic.",
+      "text": "Threepio, tell them if they do not do as you wish, you will become angry and use your magic.",
       "where": "74 EXT EWOK VILLAGE SQUARE",
       "number": 17,
       "time": 153
@@ -3596,7 +3596,7 @@
     {
       "from": "THREEPIO",
       "to": "LUKE",
-      "text": "But Master Luke, what magic? I couldn't possibly --",
+      "text": "But Master Luke, what magic? I could not possibly --",
       "where": "74 EXT EWOK VILLAGE SQUARE",
       "number": 9,
       "time": 81
@@ -3628,7 +3628,7 @@
     {
       "from": "THREEPIO",
       "to": "LUKE",
-      "text": "You see, Master Luke; they didn't believe me. Just.",
+      "text": "You see, Master Luke; they did not believe me. Just.",
       "where": "74 EXT EWOK VILLAGE SQUARE",
       "number": 9,
       "time": 81
@@ -3636,7 +3636,7 @@
     {
       "from": "THREEPIO",
       "to": "LUKE",
-      "text": ". as I said they wouldn't. Wha-wha-what's happening! Oh! Oh, dear! Oh!",
+      "text": ". as I said they would not. Wha-wha-what is happening! Oh! Oh, dear! Oh!",
       "where": "74 EXT EWOK VILLAGE SQUARE",
       "number": 11,
       "time": 99
@@ -3708,7 +3708,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "What's going on?",
+      "text": "what is going on?",
       "where": "75 INT CHIEF'S HUT - COUNCIL OF ELDERS",
       "number": 3,
       "time": 27
@@ -3716,7 +3716,7 @@
     {
       "from": "LEIA",
       "to": "HAN SOLO",
-      "text": "I don't know.",
+      "text": "I do not know.",
       "where": "75 INT CHIEF'S HUT - COUNCIL OF ELDERS",
       "number": 3,
       "time": 27
@@ -3780,7 +3780,7 @@
     {
       "from": "HAN SOLO",
       "to": "THREEPIO",
-      "text": "And hurry up, will ya? I haven't got all day.",
+      "text": "And hurry up, will ya? I have not got all day.",
       "where": "75 INT CHIEF'S HUT - COUNCIL OF ELDERS",
       "number": 10,
       "time": 90
@@ -3796,7 +3796,7 @@
     {
       "from": "LEIA",
       "to": "LUKE",
-      "text": "Luke, what's wrong?",
+      "text": "Luke, what is wrong?",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 3,
       "time": 27
@@ -3860,7 +3860,7 @@
     {
       "from": "LEIA",
       "to": "LUKE",
-      "text": "Luke, tell me. What's troubling you?",
+      "text": "Luke, tell me. what is troubling you?",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 6,
       "time": 54
@@ -3884,7 +3884,7 @@
     {
       "from": "LUKE",
       "to": "LEIA",
-      "text": "I felt his presence. He's come for me. He can feel when I'm near. That's why I have to go. As long as I stay, I'm endangering the group and our mission here. I have to face him.",
+      "text": "I felt his presence. he is come for me. He can feel when I am near. that is why I have to go. As long as I stay, I am endangering the group and our mission here. I have to face him.",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 38,
       "time": 342
@@ -3900,7 +3900,7 @@
     {
       "from": "LUKE",
       "to": "LEIA",
-      "text": "He's my father.",
+      "text": "he is my father.",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 3,
       "time": 27
@@ -3916,7 +3916,7 @@
     {
       "from": "LUKE",
       "to": "LEIA",
-      "text": "There's more. It won't be easy for you to hear it, but you must. If I don't make it back, you're the only hope for the Alliance.",
+      "text": "there is more. It will not be easy for you to hear it, but you must. If I do not make it back, you are the only hope for the Alliance.",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 27,
       "time": 243
@@ -3924,7 +3924,7 @@
     {
       "from": "LEIA",
       "to": "LUKE",
-      "text": "Luke, don't talk that way. You have a power I--I don't understand and could never have.",
+      "text": "Luke, do not talk that way. You have a power I--I do not understand and could never have.",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 16,
       "time": 144
@@ -3932,7 +3932,7 @@
     {
       "from": "LUKE",
       "to": "LEIA",
-      "text": "You're wrong, Leia. You have that power too. In time you'll learn to use it as I have. The Force is strong in my family. My father has it I have it and my sister has it.",
+      "text": "you are wrong, Leia. You have that power too. In time you will learn to use it as I have. The Force is strong in my family. My father has it I have it and my sister has it.",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 37,
       "time": 333
@@ -3940,7 +3940,7 @@
     {
       "from": "LUKE",
       "to": "LEIA",
-      "text": "Yes. It's you Leia.",
+      "text": "Yes. it is you Leia.",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 4,
       "time": 36
@@ -3948,7 +3948,7 @@
     {
       "from": "LEIA",
       "to": "LUKE",
-      "text": "I know Somehow I've always known.",
+      "text": "I know Somehow I have always known.",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 6,
       "time": 54
@@ -3972,7 +3972,7 @@
     {
       "from": "LUKE",
       "to": "LEIA",
-      "text": "No, you don't. You've always been strong.",
+      "text": "No, you do not. you have always been strong.",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 7,
       "time": 63
@@ -3988,7 +3988,7 @@
     {
       "from": "LUKE",
       "to": "LEIA",
-      "text": "Because there is good in him. I've felt it. He won't turn me over to the Emperor. I can save him. I can turn him back to the good side. I have to try.",
+      "text": "Because there is good in him. I have felt it. He will not turn me over to the Emperor. I can save him. I can turn him back to the good side. I have to try.",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 34,
       "time": 306
@@ -3996,7 +3996,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "Hey, what's goin' on?",
+      "text": "Hey, what is goin' on?",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 4,
       "time": 36
@@ -4012,7 +4012,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "Nothing? Come on, tell me. What's goin' on?",
+      "text": "Nothing? Come on, tell me. what is goin' on?",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 8,
       "time": 72
@@ -4020,7 +4020,7 @@
     {
       "from": "LEIA",
       "to": "HAN SOLO",
-      "text": "I.I can't tell you.",
+      "text": "I.I can not tell you.",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 5,
       "time": 45
@@ -4052,7 +4052,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "I'm sorry.",
+      "text": "I am sorry.",
       "where": "76 EXT EWOK VILLAGE - NIGHT",
       "number": 2,
       "time": 18
@@ -4124,7 +4124,7 @@
     {
       "from": "LUKE",
       "to": "DARTH VADER",
-      "text": "I've accepted the truth that you were once Anakin Skywalker, my father.",
+      "text": "I have accepted the truth that you were once Anakin Skywalker, my father.",
       "where": "78 EXT IMPERIAL LANDING PLATFORM - LOWER DECK",
       "number": 12,
       "time": 108
@@ -4140,7 +4140,7 @@
     {
       "from": "LUKE",
       "to": "DARTH VADER",
-      "text": "It is the name of your true self. You've only forgotten. I know there is good in you. The Emperor hasn't driven it from you fully. That is why you couldn't destroy me. That's why you won't bring me to your Emperor now.",
+      "text": "It is the name of your true self. you have only forgotten. I know there is good in you. The Emperor has not driven it from you fully. That is why you could not destroy me. that is why you will not bring me to your Emperor now.",
       "where": "78 EXT IMPERIAL LANDING PLATFORM - LOWER DECK",
       "number": 43,
       "time": 387
@@ -4180,7 +4180,7 @@
     {
       "from": "DARTH VADER",
       "to": "LUKE",
-      "text": "You don't know the power of the dark side. I must obey my master.",
+      "text": "You do not know the power of the dark side. I must obey my master.",
       "where": "78 EXT IMPERIAL LANDING PLATFORM - LOWER DECK",
       "number": 14,
       "time": 126
@@ -4188,7 +4188,7 @@
     {
       "from": "LUKE",
       "to": "DARTH VADER",
-      "text": "I will not turn.and you'll be forced to kill me.",
+      "text": "I will not turn.and you will be forced to kill me.",
       "where": "78 EXT IMPERIAL LANDING PLATFORM - LOWER DECK",
       "number": 11,
       "time": 99
@@ -4204,7 +4204,7 @@
     {
       "from": "LUKE",
       "to": "DARTH VADER",
-      "text": "Search your feelings, father. You can't do this. I feel the conflict within you. Let go of your hate.",
+      "text": "Search your feelings, father. You can not do this. I feel the conflict within you. Let go of your hate.",
       "where": "78 EXT IMPERIAL LANDING PLATFORM - LOWER DECK",
       "number": 19,
       "time": 171
@@ -4228,7 +4228,7 @@
     {
       "from": "LEIA",
       "to": "HAN SOLO",
-      "text": "The main entrance to the control bunker's on the far side of that landing platform. This isn't gonna be easy.",
+      "text": "The main entrance to the control bunker's on the far side of that landing platform. This is not gonna be easy.",
       "where": "79 EXT ENDOR - RIDGE OVERLOOKING SHIELD GENERAtoR",
       "number": 20,
       "time": 180
@@ -4236,7 +4236,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "Hey, don't worry. Chewie and me got into a lot of places more heavily guarded than this.",
+      "text": "Hey, do not worry. Chewie and me got into a lot of places more heavily guarded than this.",
       "where": "79 EXT ENDOR - RIDGE OVERLOOKING SHIELD GENERAtoR",
       "number": 17,
       "time": 153
@@ -4268,7 +4268,7 @@
     {
       "from": "LEIA",
       "to": "THREEPIO",
-      "text": "What's he saying?",
+      "text": "what is he saying?",
       "where": "79 EXT ENDOR - RIDGE OVERLOOKING SHIELD GENERAtoR",
       "number": 3,
       "time": 27
@@ -4276,7 +4276,7 @@
     {
       "from": "THREEPIO",
       "to": "LEIA",
-      "text": "He says there's a secret entrance on the other side of the ridge.",
+      "text": "He says there is a secret entrance on the other side of the ridge.",
       "where": "79 EXT ENDOR - RIDGE OVERLOOKING SHIELD GENERAtoR",
       "number": 13,
       "time": 117
@@ -4284,7 +4284,7 @@
     {
       "from": "LANDO",
       "to": "ACKBAR",
-      "text": "Admiral, we're in position. All fighters accounted for.",
+      "text": "Admiral, we are in position. All fighters accounted for.",
       "where": "81 INT MILLENNIUM FALCON - COCKPIT",
       "number": 8,
       "time": 72
@@ -4300,7 +4300,7 @@
     {
       "from": "LANDO",
       "to": "ACKBAR",
-      "text": "Don't worry, my friends are down there. They'll have that shield down on time. or this'll be the shortest offensive of all time.",
+      "text": "do not worry, my friends are down there. they will have that shield down on time. or this'll be the shortest offensive of all time.",
       "where": "81 INT MILLENNIUM FALCON - COCKPIT",
       "number": 23,
       "time": 207
@@ -4348,7 +4348,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "It's only a few guards. This shouldn't be too much trouble.",
+      "text": "it is only a few guards. This should not be too much trouble.",
       "where": "83 EXT ENDOR - RIDGE OVERLOOKING CONTROL BUNKER",
       "number": 11,
       "time": 99
@@ -4372,7 +4372,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "hen we'll do it real quiet-like.",
+      "text": "hen we will do it real quiet-like.",
       "where": "83 EXT ENDOR - RIDGE OVERLOOKING CONTROL BUNKER",
       "number": 6,
       "time": 54
@@ -4396,7 +4396,7 @@
     {
       "from": "THREEPIO",
       "to": "LEIA",
-      "text": "I'm afraid our furry companion has gone and done something rather rash.",
+      "text": "I am afraid our furry companion has gone and done something rather rash.",
       "where": "83 EXT ENDOR - RIDGE OVERLOOKING CONTROL BUNKER",
       "number": 12,
       "time": 108
@@ -4428,7 +4428,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "Not bad for a little furball. There's only one left. You stay here. We'll take care of this.",
+      "text": "Not bad for a little furball. there is only one left. You stay here. we will take care of this.",
       "where": "87 EXT RIDGE",
       "number": 18,
       "time": 162
@@ -4460,7 +4460,7 @@
     {
       "from": "EMPEROR",
       "to": "LUKE",
-      "text": "I'm looking forward to completing your training. In time you will call me Master.",
+      "text": "I am looking forward to completing your training. In time you will call me Master.",
       "where": "90 INT DEATH STAR - EMPEROR'S THRONE ROOM",
       "number": 14,
       "time": 126
@@ -4468,7 +4468,7 @@
     {
       "from": "LUKE",
       "to": "EMPEROR",
-      "text": "You're gravely mistaken. You won't convert me as you did my father.",
+      "text": "you are gravely mistaken. You will not convert me as you did my father.",
       "where": "90 INT DEATH STAR - EMPEROR'S THRONE ROOM",
       "number": 12,
       "time": 108
@@ -4492,7 +4492,7 @@
     {
       "from": "EMPEROR",
       "to": "LUKE",
-      "text": "Ah, yes, a Jedi's weapon. Much like your father's. By now you must know your father can never be turned from the dark side. So will it be with you.",
+      "text": "Ah, yes, a Jedi weapon. Much like your father's. By now you must know your father can never be turned from the dark side. So will it be with you.",
       "where": "90 INT DEATH STAR - EMPEROR'S THRONE ROOM",
       "number": 30,
       "time": 270
@@ -4500,7 +4500,7 @@
     {
       "from": "LUKE",
       "to": "EMPEROR",
-      "text": "You're wrong. Soon I'll be dead and you with me.",
+      "text": "you are wrong. Soon I will be dead and you with me.",
       "where": "90 INT DEATH STAR - EMPEROR'S THRONE ROOM",
       "number": 10,
       "time": 90
@@ -4564,7 +4564,7 @@
     {
       "from": "EMPEROR",
       "to": "LUKE",
-      "text": "Oh I'm afraid the deflector shield will be quite operational when your friends arrive.",
+      "text": "Oh I am afraid the deflector shield will be quite operational when your friends arrive.",
       "where": "90 INT DEATH STAR - EMPEROR'S THRONE ROOM",
       "number": 14,
       "time": 126
@@ -4596,7 +4596,7 @@
     {
       "from": "THREEPIO",
       "to": "EWOK",
-      "text": "Oh, my! They'll be captured!",
+      "text": "Oh, my! they will be captured!",
       "where": "91 INT BUNKER - MAIN CONTROL ROOM",
       "number": 5,
       "time": 45
@@ -4684,7 +4684,7 @@
     {
       "from": "LANDO",
       "to": "REBEL PILOTS",
-      "text": "We've got to be able to get some kind of a reading on that shield, up or down. Well, how could they be jamming us if they don't know if we're coming.",
+      "text": "we have got to be able to get some kind of a reading on that shield, up or down. Well, how could they be jamming us if they do not know if we are coming.",
       "where": "95 INT MILLENNIUM FALCON - COCKPIT",
       "number": 32,
       "time": 288
@@ -4732,7 +4732,7 @@
     {
       "from": "ACKBAR",
       "to": "REBEL PILOTS",
-      "text": "It's a trap!",
+      "text": "it is a trap!",
       "where": "97 INT REBEL STAR CRUISER - BRIDGE",
       "number": 3,
       "time": 27
@@ -4748,7 +4748,7 @@
     {
       "from": "REBEL PILOTS",
       "to": "LANDO",
-      "text": "There's too many of them!",
+      "text": "there is too many of them!",
       "where": "97 INT REBEL STAR CRUISER - BRIDGE",
       "number": 5,
       "time": 45
@@ -4788,7 +4788,7 @@
     {
       "from": "EMPEROR",
       "to": "LUKE",
-      "text": "You want this, don't you? The hate is swelling in you now. Take your Jedi weapon. Use it. I am unarmed. Strike me down with it. Give in to your anger. With each passing moment, you make yourself more my servant.",
+      "text": "You want this, do not you? The hate is swelling in you now. Take your Jedi weapon. Use it. I am unarmed. Strike me down with it. Give in to your anger. With each passing moment, you make yourself more my servant.",
       "where": "98 INT DEATH STAR - EMPEROR'S THRONE ROOM",
       "number": 41,
       "time": 369
@@ -4836,7 +4836,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "Well, they're on their way. ARTOO, are you sure this was a good idea?",
+      "text": "Well, they are on their way. ARTOO, are you sure this was a good idea?",
       "where": "99 EXT FOREST - GENERAtoR BUNKER",
       "number": 14,
       "time": 126
@@ -4844,7 +4844,7 @@
     {
       "from": "STORMTROOPER",
       "to": "THREEPIO",
-      "text": "Freeze! Don't move!",
+      "text": "Freeze! do not move!",
       "where": "99 EXT FOREST - GENERAtoR BUNKER",
       "number": 3,
       "time": 27
@@ -4900,7 +4900,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "Going? What do you mean, you're going. But-- but going where, ARTOO? No, what! ARTOO! Oh, this is no time for heroics. Come back!",
+      "text": "Going? What do you mean, you are going. But-- but going where, ARTOO? No, what! ARTOO! Oh, this is no time for heroics. Come back!",
       "where": "99 EXT FOREST - GENERAtoR BUNKER",
       "number": 24,
       "time": 216
@@ -4948,7 +4948,7 @@
     {
       "from": "WEDGE",
       "to": "REBEL PILOTS",
-      "text": "Cut to the left! I'll take the leader! They're heading for the medical frigate.",
+      "text": "Cut to the left! I will take the leader! they are heading for the medical frigate.",
       "where": "101 INT MILLENNIUM FALCON - COCKPIT",
       "number": 14,
       "time": 126
@@ -4972,7 +4972,7 @@
     {
       "from": "IMPERIAL COMMANDER",
       "to": "PIETT",
-      "text": "We're in attack position now, sir.",
+      "text": "we are in attack position now, sir.",
       "where": "103 INT SUPER STAR DESTROYER - BRIDGE",
       "number": 6,
       "time": 54
@@ -4988,7 +4988,7 @@
     {
       "from": "IMPERIAL COMMANDER",
       "to": "PIETT",
-      "text": "We're not going to attack?",
+      "text": "we are not going to attack?",
       "where": "103 INT SUPER STAR DESTROYER - BRIDGE",
       "number": 5,
       "time": 45
@@ -5036,7 +5036,7 @@
     {
       "from": "LANDO",
       "to": "ACKBAR",
-      "text": "You won't get another chance at this, Admiral.",
+      "text": "You will not get another chance at this, Admiral.",
       "where": "110 INT REBEL STAR CRUISER - BRIDGE",
       "number": 8,
       "time": 72
@@ -5044,7 +5044,7 @@
     {
       "from": "ACKBAR",
       "to": "LANDO",
-      "text": "We have no choice, General Calrissian. Our cruisers can't repel firepower of that magnitude.",
+      "text": "We have no choice, General Calrissian. Our cruisers can not repel firepower of that magnitude.",
       "where": "110 INT REBEL STAR CRUISER - BRIDGE",
       "number": 14,
       "time": 126
@@ -5052,7 +5052,7 @@
     {
       "from": "LANDO",
       "to": "ACKBAR",
-      "text": "Han will have that shield down. We've got to give him more time.",
+      "text": "Han will have that shield down. we have got to give him more time.",
       "where": "110 INT REBEL STAR CRUISER - BRIDGE",
       "number": 13,
       "time": 117
@@ -5060,7 +5060,7 @@
     {
       "from": "THREEPIO",
       "to": "HAN SOLO",
-      "text": "We're coming!",
+      "text": "we are coming!",
       "where": "111 EXT FOREST - GENERAtoR BUNKER",
       "number": 2,
       "time": 18
@@ -5100,7 +5100,7 @@
     {
       "from": "LEIA",
       "to": "HAN SOLO",
-      "text": "I'll cover you.",
+      "text": "I will cover you.",
       "where": "111 EXT FOREST - GENERAtoR BUNKER",
       "number": 3,
       "time": 27
@@ -5116,7 +5116,7 @@
     {
       "from": "ACKBAR",
       "to": "LANDO",
-      "text": "At that close range, we won't last long against those Star Destroyers.",
+      "text": "At that close range, we will not last long against those Star Destroyers.",
       "where": "113 INT MILLENNIUM FALCON - COCKPIT",
       "number": 12,
       "time": 108
@@ -5124,7 +5124,7 @@
     {
       "from": "LANDO",
       "to": "ACKBAR",
-      "text": "We'll last longer then we will against that Death Star and we might just take a few of them with us.",
+      "text": "we will last longer then we will against that Death Star and we might just take a few of them with us.",
       "where": "113 INT MILLENNIUM FALCON - COCKPIT",
       "number": 21,
       "time": 189
@@ -5132,7 +5132,7 @@
     {
       "from": "REBEL PILOTS",
       "to": "LANDO",
-      "text": "She's gonna blow!",
+      "text": "She is gonna blow!",
       "where": "113 INT MILLENNIUM FALCON - COCKPIT",
       "number": 3,
       "time": 27
@@ -5140,7 +5140,7 @@
     {
       "from": "REBEL PILOTS",
       "to": "LANDO",
-      "text": "I'm hit!",
+      "text": "I am hit!",
       "where": "113 INT MILLENNIUM FALCON - COCKPIT",
       "number": 2,
       "time": 18
@@ -5180,7 +5180,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "Let's see.",
+      "text": "let  is see.",
       "where": "116 EXT FOREST - GENERAtoR BUNKER",
       "number": 2,
       "time": 18
@@ -5188,7 +5188,7 @@
     {
       "from": "LEIA",
       "to": "HAN SOLO",
-      "text": "It's not bad.",
+      "text": "it is not bad.",
       "where": "116 EXT FOREST - GENERAtoR BUNKER",
       "number": 3,
       "time": 27
@@ -5212,7 +5212,7 @@
     {
       "from": "STORMTROOPER",
       "to": "HAN SOLO",
-      "text": "Don't move!",
+      "text": "do not move!",
       "where": "116 EXT FOREST - GENERAtoR BUNKER",
       "number": 2,
       "time": 18
@@ -5260,7 +5260,7 @@
     {
       "from": "HAN SOLO",
       "to": "CHEWBACCA",
-      "text": "Chewie! Get down here! She's wounded! No, wait. I got an idea.",
+      "text": "Chewie! Get down here! She is wounded! No, wait. I got an idea.",
       "where": "116 EXT FOREST - GENERAtoR BUNKER",
       "number": 12,
       "time": 108
@@ -5316,7 +5316,7 @@
     {
       "from": "LUKE",
       "to": "DARTH VADER",
-      "text": "You couldn't bring yourself to kill me before, and I don't believe you'll destroy me now.",
+      "text": "You could not bring yourself to kill me before, and I do not believe you will destroy me now.",
       "where": "117 INT EMPEROR'S toWER - THRONE ROOM",
       "number": 16,
       "time": 144
@@ -5348,7 +5348,7 @@
     {
       "from": "REBEL PILOTS",
       "to": "LANDO",
-      "text": "I'm on it, Gold Leader.",
+      "text": "I am on it, Gold Leader.",
       "where": "118 EXT SPACE - AIR BATTLE",
       "number": 5,
       "time": 45
@@ -5364,7 +5364,7 @@
     {
       "from": "LANDO",
       "to": "HAN SOLO",
-      "text": "Now come on, Han, old buddy. Don't let me down.",
+      "text": "Now come on, Han, old buddy. do not let me down.",
       "where": "118 EXT SPACE - AIR BATTLE",
       "number": 10,
       "time": 90
@@ -5372,7 +5372,7 @@
     {
       "from": "HAN SOLO",
       "to": "IMPERIAL COMMANDER",
-      "text": "It's over, Commander. The Rebels have been routed. They're fleeing into the woods. We need reinforcements to continue the pursuit.",
+      "text": "it is over, Commander. The Rebels have been routed. they are fleeing into the woods. We need reinforcements to continue the pursuit.",
       "where": "119 INT BUNKER - CONTROL ROOM",
       "number": 20,
       "time": 180
@@ -5388,7 +5388,7 @@
     {
       "from": "DARTH VADER",
       "to": "LUKE",
-      "text": "You cannot hide forever, Luke.",
+      "text": "You can not hide forever, Luke.",
       "where": "122 INT EMPEROR'S toWER - THRONE ROOM",
       "number": 5,
       "time": 45
@@ -5436,7 +5436,7 @@
     {
       "from": "LUKE",
       "to": "EMPEROR",
-      "text": "Never! I'll never turn to the dark side. You've failed, Your Highness. I am a Jedi, like my father before me.",
+      "text": "Never! I will never turn to the dark side. you have failed, Your Highness. I am a Jedi, like my father before me.",
       "where": "122 INT EMPEROR'S toWER - THRONE ROOM",
       "number": 21,
       "time": 189
@@ -5468,7 +5468,7 @@
     {
       "from": "LANDO",
       "to": "ACKBAR",
-      "text": "We're on our way. Red Group, Gold Group, all fighters follow me. told you they'd do it!",
+      "text": "we are on our way. Red Group, Gold Group, all fighters follow me. told you they'd do it!",
       "where": "124 INT REBEL STAR CRUISER - BRIDGE",
       "number": 17,
       "time": 153
@@ -5516,7 +5516,7 @@
     {
       "from": "WEDGE",
       "to": "LANDO",
-      "text": "I'm going in.",
+      "text": "I am going in.",
       "where": "126 EXT/INT - SPACE BATTLE - FIGHTER AND DEATH STAR",
       "number": 3,
       "time": 27
@@ -5572,7 +5572,7 @@
     {
       "from": "ACKBAR",
       "to": "LANDO",
-      "text": "We've got to give those fighters more time. Concentrate all fire on that Super Star Destroyer.",
+      "text": "we have got to give those fighters more time. Concentrate all fire on that Super Star Destroyer.",
       "where": "127 INT REBEL STAR CRUISER - BRIDGE",
       "number": 16,
       "time": 144
@@ -5580,7 +5580,7 @@
     {
       "from": "IMPERIAL CONTROLLER",
       "to": "PIETT",
-      "text": "Sir, we've lost our bridge deflector shield.",
+      "text": "Sir, we have lost our bridge deflector shield.",
       "where": "128 INT VADER'S STAR DESTROYER - BRIDGE",
       "number": 7,
       "time": 63
@@ -5588,7 +5588,7 @@
     {
       "from": "PIETT",
       "to": "IMPERIAL CONTROLLER",
-      "text": "Intensify the forward batteries. I don't want anything to get through.",
+      "text": "Intensify the forward batteries. I do not want anything to get through.",
       "where": "128 INT VADER'S STAR DESTROYER - BRIDGE",
       "number": 11,
       "time": 99
@@ -5604,7 +5604,7 @@
     {
       "from": "IMPERIAL COMMANDER",
       "to": "PIETT",
-      "text": "It's too late!",
+      "text": "it is too late!",
       "where": "128 INT VADER'S STAR DESTROYER - BRIDGE",
       "number": 3,
       "time": 27
@@ -5620,7 +5620,7 @@
     {
       "from": "LUKE",
       "to": "DARTH VADER",
-      "text": "But you'll die.",
+      "text": "But you will die.",
       "where": "130 INT DEATH STAR - MAIN DOCKING BAY",
       "number": 3,
       "time": 27
@@ -5644,7 +5644,7 @@
     {
       "from": "LUKE",
       "to": "ANAKIN",
-      "text": "No. You're coming with me. I can't leave you here. I've got to save you.",
+      "text": "No. you are coming with me. I can not leave you here. I have got to save you.",
       "where": "130 INT DEATH STAR - MAIN DOCKING BAY",
       "number": 15,
       "time": 135
@@ -5660,7 +5660,7 @@
     {
       "from": "LUKE",
       "to": "ANAKIN",
-      "text": "Father I won't leave you.",
+      "text": "Father I will not leave you.",
       "where": "130 INT DEATH STAR - MAIN DOCKING BAY",
       "number": 5,
       "time": 45
@@ -5684,7 +5684,7 @@
     {
       "from": "WEDGE",
       "to": "LANDO",
-      "text": "Copy, Gold Leader. I'm already on my way out.",
+      "text": "Copy, Gold Leader. I am already on my way out.",
       "where": "132 INT MILLENNIUM FALCON - COCKPIT AND GUN PORTS",
       "number": 9,
       "time": 81
@@ -5708,7 +5708,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "I'm sure Luke wasn't on that thing when it blew.",
+      "text": "I am sure Luke was not on that thing when it blew.",
       "where": "136 EXT ENDOR FOREST",
       "number": 10,
       "time": 90
@@ -5716,7 +5716,7 @@
     {
       "from": "LEIA",
       "to": "HAN SOLO",
-      "text": "He wasn't. I can feel it.",
+      "text": "He was not. I can feel it.",
       "where": "136 EXT ENDOR FOREST",
       "number": 6,
       "time": 54
@@ -5724,7 +5724,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "You love him, don't you?",
+      "text": "You love him, do not you?",
       "where": "136 EXT ENDOR FOREST",
       "number": 5,
       "time": 45
@@ -5740,7 +5740,7 @@
     {
       "from": "HAN SOLO",
       "to": "LEIA",
-      "text": "All right. I understand. Fine. When he comes back, I won't get in the way.",
+      "text": "All right. I understand. Fine. When he comes back, I will not get in the way.",
       "where": "136 EXT ENDOR FOREST",
       "number": 15,
       "time": 135
@@ -5748,7 +5748,7 @@
     {
       "from": "LEIA",
       "to": "HAN SOLO",
-      "text": "Oh. No, it's not like that at all. He's my brother.",
+      "text": "Oh. No, it is not like that at all. he is my brother.",
       "where": "136 EXT ENDOR FOREST",
       "number": 11,
       "time": 99

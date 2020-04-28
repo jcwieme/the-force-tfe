@@ -15,8 +15,13 @@ export default new Vuex.Store({
   state: {
     movies: [movie1, movie2, movie3, movie4, movie5, movie6],
     definitions,
+    activeMovie: null,
   },
-  mutations: {},
+  mutations: {
+    setActiveMovie(state, number) {
+      state.activeMovie = number
+    },
+  },
   actions: {},
   modules: {},
 })

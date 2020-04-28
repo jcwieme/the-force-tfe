@@ -60,7 +60,7 @@
     {
       "from": "TC-14",
       "to": "QUI-GON",
-      "text": "I'm TC-14 at your service. This way, please.",
+      "text": "I am TC-14 at your service. This way, please.",
       "where": "INT. FEDERATION BATTLESHIP - DOCKING BAY - SPACE",
       "number": 8,
       "time": 72
@@ -84,7 +84,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "I don't sense anything.",
+      "text": "I do not sense anything.",
       "where": "INT. FEDERATION BATTLESHIP - CONFERENCE ROOM",
       "number": 4,
       "time": 36
@@ -92,7 +92,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "It's not about the mission, Master, it's something, elsewhere, elusive.",
+      "text": "it is not about the mission, Master, it is something, elsewhere, elusive.",
       "where": "INT. FEDERATION BATTLESHIP - CONFERENCE ROOM",
       "number": 10,
       "time": 90
@@ -100,7 +100,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "Don't center on your anxiety, Obi-Wan. Keep your concentration here and now where it belongs.",
+      "text": "do not center on your anxiety, Obi-Wan. Keep your concentration here and now where it belongs.",
       "where": "INT. FEDERATION BATTLESHIP - CONFERENCE ROOM",
       "number": 15,
       "time": 135
@@ -172,7 +172,7 @@
     {
       "from": "DOFINE",
       "to": "NUTE",
-      "text": "Are you brain-dead? I'm not going in there with two Jedi .Send a droid.",
+      "text": "Are you brain-dead? I am not going in there with two Jedi .Send a droid.",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 14,
       "time": 126
@@ -212,7 +212,7 @@
     {
       "from": "DARTH SIDIOUS",
       "to": "NUTE",
-      "text": "Viceroy, I don't want this stunted slime in my sight again. This turn of events is unfortunate. We must accelerate our plans. Begin landing your troops.",
+      "text": "Viceroy, I do not want this stunted slime in my sight again. This turn of events is unfortunate. We must accelerate our plans. Begin landing your troops.",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 26,
       "time": 234
@@ -284,7 +284,7 @@
     {
       "from": "NUTE",
       "to": "CAPTAIN DROID",
-      "text": "They must be dead by now. Blast, what's left of them.",
+      "text": "They must be dead by now. Blast, what is left of them.",
       "where": "INT. FEDERATION BATTLESHIP - HALLWAY",
       "number": 11,
       "time": 99
@@ -300,7 +300,7 @@
     {
       "from": "CAPTAIN DROID",
       "to": "CAPORAL DROID",
-      "text": "Check it out, Corporal. We'll cover you.",
+      "text": "Check it out, Corporal. we will cover you.",
       "where": "INT. FEDERATION BATTLESHIP - HALLWAY",
       "number": 7,
       "time": 63
@@ -348,7 +348,7 @@
     {
       "from": "NUTE",
       "to": "RUNE",
-      "text": "Well, not exactly, but I don't seal off the bridge.",
+      "text": "Well, not exactly, but I do not seal off the bridge.",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 10,
       "time": 90
@@ -356,7 +356,7 @@
     {
       "from": "RUNE",
       "to": "NUTE",
-      "text": "That won't be enough, sir.",
+      "text": "That will not be enough, sir.",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 5,
       "time": 45
@@ -396,7 +396,7 @@
     {
       "from": "RUNE",
       "to": "NUTE",
-      "text": "They're still coming through!",
+      "text": "they are still coming through!",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 4,
       "time": 36
@@ -436,7 +436,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "It's a standoff. Let's go.",
+      "text": "it is a standoff. let  is go.",
       "where": "INT. FEDERATION BATTLESHIP - HALLWAY - OUTSIDE BRIDGE",
       "number": 5,
       "time": 45
@@ -444,7 +444,7 @@
     {
       "from": "RUNE",
       "to": "NUTE",
-      "text": "They're no match for destroyer droids.",
+      "text": "they are no match for destroyer droids.",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 6,
       "time": 54
@@ -452,7 +452,7 @@
     {
       "from": "TEY HOW",
       "to": "NUTE",
-      "text": "Sir, they've gone up the ventilation shaft.",
+      "text": "Sir, they have gone up the ventilation shaft.",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 7,
       "time": 63
@@ -468,7 +468,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "It's an invasion army.",
+      "text": "it is an invasion army.",
       "where": "INT. FEDERATION BATTLESHIP - MAIN BAY",
       "number": 4,
       "time": 36
@@ -476,7 +476,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "It's an odd play for the Trade Federation. We've got to warn the Naboo and contact Chancellor Valorum. Let's split up. Stow aboard separate ships and meet down on the planet.",
+      "text": "it is an odd play for the Trade Federation. we have got to warn the Naboo and contact Chancellor Valorum. let  is split up. Stow aboard separate ships and meet down on the planet.",
       "where": "INT. FEDERATION BATTLESHIP - MAIN BAY",
       "number": 31,
       "time": 279
@@ -500,7 +500,7 @@
     {
       "from": "RUNE",
       "to": "NUTE",
-      "text": "It's Queen Amidala herself.",
+      "text": "it is Queen Amidala herself.",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 4,
       "time": 36
@@ -508,7 +508,7 @@
     {
       "from": "NUTE",
       "to": "RUNE",
-      "text": "At last we're getting results.",
+      "text": "At last we are getting results.",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 5,
       "time": 45
@@ -580,7 +580,7 @@
     {
       "from": "RUNE",
       "to": "NUTE",
-      "text": "She's right, the Senate will never",
+      "text": "She is right, the Senate will never",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 6,
       "time": 54
@@ -588,7 +588,7 @@
     {
       "from": "NUTE",
       "to": "RUNE",
-      "text": "It's too late now.",
+      "text": "it is too late now.",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 4,
       "time": 36
@@ -604,7 +604,7 @@
     {
       "from": "NUTE",
       "to": "NUTE",
-      "text": "I don't know, but we must move quickly to disrupt all communications down there.",
+      "text": "I do not know, but we must move quickly to disrupt all communications down there.",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 14,
       "time": 126
@@ -612,7 +612,7 @@
     {
       "from": "PALPATINE",
       "to": "AMIDALA",
-      "text": "Negotiations haven't started because the ambassadors aren't there? How could that be true? I have assurances from the chancellor his ambassadors did arrive. It must handiwork negotiate ambassadors",
+      "text": "Negotiations have not started because the ambassadors are not there? How could that be true? I have assurances from the chancellor his ambassadors did arrive. It must handiwork negotiate ambassadors",
       "where": "INT. NABOO PALACE - THRONE ROOM",
       "number": 28,
       "time": 252
@@ -620,7 +620,7 @@
     {
       "from": "AMIDALA",
       "to": "PALPATINE",
-      "text": "Senator Palpatine?!? What's happening?",
+      "text": "Senator Palpatine?!? what is happening?",
       "where": "INT. NABOO PALACE - THRONE ROOM",
       "number": 4,
       "time": 36
@@ -676,7 +676,7 @@
     {
       "from": "BIBBLE",
       "to": "AMIDALA",
-      "text": "Negotiation? We've lost all communications! and where are the Chancellors Ambassadors?",
+      "text": "Negotiation? we have lost all communications! and where are the Chancellors Ambassadors?",
       "where": "INT. NABOO PALACE - THRONE ROOM",
       "number": 11,
       "time": 99
@@ -708,7 +708,7 @@
     {
       "from": "RUNE",
       "to": "CAPORAL DROID",
-      "text": "Captain, we've searched the ship and there is no trace of the Jedi. They may have gotten on one of your landing craft.",
+      "text": "Captain, we have searched the ship and there is no trace of the Jedi. They may have gotten on one of your landing craft.",
       "where": "EXT. NABOO EDGE OF SWAMP / GRASS PLAINS - TWILIGHT (FX)",
       "number": 23,
       "time": 207
@@ -716,7 +716,7 @@
     {
       "from": "CAPORAL DROID",
       "to": "NUTE",
-      "text": "If they are down here, sir, we'll find them.",
+      "text": "If they are down here, sir, we will find them.",
       "where": "EXT. NABOO EDGE OF SWAMP / GRASS PLAINS - TWILIGHT (FX)",
       "number": 9,
       "time": 81
@@ -812,7 +812,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "What's this?",
+      "text": "what is this?",
       "where": "EXT. NABOO SWAMP - TWILIGHT",
       "number": 2,
       "time": 18
@@ -820,7 +820,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "A local. Let's get out of here before more droids show up.",
+      "text": "A local. let  is get out of here before more droids show up.",
       "where": "EXT. NABOO SWAMP - TWILIGHT",
       "number": 12,
       "time": 108
@@ -868,7 +868,7 @@
     {
       "from": "QUI-GON",
       "to": "JAR JAR",
-      "text": "You hear that? That's the sound of a thousand terrible things heading this way",
+      "text": "You hear that? that is the sound of a thousand terrible things heading this way",
       "where": "EXT. NABOO SWAMP - TWILIGHT",
       "number": 14,
       "time": 126
@@ -900,7 +900,7 @@
     {
       "from": "JAR JAR",
       "to": "QUI-GON",
-      "text": "Wesa goen underwater, okeyday? My warning yous. Gungans no liken outlaunders. Don't expict a wern welcome.",
+      "text": "Wesa goen underwater, okeyday? My warning yous. Gungans no liken outlaunders. do not expict a wern welcome.",
       "where": "EXT. NABOO SWAMP LAKE - TWILIGHT",
       "number": 16,
       "time": 144
@@ -908,7 +908,7 @@
     {
       "from": "OBI-WAN",
       "to": "JAR JAR",
-      "text": "Don't worry, this has not been our day for warm welcomes.",
+      "text": "do not worry, this has not been our day for warm welcomes.",
       "where": "EXT. NABOO SWAMP LAKE - TWILIGHT",
       "number": 11,
       "time": 99
@@ -972,7 +972,7 @@
     {
       "from": "BOSS NASS",
       "to": "QUI-GON",
-      "text": "Yousa cannot bees hair. Dis army of mackineeks up dare tis new weesong!",
+      "text": "Yousa can not bees hair. Dis army of mackineeks up dare tis new weesong!",
       "where": "INT. OTOH GUNGA - HIGH TOWER BOARD ROOM",
       "number": 13,
       "time": 117
@@ -1100,7 +1100,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "We'll need a navigator to get us through the planet's core. This Gungan my be of help.",
+      "text": "we will need a navigator to get us through the planet's core. This Gungan my be of help.",
       "where": "INT. OTOH GUNGA - HIGH TOWER BOARD ROOM",
       "number": 17,
       "time": 153
@@ -1180,7 +1180,7 @@
     {
       "from": "OBI-WAN",
       "to": "JAR JAR",
-      "text": "They banished you because you're clumsy?",
+      "text": "They banished you because you are clumsy?",
       "where": "INT. SUB COCKPIT - UNDERWATER",
       "number": 6,
       "time": 54
@@ -1196,7 +1196,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "There's always a bigger fish.",
+      "text": "there is always a bigger fish.",
       "where": "INT. SUB COCKPIT - UNDERWATER",
       "number": 5,
       "time": 45
@@ -1252,7 +1252,7 @@
     {
       "from": "RUNE",
       "to": "NUTE",
-      "text": "You didn't tell him about the missing Jedi?",
+      "text": "You did not tell him about the missing Jedi?",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 8,
       "time": 72
@@ -1276,7 +1276,7 @@
     {
       "from": "QUI-GON",
       "to": "JAR JAR",
-      "text": "Don't worry. The Force will guide us.",
+      "text": "do not worry. The Force will guide us.",
       "where": "INT. SUB COCKPIT - UNDERWATER",
       "number": 7,
       "time": 63
@@ -1292,7 +1292,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "we're losing power.",
+      "text": "we are losing power.",
       "where": "INT. SUB COCKPIT - UNDERWATER",
       "number": 3,
       "time": 27
@@ -1308,7 +1308,7 @@
     {
       "from": "QUI-GON",
       "to": "JAR JAR",
-      "text": "Just relax. We're not in trouble yet.",
+      "text": "Just relax. we are not in trouble yet.",
       "where": "INT. SUB COCKPIT - UNDERWATER",
       "number": 7,
       "time": 63
@@ -1404,7 +1404,7 @@
     {
       "from": "NUTE",
       "to": "BIBBLE",
-      "text": "The Naboo and the Federation will forge a treaty that will legitimize our occupation here. I've been assured it will be ratified by the Senate.",
+      "text": "The Naboo and the Federation will forge a treaty that will legitimize our occupation here. I have been assured it will be ratified by the Senate.",
       "where": "INT. THEED - PALACE THRONE ROOM - DAY",
       "number": 25,
       "time": 225
@@ -1484,7 +1484,7 @@
     {
       "from": "PANAKA",
       "to": "QUI-GON",
-      "text": "They've knocked out all our communications.",
+      "text": "they have knocked out all our communications.",
       "where": "EXT. PALACE - PLAZA - DAY",
       "number": 6,
       "time": 54
@@ -1516,7 +1516,7 @@
     {
       "from": "QUI-GON",
       "to": "AMIDALA",
-      "text": "That won't be a problem. Your Highness, under the circumstances, I suggest you come to Coruscant with us.",
+      "text": "That will not be a problem. Your Highness, under the circumstances, I suggest you come to Coruscant with us.",
       "where": "INT. CENTRAL HANGER - HALLWAY - DAY",
       "number": 18,
       "time": 162
@@ -1540,7 +1540,7 @@
     {
       "from": "BIBBLE",
       "to": "QUI-GON",
-      "text": "They wouldn't dare.",
+      "text": "They would not dare.",
       "where": "INT. CENTRAL HANGER - HALLWAY - DAY",
       "number": 3,
       "time": 27
@@ -1548,7 +1548,7 @@
     {
       "from": "PANAKA",
       "to": "QUI-GON",
-      "text": "They need her to sign a treaty to make this invasion of theirs legal. They can't afford to kill her.",
+      "text": "They need her to sign a treaty to make this invasion of theirs legal. They can not afford to kill her.",
       "where": "INT. CENTRAL HANGER - HALLWAY - DAY",
       "number": 20,
       "time": 180
@@ -1628,7 +1628,7 @@
     {
       "from": "QUI-GON",
       "to": "CAPORAL DROID",
-      "text": "I'm Ambassador for the Supreme Chancellor, and I'm taking those people to Coruscant.",
+      "text": "I am Ambassador for the Supreme Chancellor, and I am taking those people to Coruscant.",
       "where": "INT. CENTRAL HANGER - DAY",
       "number": 13,
       "time": 117
@@ -1652,7 +1652,7 @@
     {
       "from": "CAPORAL DROID",
       "to": "QUI-GON",
-      "text": "Coruscant? U h, that doesn't compute. Uh, wait. U h, you're under arrest.",
+      "text": "Coruscant? U h, that does not compute. Uh, wait. U h, you are under arrest.",
       "where": "INT. CENTRAL HANGER - DAY",
       "number": 13,
       "time": 117
@@ -1700,7 +1700,7 @@
     {
       "from": "RIC OLIE",
       "to": "QUI-GON",
-      "text": "There's the blockade.",
+      "text": "there is the blockade.",
       "where": "INT. NABOO SPACECRAFT - DROID HOLD",
       "number": 3,
       "time": 27
@@ -1716,7 +1716,7 @@
     {
       "from": "OBI-WAN",
       "to": "RIC OLIE",
-      "text": "We're losing droids fast.",
+      "text": "we are losing droids fast.",
       "where": "INT. NABOO SPACECRAFT - DROID HOLD",
       "number": 4,
       "time": 36
@@ -1724,7 +1724,7 @@
     {
       "from": "RIC OLIE",
       "to": "OBI-WAN",
-      "text": "If we can't get the shield generator fixed, we'll be sitting ducks.",
+      "text": "If we can not get the shield generator fixed, we will be sitting ducks.",
       "where": "INT. NABOO SPACECRAFT - DROID HOLD",
       "number": 12,
       "time": 108
@@ -1748,7 +1748,7 @@
     {
       "from": "RIC OLIE",
       "to": "OBI-WAN",
-      "text": "There's not enough power to get us to Coruscant the hyperdrive is leaking.",
+      "text": "there is not enough power to get us to Coruscant the hyperdrive is leaking.",
       "where": "INT. NABOO SPACECRAFT - DROID HOLD",
       "number": 13,
       "time": 117
@@ -1756,7 +1756,7 @@
     {
       "from": "QUI-GON",
       "to": "RIC OLIE",
-      "text": "We'll have to land somewhere to refuel and repair the ship.",
+      "text": "we will have to land somewhere to refuel and repair the ship.",
       "where": "INT. NABOO SPACECRAFT - DROID HOLD",
       "number": 11,
       "time": 99
@@ -1764,7 +1764,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "Here, Master. Tatooine It's small, out of the way, poor The Trade Federation has no presence there.",
+      "text": "Here, Master. Tatooine it is small, out of the way, poor The Trade Federation has no presence there.",
       "where": "INT. NABOO SPACECRAFT - DROID HOLD",
       "number": 17,
       "time": 153
@@ -1780,7 +1780,7 @@
     {
       "from": "QUI-GON",
       "to": "PANAKA",
-      "text": "It's controlled by the Hutts",
+      "text": "it is controlled by the Hutts",
       "where": "INT. NABOO SPACECRAFT - DROID HOLD",
       "number": 5,
       "time": 45
@@ -1788,7 +1788,7 @@
     {
       "from": "PANAKA",
       "to": "QUI-GON",
-      "text": "You can't take Her Royal Highness there! The Hutts are gangsters If they discovered her",
+      "text": "You can not take Her Royal Highness there! The Hutts are gangsters If they discovered her",
       "where": "INT. NABOO SPACECRAFT - DROID HOLD",
       "number": 15,
       "time": 135
@@ -1796,7 +1796,7 @@
     {
       "from": "QUI-GON",
       "to": "PANAKA",
-      "text": "It would be no different than if we landed on a system controlled by the Federation except the Hutts aren't looking for her, which gives us an advantage.",
+      "text": "It would be no different than if we landed on a system controlled by the Federation except the Hutts are not looking for her, which gives us an advantage.",
       "where": "INT. NABOO SPACECRAFT - DROID HOLD",
       "number": 28,
       "time": 252
@@ -1828,7 +1828,7 @@
     {
       "from": "NUTE",
       "to": "DARTH SIDIOUS",
-      "text": "My Lord, it's impossible to locate the ship. It's out of our range.",
+      "text": "My Lord, it is impossible to locate the ship. it is out of our range.",
       "where": "INT. FEDERATION BATTLESHIP - CONFERENCE ROOM",
       "number": 13,
       "time": 117
@@ -1964,7 +1964,7 @@
     {
       "from": "PADME",
       "to": "JAR JAR",
-      "text": "I'm Padme, I attend Her Highness, You're a Gungan, aren't you? How did you end up here with us?",
+      "text": "I am Padme, I attend Her Highness, you are a Gungan, are not you? How did you end up here with us?",
       "where": "INT. NABOO SPACECRAFT - MAIN AREA",
       "number": 19,
       "time": 171
@@ -1988,7 +1988,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "That's it. Tatooine.",
+      "text": "that is it. Tatooine.",
       "where": "INT. ANBOO SPACECRAFT - COCKPIT",
       "number": 3,
       "time": 27
@@ -1996,7 +1996,7 @@
     {
       "from": "RIC OLIE",
       "to": "QUI-GON",
-      "text": "There's a settlement a spaceport, looks like.",
+      "text": "there is a settlement a spaceport, looks like.",
       "where": "INT. ANBOO SPACECRAFT - COCKPIT",
       "number": 7,
       "time": 63
@@ -2004,7 +2004,7 @@
     {
       "from": "QUI-GON",
       "to": "RIC OLIE",
-      "text": "Land near the outskirts. We don't want to attract any attention.",
+      "text": "Land near the outskirts. We do not want to attract any attention.",
       "where": "INT. ANBOO SPACECRAFT - COCKPIT",
       "number": 11,
       "time": 99
@@ -2036,7 +2036,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "Don't let them send any transmissions.",
+      "text": "do not let them send any transmissions.",
       "where": "EXT. NABOO SPACECRAFT - MAIN AREA",
       "number": 6,
       "time": 54
@@ -2116,7 +2116,7 @@
     {
       "from": "QUI-GON",
       "to": "PADME",
-      "text": "We'll try one of the smaller dealers.",
+      "text": "we will try one of the smaller dealers.",
       "where": "EXT. MOS ESPA - JUNK DEALER PLAZA - DAY",
       "number": 7,
       "time": 63
@@ -2172,7 +2172,7 @@
     {
       "from": "WATTO",
       "to": "ANAKIN",
-      "text": "Chut-Chut! Ganda doe wallya. Me dwana no bata. Soooo, let me take- a thee out back. Ni you'll find what you need.",
+      "text": "Chut-Chut! Ganda doe wallya. Me dwana no bata. Soooo, let me take- a thee out back. Ni you will find what you need.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 22,
       "time": 198
@@ -2180,7 +2180,7 @@
     {
       "from": "QUI-GON",
       "to": "JAR JAR",
-      "text": "Don't touch anything.",
+      "text": "do not touch anything.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 3,
       "time": 27
@@ -2204,7 +2204,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "An angel. I've heard the deep space pilots talk about them. They live on the Moons of Iego I thimk. They are the most beautiful creatures in the universe. They are good and kind, and so pretty they make even the most hardened spice pirate cry.",
+      "text": "An angel. I have heard the deep space pilots talk about them. They live on the Moons of Iego I thimk. They are the most beautiful creatures in the universe. They are good and kind, and so pretty they make even the most hardened spice pirate cry.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 46,
       "time": 414
@@ -2212,7 +2212,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "You're a funny little boy. How do you know so much?",
+      "text": "you are a funny little boy. How do you know so much?",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 11,
       "time": 99
@@ -2220,7 +2220,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I listen to all the traders and star pilots who come through here. I'm a pilot, you know, and someday I'm gonna fly away from this place.",
+      "text": "I listen to all the traders and star pilots who come through here. I am a pilot, you know, and someday I am gonna fly away from this place.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 27,
       "time": 243
@@ -2228,7 +2228,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "You're a pilot?",
+      "text": "you are a pilot?",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 3,
       "time": 27
@@ -2252,7 +2252,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Since I was very little, three, I think. My Mom and I were sold to Gardulla the Hutt, but she lost us, betting on the Podraces, to Watto, who's a lot better master than Gardulla, I think.",
+      "text": "Since I was very little, three, I think. My Mom and I were sold to Gardulla the Hutt, but she lost us, betting on the Podraces, to Watto, who is a lot better master than Gardulla, I think.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 37,
       "time": 333
@@ -2260,7 +2260,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "You're a slave?",
+      "text": "you are a slave?",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 3,
       "time": 27
@@ -2276,7 +2276,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I'm sorry. I don't fully understand. This is a strange world to me.",
+      "text": "I am sorry. I do not fully understand. This is a strange world to me.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 13,
       "time": 117
@@ -2292,7 +2292,7 @@
     {
       "from": "WATTO",
       "to": "QUI-GON",
-      "text": "Here it is a T-14 hyperdrive generator! Thee in luck, I'm the only one hereabouts who has one but thee might as well buy a new ship. It would be cheaper, I think Sying of which, how's thee going to pay for all this?",
+      "text": "Here it is a T-14 hyperdrive generator! Thee in luck, I am the only one hereabouts who has one but thee might as well buy a new ship. It would be cheaper, I think Sying of which, How is thee going to pay for all this?",
       "where": "EXT. WATTO'S JUNK YARD - BEHIND SHOP - DAY",
       "number": 44,
       "time": 396
@@ -2316,7 +2316,7 @@
     {
       "from": "QUI-GON",
       "to": "WATTO",
-      "text": "I don't have anything else. But credits will do fine.",
+      "text": "I do not have anything else. But credits will do fine.",
       "where": "EXT. WATTO'S JUNK YARD - BEHIND SHOP - DAY",
       "number": 10,
       "time": 90
@@ -2324,7 +2324,7 @@
     {
       "from": "WATTO",
       "to": "QUI-GON",
-      "text": "No they won'ta.",
+      "text": "No they will nota.",
       "where": "EXT. WATTO'S JUNK YARD - BEHIND SHOP - DAY",
       "number": 3,
       "time": 27
@@ -2340,7 +2340,7 @@
     {
       "from": "WATTO",
       "to": "QUI-GON",
-      "text": "No, they won'ta. What you think you're some kinda Jedi, waving your hand around like that? I'm a Toydarian. Mind tricks don'ta work on me-only money. No money, no parts! No deal! And no one else has a T-14 hyperdrive, I promise you that.",
+      "text": "No, they will nota. What you think you are some kinda Jedi, waving your hand around like that? I am a Toydarian. Mind tricks do nota work on me-only money. No money, no parts! No deal! And no one else has a T-14 hyperdrive, I promise you that.",
       "where": "EXT. WATTO'S JUNK YARD - BEHIND SHOP - DAY",
       "number": 44,
       "time": 396
@@ -2348,7 +2348,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "wouldn't have lasted long if I weren't so good at fixing things. I'm making my own droid",
+      "text": "would not have lasted long if I weren't so good at fixing things. I am making my own droid",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 17,
       "time": 153
@@ -2356,7 +2356,7 @@
     {
       "from": "QUI-GON",
       "to": "PADME",
-      "text": "We're leaving.",
+      "text": "we are leaving.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 2,
       "time": 18
@@ -2364,7 +2364,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I'm glad I met you, ah",
+      "text": "I am glad I met you, ah",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 6,
       "time": 54
@@ -2372,7 +2372,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I'm glad I met you too.",
+      "text": "I am glad I met you too.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 6,
       "time": 54
@@ -2404,7 +2404,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "You're sure there isn't anything of value left on board?",
+      "text": "you are sure there is not anything of value left on board?",
       "where": "EXT. MOS ESPA - STREET - ALCOVE - DAY",
       "number": 10,
       "time": 90
@@ -2412,7 +2412,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "A few containers of supplies, the Queen's wardrobe, maybe. Not enough for you to barter with. Not in the ammounts you're talking about.",
+      "text": "A few containers of supplies, the Queen's wardrobe, maybe. Not enough for you to barter with. Not in the ammounts you are talking about.",
       "where": "EXT. MOS ESPA - STREET - ALCOVE - DAY",
       "number": 23,
       "time": 207
@@ -2420,7 +2420,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "All right. Another solution will present itself. I'll check back.",
+      "text": "All right. Another solution will present itself. I will check back.",
       "where": "EXT. MOS ESPA - STREET - ALCOVE - DAY",
       "number": 10,
       "time": 90
@@ -2436,7 +2436,7 @@
     {
       "from": "QUI-GON",
       "to": "JAR JAR",
-      "text": "Not likely. We have nothing of value, that's our problem.",
+      "text": "Not likely. We have nothing of value, that is our problem.",
       "where": "EXT. MOS ESPA - STREET - ALCOVE - DAY",
       "number": 10,
       "time": 90
@@ -2612,7 +2612,7 @@
     {
       "from": "PANAKA",
       "to": "CONTROLLER",
-      "text": "We'll be right there.",
+      "text": "we will be right there.",
       "where": "EXT. TATOOINE - DESERT - SPACESHIP - DAY",
       "number": 4,
       "time": 36
@@ -2620,7 +2620,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "Here, you'll like these pallies. Here.",
+      "text": "Here, you will like these pallies. Here.",
       "where": "EXT. MOS ESPA - STREET - FRUIT STAND - DAY",
       "number": 6,
       "time": 54
@@ -2652,7 +2652,7 @@
     {
       "from": "QUI-GON",
       "to": "ANAKIN",
-      "text": "We'll hed back to our ship.",
+      "text": "we will hed back to our ship.",
       "where": "EXT. MOS ESPA - STREET - FRUIT STAND - DAY",
       "number": 6,
       "time": 54
@@ -2676,7 +2676,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "You'll never reach the outskirts in time sandstorms are very, very dangerous. Come with me. Hurry!",
+      "text": "you will never reach the outskirts in time sandstorms are very, very dangerous. Come with me. Hurry!",
       "where": "EXT. MOS ESPA - STREET - FRUIT STAND - DAY",
       "number": 16,
       "time": 144
@@ -2692,7 +2692,7 @@
     {
       "from": "ANAKIN",
       "to": "SHMI",
-      "text": "Mom! Mom! I'm home.",
+      "text": "Mom! Mom! I am home.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 4,
       "time": 36
@@ -2716,7 +2716,7 @@
     {
       "from": "QUI-GON",
       "to": "SHMI",
-      "text": "I'm Qui-Gon Jinn. Your son was kind enough to offer us shelter.",
+      "text": "I am Qui-Gon Jinn. Your son was kind enough to offer us shelter.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 12,
       "time": 108
@@ -2724,7 +2724,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I'm building a droid. You wanna see? Come on. I'll show you 3PO.",
+      "text": "I am building a droid. You wanna see? Come on. I will show you 3PO.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 13,
       "time": 117
@@ -2740,7 +2740,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Isn't he great?! He's not finished yet.",
+      "text": "is not he great?! he is not finished yet.",
       "where": "INT. ANAKIN'S HOVEL - BEDROOM - DAY",
       "number": 7,
       "time": 63
@@ -2748,7 +2748,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "He's wonderful!",
+      "text": "he is wonderful!",
       "where": "INT. ANAKIN'S HOVEL - BEDROOM - DAY",
       "number": 2,
       "time": 18
@@ -2764,7 +2764,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "You reall like him? He's a protocol droid to help Mom. Watch!",
+      "text": "You reall like him? he is a protocol droid to help Mom. Watch!",
       "where": "INT. ANAKIN'S HOVEL - BEDROOM - DAY",
       "number": 12,
       "time": 108
@@ -2772,7 +2772,7 @@
     {
       "from": "THREEPIO",
       "to": "ANAKIN",
-      "text": "How do you do, I am See-Threepio, Human Cyborg Relations. How might I serve you?",
+      "text": "How do you do, I am Threepio, Human Cyborg Relations. How might I serve you?",
       "where": "INT. ANAKIN'S HOVEL - BEDROOM - DAY",
       "number": 15,
       "time": 135
@@ -2780,7 +2780,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "He's perfect.",
+      "text": "he is perfect.",
       "where": "INT. ANAKIN'S HOVEL - BEDROOM - DAY",
       "number": 2,
       "time": 18
@@ -2788,7 +2788,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "When the storm is over, you can see my racer. I'm building a Podracer!",
+      "text": "When the storm is over, you can see my racer. I am building a Podracer!",
       "where": "INT. ANAKIN'S HOVEL - BEDROOM - DAY",
       "number": 14,
       "time": 126
@@ -2804,7 +2804,7 @@
     {
       "from": "THREEPIO",
       "to": "ANAKIN",
-      "text": "I'm not sure this floor is entirely stable.",
+      "text": "I am not sure this floor is entirely stable.",
       "where": "INT. ANAKIN'S HOVEL - BEDROOM - DAY",
       "number": 8,
       "time": 72
@@ -2812,7 +2812,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "Hello. I don't believe we have been introduced.",
+      "text": "Hello. I do not believe we have been introduced.",
       "where": "INT. ANAKIN'S HOVEL - BEDROOM - DAY",
       "number": 8,
       "time": 72
@@ -2876,7 +2876,7 @@
     {
       "from": "OBI-WAN",
       "to": "AMIDALA",
-      "text": "It's a trick. Send no reply Send no transmission of any kind.",
+      "text": "it is a trick. Send no reply Send no transmission of any kind.",
       "where": "INT. NABOO SPACECRAFT - QUEENS CHAMBERS",
       "number": 12,
       "time": 108
@@ -2900,7 +2900,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "Either way, we're running out of time.",
+      "text": "Either way, we are running out of time.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 7,
       "time": 63
@@ -2948,7 +2948,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "I've been working on a scanner to try and locate them, but no luck.",
+      "text": "I have been working on a scanner to try and locate them, but no luck.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 14,
       "time": 126
@@ -2980,7 +2980,7 @@
     {
       "from": "PADME",
       "to": "SHMI",
-      "text": "I can't believe there is still slavery in the galaxy. The Republic's anti-slavery laws",
+      "text": "I can not believe there is still slavery in the galaxy. The Republic's anti-slavery laws",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 14,
       "time": 126
@@ -2988,7 +2988,7 @@
     {
       "from": "SHMI",
       "to": "PADME",
-      "text": "The Republic doesn't exist out here we must survive on our own.",
+      "text": "The Republic does not exist out here we must survive on our own.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 12,
       "time": 108
@@ -3012,7 +3012,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "I'm the only human who can do it.",
+      "text": "I am the only human who can do it.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 8,
       "time": 72
@@ -3028,7 +3028,7 @@
     {
       "from": "QUI-GON",
       "to": "JAR JAR",
-      "text": "Don't do that again.",
+      "text": "do not do that again.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 4,
       "time": 36
@@ -3036,7 +3036,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "Well, ahhh you're a Jedi Knight, aren't you?",
+      "text": "Well, ahhh you are a Jedi Knight, are not you?",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 8,
       "time": 72
@@ -3068,7 +3068,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "I don't think so No one can kill a Jedi Knight.",
+      "text": "I do not think so No one can kill a Jedi Knight.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 11,
       "time": 99
@@ -3092,7 +3092,7 @@
     {
       "from": "QUI-GON",
       "to": "ANAKIN",
-      "text": "No, I'm afraid not",
+      "text": "No, I am afraid not",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 4,
       "time": 36
@@ -3108,7 +3108,7 @@
     {
       "from": "QUI-GON",
       "to": "ANAKIN",
-      "text": "I can see there's no fooling you You mustn't let anyone know about us we're on our way to Coruscant, the central system in the Republic, on a very important mission, and it must be kept secret.",
+      "text": "I can see there is no fooling you You mustn't let anyone know about us we are on our way to Coruscant, the central system in the Republic, on a very important mission, and it must be kept secret.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 37,
       "time": 333
@@ -3124,7 +3124,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Our ship was damaged, and we're stranded here until we can repair it.",
+      "text": "Our ship was damaged, and we are stranded here until we can repair it.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 13,
       "time": 117
@@ -3172,7 +3172,7 @@
     {
       "from": "QUI-GON",
       "to": "SHMI",
-      "text": "Podracing Greed can be a powerful ally if it's used properly.",
+      "text": "Podracing Greed can be a powerful ally if it is used properly.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 11,
       "time": 99
@@ -3180,7 +3180,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "I've built a racer! It's the fastest ever There's a big race tomorrow, on Boonta Eve. You could enter my pod. It's all but finished",
+      "text": "I have built a racer! it is the fastest ever there is a big race tomorrow, on Boonta Eve. You could enter my pod. it is all but finished",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 25,
       "time": 225
@@ -3188,7 +3188,7 @@
     {
       "from": "SHMI",
       "to": "ANAKIN",
-      "text": "Anakin, settle down. Watto won't let you",
+      "text": "Anakin, settle down. Watto will not let you",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 7,
       "time": 63
@@ -3196,7 +3196,7 @@
     {
       "from": "ANAKIN",
       "to": "SHMI",
-      "text": "Watto doesn't know I've built it.",
+      "text": "Watto does not know I have built it.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 6,
       "time": 54
@@ -3204,7 +3204,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "You could make him think it's your's, and you could get him to let me pilot it for you.",
+      "text": "You could make him think it is your's, and you could get him to let me pilot it for you.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 19,
       "time": 171
@@ -3212,7 +3212,7 @@
     {
       "from": "SHMI",
       "to": "ANAKIN",
-      "text": "I don't want you to race, Annie It's awful. I die every time Watto makes you do it.",
+      "text": "I do not want you to race, Annie it is awful. I die every time Watto makes you do it.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 18,
       "time": 162
@@ -3220,7 +3220,7 @@
     {
       "from": "ANAKIN",
       "to": "SHMI",
-      "text": "But Mom, I love it and they need help they're in trouble. The prize money would more than pay for the parts they need.",
+      "text": "But Mom, I love it and they need help they are in trouble. The prize money would more than pay for the parts they need.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 24,
       "time": 216
@@ -3260,7 +3260,7 @@
     {
       "from": "PADME",
       "to": "SHMI",
-      "text": "I'm sure Qui-Gon doesn't want to put your son in danger. We will find another way",
+      "text": "I am sure Qui-Gon does not want to put your son in danger. We will find another way",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 16,
       "time": 144
@@ -3300,7 +3300,7 @@
     {
       "from": "PADME",
       "to": "QUI-GON",
-      "text": "Well, I don't approve.",
+      "text": "Well, I do not approve.",
       "where": "EXT. MOS ESPA - JUNK DEALER PLAZA - DAY",
       "number": 4,
       "time": 36
@@ -3308,7 +3308,7 @@
     {
       "from": "WATTO",
       "to": "QUI-GON",
-      "text": "The boy tells me you wanta sponser hi insa race. You can't afford parts. How can you do this? Not on Republic credits, I think.",
+      "text": "The boy tells me you wanta sponser hi insa race. You can not afford parts. How can you do this? Not on Republic credits, I think.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 25,
       "time": 225
@@ -3332,7 +3332,7 @@
     {
       "from": "QUI-GON",
       "to": "WATTO",
-      "text": "It's in good order, except for the parts we need.",
+      "text": "it is in good order, except for the parts we need.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 10,
       "time": 90
@@ -3348,7 +3348,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "Ahhhh it wasn't my fault really Sebulba flashed me with his vent ports. I actually saved the Pod mostly.",
+      "text": "Ahhhh it was not my fault really Sebulba flashed me with his vent ports. I actually saved the Pod mostly.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 19,
       "time": 171
@@ -3372,7 +3372,7 @@
     {
       "from": "WATTO",
       "to": "QUI-GON",
-      "text": "I hope you didn't kill anyone I know for it. So, you supply the Pod and the entry fee; I supply the boy. We split the winnings fifty-fifty, I think.",
+      "text": "I hope you did not kill anyone I know for it. So, you supply the Pod and the entry fee; I supply the boy. We split the winnings fifty-fifty, I think.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 30,
       "time": 270
@@ -3380,7 +3380,7 @@
     {
       "from": "QUI-GON",
       "to": "WATTO",
-      "text": "Fifty-fifty!?! If it's going to be fifty-fifty, I suggest you front the cash for the entry. If we win, you keep all the winnings, minus the cost of the parts I need If we lose, you keep my ship.",
+      "text": "Fifty-fifty!?! If it is going to be fifty-fifty, I suggest you front the cash for the entry. If we win, you keep all the winnings, minus the cost of the parts I need If we lose, you keep my ship.",
       "where": "INT. WATTO'S JUNK SHOP - DAY",
       "number": 39,
       "time": 351
@@ -3460,7 +3460,7 @@
     {
       "from": "QUI-GON",
       "to": "SHMI",
-      "text": "He can see things before they happen. That's why he appears to have such quick reflexes. It is a Jedi trait.",
+      "text": "He can see things before they happen. that is why he appears to have such quick reflexes. It is a Jedi trait.",
       "where": "EXT MOS ESPA - SLAVE QUARTERS - PORCH - DAY",
       "number": 21,
       "time": 189
@@ -3484,7 +3484,7 @@
     {
       "from": "SHMI",
       "to": "QUI-GON",
-      "text": "There was no father, that I know of I carried him, I gave him birth I can't explain what happened. Can you help him?",
+      "text": "There was no father, that I know of I carried him, I gave him birth I can not explain what happened. Can you help him?",
       "where": "EXT MOS ESPA - SLAVE QUARTERS - PORCH - DAY",
       "number": 24,
       "time": 216
@@ -3492,7 +3492,7 @@
     {
       "from": "QUI-GON",
       "to": "SHMI",
-      "text": "I don't know. I didn't actually come here to free slaves.",
+      "text": "I do not know. I did not actually come here to free slaves.",
       "where": "EXT MOS ESPA - SLAVE QUARTERS - PORCH - DAY",
       "number": 11,
       "time": 99
@@ -3508,7 +3508,7 @@
     {
       "from": "ANAKIN",
       "to": "KITSTER",
-      "text": "This isn't the half of it. I'm entered in the Boonta Race tomorrow!",
+      "text": "This is not the half of it. I am entered in the Boonta Race tomorrow!",
       "where": "EXT. MOS ESPA - SLAVE QUARTERS - BACK YARD - DAY",
       "number": 13,
       "time": 117
@@ -3532,7 +3532,7 @@
     {
       "from": "AMEE",
       "to": "ANAKIN",
-      "text": "You've been working on that thing for years. It's never going to run.",
+      "text": "you have been working on that thing for years. it is never going to run.",
       "where": "EXT. MOS ESPA - SLAVE QUARTERS - BACK YARD - DAY",
       "number": 13,
       "time": 117
@@ -3540,7 +3540,7 @@
     {
       "from": "SEEK",
       "to": "ANAKIN",
-      "text": "Come on, let's go play ball. Keep it up, Annie, and you're gonna be bug squash.",
+      "text": "Come on, let  is go play ball. Keep it up, Annie, and you are gonna be bug squash.",
       "where": "EXT. MOS ESPA - SLAVE QUARTERS - BACK YARD - DAY",
       "number": 16,
       "time": 144
@@ -3580,7 +3580,7 @@
     {
       "from": "KITSTER",
       "to": "ANAKIN",
-      "text": "But you don't even know if this thing will run.",
+      "text": "But you do not even know if this thing will run.",
       "where": "EXT. MOS ESPA - SLAVE QUARTERS - BACK YARD - DAY",
       "number": 10,
       "time": 90
@@ -3596,7 +3596,7 @@
     {
       "from": "QUI-GON",
       "to": "ANAKIN",
-      "text": "I think it's time we found out. Use this power charge.",
+      "text": "I think it is time we found out. Use this power charge.",
       "where": "EXT. MOS ESPA - SLAVE QUARTERS - BACK YARD - DAY",
       "number": 11,
       "time": 99
@@ -3604,7 +3604,7 @@
     {
       "from": "QUI-GON",
       "to": "KITSTER",
-      "text": "Come on, Kitster. Let's move away.",
+      "text": "Come on, Kitster. let  is move away.",
       "where": "EXT. MOS ESPA - SLAVE QUARTERS - BACK YARD - DAY",
       "number": 6,
       "time": 54
@@ -3612,7 +3612,7 @@
     {
       "from": "JAR JAR",
       "to": "ANAKIN",
-      "text": "My mouth. Ani, I'm stuck. My tongue is fat.",
+      "text": "My mouth. Ani, I am stuck. My tongue is fat.",
       "where": "EXT. MOS ESPA - SLAVE QUARTERS - BACK YARD - DAY",
       "number": 9,
       "time": 81
@@ -3620,7 +3620,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "You're quite right. He's very odd indeed.",
+      "text": "you are quite right. he is very odd indeed.",
       "where": "EXT. MOS ESPA - SLAVE QUARTERS - BACK YARD - DAY",
       "number": 7,
       "time": 63
@@ -3652,7 +3652,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "It's working! It's working!",
+      "text": "it is working! it is working!",
       "where": "EXT. MOS ESPA - SLAVE QUARTERS - BACK YARD - DAY",
       "number": 4,
       "time": 36
@@ -3716,7 +3716,7 @@
     {
       "from": "SHMI",
       "to": "ANAKIN",
-      "text": "Annie! I'm not going to tell you again!",
+      "text": "Annie! I am not going to tell you again!",
       "where": "EXT. SLAVE QUARTERS - BALCONY - NIGHT",
       "number": 8,
       "time": 72
@@ -3756,7 +3756,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "Make an analysis of this blood sample I'm sending you.",
+      "text": "Make an analysis of this blood sample I am sending you.",
       "where": "EXT. SLAVE QUARTERS - BALCONY - NIGHT",
       "number": 10,
       "time": 90
@@ -3780,7 +3780,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "The reading is off the chart. Over 20,000. Even Master Yoda doesn't have a midi-chlorian count that high.",
+      "text": "The reading is off the chart. Over 20,000. Even Master Yoda does not have a midi-chlorian count that high.",
       "where": "EXT. SLAVE QUARTERS - BALCONY - NIGHT",
       "number": 19,
       "time": 171
@@ -3804,7 +3804,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "I'm not sure.",
+      "text": "I am not sure.",
       "where": "EXT. SLAVE QUARTERS - BALCONY - NIGHT",
       "number": 3,
       "time": 27
@@ -3820,7 +3820,7 @@
     {
       "from": "QUI-GON",
       "to": "WATTO",
-      "text": "Patienc, my blue friend. You'll have your winnings before the suns set, and we'll be far away from here.",
+      "text": "Patienc, my blue friend. you will have your winnings before the suns set, and we will be far away from here.",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 19,
       "time": 171
@@ -3836,7 +3836,7 @@
     {
       "from": "QUI-GON",
       "to": "WATTO",
-      "text": "You don't think Anakin will win?",
+      "text": "You do not think Anakin will win?",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 6,
       "time": 54
@@ -3844,7 +3844,7 @@
     {
       "from": "WATTO",
       "to": "QUI-GON",
-      "text": "Don't get me wrongo. I have great faith in the boy. He's a credit to your race, but Sebulba there is going to win, I think.",
+      "text": "do not get me wrongo. I have great faith in the boy. he is a credit to your race, but Sebulba there is going to win, I think.",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 26,
       "time": 234
@@ -3860,7 +3860,7 @@
     {
       "from": "WATTO",
       "to": "QUI-GON",
-      "text": "He always wins. I'm betting heavily on Sebulba.",
+      "text": "He always wins. I am betting heavily on Sebulba.",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 8,
       "time": 72
@@ -3868,7 +3868,7 @@
     {
       "from": "QUI-GON",
       "to": "WATTO",
-      "text": "I'll take that bet.",
+      "text": "I will take that bet.",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 4,
       "time": 36
@@ -3884,7 +3884,7 @@
     {
       "from": "QUI-GON",
       "to": "WATTO",
-      "text": "I'll wager my new racing pod against say the boy and his mother.",
+      "text": "I will wager my new racing pod against say the boy and his mother.",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 13,
       "time": 117
@@ -3892,7 +3892,7 @@
     {
       "from": "WATTO",
       "to": "QUI-GON",
-      "text": "A Pod for slaves. I don't think so well, poerhaps. Just one the mother, maybe the boy isn't for sale.",
+      "text": "A Pod for slaves. I do not think so well, poerhaps. Just one the mother, maybe the boy is not for sale.",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 20,
       "time": 180
@@ -3900,7 +3900,7 @@
     {
       "from": "QUI-GON",
       "to": "WATTO",
-      "text": "The boy is small, he can't be worth much.",
+      "text": "The boy is small, he can not be worth much.",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 9,
       "time": 81
@@ -3940,7 +3940,7 @@
     {
       "from": "WATTO",
       "to": "QUI-GON",
-      "text": "We'll let fate decide. Blue it's the boy, red his mother. You won the small toss, outlander, but you won't win the race, so it makes little difference.",
+      "text": "we will let fate decide. Blue it is the boy, red his mother. You won the small toss, outlander, but you will not win the race, so it makes little difference.",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 28,
       "time": 252
@@ -3964,7 +3964,7 @@
     {
       "from": "QUI-GON",
       "to": "ANAKIN",
-      "text": "I'll tell you later.",
+      "text": "I will tell you later.",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 4,
       "time": 36
@@ -4004,7 +4004,7 @@
     {
       "from": "KITSTER",
       "to": "ANAKIN",
-      "text": "This is so wizard! I'm sure you'll do it this time, Annie.",
+      "text": "This is so wizard! I am sure you will do it this time, Annie.",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 12,
       "time": 108
@@ -4028,7 +4028,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "You've never won a race?",
+      "text": "you have never won a race?",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 5,
       "time": 45
@@ -4076,7 +4076,7 @@
     {
       "from": "SPEAKER B",
       "to": "PUBLIC",
-      "text": "That's absolutly right. And a big turnout here, from all corners of the Outer Rim territories. I see the contestants are making their way out onto the starting grid.",
+      "text": "that is absolutly right. And a big turnout here, from all corners of the Outer Rim territories. I see the contestants are making their way out onto the starting grid.",
       "where": "FODE/BEED :",
       "number": 29,
       "time": 261
@@ -4204,7 +4204,7 @@
     {
       "from": "QUI-GON",
       "to": "ANAKIN",
-      "text": "Remember,concentrate on the moment. Feel. Don't think. Trust your instincts.",
+      "text": "Remember,concentrate on the moment. Feel. do not think. Trust your instincts.",
       "where": "EXT. MOS ESPA - ARENA - STARTING GRID - DAY",
       "number": 11,
       "time": 99
@@ -4252,7 +4252,7 @@
     {
       "from": "SPEAKER B",
       "to": "PUBLIC",
-      "text": "Hey, it looks like they're clearing the grid.",
+      "text": "Hey, it looks like they are clearing the grid.",
       "where": "EXT. MOS ESPA - ARENA - STARTING GRID - DAY",
       "number": 8,
       "time": 72
@@ -4268,7 +4268,7 @@
     {
       "from": "QUI-GON",
       "to": "SHMI",
-      "text": "He's fine.",
+      "text": "he is fine.",
       "where": "EXT. MOS ESPA - ARENA - VIEWING PLATFORM - DAY",
       "number": 2,
       "time": 18
@@ -4324,7 +4324,7 @@
     {
       "from": "SPEAKER B",
       "to": "PUBLIC",
-      "text": "And there goes Skywalker He'll be hard pressed to catch up with the leaders today.",
+      "text": "And there goes Skywalker He will be hard pressed to catch up with the leaders today.",
       "where": "EXT. MOS ESPA - ARENA - STARTING GRID - DAY",
       "number": 15,
       "time": 135
@@ -4412,7 +4412,7 @@
     {
       "from": "SPEAKER B",
       "to": "PUBLIC",
-      "text": "It looks like Skywalker is moving up through the field. He's in",
+      "text": "It looks like Skywalker is moving up through the field. he is in",
       "where": "EXT. MOS ESPA - RACETRACK - DAY",
       "number": 12,
       "time": 108
@@ -4468,7 +4468,7 @@
     {
       "from": "SPEAKER B",
       "to": "PUBLIC",
-      "text": "Amazing a controlled thrust and he's back on course! What a move!",
+      "text": "Amazing a controlled thrust and he is back on course! What a move!",
       "where": "EXT. MOS ESPA - RACETRACK - DAY",
       "number": 12,
       "time": 108
@@ -4476,7 +4476,7 @@
     {
       "from": "SPEAKER B",
       "to": "PUBLIC",
-      "text": "He's catching Sebulba.",
+      "text": "he is catching Sebulba.",
       "where": "EXT. MOS ESPA - RACETRACK - DAY",
       "number": 3,
       "time": 27
@@ -4508,7 +4508,7 @@
     {
       "from": "SPEAKER B",
       "to": "PUBLIC",
-      "text": "They're side by side!",
+      "text": "they are side by side!",
       "where": "EXT. MOS ESPA - RACETRACK - DAY",
       "number": 4,
       "time": 36
@@ -4524,7 +4524,7 @@
     {
       "from": "SPEAKER B",
       "to": "PUBLIC",
-      "text": "It's Skywalker! The crowd are going nuts! Oh Ah Oh Ah",
+      "text": "it is Skywalker! The crowd are going nuts! Oh Ah Oh Ah",
       "where": "EXT. MOS ESPA - RACETRACK - DAY",
       "number": 11,
       "time": 99
@@ -4540,7 +4540,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "I can't believe it.",
+      "text": "I can not believe it.",
       "where": "EXT. MOS ESPA - ARENA - PIT AREA - DAY",
       "number": 4,
       "time": 36
@@ -4580,7 +4580,7 @@
     {
       "from": "SHMI",
       "to": "ANAKIN",
-      "text": "It's so wonderful, Annie. You have brought hope to those who have none. I'm so very proud of you",
+      "text": "it is so wonderful, Annie. You have brought hope to those who have none. I am so very proud of you",
       "where": "INT. MOS ESPA - ARENA - MAIN HANGER - DAY",
       "number": 19,
       "time": 171
@@ -4604,7 +4604,7 @@
     {
       "from": "QUI-GON",
       "to": "WATTO",
-      "text": "Whenever you gamble, my friend, eventually you'll lose. Bring the parts to the main hanger. I'll come by your shop later so you can release the boy.",
+      "text": "Whenever you gamble, my friend, eventually you will lose. Bring the parts to the main hanger. I will come by your shop later so you can release the boy.",
       "where": "INT. MOS ESPA - ARENA - PRIVATE BOX - DAY",
       "number": 27,
       "time": 243
@@ -4612,7 +4612,7 @@
     {
       "from": "WATTO",
       "to": "QUI-GON",
-      "text": "You can't have him! It wasn't a fair bet!",
+      "text": "You can not have him! It was not a fair bet!",
       "where": "INT. MOS ESPA - ARENA - PRIVATE BOX - DAY",
       "number": 9,
       "time": 81
@@ -4620,7 +4620,7 @@
     {
       "from": "QUI-GON",
       "to": "WATTO",
-      "text": "Would you like to discuss it with the Hutts I'm sure they can settle this.",
+      "text": "Would you like to discuss it with the Hutts I am sure they can settle this.",
       "where": "INT. MOS ESPA - ARENA - PRIVATE BOX - DAY",
       "number": 15,
       "time": 135
@@ -4636,7 +4636,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "I'm going back some unfinished business. I won't be long.",
+      "text": "I am going back some unfinished business. I will not be long.",
       "where": "EXT. TATOOINE - DESERT - NABOO SPACECRAFT - DAY",
       "number": 10,
       "time": 90
@@ -4644,7 +4644,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "Why do I sense we've picked up another pathetic life form?",
+      "text": "Why do I sense we have picked up another pathetic life form?",
       "where": "EXT. TATOOINE - DESERT - NABOO SPACECRAFT - DAY",
       "number": 11,
       "time": 99
@@ -4652,7 +4652,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "It's the boy who's responsible for getting us these parts. Start getting this hyperdrive generator installed.",
+      "text": "it is the boy who is responsible for getting us these parts. Start getting this hyperdrive generator installed.",
       "where": "EXT. TATOOINE - DESERT - NABOO SPACECRAFT - DAY",
       "number": 16,
       "time": 144
@@ -4660,7 +4660,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "Yes, Master. That shouldn't take long.",
+      "text": "Yes, Master. That should not take long.",
       "where": "EXT. TATOOINE - DESERT - NABOO SPACECRAFT - DAY",
       "number": 6,
       "time": 54
@@ -4692,7 +4692,7 @@
     {
       "from": "SHMI",
       "to": "ANAKIN",
-      "text": "Oh, my goodness, That's wonderful.",
+      "text": "Oh, my goodness, that is wonderful.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 5,
       "time": 45
@@ -4716,7 +4716,7 @@
     {
       "from": "QUI-GON",
       "to": "ANAKIN",
-      "text": "You're no longer a slave.",
+      "text": "you are no longer a slave.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 5,
       "time": 45
@@ -4772,7 +4772,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "But it's what I want. What I've always dreamed about.",
+      "text": "But it is what I want. What I have always dreamed about.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 10,
       "time": 90
@@ -4804,7 +4804,7 @@
     {
       "from": "QUI-GON",
       "to": "ANAKIN",
-      "text": "Then, pack your things. We haven't much time.",
+      "text": "Then, pack your things. We have not much time.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 8,
       "time": 72
@@ -4820,7 +4820,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "What about Mom? Is she free too? You're coming, aren't you, Mom",
+      "text": "What about Mom? Is she free too? you are coming, are not you, Mom",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 12,
       "time": 108
@@ -4828,7 +4828,7 @@
     {
       "from": "QUI-GON",
       "to": "ANAKIN",
-      "text": "I tried to free your mother, Annie, but Watto wouldn't have it.",
+      "text": "I tried to free your mother, Annie, but Watto would not have it.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 12,
       "time": 108
@@ -4836,7 +4836,7 @@
     {
       "from": "ANAKIN",
       "to": "SHMI",
-      "text": "You're coming with us, aren't you, Mom?",
+      "text": "you are coming with us, are not you, Mom?",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 7,
       "time": 63
@@ -4844,7 +4844,7 @@
     {
       "from": "SHMI",
       "to": "ANAKIN",
-      "text": "Son, my place is here. My future is here. It is time for you to let go to let go of me. I cannot go with you.",
+      "text": "Son, my place is here. My future is here. It is time for you to let go to let go of me. I can not go with you.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 27,
       "time": 243
@@ -4852,7 +4852,7 @@
     {
       "from": "ANAKIN",
       "to": "SHMI",
-      "text": "I want to stay with you. I don't want things to change.",
+      "text": "I want to stay with you. I do not want things to change.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 12,
       "time": 108
@@ -4860,7 +4860,7 @@
     {
       "from": "SHMI",
       "to": "ANAKIN",
-      "text": "You can't stop change any more than you can stop the suns from setting. I love you. Now hurry.",
+      "text": "You can not stop change any more than you can stop the suns from setting. I love you. Now hurry.",
       "where": "INT. ANAKIN'S HOVEL - MAIN ROOM - DAY",
       "number": 19,
       "time": 171
@@ -4892,7 +4892,7 @@
     {
       "from": "ANAKIN",
       "to": "THREEPIO",
-      "text": "Well, Threepio, I'm free and I'm going away in a starship",
+      "text": "Well, Threepio, I am free and I am going away in a starship",
       "where": "INT. ANAKIN'S HOVEL - SECOND ROOM - DAY",
       "number": 11,
       "time": 99
@@ -4900,7 +4900,7 @@
     {
       "from": "THREEPIO",
       "to": "ANAKIN",
-      "text": "Master, Annie, you are my maker, and I wish you well. Although I'd like it better if I were a little less naked.",
+      "text": "Master, Annie, you are my maker, and I wish you well. Although I would like it better if I were a little less naked.",
       "where": "INT. ANAKIN'S HOVEL - SECOND ROOM - DAY",
       "number": 23,
       "time": 207
@@ -4908,7 +4908,7 @@
     {
       "from": "ANAKIN",
       "to": "THREEPIO",
-      "text": "I'm sorry I wasn't able to finish you, Threepio give you coverings and all I'm going to miss working on you. You've been a great pal. I'll make sure Mom doesn't sell you or anything.",
+      "text": "I am sorry I was not able to finish you, Threepio give you coverings and all I am going to miss working on you. you have been a great pal. I will make sure Mom does not sell you or anything.",
       "where": "INT. ANAKIN'S HOVEL - SECOND ROOM - DAY",
       "number": 35,
       "time": 315
@@ -4940,7 +4940,7 @@
     {
       "from": "ANAKIN",
       "to": "SHMI",
-      "text": "I can't do it, Mom. I just can't.",
+      "text": "I can not do it, Mom. I just can not.",
       "where": "EXT. MOS ESPA - STREET - SLAVE QUARTERS - DAY",
       "number": 8,
       "time": 72
@@ -4996,7 +4996,7 @@
     {
       "from": "SHMI",
       "to": "ANAKIN",
-      "text": "No matter where you are, my love will be with you. Now be brave, and don't look back don't look back.",
+      "text": "No matter where you are, my love will be with you. Now be brave, and do not look back do not look back.",
       "where": "EXT. MOS ESPA - STREET - SLAVE QUARTERS - DAY",
       "number": 21,
       "time": 189
@@ -5068,7 +5068,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "I don't know but he was well trained in the Jedi arts. My guess is he was after the Queen",
+      "text": "I do not know but he was well trained in the Jedi arts. My guess is he was after the Queen",
       "where": "INT. NABOO SPACECRAFT - HALLWAY",
       "number": 20,
       "time": 180
@@ -5092,7 +5092,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Pleased to meet you. Wow! You're a Jedi too? Pleased to meet you.",
+      "text": "Pleased to meet you. Wow! you are a Jedi too? Pleased to meet you.",
       "where": "INT. NABOO SPACECRAFT - HALLWAY",
       "number": 13,
       "time": 117
@@ -5100,7 +5100,7 @@
     {
       "from": "NUTE",
       "to": "BIBBLE",
-      "text": "Your Queen is lost, your people are starving, and you, Governor, are going to die, much sooner than your people, I'm afraid.",
+      "text": "Your Queen is lost, your people are starving, and you, Governor, are going to die, much sooner than your people, I am afraid.",
       "where": "INT. NABOO PALACE - THRONE ROOM - THEED - NIGHT",
       "number": 22,
       "time": 198
@@ -5108,7 +5108,7 @@
     {
       "from": "BIBBLE",
       "to": "NUTE",
-      "text": "This invasion will gain you nothing. We're a democracy. The people have decided",
+      "text": "This invasion will gain you nothing. we are a democracy. The people have decided",
       "where": "INT. NABOO PALACE - THRONE ROOM - THEED - NIGHT",
       "number": 13,
       "time": 117
@@ -5148,7 +5148,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "It's very cold.",
+      "text": "it is very cold.",
       "where": "INT. NABOO PALACE - THRONE ROOM - THEED - NIGHT",
       "number": 3,
       "time": 27
@@ -5156,7 +5156,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "You're from a warm planet, Annie. Too warm for my taste. Space is cold.",
+      "text": "you are from a warm planet, Annie. Too warm for my taste. Space is cold.",
       "where": "INT. NABOO PALACE - THRONE ROOM - THEED - NIGHT",
       "number": 14,
       "time": 126
@@ -5172,7 +5172,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "The Queen is worried. Her people are suffering dying. She must convince the Senate to intervene, or I'm not sure what will happen.",
+      "text": "The Queen is worried. Her people are suffering dying. She must convince the Senate to intervene, or I am not sure what will happen.",
       "where": "INT. NABOO PALACE - THRONE ROOM - THEED - NIGHT",
       "number": 23,
       "time": 207
@@ -5180,7 +5180,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I'm I'm not sure what's going to happen to me. I dunno if I'll ever see you again. I made this for you. Sou you'd remember me. I carved it out of a japor snippet It will bring you good fortune.",
+      "text": "I am I am not sure what is going to happen to me. I dunno if I will ever see you again. I made this for you. Sou you would remember me. I carved it out of a japor snippet It will bring you good fortune.",
       "where": "INT. NABOO PALACE - THRONE ROOM - THEED - NIGHT",
       "number": 41,
       "time": 369
@@ -5188,7 +5188,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "It's beautiful, but I don't need this to remember you. Many things will change when we reach the capital, Annie. My caring for you will always remain.",
+      "text": "it is beautiful, but I do not need this to remember you. Many things will change when we reach the capital, Annie. My caring for you will always remain.",
       "where": "INT. NABOO PALACE - THRONE ROOM - THEED - NIGHT",
       "number": 27,
       "time": 243
@@ -5212,7 +5212,7 @@
     {
       "from": "RIC OLIE",
       "to": "ANAKIN",
-      "text": "Coruscant the capital of the Republic the entire planet is one big city. There's Chancellor Valorum's shuttle. And look over there. Senator Palpatine is waiting for us.",
+      "text": "Coruscant the capital of the Republic the entire planet is one big city. there is Chancellor Valorum's shuttle. And look over there. Senator Palpatine is waiting for us.",
       "where": "INT. NABOO SPACECRAFT - COCKPIT",
       "number": 27,
       "time": 243
@@ -5220,7 +5220,7 @@
     {
       "from": "PALPATINE",
       "to": "AMIDALA",
-      "text": "It is a great gift to see you alive, Your Majesty. With the communications breakdown, we've been very concerned. I'm anxious to hear your report on the situation. May I present Supreme Chancellor Valorum.",
+      "text": "It is a great gift to see you alive, Your Majesty. With the communications breakdown, we have been very concerned. I am anxious to hear your report on the situation. May I present Supreme Chancellor Valorum.",
       "where": "EXT. CORUSCANT - SENATE LANDING PLATFORM - DAY",
       "number": 34,
       "time": 306
@@ -5244,7 +5244,7 @@
     {
       "from": "VALORUM",
       "to": "AMIDALA",
-      "text": "I must relay to you how distressed everyone is over the currant situation. I've called for a special session of the Senate to hear your position.",
+      "text": "I must relay to you how distressed everyone is over the currant situation. I have called for a special session of the Senate to hear your position.",
       "where": "EXT. CORUSCANT - SENATE LANDING PLATFORM - DAY",
       "number": 26,
       "time": 234
@@ -5348,7 +5348,7 @@
     {
       "from": "AMIDALA",
       "to": "PALPATINE",
-      "text": "There's no time for that. The courts take even longer to decide things than the Senate. Our people are dying, Senator more and more each day. We must do something quickly to stop the Federation.",
+      "text": "there is no time for that. The courts take even longer to decide things than the Senate. Our people are dying, Senator more and more each day. We must do something quickly to stop the Federation.",
       "where": "INT. PALPATINE'S QUARTERS - LIVING AREA - DAY",
       "number": 35,
       "time": 315
@@ -5356,7 +5356,7 @@
     {
       "from": "PALPATINE",
       "to": "AMIDALA",
-      "text": "To be realistic, Your Highness, I'd say we're going to have to accept Federation control for the time being.",
+      "text": "To be realistic, Your Highness, I would say we are going to have to accept Federation control for the time being.",
       "where": "INT. PALPATINE'S QUARTERS - LIVING AREA - DAY",
       "number": 19,
       "time": 171
@@ -5364,7 +5364,7 @@
     {
       "from": "AMIDALA",
       "to": "PALPATINE",
-      "text": "There is something I cannot do.",
+      "text": "There is something I can not do.",
       "where": "INT. PALPATINE'S QUARTERS - LIVING AREA - DAY",
       "number": 6,
       "time": 54
@@ -5460,7 +5460,7 @@
     {
       "from": "MACE WINDU",
       "to": "QUI-GON",
-      "text": "You're referring to the prophesy of the one who will bring balance to the Force you believe it's this boy?",
+      "text": "you are referring to the prophesy of the one who will bring balance to the Force you believe it is this boy?",
       "where": "INT. TEMPLE OF THE JEDI - COUNCIL CHAMBERS - DAY",
       "number": 20,
       "time": 180
@@ -5468,7 +5468,7 @@
     {
       "from": "QUI-GON",
       "to": "MACE WINDU",
-      "text": "I don't pressume",
+      "text": "I do not pressume",
       "where": "INT. TEMPLE OF THE JEDI - COUNCIL CHAMBERS - DAY",
       "number": 3,
       "time": 27
@@ -5516,7 +5516,7 @@
     {
       "from": "RABE",
       "to": "ANAKIN",
-      "text": "I'm sorry, Annie. Padme is not here right now.",
+      "text": "I am sorry, Annie. Padme is not here right now.",
       "where": "INT. QUEENS QUARTERS - CORUSCANT - DAY",
       "number": 9,
       "time": 81
@@ -5540,7 +5540,7 @@
     {
       "from": "AMIDALA",
       "to": "ANAKIN",
-      "text": "I've sent Padme on an errand.",
+      "text": "I have sent Padme on an errand.",
       "where": "INT. QUEENS QUARTERS - CORUSCANT - DAY",
       "number": 6,
       "time": 54
@@ -5548,7 +5548,7 @@
     {
       "from": "ANAKIN",
       "to": "AMIDALA",
-      "text": "I'm going to the Jedi temple to start my training, I hope. I may not see her again and I just wanted to say goodbye.",
+      "text": "I am going to the Jedi temple to start my training, I hope. I may not see her again and I just wanted to say goodbye.",
       "where": "INT. QUEENS QUARTERS - CORUSCANT - DAY",
       "number": 25,
       "time": 225
@@ -5556,7 +5556,7 @@
     {
       "from": "AMIDALA",
       "to": "ANAKIN",
-      "text": "We will tell her for you. We're sure her heart goes with you.",
+      "text": "We will tell her for you. we are sure her heart goes with you.",
       "where": "INT. QUEENS QUARTERS - CORUSCANT - DAY",
       "number": 13,
       "time": 117
@@ -5564,7 +5564,7 @@
     {
       "from": "ANAKIN",
       "to": "AMIDALA",
-      "text": "Thank you, Your Highness. I'm sorry to have disturbed you.",
+      "text": "Thank you, Your Highness. I am sorry to have disturbed you.",
       "where": "INT. QUEENS QUARTERS - CORUSCANT - DAY",
       "number": 10,
       "time": 90
@@ -5612,7 +5612,7 @@
     {
       "from": "PALPATINE",
       "to": "SENAT",
-      "text": "Supreme Chancellor, delegates of the Senate. A tragedy has occured on our peaceful system of Naboo. We have become caugt in a dispute you're all well aware of, which began right here with the taxation of trade routes, and has now engulfed our entire planet in the oppresion of the Trade Federation.",
+      "text": "Supreme Chancellor, delegates of the Senate. A tragedy has occured on our peaceful system of Naboo. We have become caugt in a dispute you are all well aware of, which began right here with the taxation of trade routes, and has now engulfed our entire planet in the oppresion of the Trade Federation.",
       "where": "INT. MAIN ROTUNDA - GALACTIC SENATE - DAY",
       "number": 52,
       "time": 468
@@ -5732,7 +5732,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "Don't defy the Council, Master not again.",
+      "text": "do not defy the Council, Master not again.",
       "where": "EXT. PALACE OF THE JEDI - BALCONY - SUNSET",
       "number": 7,
       "time": 63
@@ -5844,7 +5844,7 @@
     {
       "from": "ANAKIN",
       "to": "YODA",
-      "text": "What's that got to do with anything?",
+      "text": "what is that got to do with anything?",
       "where": "INT. PALACE OF THE JEDI - COUNCIL CHAMBERS - SUNSET",
       "number": 7,
       "time": 63
@@ -5868,7 +5868,7 @@
     {
       "from": "AMIDALA",
       "to": "JAR JAR",
-      "text": "I don't know.",
+      "text": "I do not know.",
       "where": "INT. PALPATINES QUARTERS - SUNSET",
       "number": 3,
       "time": 27
@@ -5996,7 +5996,7 @@
     {
       "from": "PALPATINE",
       "to": "AMIDALA",
-      "text": "Please, Your Majesty, stay here where it's safe.",
+      "text": "Please, Your Majesty, stay here where it is safe.",
       "where": "INT. PALPATINES QUARTERS - SUNSET",
       "number": 8,
       "time": 72
@@ -6004,7 +6004,7 @@
     {
       "from": "AMIDALA",
       "to": "PALPATINE",
-      "text": "No place is safe, if the Senate doesn't condemn this invasion. It is clear to me now that the Republic no longer functions as a democracy. If you win the election, Senator, I know you will do everything possible to stop the Federation. I pray you will bring sanity and compassion back to the Senate.",
+      "text": "No place is safe, if the Senate does not condemn this invasion. It is clear to me now that the Republic no longer functions as a democracy. If you win the election, Senator, I know you will do everything possible to stop the Federation. I pray you will bring sanity and compassion back to the Senate.",
       "where": "INT. PALPATINES QUARTERS - SUNSET",
       "number": 55,
       "time": 495
@@ -6020,7 +6020,7 @@
     {
       "from": "QUI-GON",
       "to": "KI-ADI",
-      "text": "He's to be trained, then.",
+      "text": "he is to be trained, then.",
       "where": "INT. TEMPLE OF THE JEDI - COUNCIL CHAMBERS - TWILIGHT",
       "number": 5,
       "time": 45
@@ -6180,7 +6180,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "The boy is dangerous they all sense it. Why can't you?",
+      "text": "The boy is dangerous they all sense it. Why can not you?",
       "where": "EXT. CORUSCANT - SENATE LANDING PLATFORM - NIGHT",
       "number": 11,
       "time": 99
@@ -6212,7 +6212,7 @@
     {
       "from": "QUI-GON",
       "to": "ANAKIN",
-      "text": "You won't be, Annie I'm not allowed to train you, so I want you to watch me and be mindful always remember, your focus determines your reality. Stay close to me and you will be safe.",
+      "text": "You will not be, Annie I am not allowed to train you, so I want you to watch me and be mindful always remember, your focus determines your reality. Stay close to me and you will be safe.",
       "where": "EXT. CORUSCANT - SENATE LANDING PLATFORM - NIGHT",
       "number": 36,
       "time": 324
@@ -6220,7 +6220,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "Master, sir I heard Yoda talking about midi-chlorians.I've been wondering. What are midi-chlorians?",
+      "text": "Master, sir I heard Yoda talking about midi-chlorians.I have been wondering. What are midi-chlorians?",
       "where": "EXT. CORUSCANT - SENATE LANDING PLATFORM - NIGHT",
       "number": 14,
       "time": 126
@@ -6268,7 +6268,7 @@
     {
       "from": "ANAKIN",
       "to": "QUI-GON",
-      "text": "I don't understand.",
+      "text": "I do not understand.",
       "where": "EXT. CORUSCANT - SENATE LANDING PLATFORM - NIGHT",
       "number": 3,
       "time": 27
@@ -6404,7 +6404,7 @@
     {
       "from": "QUI-GON",
       "to": "AMIDALA",
-      "text": "I agree I'm not sure what you hope to accomplish by this.",
+      "text": "I agree I am not sure what you hope to accomplish by this.",
       "where": "INT. NABOO SPACECRAFT - QUEEN'S CHAMBERS",
       "number": 12,
       "time": 108
@@ -6412,7 +6412,7 @@
     {
       "from": "AMIDALA",
       "to": "QUI-GON",
-      "text": "I'm going to take back what's ours.",
+      "text": "I am going to take back what is ours.",
       "where": "INT. NABOO SPACECRAFT - QUEEN'S CHAMBERS",
       "number": 7,
       "time": 63
@@ -6428,7 +6428,7 @@
     {
       "from": "QUI-GON",
       "to": "AMIDALA",
-      "text": "I cannot fight a war for you, Your Highness, only protect you.",
+      "text": "I can not fight a war for you, Your Highness, only protect you.",
       "where": "INT. NABOO SPACECRAFT - QUEEN'S CHAMBERS",
       "number": 12,
       "time": 108
@@ -6476,7 +6476,7 @@
     {
       "from": "PANAKA",
       "to": "OBI-WAN",
-      "text": "They've probably spotted us.",
+      "text": "they have probably spotted us.",
       "where": "INT. NABOO CRUISER COCKPIT - DAY",
       "number": 4,
       "time": 36
@@ -6484,7 +6484,7 @@
     {
       "from": "OBI-WAN",
       "to": "PANAKA",
-      "text": "We haven't much time.",
+      "text": "We have not much time.",
       "where": "INT. NABOO CRUISER COCKPIT - DAY",
       "number": 4,
       "time": 36
@@ -6516,7 +6516,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "The Gungans will not easily be swayed, and we cannot use our power to help her.",
+      "text": "The Gungans will not easily be swayed, and we can not use our power to help her.",
       "where": "EXT. NABOO SWAMP - DAY",
       "number": 16,
       "time": 144
@@ -6524,7 +6524,7 @@
     {
       "from": "OBI-WAN",
       "to": "QUI-GON",
-      "text": "I'm I'm sorry for my behavior, Master. It is not my place to disagree with you about the boy. I am grateful you think I am ready for the trials.",
+      "text": "I am I am sorry for my behavior, Master. It is not my place to disagree with you about the boy. I am grateful you think I am ready for the trials.",
       "where": "EXT. NABOO SWAMP - DAY",
       "number": 30,
       "time": 270
@@ -6588,7 +6588,7 @@
     {
       "from": "BOSS NASS",
       "to": "JAR JAR",
-      "text": "Jar Jar. Who's da uss-en others?",
+      "text": "Jar Jar. who is da uss-en others?",
       "where": "EXT. NABOO SACRED TEMPLE RUINS - DAY",
       "number": 6,
       "time": 54
@@ -6652,7 +6652,7 @@
     {
       "from": "NUTE",
       "to": "DARTH SIDIOUS",
-      "text": "we've sent out patrols. We've already located their starship in the swamp It won't be long, My Lord.",
+      "text": "we have sent out patrols. we have already located their starship in the swamp It will not be long, My Lord.",
       "where": "INT. NABOO PALACE - THRONE ROOM - DAY",
       "number": 18,
       "time": 162
@@ -6660,7 +6660,7 @@
     {
       "from": "DARTH SIDIOUS",
       "to": "NUTE",
-      "text": "This is an unexpected move for her. It's too aggresive Lord Maul, be mindful.",
+      "text": "This is an unexpected move for her. it is too aggresive Lord Maul, be mindful.",
       "where": "INT. NABOO PALACE - THRONE ROOM - DAY",
       "number": 14,
       "time": 126
@@ -6684,7 +6684,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "All right. They're here!",
+      "text": "All right. they are here!",
       "where": "EXT. NABOO EDGE OF SWAMP/ GRASS PLAINS - DAY",
       "number": 4,
       "time": 36
@@ -6756,7 +6756,7 @@
     {
       "from": "PANAKA",
       "to": "PADME",
-      "text": "The difficulty's getting into the throne room. Once we're inside, we shouldn't have a problem.",
+      "text": "The difficulty's getting into the throne room. Once we are inside, we should not have a problem.",
       "where": "EXT. NABOO EDGE OF SWAMP/ GRASS PLAINS - DAY",
       "number": 15,
       "time": 135
@@ -6788,7 +6788,7 @@
     {
       "from": "QUI-GON",
       "to": "PADME",
-      "text": "A well-conceived plan. However, there's great risk. The weapons on your fighters may not penetrate the shields on the control ship.",
+      "text": "A well-conceived plan. However, there is great risk. The weapons on your fighters may not penetrate the shields on the control ship.",
       "where": "EXT. NABOO EDGE OF SWAMP/ GRASS PLAINS - DAY",
       "number": 21,
       "time": 189
@@ -6796,7 +6796,7 @@
     {
       "from": "OBI-WAN",
       "to": "PADME",
-      "text": "And there's an even bigger danger. If the Vicroy escapes, Your Highness, he will return with another droid army.",
+      "text": "And there is an even bigger danger. If the Vicroy escapes, Your Highness, he will return with another droid army.",
       "where": "EXT. NABOO EDGE OF SWAMP/ GRASS PLAINS - DAY",
       "number": 19,
       "time": 171
@@ -6980,7 +6980,7 @@
     {
       "from": "QUI-GON",
       "to": "AMIDALA",
-      "text": "We'll handle this.",
+      "text": "we will handle this.",
       "where": "INT. THEED - CENTRAL HANGER - DAY",
       "number": 3,
       "time": 27
@@ -7012,7 +7012,7 @@
     {
       "from": "ANAKIN",
       "to": "ARTOO",
-      "text": "Where's the trigger? Oops, wrong one Maybe this one",
+      "text": "where is the trigger? Oops, wrong one Maybe this one",
       "where": "INT. THEED - CENTRAL HANGER - DAY",
       "number": 9,
       "time": 81
@@ -7028,7 +7028,7 @@
     {
       "from": "ANAKIN",
       "to": "ARTOO",
-      "text": "It's on automatic pilot. Try to override it.",
+      "text": "it is on automatic pilot. Try to override it.",
       "where": "INT. THEED - CENTRAL HANGER - DAY",
       "number": 8,
       "time": 72
@@ -7044,7 +7044,7 @@
     {
       "from": "ANAKIN",
       "to": "ARTOO",
-      "text": "Look, there they are ! There they are! That's where the autopilot is taking us.",
+      "text": "Look, there they are ! There they are! that is where the autopilot is taking us.",
       "where": "INT. NABOO STARFIGHTER - COCKPIT - SPACE",
       "number": 15,
       "time": 135
@@ -7052,7 +7052,7 @@
     {
       "from": "PADME",
       "to": "PANAKA",
-      "text": "We don't have time for this, Captain.",
+      "text": "We do not have time for this, Captain.",
       "where": "INT. THEED - PALACE - HALLWAY - DAY",
       "number": 7,
       "time": 63
@@ -7084,7 +7084,7 @@
     {
       "from": "ANAKIN",
       "to": "ARTOO",
-      "text": "Oops! ARTOO, get us off Autopilot! It's gonna get us both killed.",
+      "text": "Oops! ARTOO, get us off Autopilot! it is gonna get us both killed.",
       "where": "INT. NABOO STARFIGHTER - COCKPIT - SPACE",
       "number": 12,
       "time": 108
@@ -7100,7 +7100,7 @@
     {
       "from": "ANAKIN",
       "to": "ARTOO",
-      "text": "Yes I've got control. You did it, ARTOO!",
+      "text": "Yes I have got control. You did it, ARTOO!",
       "where": "INT. NABOO STARFIGHTER - COCKPIT - SPACE",
       "number": 8,
       "time": 72
@@ -7116,7 +7116,7 @@
     {
       "from": "ANAKIN",
       "to": "ARTOO",
-      "text": "Go back!?! Qui-Gon told me to stay in this cockpit and that's what I'm gonna do. Now c'mon!",
+      "text": "Go back!?! Qui-Gon told me to stay in this cockpit and that is what I am gonna do. Now c'mon!",
       "where": "INT. NABOO STARFIGHTER - COCKPIT - SPACE",
       "number": 18,
       "time": 162
@@ -7132,7 +7132,7 @@
     {
       "from": "ANAKIN",
       "to": "ARTOO",
-      "text": "I'll try spinning, that's a good trick.",
+      "text": "I will try spinning, that is a good trick.",
       "where": "INT. NABOO STARFIGHTER - COCKPIT - SPACE",
       "number": 7,
       "time": 63
@@ -7148,7 +7148,7 @@
     {
       "from": "ANAKIN",
       "to": "ARTOO",
-      "text": "I know we're in trouble! Hang on! The way out of this mess is the way we got into it.",
+      "text": "I know we are in trouble! Hang on! The way out of this mess is the way we got into it.",
       "where": "INT. NABOO STARFIGHTER - COCKPIT - SPACE",
       "number": 20,
       "time": 180
@@ -7188,7 +7188,7 @@
     {
       "from": "ANAKIN",
       "to": "ARTOO",
-      "text": "We're hit!",
+      "text": "we are hit!",
       "where": "INT. NABOO STARFIGHTER - COCKPIT - SPACE",
       "number": 2,
       "time": 18
@@ -7204,7 +7204,7 @@
     {
       "from": "ANAKIN",
       "to": "ARTOO",
-      "text": "I'm trying to stop! I'm trying to stop! Whoa!",
+      "text": "I am trying to stop! I am trying to stop! Whoa!",
       "where": "INT. NABOO STARFIGHTER - COCKPIT - SPACE",
       "number": 9,
       "time": 81
@@ -7260,7 +7260,7 @@
     {
       "from": "SABE",
       "to": "NUTE",
-      "text": "I will not be signing any treaty, Viceroy, because you've lost!",
+      "text": "I will not be signing any treaty, Viceroy, because you have lost!",
       "where": "INT. THED - PALACE THRONE ROOM - DAY",
       "number": 11,
       "time": 99
@@ -7284,7 +7284,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "It is too late It's",
+      "text": "It is too late it is",
       "where": "INT. THEED - POWER GENERATOR - MELTING PIT",
       "number": 5,
       "time": 45
@@ -7300,7 +7300,7 @@
     {
       "from": "QUI-GON",
       "to": "OBI-WAN",
-      "text": "Obi-Wan promise promise me you'll train the boy",
+      "text": "Obi-Wan promise promise me you will train the boy",
       "where": "INT. THEED - POWER GENERATOR - MELTING PIT",
       "number": 8,
       "time": 72
@@ -7340,7 +7340,7 @@
     {
       "from": "ANAKIN",
       "to": "ARTOO",
-      "text": "Let's get outta here.",
+      "text": "let  is get outta here.",
       "where": "INT. NABOO STARFIGHTER - COCKPIT - FEDERATION HANGER",
       "number": 4,
       "time": 36
@@ -7372,7 +7372,7 @@
     {
       "from": "TEY HOW",
       "to": "DOFINE",
-      "text": "Sir, we're losing power There is some problem with the main reactor",
+      "text": "Sir, we are losing power There is some problem with the main reactor",
       "where": "INT. FEDERATION BATTLESHIP - BRIDGE",
       "number": 12,
       "time": 108
@@ -7388,7 +7388,7 @@
     {
       "from": "REPUBLIC PILOT",
       "to": "RIC OLIE",
-      "text": "What's that? It's blowing up from the inside.",
+      "text": "what is that? it is blowing up from the inside.",
       "where": "INT. NABOO FIGHTER - COCKPIT - SPACE",
       "number": 8,
       "time": 72
@@ -7396,7 +7396,7 @@
     {
       "from": "RIC OLIE",
       "to": "REPUBLIC PILOT",
-      "text": "I don't know, we didn't hit it.",
+      "text": "I do not know, we did not hit it.",
       "where": "INT. NABOO FIGHTER - COCKPIT - SPACE",
       "number": 7,
       "time": 63
@@ -7476,7 +7476,7 @@
     {
       "from": "PALPATINE",
       "to": "AMIDALA",
-      "text": "It's good to be home. Your boldness has saved our people, Your Majesty. It is you who should be congratulated. Together we shall bring peace and prosperity to the Republic.",
+      "text": "it is good to be home. Your boldness has saved our people, Your Majesty. It is you who should be congratulated. Together we shall bring peace and prosperity to the Republic.",
       "where": "INT. MAIN HANGER - COURTYARD - DAY",
       "number": 30,
       "time": 270
