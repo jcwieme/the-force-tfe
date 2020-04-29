@@ -36,7 +36,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Not this time. There's too much at stake. We need help.",
+      "text": "Not this time. there is too much at stake. We need help.",
       "where": "6 INT. OBI-WAN'S STARFIGHTER COCKPIT-SPACE",
       "number": 11,
       "time": 99
@@ -68,7 +68,7 @@
     {
       "from": "ODD BALL",
       "to": "OBI-WAN",
-      "text": "We're on your tail, General Kenobi. Set S-foils in attack position.",
+      "text": "we are on your tail, General Kenobi. Set S-foils in attack position.",
       "where": "7 INT. ODD BALL'S FIGHTER COCKPIT-SPACE",
       "number": 11,
       "time": 99
@@ -92,7 +92,7 @@
     {
       "from": "ODD BALL",
       "to": "OBI-WAN",
-      "text": "They're all over me. Get them off my",
+      "text": "they are all over me. Get them off my",
       "where": "8 INT. ANAKIN'S FIGHTER COCKPIT-SPACE",
       "number": 8,
       "time": 72
@@ -100,7 +100,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "I'm gonna go help them out.",
+      "text": "I am gonna go help them out.",
       "where": "8 INT. ANAKIN'S FIGHTER COCKPIT-SPACE",
       "number": 6,
       "time": 54
@@ -132,7 +132,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "They're coming around!",
+      "text": "they are coming around!",
       "where": "8 INT. ANAKIN'S FIGHTER COCKPIT-SPACE",
       "number": 3,
       "time": 27
@@ -188,7 +188,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Flying is for droids. I'm hit! Anakin?",
+      "text": "Flying is for droids. I am hit! Anakin?",
       "where": "8 INT. ANAKIN'S FIGHTER COCKPIT-SPACE",
       "number": 7,
       "time": 63
@@ -220,7 +220,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Oh dear. They're shutting down all the controls.",
+      "text": "Oh dear. they are shutting down all the controls.",
       "where": "8 INT. ANAKIN'S FIGHTER COCKPIT-SPACE",
       "number": 8,
       "time": 72
@@ -236,7 +236,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "The mission. Get to the Command Ship. Get the Chancellor! I'm running out of tricks here.",
+      "text": "The mission. Get to the Command Ship. Get the Chancellor! I am running out of tricks here.",
       "where": "8 INT. ANAKIN'S FIGHTER COCKPIT-SPACE",
       "number": 16,
       "time": 144
@@ -252,7 +252,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Anakin, hold your fire hold your fire. You're not helping here.",
+      "text": "Anakin, hold your fire hold your fire. you are not helping here.",
       "where": "8 INT. ANAKIN'S FIGHTER COCKPIT-SPACE",
       "number": 11,
       "time": 99
@@ -268,7 +268,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Wait wait I can't see a thing! My cockpit's fogging. They're all over me, Anakin.",
+      "text": "Wait wait I can not see a thing! My cockpit is fogging. they are all over me, Anakin.",
       "where": "8 INT. ANAKIN'S FIGHTER COCKPIT-SPACE",
       "number": 15,
       "time": 135
@@ -284,7 +284,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Hold on, Anakin. You're going to get us both killed! Get out of here. There's nothing more you can do.",
+      "text": "Hold on, Anakin. you are going to get us both killed! Get out of here. there is nothing more you can do.",
       "where": "8 INT. ANAKIN'S FIGHTER COCKPIT-SPACE",
       "number": 20,
       "time": 180
@@ -292,7 +292,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "I'm not leaving without you, Master.",
+      "text": "I am not leaving without you, Master.",
       "where": "8 INT. ANAKIN'S FIGHTER COCKPIT-SPACE",
       "number": 6,
       "time": 54
@@ -411,7 +411,7 @@
     },
     {
       "from": "OBI-WAN",
-      "to": "OBI-WAN",
+      "to": "ANAKIN",
       "text": "The Chancellor's signal is coming from right there. The observation platform at the top of that spire.",
       "where": "9 INT. MAIN HANGAR-TRADE FEDERATION CRUISER",
       "number": 17,
@@ -484,7 +484,7 @@
     {
       "from": "GRIEVOUS",
       "to": "CAPTAIN TRADE",
-      "text": "What's the situation, Captain?",
+      "text": "what is the situation, Captain?",
       "where": "10 INT. BRIDGE-TRADE FEDERATION CRUISER",
       "number": 4,
       "time": 36
@@ -540,7 +540,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Well, there's more than one way out of here.",
+      "text": "Well, there is more than one way out of here.",
       "where": "22 INT. ELEVATOR-TRADE FEDERATION CRUISER",
       "number": 9,
       "time": 81
@@ -548,7 +548,7 @@
     {
       "from": "OBI-WAN",
       "to": "ARTOO",
-      "text": "We don't want to get out, we want to get moving. ARTOO ARTOO. Do you copy? Activate elevator 31174",
+      "text": "We do not want to get out, we want to get moving. ARTOO ARTOO. Do you copy? Activate elevator 31174",
       "where": "22 INT. ELEVATOR-TRADE FEDERATION CRUISER",
       "number": 19,
       "time": 171
@@ -596,7 +596,7 @@
     {
       "from": "OBI-WAN",
       "to": "ARTOO",
-      "text": "Now, that's better",
+      "text": "Now, that is better",
       "where": "24 INT. ELEVATOR-TRADE FEDERATION CRUISER",
       "number": 3,
       "time": 27
@@ -604,7 +604,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Oh, it's you",
+      "text": "Oh, it is you",
       "where": "34 INT. ELEVATOR SHAFT-TRADE FEDERATION CRUISER",
       "number": 3,
       "time": 27
@@ -628,7 +628,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "No loose wire jokes He's doing the best he can.",
+      "text": "No loose wire jokes he is doing the best he can.",
       "where": "34 INT. ELEVATOR SHAFT-TRADE FEDERATION CRUISER",
       "number": 10,
       "time": 90
@@ -644,7 +644,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "He's trying!",
+      "text": "he is trying!",
       "where": "34 INT. ELEVATOR SHAFT-TRADE FEDERATION CRUISER",
       "number": 2,
       "time": 18
@@ -652,7 +652,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "I didn't say anything!",
+      "text": "I did not say anything!",
       "where": "34 INT. ELEVATOR SHAFT-TRADE FEDERATION CRUISER",
       "number": 4,
       "time": 36
@@ -700,7 +700,7 @@
     {
       "from": "PALPATINE",
       "to": "OBI-WAN",
-      "text": "Get help! You're no match for him. He's a Sith Lord.",
+      "text": "Get help! you are no match for him. he is a Sith Lord.",
       "where": "38 INT. GENERAL'S QUARTER'S-TRADE FEDERATION CRUISER",
       "number": 11,
       "time": 99
@@ -716,7 +716,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "OBI-WAN",
-      "text": "Your swords, please, Master Jedi. We don't want to make a mess of things in front of the Chancellor.",
+      "text": "Your swords, please, Master Jedi. We do not want to make a mess of things in front of the Chancellor.",
       "where": "38 INT. GENERAL'S QUARTER'S-TRADE FEDERATION CRUISER",
       "number": 19,
       "time": 171
@@ -724,7 +724,7 @@
     {
       "from": "OBI-WAN",
       "to": "COUNT DOOKU",
-      "text": "You won't get away this time, Dooku.",
+      "text": "You will not get away this time, Dooku.",
       "where": "38 INT. GENERAL'S QUARTER'S-TRADE FEDERATION CRUISER",
       "number": 7,
       "time": 63
@@ -732,7 +732,7 @@
     {
       "from": "COUNT DOOKU",
       "to": "ANAKIN",
-      "text": "I've been looking forward to this.",
+      "text": "I have been looking forward to this.",
       "where": "38 INT. GENERAL'S QUARTER'S-TRADE FEDERATION CRUISER",
       "number": 6,
       "time": 54
@@ -772,7 +772,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "I shouldn't",
+      "text": "I should not",
       "where": "39 INT. GENERAL'S QUARTERS-TRADE FEDERATION CRUISER",
       "number": 2,
       "time": 18
@@ -788,7 +788,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "I couldn't stop myself.",
+      "text": "I could not stop myself.",
       "where": "39 INT. GENERAL'S QUARTERS-TRADE FEDERATION CRUISER",
       "number": 4,
       "time": 36
@@ -812,7 +812,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "I shouldn't have done that, Chancellor. It's not the Jedi way.",
+      "text": "I should not have done that, Chancellor. it is not the Jedi way.",
       "where": "39 INT. GENERAL'S QUARTERS-TRADE FEDERATION CRUISER",
       "number": 11,
       "time": 99
@@ -820,7 +820,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "It is only natural. He cut off your arm, and you wanted revenge. It wasn't the first time, Anakin. Remember what you told me about your mother and the Sand People. Now, we must leave before more security droids arrive.",
+      "text": "It is only natural. He cut off your arm, and you wanted revenge. It was not the first time, Anakin. Remember what you told me about your mother and the Sand People. Now, we must leave before more security droids arrive.",
       "where": "39 INT. GENERAL'S QUARTERS-TRADE FEDERATION CRUISER",
       "number": 40,
       "time": 360
@@ -828,7 +828,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "Anakin, there is no time. We must get off the ship before it's too late.",
+      "text": "Anakin, there is no time. We must get off the ship before it is too late.",
       "where": "39 INT. GENERAL'S QUARTERS-TRADE FEDERATION CRUISER",
       "number": 15,
       "time": 135
@@ -844,7 +844,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "Leave him, or we'll never make it.",
+      "text": "Leave him, or we will never make it.",
       "where": "39 INT. GENERAL'S QUARTERS-TRADE FEDERATION CRUISER",
       "number": 7,
       "time": 63
@@ -916,7 +916,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Easy . We're in a bit of a situation.",
+      "text": "Easy . we are in a bit of a situation.",
       "where": "53 INT. ELEVATOR SHAFT, VERTICAL-TRADE FEDERATION CRUISER",
       "number": 8,
       "time": 72
@@ -964,7 +964,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Let's see if we can find something in the hangar bay that's still flyable. Come on.",
+      "text": "let  is see if we can find something in the hangar bay that is still flyable. Come on.",
       "where": "54 INT. ELEVATOR LOBBY-TRADE FEDERATION CRUISER",
       "number": 16,
       "time": 144
@@ -996,7 +996,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Wait a minute, how'd this happen! We're smarter than this.",
+      "text": "Wait a minute, how'd this happen! we are smarter than this.",
       "where": "61 INT. HALLWAY-TRADE FEDERATION CRUISER",
       "number": 10,
       "time": 90
@@ -1020,7 +1020,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Patience! That's your plan, is it?",
+      "text": "Patience! that is your plan, is it?",
       "where": "61 INT. HALLWAY-TRADE FEDERATION CRUISER",
       "number": 6,
       "time": 54
@@ -1028,7 +1028,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Yes, ARTOO will be along in a few moments and he'll release the ray shields",
+      "text": "Yes, ARTOO will be along in a few moments and He will release the ray shields",
       "where": "61 INT. HALLWAY-TRADE FEDERATION CRUISER",
       "number": 15,
       "time": 135
@@ -1060,7 +1060,7 @@
     {
       "from": "GRIEVOUS",
       "to": "OBI-WAN",
-      "text": "Oh yes. General Kenobi, the Negotiator. We've been waiting for you. That wasn't much of a rescue.",
+      "text": "Oh yes. General Kenobi, the Negotiator. we have been waiting for you. That was not much of a rescue.",
       "where": "62 EXT. BRIDGE-TRADE FEDERATION CRUISER",
       "number": 17,
       "time": 153
@@ -1076,7 +1076,7 @@
     {
       "from": "ANAKIN",
       "to": "GRIEVOUS",
-      "text": "General Grievous Supreme Commander of the Droid Armies. You're shorter than I expected.",
+      "text": "General Grievous Supreme Commander of the Droid Armies. you are shorter than I expected.",
       "where": "62 EXT. BRIDGE-TRADE FEDERATION CRUISER",
       "number": 13,
       "time": 117
@@ -1108,7 +1108,7 @@
     {
       "from": "OBI-WAN",
       "to": "GRIEVOUS",
-      "text": "Not this time. And this time you won't escape.",
+      "text": "Not this time. And this time you will not escape.",
       "where": "62 EXT. BRIDGE-TRADE FEDERATION CRUISER",
       "number": 9,
       "time": 81
@@ -1156,7 +1156,7 @@
     {
       "from": "GRIEVOUS",
       "to": "PILOT DROID",
-      "text": "Stay on course Don't bother with them. Keep the ship in orbit.",
+      "text": "Stay on course do not bother with them. Keep the ship in orbit.",
       "where": "62 EXT. BRIDGE-TRADE FEDERATION CRUISER",
       "number": 12,
       "time": 108
@@ -1188,7 +1188,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "You mean, do I know how to land what's left of this thing?",
+      "text": "You mean, do I know how to land what is left of this thing?",
       "where": "67 INT. BRIDGE-TRADE FEDERATION CRUISER",
       "number": 13,
       "time": 117
@@ -1204,7 +1204,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Under the circumstances, I'd say the ability to pilot this thing is irrelevant. Strap yourselves in.",
+      "text": "Under the circumstances, I would say the ability to pilot this thing is irrelevant. Strap yourselves in.",
       "where": "67 INT. BRIDGE-TRADE FEDERATION CRUISER",
       "number": 16,
       "time": 144
@@ -1244,7 +1244,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Not to worry, we're still flying half the ship.",
+      "text": "Not to worry, we are still flying half the ship.",
       "where": "67 INT. BRIDGE-TRADE FEDERATION CRUISER",
       "number": 9,
       "time": 81
@@ -1252,7 +1252,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Now we're really picking up speed I'm going to shift a few degrees and see if I can slow us down.",
+      "text": "Now we are really picking up speed I am going to shift a few degrees and see if I can slow us down.",
       "where": "67 INT. BRIDGE-TRADE FEDERATION CRUISER",
       "number": 21,
       "time": 189
@@ -1260,7 +1260,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Eight plus sixty-forty. Eight plus sixty-twenty. Eight plus sixty. Temp ten thousand, nine thousand we're in the atmosphere",
+      "text": "Eight plus sixty-forty. Eight plus sixty-twenty. Eight plus sixty. Temp ten thousand, nine thousand we are in the atmosphere",
       "where": "67 INT. BRIDGE-TRADE FEDERATION CRUISER",
       "number": 18,
       "time": 162
@@ -1308,7 +1308,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "We're coming in too hot.",
+      "text": "we are coming in too hot.",
       "where": "67 INT. BRIDGE-TRADE FEDERATION CRUISER",
       "number": 5,
       "time": 45
@@ -1332,7 +1332,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Oh no. I'm not brave enough for politics. I have to report to the Council. Besides, someone needs to be the poster boy.",
+      "text": "Oh no. I am not brave enough for politics. I have to report to the Council. Besides, someone needs to be the poster boy.",
       "where": "69 EXT. CORUSCANT-SENATE OFFICE BUILDING-LANDING PLATFORM-LATE AFTERNOON",
       "number": 23,
       "time": 207
@@ -1364,7 +1364,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Anakin, let's be fair. Today, you are the hero and you deserve your glorious day with the politicians.",
+      "text": "Anakin, let  is be fair. Today, you are the hero and you deserve your glorious day with the politicians.",
       "where": "69 EXT. CORUSCANT-SENATE OFFICE BUILDING-LANDING PLATFORM-LATE AFTERNOON",
       "number": 18,
       "time": 162
@@ -1380,7 +1380,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Ninth time that business on Cato Nemoidia doesn't count. I'll see you at the briefing.",
+      "text": "Ninth time that business on Cato Nemoidia does not count. I will see you at the briefing.",
       "where": "69 EXT. CORUSCANT-SENATE OFFICE BUILDING-LANDING PLATFORM-LATE AFTERNOON",
       "number": 15,
       "time": 135
@@ -1428,7 +1428,7 @@
     {
       "from": "BAIL ORGANA",
       "to": "ANAKIN",
-      "text": "Skywalker, the Republic cannot praise you enough.",
+      "text": "Skywalker, the Republic can not praise you enough.",
       "where": "69 EXT. CORUSCANT-SENATE OFFICE BUILDING-LANDING PLATFORM-LATE AFTERNOON",
       "number": 7,
       "time": 63
@@ -1452,7 +1452,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "It couldn't possibly be as bad as all that.",
+      "text": "It could not possibly be as bad as all that.",
       "where": "69 EXT. CORUSCANT-SENATE OFFICE BUILDING-LANDING PLATFORM-LATE AFTERNOON",
       "number": 9,
       "time": 81
@@ -1492,7 +1492,7 @@
     {
       "from": "BAIL ORGANA",
       "to": "ANAKIN",
-      "text": "I'll do everything I can with the Senate.",
+      "text": "I will do everything I can with the Senate.",
       "where": "70 INT. CORUSCANT-SENATE OFFICE BUILDING-MAIN HALLWAY-LATE AFTERNOON",
       "number": 8,
       "time": 72
@@ -1516,7 +1516,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Oh, Anakin! Thank goodness, you're back.",
+      "text": "Oh, Anakin! Thank goodness, you are back.",
       "where": "70 INT. CORUSCANT-SENATE OFFICE BUILDING-MAIN HALLWAY-LATE AFTERNOON",
       "number": 6,
       "time": 54
@@ -1524,7 +1524,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I missed you, Padme. I've missed you so.",
+      "text": "I missed you, Padme. I have missed you so.",
       "where": "70 INT. CORUSCANT-SENATE OFFICE BUILDING-MAIN HALLWAY-LATE AFTERNOON",
       "number": 8,
       "time": 72
@@ -1532,7 +1532,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "There were whispers that you'd been killed. I've been living with unbearable dread.",
+      "text": "There were whispers that you would been killed. I have been living with unbearable dread.",
       "where": "70 INT. CORUSCANT-SENATE OFFICE BUILDING-MAIN HALLWAY-LATE AFTERNOON",
       "number": 13,
       "time": 117
@@ -1540,7 +1540,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I'm back, I'm all right. It feels like we've been apart for a lifetime. And it might have been If the Chancellor hadn't been kidnapped. I don't think they would have ever brought us back from the Outer Rim sieges.",
+      "text": "I am back, I am all right. It feels like we have been apart for a lifetime. And it might have been If the Chancellor hadn't been kidnapped. I do not think they would have ever brought us back from the Outer Rim sieges.",
       "where": "70 INT. CORUSCANT-SENATE OFFICE BUILDING-MAIN HALLWAY-LATE AFTERNOON",
       "number": 40,
       "time": 360
@@ -1556,7 +1556,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Yes, here! I'm tired of all this deception. I don't care if they know we're married.",
+      "text": "Yes, here! I am tired of all this deception. I do not care if they know we are married.",
       "where": "70 INT. CORUSCANT-SENATE OFFICE BUILDING-MAIN HALLWAY-LATE AFTERNOON",
       "number": 16,
       "time": 144
@@ -1564,7 +1564,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Anakin, don't say things like that.",
+      "text": "Anakin, do not say things like that.",
       "where": "70 INT. CORUSCANT-SENATE OFFICE BUILDING-MAIN HALLWAY-LATE AFTERNOON",
       "number": 6,
       "time": 54
@@ -1572,7 +1572,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Are you all right? You're trembling. What's going on?",
+      "text": "Are you all right? you are trembling. what is going on?",
       "where": "70 INT. CORUSCANT-SENATE OFFICE BUILDING-MAIN HALLWAY-LATE AFTERNOON",
       "number": 9,
       "time": 81
@@ -1580,7 +1580,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Something wonderful has happened. I'm Annie, I'm pregnant.",
+      "text": "Something wonderful has happened. I am Annie, I am pregnant.",
       "where": "70 INT. CORUSCANT-SENATE OFFICE BUILDING-MAIN HALLWAY-LATE AFTERNOON",
       "number": 8,
       "time": 72
@@ -1588,7 +1588,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "That's that's wonderful.",
+      "text": "that is that is wonderful.",
       "where": "70 INT. CORUSCANT-SENATE OFFICE BUILDING-MAIN HALLWAY-LATE AFTERNOON",
       "number": 3,
       "time": 27
@@ -1604,7 +1604,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "We're not going to worry about anything right now, all right? This is a happy moment. The happiest moment of my life.",
+      "text": "we are not going to worry about anything right now, all right? This is a happy moment. The happiest moment of my life.",
       "where": "70 INT. CORUSCANT-SENATE OFFICE BUILDING-MAIN HALLWAY-LATE AFTERNOON",
       "number": 22,
       "time": 198
@@ -1676,7 +1676,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "It's only because I'm so in love",
+      "text": "it is only because I am so in love",
       "where": "73 INT. CORUSCANT-PADME'S APARTMENT-TWILIGHT",
       "number": 7,
       "time": 63
@@ -1684,7 +1684,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "No, it's because I'm so in love with you.",
+      "text": "No, it is because I am so in love with you.",
       "where": "73 INT. CORUSCANT-PADME'S APARTMENT-TWILIGHT",
       "number": 9,
       "time": 81
@@ -1700,7 +1700,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Well, that's not exactly what I meant",
+      "text": "Well, that is not exactly what I meant",
       "where": "73 INT. CORUSCANT-PADME'S APARTMENT-TWILIGHT",
       "number": 7,
       "time": 63
@@ -1708,7 +1708,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "But it's probably true!",
+      "text": "But it is probably true!",
       "where": "73 INT. CORUSCANT-PADME'S APARTMENT-TWILIGHT",
       "number": 4,
       "time": 36
@@ -1716,7 +1716,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I haven't laughed in so long",
+      "text": "I have not laughed in so long",
       "where": "73 INT. CORUSCANT-PADME'S APARTMENT-TWILIGHT",
       "number": 6,
       "time": 54
@@ -1740,7 +1740,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "What's bothering you?",
+      "text": "what is bothering you?",
       "where": "76 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-NIGHT",
       "number": 3,
       "time": 27
@@ -1844,7 +1844,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I don't know.",
+      "text": "I do not know.",
       "where": "76 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-NIGHT",
       "number": 3,
       "time": 27
@@ -1860,7 +1860,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I won't let this one become real, Padme.",
+      "text": "I will not let this one become real, Padme.",
       "where": "76 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-NIGHT",
       "number": 8,
       "time": 72
@@ -1892,7 +1892,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I don't need his help Our baby is a blessing, not a problem.",
+      "text": "I do not need his help Our baby is a blessing, not a problem.",
       "where": "76 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-NIGHT",
       "number": 13,
       "time": 117
@@ -1956,7 +1956,7 @@
     {
       "from": "ANAKIN",
       "to": "YODA",
-      "text": "I won't let these visions come true, Master Yoda.",
+      "text": "I will not let these visions come true, Master Yoda.",
       "where": "77 INT. CORUSCANT-JEDI TEMPLE-YODAS QUARTERS-DAY",
       "number": 9,
       "time": 81
@@ -1996,7 +1996,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "I'm sorry, I was held up. I have no excuse.",
+      "text": "I am sorry, I was held up. I have no excuse.",
       "where": "79 INT. CORUSCANT-JEDI TEMPLE-BRIEFING ROOM-DAY",
       "number": 10,
       "time": 90
@@ -2012,7 +2012,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "What's wrong then?",
+      "text": "what is wrong then?",
       "where": "79 INT. CORUSCANT-JEDI TEMPLE-BRIEFING ROOM-DAY",
       "number": 3,
       "time": 27
@@ -2076,7 +2076,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "He didn't inform the Jedi Council? That's unusual, isn't it?",
+      "text": "He did not inform the Jedi Council? that is unusual, is not it?",
       "where": "79 INT. CORUSCANT-JEDI TEMPLE-BRIEFING ROOM-DAY",
       "number": 10,
       "time": 90
@@ -2084,7 +2084,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "All of this is unusual, and it's making me feel uneasy.",
+      "text": "All of this is unusual, and it is making me feel uneasy.",
       "where": "79 INT. CORUSCANT-JEDI TEMPLE-BRIEFING ROOM-DAY",
       "number": 11,
       "time": 99
@@ -2124,7 +2124,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "I'm depending on you.",
+      "text": "I am depending on you.",
       "where": "80 INT. CORUSCANT-CHANCELLOR'S OFFICE-DAY",
       "number": 4,
       "time": 36
@@ -2132,7 +2132,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "For what? I don't understand.",
+      "text": "For what? I do not understand.",
       "where": "80 INT. CORUSCANT-CHANCELLOR'S OFFICE-DAY",
       "number": 5,
       "time": 45
@@ -2148,7 +2148,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "Anakin I'm appointing you to be my personal representative on the Jedi Council.",
+      "text": "Anakin I am appointing you to be my personal representative on the Jedi Council.",
       "where": "80 INT. CORUSCANT-CHANCELLOR'S OFFICE-DAY",
       "number": 13,
       "time": 117
@@ -2196,7 +2196,7 @@
     {
       "from": "ANAKIN",
       "to": "MACE WINDU",
-      "text": "What? ! How can you do this? This is outrageous, it's unfair. How can you be on the Council and not be a Master?",
+      "text": "What? ! How can you do this? This is outrageous, it is unfair. How can you be on the Council and not be a Master?",
       "where": "83 INT. CORUSCANT-JEDI TEMPLE-COUNCIL CHAMBERS-DAY",
       "number": 24,
       "time": 216
@@ -2260,7 +2260,7 @@
     {
       "from": "OBI-WAN",
       "to": "MACE WINDU",
-      "text": "He's right, that is a system we cannot afford to lose. It's the main navigation route for the southwestern quadrant.",
+      "text": "he is right, that is a system we can not afford to lose. it is the main navigation route for the southwestern quadrant.",
       "where": "83 INT. CORUSCANT-JEDI TEMPLE-COUNCIL CHAMBERS-DAY",
       "number": 20,
       "time": 180
@@ -2284,7 +2284,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "What kind of nonsense is this, put me on the Council and not make me a Master!? That's never been done in the history of the Jedi. It's insulting!",
+      "text": "What kind of nonsense is this, put me on the Council and not make me a Master!? that is never been done in the history of the Jedi. it is insulting!",
       "where": "84 INT. CORUSCANT-JEDI TEMPLE-MASSIVE MAIN HALLWAY AND ALCOVE-LATE AFTERNOON",
       "number": 29,
       "time": 261
@@ -2292,7 +2292,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Calm down, Anakin. You have been given a great honor. To be on the Council at your age, it's never happened before. Listen to me, Anakin. The fact of the matter is you're too close to the Chancellor. The Council doesn't like it when he interferes in Jedi affairs.",
+      "text": "Calm down, Anakin. You have been given a great honor. To be on the Council at your age, it is never happened before. Listen to me, Anakin. The fact of the matter is you are too close to the Chancellor. The Council does not like it when he interferes in Jedi affairs.",
       "where": "84 INT. CORUSCANT-JEDI TEMPLE-MASSIVE MAIN HALLWAY AND ALCOVE-LATE AFTERNOON",
       "number": 49,
       "time": 441
@@ -2300,7 +2300,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "I swear to you, I didn't ask to be put on the Council",
+      "text": "I swear to you, I did not ask to be put on the Council",
       "where": "84 INT. CORUSCANT-JEDI TEMPLE-MASSIVE MAIN HALLWAY AND ALCOVE-LATE AFTERNOON",
       "number": 13,
       "time": 117
@@ -2308,7 +2308,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "But it's what you wanted! Your friendship with Chancellor Palpatine seems to have paid off.",
+      "text": "But it is what you wanted! Your friendship with Chancellor Palpatine seems to have paid off.",
       "where": "84 INT. CORUSCANT-JEDI TEMPLE-MASSIVE MAIN HALLWAY AND ALCOVE-LATE AFTERNOON",
       "number": 15,
       "time": 135
@@ -2340,7 +2340,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Anakin, look, I am on your side. I didn't want to see you put in this situation.",
+      "text": "Anakin, look, I am on your side. I did not want to see you put in this situation.",
       "where": "84 INT. CORUSCANT-JEDI TEMPLE-MASSIVE MAIN HALLWAY AND ALCOVE-LATE AFTERNOON",
       "number": 17,
       "time": 153
@@ -2356,7 +2356,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "The Council wants you to report on all of the Chancellor's dealings. They want to know what he's up to.",
+      "text": "The Council wants you to report on all of the Chancellor's dealings. They want to know what he is up to.",
       "where": "84 INT. CORUSCANT-JEDI TEMPLE-MASSIVE MAIN HALLWAY AND ALCOVE-LATE AFTERNOON",
       "number": 20,
       "time": 180
@@ -2364,7 +2364,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "They want me to spy on the Chancellor? That's treason!",
+      "text": "They want me to spy on the Chancellor? that is treason!",
       "where": "84 INT. CORUSCANT-JEDI TEMPLE-MASSIVE MAIN HALLWAY AND ALCOVE-LATE AFTERNOON",
       "number": 10,
       "time": 90
@@ -2380,7 +2380,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Why didn't the Council give me this assignment when we were in session?",
+      "text": "Why did not the Council give me this assignment when we were in session?",
       "where": "84 INT. CORUSCANT-JEDI TEMPLE-MASSIVE MAIN HALLWAY AND ALCOVE-LATE AFTERNOON",
       "number": 13,
       "time": 117
@@ -2396,7 +2396,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "The Chancellor is not a bad man, Obi-Wan. He befriended me. He's watched out for me ever since I arrived here.",
+      "text": "The Chancellor is not a bad man, Obi-Wan. He befriended me. he is watched out for me ever since I arrived here.",
       "where": "84 INT. CORUSCANT-JEDI TEMPLE-MASSIVE MAIN HALLWAY AND ALCOVE-LATE AFTERNOON",
       "number": 21,
       "time": 189
@@ -2428,7 +2428,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "You're asking me to do something against the Jedi Code. Against the Republic. Against a mentor and a friend. That's what's out of place here. Why are you asking this of me?",
+      "text": "you are asking me to do something against the Jedi Code. Against the Republic. Against a mentor and a friend. that is what is out of place here. Why are you asking this of me?",
       "where": "84 INT. CORUSCANT-JEDI TEMPLE-MASSIVE MAIN HALLWAY AND ALCOVE-LATE AFTERNOON",
       "number": 32,
       "time": 288
@@ -2452,7 +2452,7 @@
     {
       "from": "MACE WINDU",
       "to": "OBI-WAN",
-      "text": "It's very dangerous, putting them together. I don't think the boy can handle it. I don't trust him.",
+      "text": "it is very dangerous, putting them together. I do not think the boy can handle it. I do not trust him.",
       "where": "86 INT. CORUSCANT-JEDI GUNSHIP-DAY",
       "number": 18,
       "time": 162
@@ -2500,7 +2500,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Sometimes, I wonder what's happening to the Jedi Order I think this war is destroying the principles of the Republic.",
+      "text": "Sometimes, I wonder what is happening to the Jedi Order I think this war is destroying the principles of the Republic.",
       "where": "87 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-SUNSET",
       "number": 20,
       "time": 180
@@ -2532,7 +2532,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I don't believe that. And you're sounding like a Separatist!",
+      "text": "I do not believe that. And you are sounding like a Separatist!",
       "where": "87 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-SUNSET",
       "number": 10,
       "time": 90
@@ -2540,7 +2540,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Anakin, this war represents a failure to listen Now, you're closer to the Chancellor than anyone. Please, please ask him to stop the fighting and let diplomacy resume.",
+      "text": "Anakin, this war represents a failure to listen Now, you are closer to the Chancellor than anyone. Please, please ask him to stop the fighting and let diplomacy resume.",
       "where": "87 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-SUNSET",
       "number": 28,
       "time": 252
@@ -2548,7 +2548,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Don't ask me to do that, Padme. Make a motion in the Senate, where that kind of a request belongs. I'm not your errand boy. I'm not anyone's errand boy!",
+      "text": "do not ask me to do that, Padme. Make a motion in the Senate, where that kind of a request belongs. I am not your errand boy. I am not anyone's errand boy!",
       "where": "87 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-SUNSET",
       "number": 30,
       "time": 270
@@ -2572,7 +2572,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Don't do this don't shut me out. Let me help you.",
+      "text": "do not do this do not shut me out. Let me help you.",
       "where": "87 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-SUNSET",
       "number": 11,
       "time": 99
@@ -2604,7 +2604,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "At last, we'll be able to capture that monster and end this war.",
+      "text": "At last, we will be able to capture that monster and end this war.",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 13,
       "time": 117
@@ -2612,7 +2612,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "I would worry about the collective wisdom of the Council if they didn't select you for this assignment. You are the best choice by far but, they can't always be trusted to do the right thing.",
+      "text": "I would worry about the collective wisdom of the Council if they did not select you for this assignment. You are the best choice by far but, they can not always be trusted to do the right thing.",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 36,
       "time": 324
@@ -2628,7 +2628,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "Anakin, you know I'm not able to rely on the Jedi Council. If they haven't included you in their plot, they soon will.",
+      "text": "Anakin, you know I am not able to rely on the Jedi Council. If they have not included you in their plot, they soon will.",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 23,
       "time": 207
@@ -2636,7 +2636,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "I'm not sure I understand.",
+      "text": "I am not sure I understand.",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 5,
       "time": 45
@@ -2644,7 +2644,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "You must sense what I have come to suspect the Jedi Council want control of the Republic they're planning to betray me.",
+      "text": "You must sense what I have come to suspect the Jedi Council want control of the Republic they are planning to betray me.",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 22,
       "time": 198
@@ -2652,7 +2652,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "I don't think",
+      "text": "I do not think",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 3,
       "time": 27
@@ -2660,7 +2660,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "Anakin, search your feelings. You know, don't you?",
+      "text": "Anakin, search your feelings. You know, do not you?",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 8,
       "time": 72
@@ -2668,7 +2668,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "I know they don't trust you",
+      "text": "I know they do not trust you",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 6,
       "time": 54
@@ -2692,7 +2692,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "Why? They asked you to do something that made you feel dishonest, didn't they?",
+      "text": "Why? They asked you to do something that made you feel dishonest, did not they?",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 14,
       "time": 126
@@ -2700,7 +2700,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "They asked you to spy on me, didn't they?",
+      "text": "They asked you to spy on me, did not they?",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 9,
       "time": 81
@@ -2708,7 +2708,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "I don't know I don't know what to say.",
+      "text": "I do not know I do not know what to say.",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 9,
       "time": 81
@@ -2748,7 +2748,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "from a Jedi's point of view. The Sith and the Jedi are similar in almost every way, including their quest for greater power. The difference between the two is the Sith are not afraid of the dark side of the Force. That is why they are more powerful.",
+      "text": "from a Jedi point of view. The Sith and the Jedi are similar in almost every way, including their quest for greater power. The difference between the two is the Sith are not afraid of the dark side of the Force. That is why they are more powerful.",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 48,
       "time": 432
@@ -2764,7 +2764,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "And the Jedi don't?",
+      "text": "And the Jedi do not?",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 4,
       "time": 36
@@ -2796,7 +2796,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "I thought not. It's not a story the Jedi would tell you. It's a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midi-chlorians to create life He had such a knowledge of the dark side that he could even keep the ones he cared about from dying.",
+      "text": "I thought not. it is not a story the Jedi would tell you. it is a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midi-chlorians to create life He had such a knowledge of the dark side that he could even keep the ones he cared about from dying.",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 63,
       "time": 567
@@ -2828,7 +2828,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "He became so powerful the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Plagueis never saw it coming. It's ironic he could save others from death, but not himself.",
+      "text": "He became so powerful the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Plagueis never saw it coming. it is ironic he could save others from death, but not himself.",
       "where": "88 INT. CORUSCANT-GALAXIES OPERA HOUSE-NIGHT",
       "number": 53,
       "time": 477
@@ -2964,7 +2964,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "You're going to need me on this one, Master.",
+      "text": "you are going to need me on this one, Master.",
       "where": "96 EXT. CORUSCANT-CLONE LANDING PLATFORM-DAY",
       "number": 9,
       "time": 81
@@ -2980,7 +2980,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Master! Master, I've disappointed you. I have not been very appreciative of your training I have been arrogant and I apologize I've just been so frustrated with the Council. Your friendship means everything to me.",
+      "text": "Master! Master, I have disappointed you. I have not been very appreciative of your training I have been arrogant and I apologize I have just been so frustrated with the Council. Your friendship means everything to me.",
       "where": "96 EXT. CORUSCANT-CLONE LANDING PLATFORM-DAY",
       "number": 35,
       "time": 315
@@ -2988,7 +2988,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "You are strong and wise, Anakin, and I am very proud of you. I have trained you since you were a small boy. I have taught you everything I know. And you have become a far greater Jedi than I could ever hope to be, and you have saved my life more times than I can remember. But be patient, Anakin. It won't be long before the Council makes you a Jedi Master.",
+      "text": "You are strong and wise, Anakin, and I am very proud of you. I have trained you since you were a small boy. I have taught you everything I know. And you have become a far greater Jedi than I could ever hope to be, and you have saved my life more times than I can remember. But be patient, Anakin. It will not be long before the Council makes you a Jedi Master.",
       "where": "96 EXT. CORUSCANT-CLONE LANDING PLATFORM-DAY",
       "number": 73,
       "time": 657
@@ -3020,7 +3020,7 @@
     {
       "from": "OBI-WAN",
       "to": "CLONE CODY",
-      "text": "I'll keep them distracted until you get there. Just don't take too long.",
+      "text": "I will keep them distracted until you get there. Just do not take too long.",
       "where": "98 INT. REPUBLIC BATTLE CRUISER-HANGAR-SPACE",
       "number": 13,
       "time": 117
@@ -3044,7 +3044,7 @@
     {
       "from": "CLONE CODY",
       "to": "OBI-WAN",
-      "text": "I'm counting on you.",
+      "text": "I am counting on you.",
       "where": "98 INT. REPUBLIC BATTLE CRUISER-HANGAR-SPACE",
       "number": 4,
       "time": 36
@@ -3060,7 +3060,7 @@
     {
       "from": "PADME",
       "to": "OBI-WAN",
-      "text": "I can't!",
+      "text": "I can not!",
       "where": "102 INT. POLIS MASSA-MEDICAL CENTER-DREAM",
       "number": 2,
       "time": 18
@@ -3068,7 +3068,7 @@
     {
       "from": "OBI-WAN",
       "to": "PADME",
-      "text": "Don't give up, Padme. Don't give up",
+      "text": "do not give up, Padme. do not give up",
       "where": "102 INT. POLIS MASSA-MEDICAL CENTER-DREAM",
       "number": 7,
       "time": 63
@@ -3076,7 +3076,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I sense someone familiar Obi-Wan's been here, hasn't he?",
+      "text": "I sense someone familiar Obi-Wan's been here, has not he?",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 9,
       "time": 81
@@ -3100,7 +3100,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "He's worried about you.",
+      "text": "he is worried about you.",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 4,
       "time": 36
@@ -3108,7 +3108,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "You told him about us, didn't you?",
+      "text": "You told him about us, did not you?",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 7,
       "time": 63
@@ -3116,7 +3116,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "He's your best friend, Anakin. He says you're under a lot of stress.",
+      "text": "he is your best friend, Anakin. He says you are under a lot of stress.",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 13,
       "time": 117
@@ -3124,7 +3124,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "And he's not?",
+      "text": "And he is not?",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 3,
       "time": 27
@@ -3140,7 +3140,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I'm not moody",
+      "text": "I am not moody",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 3,
       "time": 27
@@ -3148,7 +3148,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Anakin! Don't do this again.",
+      "text": "Anakin! do not do this again.",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 5,
       "time": 45
@@ -3156,7 +3156,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I don't know I feel lost.",
+      "text": "I do not know I feel lost.",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 6,
       "time": 54
@@ -3164,7 +3164,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Lost? What do you mean? You're always so sure of yourself. I don't understand.",
+      "text": "Lost? What do you mean? you are always so sure of yourself. I do not understand.",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 14,
       "time": 126
@@ -3172,7 +3172,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Obi-Wan and the Council don't trust me.",
+      "text": "Obi-Wan and the Council do not trust me.",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 7,
       "time": 63
@@ -3188,7 +3188,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Something's happening I'm not the Jedi I should be. I am one of the most powerful Jedi, but I'm not satisfied I want more, and I know I shouldn't.",
+      "text": "Something's happening I am not the Jedi I should be. I am one of the most powerful Jedi, but I am not satisfied I want more, and I know I should not.",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 29,
       "time": 261
@@ -3228,7 +3228,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Is that what's bothering you?",
+      "text": "Is that what is bothering you?",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 5,
       "time": 45
@@ -3236,7 +3236,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I won't lose you, Padme.",
+      "text": "I will not lose you, Padme.",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 5,
       "time": 45
@@ -3244,7 +3244,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I'm not going to die in childbirth, Annie. I promise you.",
+      "text": "I am not going to die in childbirth, Annie. I promise you.",
       "where": "103 INT. CORUSCANT-PADME'S APARTMENT-LANDING ROOM-DAY",
       "number": 11,
       "time": 99
@@ -3276,7 +3276,7 @@
     {
       "from": "TION MEDON",
       "to": "OBI-WAN",
-      "text": "There is no war here unless you've brought it with you.",
+      "text": "There is no war here unless you have brought it with you.",
       "where": "105 INT. UTAPAU-LANDING PLATFORM-DAY",
       "number": 11,
       "time": 99
@@ -3332,7 +3332,7 @@
     {
       "from": "TION MEDON",
       "to": "PURPLE DROIDS",
-      "text": "He didn't say.",
+      "text": "He did not say.",
       "where": "106 EXT. UTAPAU-OBSERVATION DECK-DAY",
       "number": 3,
       "time": 27
@@ -3340,7 +3340,7 @@
     {
       "from": "GRIEVOUS",
       "to": "NUTE",
-      "text": "It won't be long before the armies of the Republic track us here. I am sending you to the Mustafar system in the Outer Rim. It is a volcanic planet which generates a great deal of scanning interference. You will be safe there.",
+      "text": "It will not be long before the armies of the Republic track us here. I am sending you to the Mustafar system in the Outer Rim. It is a volcanic planet which generates a great deal of scanning interference. You will be safe there.",
       "where": "111 INT. UTAPAU-CONFERENCE ROOM-GRAND CHAMBER-DAY",
       "number": 43,
       "time": 387
@@ -3372,7 +3372,7 @@
     {
       "from": "GRIEVOUS",
       "to": "OBI-WAN",
-      "text": "General Kenobi, you are a bold one. I find your behavior bewildering Surely you realize you're doomed.",
+      "text": "General Kenobi, you are a bold one. I find your behavior bewildering Surely you realize you are doomed.",
       "where": "112 INT. UTAPAU-TENTH LEVEL-CONTROL CENTER-DAY",
       "number": 17,
       "time": 153
@@ -3428,7 +3428,7 @@
     {
       "from": "OBI-WAN",
       "to": "GRIEVOUS",
-      "text": "I don't think so.",
+      "text": "I do not think so.",
       "where": "112 INT. UTAPAU-TENTH LEVEL-CONTROL CENTER-DAY",
       "number": 4,
       "time": 36
@@ -3516,7 +3516,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "It is upsetting to me to see that the Council doesn't seem to fully appreciate your talents. Don't you wonder why they won't make you a Jedi Master?",
+      "text": "It is upsetting to me to see that the Council does not seem to fully appreciate your talents. do not you wonder why they will not make you a Jedi Master?",
       "where": "118 INT. CORUSCANT-CHANCELLOR'S OFFICE-EARLY EVENING",
       "number": 28,
       "time": 252
@@ -3532,7 +3532,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "They don't trust you, Anakin. They see your future. They know your power will be too strong to control. Anakin, you must break through the fog of lies the Jedi have created around you. Let me help you to know the subtleties of the Force.",
+      "text": "They do not trust you, Anakin. They see your future. They know your power will be too strong to control. Anakin, you must break through the fog of lies the Jedi have created around you. Let me help you to know the subtleties of the Force.",
       "where": "118 INT. CORUSCANT-CHANCELLOR'S OFFICE-EARLY EVENING",
       "number": 45,
       "time": 405
@@ -3588,7 +3588,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "You're a Sith Lord!",
+      "text": "you are a Sith Lord!",
       "where": "118 INT. CORUSCANT-CHANCELLOR'S OFFICE-EARLY EVENING",
       "number": 4,
       "time": 36
@@ -3596,7 +3596,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "I know what has been troubling you Listen to me. Don't continue to be a pawn of the Jedi Council! Ever since I've known you, you've been searching for a life greater than that of an ordinary Jedi a life of significance, of conscience.",
+      "text": "I know what has been troubling you Listen to me. do not continue to be a pawn of the Jedi Council! Ever since I have known you, you have been searching for a life greater than that of an ordinary Jedi a life of significance, of conscience.",
       "where": "118 INT. CORUSCANT-CHANCELLOR'S OFFICE-EARLY EVENING",
       "number": 44,
       "time": 396
@@ -3604,7 +3604,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "You're wrong!",
+      "text": "you are wrong!",
       "where": "118 INT. CORUSCANT-CHANCELLOR'S OFFICE-EARLY EVENING",
       "number": 2,
       "time": 18
@@ -3644,7 +3644,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "Of course you should. But you're not sure of their intentions, are you?",
+      "text": "Of course you should. But you are not sure of their intentions, are you?",
       "where": "118 INT. CORUSCANT-CHANCELLOR'S OFFICE-EARLY EVENING",
       "number": 13,
       "time": 117
@@ -3684,7 +3684,7 @@
     {
       "from": "ANAKIN",
       "to": "MACE WINDU",
-      "text": "He won't give up his power. I've just learned a terrible truth. I think Chancellor Palpatine is a Sith Lord.",
+      "text": "He will not give up his power. I have just learned a terrible truth. I think Chancellor Palpatine is a Sith Lord.",
       "where": "124 INT. JEDI GUNSHIP-LANDING PLATFORM-EARLY EVENING",
       "number": 20,
       "time": 180
@@ -3796,7 +3796,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "You do know, don't you, if the Jedi destroy me, any chance of saving her will be lost.",
+      "text": "You do know, do not you, if the Jedi destroy me, any chance of saving her will be lost.",
       "where": "125 INT. CORUSCANT-JEDI COUNCIL/PADME'S APARTMENT-EARLY EVENING",
       "number": 18,
       "time": 162
@@ -3804,7 +3804,7 @@
     {
       "from": "PALPATINE",
       "to": "MACE WINDU",
-      "text": "Master Windu. I take it General Grievous has been destroyed then. I must say, you're here sooner than expected.",
+      "text": "Master Windu. I take it General Grievous has been destroyed then. I must say, you are here sooner than expected.",
       "where": "128 INT. CORUSCANT-CHANCELLOR’S OFFICE-EARLY EVENING",
       "number": 19,
       "time": 171
@@ -3852,7 +3852,7 @@
     {
       "from": "PALPATINE",
       "to": "MACE WINDU",
-      "text": "It's treason, then.",
+      "text": "it is treason, then.",
       "where": "128 INT. CORUSCANT-CHANCELLOR’S OFFICE-EARLY EVENING",
       "number": 3,
       "time": 27
@@ -3900,7 +3900,7 @@
     {
       "from": "MACE WINDU",
       "to": "PALPATINE",
-      "text": "He's the traitor. Stop him!",
+      "text": "he is the traitor. Stop him!",
       "where": "128 INT. CORUSCANT-CHANCELLOR’S OFFICE-EARLY EVENING",
       "number": 5,
       "time": 45
@@ -3916,7 +3916,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "You are not one of them, Anakin. Don't let him kill me.",
+      "text": "You are not one of them, Anakin. do not let him kill me.",
       "where": "128 INT. CORUSCANT-CHANCELLOR’S OFFICE-EARLY EVENING",
       "number": 12,
       "time": 108
@@ -3932,7 +3932,7 @@
     {
       "from": "MACE WINDU",
       "to": "ANAKIN",
-      "text": "Don't listen to him, Anakin.",
+      "text": "do not listen to him, Anakin.",
       "where": "128 INT. CORUSCANT-CHANCELLOR’S OFFICE-EARLY EVENING",
       "number": 5,
       "time": 45
@@ -3940,7 +3940,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "Help me! Don't let him kill me. I can't hold on any longer.",
+      "text": "Help me! do not let him kill me. I can not hold on any longer.",
       "where": "128 INT. CORUSCANT-CHANCELLOR’S OFFICE-EARLY EVENING",
       "number": 13,
       "time": 117
@@ -3948,7 +3948,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "I can't I give up. Help me. I am weak I am too weak. Don't kill me. I give up. I'm dying. I can't hold on any longer.",
+      "text": "I can not I give up. Help me. I am weak I am too weak. do not kill me. I give up. I am dying. I can not hold on any longer.",
       "where": "128 INT. CORUSCANT-CHANCELLOR’S OFFICE-EARLY EVENING",
       "number": 28,
       "time": 252
@@ -3964,7 +3964,7 @@
     {
       "from": "ANAKIN",
       "to": "MACE WINDU",
-      "text": "You can't kill him, Master. He must stand trial.",
+      "text": "You can not kill him, Master. He must stand trial.",
       "where": "128 INT. CORUSCANT-CHANCELLOR’S OFFICE-EARLY EVENING",
       "number": 9,
       "time": 81
@@ -3980,7 +3980,7 @@
     {
       "from": "PALPATINE",
       "to": "MACE WINDU",
-      "text": "I'm too weak. Don't kill me. Please.",
+      "text": "I am too weak. do not kill me. Please.",
       "where": "128 INT. CORUSCANT-CHANCELLOR’S OFFICE-EARLY EVENING",
       "number": 7,
       "time": 63
@@ -4004,7 +4004,7 @@
     {
       "from": "PALPATINE",
       "to": "MACE WINDU",
-      "text": "Please don't, please don't",
+      "text": "Please do not, please do not",
       "where": "128 INT. CORUSCANT-CHANCELLOR’S OFFICE-EARLY EVENING",
       "number": 4,
       "time": 36
@@ -4020,7 +4020,7 @@
     {
       "from": "PALPATINE",
       "to": "MACE WINDU",
-      "text": "Please don't",
+      "text": "Please do not",
       "where": "128 INT. CORUSCANT-CHANCELLOR’S OFFICE-EARLY EVENING",
       "number": 2,
       "time": 18
@@ -4076,7 +4076,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "Just help me save Padme's life. I can't live without her. I won't let her die. I want the power to stop death.",
+      "text": "Just help me save Padme's life. I can not live without her. I will not let her die. I want the power to stop death.",
       "where": "128 INT. CORUSCANT-CHANCELLOR’S OFFICE-EARLY EVENING",
       "number": 23,
       "time": 207
@@ -4132,7 +4132,7 @@
     {
       "from": "ANAKIN",
       "to": "PALPATINE",
-      "text": "I agree. The Jedi's next move will be against the Senate.",
+      "text": "I agree. The Jedi next move will be against the Senate.",
       "where": "130 INT. CORUSCANT-CHANCELLOR'S OFFICE-EVENING",
       "number": 11,
       "time": 99
@@ -4140,7 +4140,7 @@
     {
       "from": "PALPATINE",
       "to": "ANAKIN",
-      "text": "Every single Jedi, including your friend Obi-Wan Kenobi, is now an enemy of the Republic. You understand that, don't you?",
+      "text": "Every single Jedi, including your friend Obi-Wan Kenobi, is now an enemy of the Republic. You understand that, do not you?",
       "where": "130 INT. CORUSCANT-CHANCELLOR'S OFFICE-EVENING",
       "number": 20,
       "time": 180
@@ -4196,7 +4196,7 @@
     {
       "from": "CLONE CODY",
       "to": "OBI-WAN",
-      "text": "Oh, by the way, I think you'll be needing this.",
+      "text": "Oh, by the way, I think you will be needing this.",
       "where": "132 EXT. UTAPAU-TENTH LEVEL-LANDIXG PLATFORM-DAY",
       "number": 10,
       "time": 90
@@ -4204,7 +4204,7 @@
     {
       "from": "OBI-WAN",
       "to": "CLONE CODY",
-      "text": "Thank you, Cody, now let's get a move on. We've got a battle to win here.",
+      "text": "Thank you, Cody, now let  is get a move on. we have got a battle to win here.",
       "where": "132 EXT. UTAPAU-TENTH LEVEL-LANDIXG PLATFORM-DAY",
       "number": 16,
       "time": 144
@@ -4220,7 +4220,7 @@
     {
       "from": "DARTH SIDIOUS",
       "to": "CLONE CODY",
-      "text": "Commander Cody, the time has come. Execute Order Sixty-Six.",
+      "text": "Commander Cody, the time has come. Execute Order sixty six.",
       "where": "132 EXT. UTAPAU-TENTH LEVEL-LANDIXG PLATFORM-DAY",
       "number": 9,
       "time": 81
@@ -4252,7 +4252,7 @@
     {
       "from": "DARTH SIDIOUS",
       "to": "CLONE BACARA",
-      "text": "The time has come. Execute Order Sixty-Six.",
+      "text": "The time has come. Execute Order sixty six.",
       "where": "133 EXT. MYGEETO-DAWN",
       "number": 7,
       "time": 63
@@ -4268,7 +4268,7 @@
     {
       "from": "DARTH SIDIOUS",
       "to": "CLONE PILOT",
-      "text": "Execute Order Sixty-Six.",
+      "text": "Execute Order sixty six.",
       "where": "137 INT. CATO NEIMOIDIA-COCKPIT CLONE FIGHTER-DAY",
       "number": 3,
       "time": 27
@@ -4292,7 +4292,7 @@
     {
       "from": "DARTH SIDIOUS",
       "to": "CLONE GREE",
-      "text": "The time has come. Execute Order Sixty-Six.",
+      "text": "The time has come. Execute Order sixty six.",
       "where": "141 INT. CORUSCANT-CHANCELLOR'S OFFICE-NIGHT",
       "number": 7,
       "time": 63
@@ -4308,7 +4308,7 @@
     {
       "from": "THREEPIO",
       "to": "PADME",
-      "text": "The Chancellor's office indicated Master Anakin returned to the Jedi Temple. Don't worry, My Lady. I am sure he will be all right.",
+      "text": "The Chancellor's office indicated Master Anakin returned to the Jedi Temple. do not worry, My Lady. I am sure he will be all right.",
       "where": "146 INT. CORUSCANT-PADME'S APARTMENT-PRE-DAWN",
       "number": 23,
       "time": 207
@@ -4316,7 +4316,7 @@
     {
       "from": "BAIL ORGANA",
       "to": "CLONE SERGEANT",
-      "text": "What's going on here?!?",
+      "text": "what is going on here?!?",
       "where": "148 EXT. CORUSCANT-JEDI TEMPLE-LANDING PLATFORM-PRE-DAWN",
       "number": 4,
       "time": 36
@@ -4324,7 +4324,7 @@
     {
       "from": "CLONE SERGEANT",
       "to": "BAIL ORGANA",
-      "text": "There's been a rebellion. Don't worry, sir, the situation is under control.",
+      "text": "there is been a rebellion. do not worry, sir, the situation is under control.",
       "where": "148 EXT. CORUSCANT-JEDI TEMPLE-LANDING PLATFORM-PRE-DAWN",
       "number": 12,
       "time": 108
@@ -4332,7 +4332,7 @@
     {
       "from": "CLONE SERGEANT",
       "to": "BAIL ORGANA",
-      "text": "I'm sorry, sir. No one is allowed entry.",
+      "text": "I am sorry, sir. No one is allowed entry.",
       "where": "148 EXT. CORUSCANT-JEDI TEMPLE-LANDING PLATFORM-PRE-DAWN",
       "number": 8,
       "time": 72
@@ -4340,7 +4340,7 @@
     {
       "from": "CLONE SERGEANT",
       "to": "BAIL ORGANA",
-      "text": "It's time for you to leave, sir.",
+      "text": "it is time for you to leave, sir.",
       "where": "148 EXT. CORUSCANT-JEDI TEMPLE-LANDING PLATFORM-PRE-DAWN",
       "number": 7,
       "time": 63
@@ -4444,7 +4444,7 @@
     {
       "from": "OBI-WAN",
       "to": "BAIL ORGANA",
-      "text": "I've locked on. Repeat.",
+      "text": "I have locked on. Repeat.",
       "where": "160 INT. GENERAL GRIEVOUS'S STARFIGHTER-SPACE",
       "number": 4,
       "time": 36
@@ -4468,7 +4468,7 @@
     {
       "from": "BAIL ORGANA",
       "to": "OBI-WAN",
-      "text": "We have just rescued Master Yoda. It appears this ambush has happened everywhere. We're sending you our coordinates.",
+      "text": "We have just rescued Master Yoda. It appears this ambush has happened everywhere. we are sending you our coordinates.",
       "where": "160 INT. GENERAL GRIEVOUS'S STARFIGHTER-SPACE",
       "number": 18,
       "time": 162
@@ -4500,7 +4500,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I'm fine. I'm fine. I came to see if you and the baby are safe.",
+      "text": "I am fine. I am fine. I came to see if you and the baby are safe.",
       "where": "162 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-PRE-DAWN",
       "number": 15,
       "time": 135
@@ -4508,7 +4508,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Captain Typho's here, we're safe. What's happening?",
+      "text": "Captain Typho's here, we are safe. what is happening?",
       "where": "162 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-PRE-DAWN",
       "number": 7,
       "time": 63
@@ -4524,7 +4524,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I can't believe that!",
+      "text": "I can not believe that!",
       "where": "162 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-PRE-DAWN",
       "number": 4,
       "time": 36
@@ -4532,7 +4532,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I couldn't either at first, but it's true. I saw Master Windu attempt to assassinate the Chancellor myself.",
+      "text": "I could not either at first, but it is true. I saw Master Windu attempt to assassinate the Chancellor myself.",
       "where": "162 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-PRE-DAWN",
       "number": 18,
       "time": 162
@@ -4564,7 +4564,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I don't know Many Jedi have been killed. We can only hope that he's remained loyal to the Chancellor.",
+      "text": "I do not know Many Jedi have been killed. We can only hope that he is remained loyal to the Chancellor.",
       "where": "162 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-PRE-DAWN",
       "number": 19,
       "time": 171
@@ -4572,7 +4572,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Oh, Anakin, I'm afraid.",
+      "text": "Oh, Anakin, I am afraid.",
       "where": "162 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-PRE-DAWN",
       "number": 4,
       "time": 36
@@ -4580,7 +4580,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Have faith, my love. Everything will soon be set right. The Chancellor has given me a very important mission. The Separatists have gathered in the Mustafar system. I'm going there to end this war. Wait for me until I return things will be different, I promise.",
+      "text": "Have faith, my love. Everything will soon be set right. The Chancellor has given me a very important mission. The Separatists have gathered in the Mustafar system. I am going there to end this war. Wait for me until I return things will be different, I promise.",
       "where": "162 EXT. CORUSCANT-PADME'S APARTMENT-VERANDA-PRE-DAWN",
       "number": 46,
       "time": 414
@@ -4676,7 +4676,7 @@
     {
       "from": "BAIL ORGANA",
       "to": "OBI-WAN",
-      "text": "I saw thousands of troops attack the Jedi Temple. That's why I went looking for Yoda.",
+      "text": "I saw thousands of troops attack the Jedi Temple. that is why I went looking for Yoda.",
       "where": "164 INT. ALDERAAN-STARCRUISER-HALLWAY-DAY",
       "number": 16,
       "time": 144
@@ -4788,7 +4788,7 @@
     {
       "from": "OBI-WAN",
       "to": "BAIL ORGANA",
-      "text": "No, I don't think so. The Chancellor will not be able to control the thousands of star systems without keeping the Senate intact.",
+      "text": "No, I do not think so. The Chancellor will not be able to control the thousands of star systems without keeping the Senate intact.",
       "where": "167 INT. CRUISER-COCKPIT",
       "number": 23,
       "time": 207
@@ -4820,7 +4820,7 @@
     {
       "from": "NUTE",
       "to": "ANAKIN",
-      "text": "Welcome, Lord Vader. We've been expecting you.",
+      "text": "Welcome, Lord Vader. we have been expecting you.",
       "where": "172 INT. MUSTAFAR-MAIN CONTROL CENTER-DAY",
       "number": 7,
       "time": 63
@@ -4836,7 +4836,7 @@
     {
       "from": "BAIL ORGANA",
       "to": "PADME",
-      "text": "I was held up. What's happening?",
+      "text": "I was held up. what is happening?",
       "where": "176 INT. CORUSCANT-SENATE CHAMBER-SUNSET",
       "number": 6,
       "time": 54
@@ -4852,7 +4852,7 @@
     {
       "from": "BAIL ORGANA",
       "to": "PADME",
-      "text": "That's not true!",
+      "text": "that is not true!",
       "where": "176 INT. CORUSCANT-SENATE CHAMBER-SUNSET",
       "number": 3,
       "time": 27
@@ -4860,7 +4860,7 @@
     {
       "from": "PADME",
       "to": "BAIL ORGANA",
-      "text": "He's been presenting evidence all afternoon.",
+      "text": "he is been presenting evidence all afternoon.",
       "where": "176 INT. CORUSCANT-SENATE CHAMBER-SUNSET",
       "number": 6,
       "time": 54
@@ -4948,7 +4948,7 @@
     {
       "from": "BAIL ORGANA",
       "to": "PADME",
-      "text": "We cannot let this happen.",
+      "text": "We can not let this happen.",
       "where": "181 INT. CORUSCANT-SENATE CHAMBER-SUNSET",
       "number": 5,
       "time": 45
@@ -4972,7 +4972,7 @@
     {
       "from": "OBI-WAN",
       "to": "YODA",
-      "text": "I've recalibrated the code warning all surviving Jedi to stay away.",
+      "text": "I have recalibrated the code warning all surviving Jedi to stay away.",
       "where": "184 INT. CORUSCANT-JEDI TEMPLE-COMPUTER ROOM-NIGHT",
       "number": 11,
       "time": 99
@@ -5012,7 +5012,7 @@
     {
       "from": "OBI-WAN",
       "to": "YODA",
-      "text": "It can't be It can't be",
+      "text": "It can not be It can not be",
       "where": "185 INT. CORUSCANT-JEDI TEMPLE-CONTROL CENTER-NIGHT",
       "number": 6,
       "time": 54
@@ -5044,7 +5044,7 @@
     {
       "from": "OBI-WAN",
       "to": "YODA",
-      "text": "I can't watch any more.",
+      "text": "I can not watch any more.",
       "where": "185 INT. CORUSCANT-JEDI TEMPLE-CONTROL CENTER-NIGHT",
       "number": 5,
       "time": 45
@@ -5076,7 +5076,7 @@
     {
       "from": "OBI-WAN",
       "to": "YODA",
-      "text": "He is like my brother I cannot do it.",
+      "text": "He is like my brother I can not do it.",
       "where": "185 INT. CORUSCANT-JEDI TEMPLE-CONTROL CENTER-NIGHT",
       "number": 9,
       "time": 81
@@ -5108,7 +5108,7 @@
     {
       "from": "OBI-WAN",
       "to": "YODA",
-      "text": "I do not know where the Emperor has sent him. I don't know where to look.",
+      "text": "I do not know where the Emperor has sent him. I do not know where to look.",
       "where": "185 INT. CORUSCANT-JEDI TEMPLE-CONTROL CENTER-NIGHT",
       "number": 16,
       "time": 144
@@ -5124,7 +5124,7 @@
     {
       "from": "OBI-WAN",
       "to": "PADME",
-      "text": "I'm here looking for Anakin When was the last time you saw him?",
+      "text": "I am here looking for Anakin When was the last time you saw him?",
       "where": "187 EXT. CORUSCANT -PADME'S APARTMENT-VERANDA-AFTERNOON",
       "number": 13,
       "time": 117
@@ -5156,7 +5156,7 @@
     {
       "from": "OBI-WAN",
       "to": "PADME",
-      "text": "Padme, I need your help. He's in grave danger.",
+      "text": "Padme, I need your help. he is in grave danger.",
       "where": "187 EXT. CORUSCANT -PADME'S APARTMENT-VERANDA-AFTERNOON",
       "number": 9,
       "time": 81
@@ -5180,7 +5180,7 @@
     {
       "from": "PADME",
       "to": "OBI-WAN",
-      "text": "You're wrong! How could you even say that?",
+      "text": "you are wrong! How could you even say that?",
       "where": "187 EXT. CORUSCANT -PADME'S APARTMENT-VERANDA-AFTERNOON",
       "number": 8,
       "time": 72
@@ -5196,7 +5196,7 @@
     {
       "from": "PADME",
       "to": "OBI-WAN",
-      "text": "Not Anakin! He couldn't!",
+      "text": "Not Anakin! He could not!",
       "where": "187 EXT. CORUSCANT -PADME'S APARTMENT-VERANDA-AFTERNOON",
       "number": 4,
       "time": 36
@@ -5204,7 +5204,7 @@
     {
       "from": "OBI-WAN",
       "to": "PADME",
-      "text": "He was deceived by a lie. We all were. It appears that the Chancellor is behind everything, including the war. Palpatine is the Sith Lord we've been looking for. After the death of Count Dooku, Anakin became his new apprentice.",
+      "text": "He was deceived by a lie. We all were. It appears that the Chancellor is behind everything, including the war. Palpatine is the Sith Lord we have been looking for. After the death of Count Dooku, Anakin became his new apprentice.",
       "where": "187 EXT. CORUSCANT -PADME'S APARTMENT-VERANDA-AFTERNOON",
       "number": 40,
       "time": 360
@@ -5212,7 +5212,7 @@
     {
       "from": "PADME",
       "to": "OBI-WAN",
-      "text": "I don't believe you I can't.",
+      "text": "I do not believe you I can not.",
       "where": "187 EXT. CORUSCANT -PADME'S APARTMENT-VERANDA-AFTERNOON",
       "number": 6,
       "time": 54
@@ -5228,7 +5228,7 @@
     {
       "from": "PADME",
       "to": "OBI-WAN",
-      "text": "You're going to kill him, aren't you?",
+      "text": "you are going to kill him, are not you?",
       "where": "187 EXT. CORUSCANT -PADME'S APARTMENT-VERANDA-AFTERNOON",
       "number": 7,
       "time": 63
@@ -5244,7 +5244,7 @@
     {
       "from": "PADME",
       "to": "OBI-WAN",
-      "text": "I can't",
+      "text": "I can not",
       "where": "187 EXT. CORUSCANT -PADME'S APARTMENT-VERANDA-AFTERNOON",
       "number": 2,
       "time": 18
@@ -5252,7 +5252,7 @@
     {
       "from": "OBI-WAN",
       "to": "PADME",
-      "text": "Anakin is the father, isn't he?",
+      "text": "Anakin is the father, is not he?",
       "where": "187 EXT. CORUSCANT -PADME'S APARTMENT-VERANDA-AFTERNOON",
       "number": 6,
       "time": 54
@@ -5260,7 +5260,7 @@
     {
       "from": "OBI-WAN",
       "to": "PADME",
-      "text": "I'm so sorry.",
+      "text": "I am so sorry.",
       "where": "187 EXT. CORUSCANT -PADME'S APARTMENT-VERANDA-AFTERNOON",
       "number": 3,
       "time": 27
@@ -5292,7 +5292,7 @@
     {
       "from": "PADME",
       "to": "CAPTAIN TYPHO",
-      "text": "I'll be all right, Captain.",
+      "text": "I will be all right, Captain.",
       "where": "191 EXT. CORUSCANT-LANDING PLATFORM-SUNSET",
       "number": 5,
       "time": 45
@@ -5316,7 +5316,7 @@
     {
       "from": "THREEPIO",
       "to": "PADME",
-      "text": "Green light. Do you know that I think I'm beginning to get the hang of this flying business.",
+      "text": "Green light. Do you know that I think I am beginning to get the hang of this flying business.",
       "where": "192 INT. NABOO SKIFF",
       "number": 18,
       "time": 162
@@ -5372,7 +5372,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "It's all right, you're safe now. What are you doing out here?",
+      "text": "it is all right, you are safe now. What are you doing out here?",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 12,
       "time": 108
@@ -5436,7 +5436,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Is Obi-Wan going to protect you? He can't he can't help you. He's not strong enough.",
+      "text": "Is Obi-Wan going to protect you? He can not he can not help you. he is not strong enough.",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 16,
       "time": 144
@@ -5452,7 +5452,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Love won't save you, Padme. Only my new powers can do that.",
+      "text": "Love will not save you, Padme. Only my new powers can do that.",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 12,
       "time": 108
@@ -5460,7 +5460,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "At what cost? You are a good person. Don't do this.",
+      "text": "At what cost? You are a good person. do not do this.",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 11,
       "time": 99
@@ -5468,7 +5468,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I won't lose you the way I lost my mother! I've become more powerful than any Jedi has ever dreamed of and I've done it for you. To protect you.",
+      "text": "I will not lose you the way I lost my mother! I have become more powerful than any Jedi has ever dreamed of and I have done it for you. To protect you.",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 30,
       "time": 270
@@ -5484,7 +5484,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "Don't you see, we don't have to run away anymore. I have brought peace to the Republic. I am more powerful than the Chancellor. I can overthrow him, and together you and I can rule the galaxy. Make things the way we want them to be.",
+      "text": "do not you see, we do not have to run away anymore. I have brought peace to the Republic. I am more powerful than the Chancellor. I can overthrow him, and together you and I can rule the galaxy. Make things the way we want them to be.",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 46,
       "time": 414
@@ -5492,7 +5492,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I don't believe what I'm hearing Obi-Wan was right. You've changed.",
+      "text": "I do not believe what I am hearing Obi-Wan was right. you have changed.",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 11,
       "time": 99
@@ -5500,7 +5500,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "I don't want to hear any more about Obi-Wan. The Jedi turned against me. Don't you turn against me.",
+      "text": "I do not want to hear any more about Obi-Wan. The Jedi turned against me. do not you turn against me.",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 19,
       "time": 171
@@ -5508,7 +5508,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "I don't know you anymore. Anakin, you're breaking my heart. I'll never stop loving you, but you are going down a path I can't follow.",
+      "text": "I do not know you anymore. Anakin, you are breaking my heart. I will never stop loving you, but you are going down a path I can not follow.",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 25,
       "time": 225
@@ -5524,7 +5524,7 @@
     {
       "from": "PADME",
       "to": "ANAKIN",
-      "text": "Because of what you've done what you plan to do. Stop, stop now. Come back! I love you.",
+      "text": "Because of what you have done what you plan to do. Stop, stop now. Come back! I love you.",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 18,
       "time": 162
@@ -5548,7 +5548,7 @@
     {
       "from": "ANAKIN",
       "to": "PADME",
-      "text": "You're with him. You've betrayed me! You brought him here to kill me!",
+      "text": "you are with him. you have betrayed me! You brought him here to kill me!",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 13,
       "time": 117
@@ -5628,7 +5628,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Don't lecture me, Obi-Wan. I see through the lies of the Jedi. I do not fear the dark side as you do. I have brought peace, justice, freedom, and security to my new Empire.",
+      "text": "do not lecture me, Obi-Wan. I see through the lies of the Jedi. I do not fear the dark side as you do. I have brought peace, justice, freedom, and security to my new Empire.",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 34,
       "time": 306
@@ -5644,7 +5644,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "Don't make me kill you.",
+      "text": "do not make me kill you.",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 5,
       "time": 45
@@ -5660,7 +5660,7 @@
     {
       "from": "ANAKIN",
       "to": "OBI-WAN",
-      "text": "If you're not with me, you're my enemy.",
+      "text": "If you are not with me, you are my enemy.",
       "where": "195 EXT. MUSTAFAR-LANDING PLATFORM-DAY",
       "number": 8,
       "time": 72
@@ -5716,7 +5716,7 @@
     {
       "from": "THREEPIO",
       "to": "ARTOO",
-      "text": "What are you doing? You're going to hurt her. Wait!",
+      "text": "What are you doing? you are going to hurt her. Wait!",
       "where": "198 EXT. MUSTAFAR-LANDING PLATFORM-NABOO CRUISER-DAY",
       "number": 10,
       "time": 90
@@ -5788,7 +5788,7 @@
     {
       "from": "BAIL ORGANA",
       "to": "YODA",
-      "text": "There aren't many troops on this side. Activate your homing beacon when you're ready.",
+      "text": "There are not many troops on this side. Activate your homing beacon when you are ready.",
       "where": "207 INT. CORUSCANT-SENATE OFFICE BUILDING-WIRING CHUTE-NIGHT",
       "number": 14,
       "time": 126
@@ -5908,7 +5908,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "It's over, Anakin. I have the high ground.",
+      "text": "it is over, Anakin. I have the high ground.",
       "where": "214 EXT. MUSTAFAR-COLLECTION PANELS-DAY",
       "number": 8,
       "time": 72
@@ -5924,7 +5924,7 @@
     {
       "from": "OBI-WAN",
       "to": "ANAKIN",
-      "text": "Don't try it.",
+      "text": "do not try it.",
       "where": "214 EXT. MUSTAFAR-COLLECTION PANELS-DAY",
       "number": 3,
       "time": 27
@@ -5972,7 +5972,7 @@
     {
       "from": "DARTH SIDIOUS",
       "to": "CLONE CAPTAIN",
-      "text": "Anakin! Anakin! There he is. He's still alive. Get a medical capsule, immediately.",
+      "text": "Anakin! Anakin! There he is. he is still alive. Get a medical capsule, immediately.",
       "where": "221 EXT. MUSTAFAR-VOLCANO PIT-DAY",
       "number": 13,
       "time": 117
@@ -5996,7 +5996,7 @@
     {
       "from": "BAIL ORGANA",
       "to": "OBI-WAN",
-      "text": "We'll take her to the medical center, quickly.",
+      "text": "we will take her to the medical center, quickly.",
       "where": "224 EXT. POLIS MASSA-LANDING PLATFORM-NIGHT",
       "number": 8,
       "time": 72
@@ -6004,7 +6004,7 @@
     {
       "from": "MEDICAL DROID",
       "to": "OBI-WAN",
-      "text": "Medically, she is completely healthy. For reasons we can't explain, we are losing her.",
+      "text": "Medically, she is completely healthy. For reasons we can not explain, we are losing her.",
       "where": "226 INT. POLIS MASSA-MEDICAL CENTER-NIGHT",
       "number": 14,
       "time": 126
@@ -6012,7 +6012,7 @@
     {
       "from": "OBI-WAN",
       "to": "MEDICAL DROID",
-      "text": "She's dying?",
+      "text": "She is dying?",
       "where": "226 INT. POLIS MASSA-MEDICAL CENTER-NIGHT",
       "number": 2,
       "time": 18
@@ -6020,7 +6020,7 @@
     {
       "from": "MEDICAL DROID",
       "to": "OBI-WAN",
-      "text": "We don't know why. She has lost the will to live. We need to operate quickly if we are to save the babies.",
+      "text": "We do not know why. She has lost the will to live. We need to operate quickly if we are to save the babies.",
       "where": "226 INT. POLIS MASSA-MEDICAL CENTER-NIGHT",
       "number": 23,
       "time": 207
@@ -6036,7 +6036,7 @@
     {
       "from": "MEDICAL DROID",
       "to": "OBI-WAN",
-      "text": "She's carrying twins.",
+      "text": "She is carrying twins.",
       "where": "226 INT. POLIS MASSA-MEDICAL CENTER-NIGHT",
       "number": 3,
       "time": 27
@@ -6052,7 +6052,7 @@
     {
       "from": "MEDICAL DROID",
       "to": "PADME",
-      "text": "It's a boy.",
+      "text": "it is a boy.",
       "where": "228 INT. POLIS MASSA-MEDICAL CENTER-NIGHT",
       "number": 3,
       "time": 27
@@ -6116,7 +6116,7 @@
     {
       "from": "DARTH SIDIOUS",
       "to": "DARTH VADER",
-      "text": "I'm afraid she died it seems in your anger, you killed her.",
+      "text": "I am afraid she died it seems in your anger, you killed her.",
       "where": "231 INT. CORUSCANT-IMPERIAL REHAB CENTER-DAY",
       "number": 12,
       "time": 108
@@ -6124,7 +6124,7 @@
     {
       "from": "DARTH VADER",
       "to": "DARTH SIDIOUS",
-      "text": "I couldn't have! She was alive! I felt her! She was alive! It's impossible! No!",
+      "text": "I could not have! She was alive! I felt her! She was alive! it is impossible! No!",
       "where": "231 INT. CORUSCANT-IMPERIAL REHAB CENTER-DAY",
       "number": 15,
       "time": 135
@@ -6156,7 +6156,7 @@
     {
       "from": "BAIL ORGANA",
       "to": "YODA",
-      "text": "My wife and I will take the girl. We've always talked of adopting a baby girl. She will be loved with us.",
+      "text": "My wife and I will take the girl. we have always talked of adopting a baby girl. She will be loved with us.",
       "where": "233 INT. ALDERAAN CRUISER-CONFERENCE ROOM",
       "number": 22,
       "time": 198
@@ -6252,7 +6252,7 @@
     {
       "from": "BAIL ORGANA",
       "to": "CAPTAIN ANTILLES",
-      "text": "I'm placing these droids in your care. Treat them well. Clean them up. Have the Protocol Droid's mind wiped.",
+      "text": "I am placing these droids in your care. Treat them well. Clean them up. Have the Protocol Droid's mind wiped.",
       "where": "234 INT. ALDERAAN STARCRUISER-HALLWAY- SPACE",
       "number": 19,
       "time": 171

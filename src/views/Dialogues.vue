@@ -1,33 +1,41 @@
 <template>
-  <div class="data-viz">
+  <div class="data-viz dialogues">
     <number-bubble />
     <d3-dialogues :data-dialogues="movieChoice" />
   </div>
 </template>
 
 <script>
+import { defineComponent, computed } from '@vue/composition-api'
 import d3Dialogues from '@/d3/d3-dialogues.vue'
-import numberBubble from '@/components/number-bubble.vue'
+import numberBubble from '@/components/comp-number-bubble.vue'
 import * as utils from '@/tools/utils'
 
-export default {
+export default defineComponent({
   name: 'Dialogues',
   components: {
     d3Dialogues,
     numberBubble,
   },
-  computed: {
-    title: function() {
-      return this.$store.state.movies[this.$route.params.id - 1].title
-    },
-    movieChoice: function() {
+  setup(props, ctx) {
+    const title = computed(() => {
+      return ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie]
+        .title
+    })
+
+    const movieChoice = computed(() => {
       return utils.filterMovies(
-        this.$store.state.movies[this.$route.params.id - 1].dialogs,
-        this.$route.params.id
+        ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie].dialogs,
+        ctx.root.$route.params.id
       )
-    },
+    })
+
+    return {
+      title,
+      movieChoice,
+    }
   },
-}
+})
 </script>
 
 <style lang="scss"></style>

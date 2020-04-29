@@ -3,113 +3,105 @@
 </template>
 
 <script>
+import { defineComponent, onMounted, watch } from '@vue/composition-api'
 import * as d3 from 'd3'
 
-export default {
+export default defineComponent({
   name: 'd3Dialogues',
   props: {
     DataDialogues: Object,
   },
-  data() {
-    return {
-      setupGraphic: {
-        margin: {
-          top: 150,
-          right: 150,
-          bottom: 150,
-          left: 150,
-        },
-        width: window.innerWidth,
-        height: window.innerHeight,
-        yellow: '#ffe403',
-        circle: {
-          originX: window.innerWidth / 2,
-          originY: window.innerHeight / 2,
-          radius: window.innerWidth / 6,
-          angle: [],
-          quarterAngle: Math.PI / 2,
-          smallQuarterAngleRight: (92.5 * Math.PI) / 180,
-          smallQuarterAngleLeft: (87.5 * Math.PI) / 180,
-          distanceFromPoint: window.innerWidth / 48,
-          smallCircleRadius: null,
-          bigCircleRadius: null,
-          angleLabels: null,
-        },
-        variables: {
-          allNodes: null,
-          cache: null,
-          labels: null,
-          subLabels: null,
-          links: null,
-          hoverLinks: null,
-          defs: null,
-          circles: null,
-          defsAppends: null,
-          grayscale: null,
-          blur: null,
-          initial: null,
-          svg: null,
-        },
+  setup(props, ctx) {
+    const setupGraphic = {
+      margin: {
+        top: 150,
+        right: 150,
+        bottom: 150,
+        left: 150,
+      },
+      width: window.innerWidth,
+      height: window.innerHeight,
+      yellow: '#ffe403',
+      circle: {
+        originX: window.innerWidth / 2,
+        originY: window.innerHeight / 2,
+        radius: window.innerWidth / 6,
+        angle: [],
+        quarterAngle: Math.PI / 2,
+        smallQuarterAngleRight: (92.5 * Math.PI) / 180,
+        smallQuarterAngleLeft: (87.5 * Math.PI) / 180,
+        distanceFromPoint: window.innerWidth / 48,
+        smallCircleRadius: null,
+        bigCircleRadius: null,
+        angleLabels: null,
+      },
+      variables: {
+        allNodes: null,
+        cache: null,
+        labels: null,
+        subLabels: null,
+        links: null,
+        hoverLinks: null,
+        defs: null,
+        circles: null,
+        defsAppends: null,
+        grayscale: null,
+        blur: null,
+        initial: null,
+        svg: null,
       },
     }
-  },
-  watch: {
-    DataDialogues: function(newVal) {
-      document.querySelector('#my_dataviz').innerHTML = ''
-      this.setupGraphic.circle.angle = []
-      this.generateGraph(newVal)
-    },
-  },
-  created() {
-    window.addEventListener('resize', this.onResize)
-  },
-  mounted() {
-    this.generateGraph(this.DataDialogues)
-  },
-  methods: {
-    generateGraph(data) {
-      this.setupGraphic.circle.angleLabels = 90 / (data.nodes.length / 4)
-      this.setupGraphic.variables.initial = d3
+
+    onMounted(() => {
+      generateGraph(props.DataDialogues)
+
+      window.addEventListener('resize', onResize)
+
+      watch(
+        () => props.DataDialogues,
+        newVal => {
+          document.querySelector('#my_dataviz').innerHTML = ''
+          setupGraphic.circle.angle = []
+          generateGraph(newVal)
+        }
+      )
+    })
+
+    const generateGraph = data => {
+      setupGraphic.circle.angleLabels = 90 / (data.nodes.length / 4)
+      setupGraphic.variables.initial = d3
         .select('#my_dataviz')
         .append('svg')
-        .attr('width', this.setupGraphic.width)
-        .attr('height', this.setupGraphic.height)
+        .attr('width', setupGraphic.width)
+        .attr('height', setupGraphic.height)
 
-      this.setupGraphic.variables.svg = this.setupGraphic.variables.initial
+      setupGraphic.variables.svg = setupGraphic.variables.initial
         .append('g')
         .attr('id', 'svg_container')
 
-      this.initializeData(data)
-    },
-    initializeData(data) {
-      this.setupGraphic.variables.allNodes = data.nodes.map(function(d) {
+      initializeData(data)
+    }
+
+    const initializeData = data => {
+      setupGraphic.variables.allNodes = data.nodes.map(function(d) {
         return d.name
       })
 
-      this.setupGraphic.circle.smallCircleRadius =
-        this.setupGraphic.circle.radius /
-        (this.setupGraphic.variables.allNodes.length * 0.5769230769)
-      this.setupGraphic.circle.bigCircleRadius =
-        this.setupGraphic.circle.radius /
-        (this.setupGraphic.variables.allNodes.length * 0.3846153846)
-
       // Loop on total character
-      for (let i = 0; i < this.setupGraphic.variables.allNodes.length; i++) {
+      for (let i = 0; i < setupGraphic.variables.allNodes.length; i++) {
         // Add one more to add space
-        this.setupGraphic.circle.angle.push(
-          (i / (this.setupGraphic.variables.allNodes.length / 2)) * Math.PI
+        setupGraphic.circle.angle.push(
+          (i / (setupGraphic.variables.allNodes.length / 2)) * Math.PI
         )
       }
 
-      var gDefs = this.setupGraphic.variables.initial
-        .append('g')
-        .attr('id', 'gDefs')
+      var gDefs = setupGraphic.variables.initial.append('g').attr('id', 'gDefs')
 
       // set the defs group for the images
-      this.setupGraphic.variables.defs = gDefs.append('svg:defs')
+      setupGraphic.variables.defs = gDefs.append('svg:defs')
 
       // set up filter
-      this.setupGraphic.variables.grayscale = gDefs
+      setupGraphic.variables.grayscale = gDefs
         .append('filter')
         .attr('id', 'desaturate')
         .append('feColorMatrix')
@@ -130,7 +122,7 @@ export default {
       feMerge.append('feMergeNode').attr('in', 'SourceGraphic')
 
       // add defs and img
-      this.setupGraphic.variables.defsAppends = this.setupGraphic.variables.defs
+      setupGraphic.variables.defsAppends = setupGraphic.variables.defs
         .selectAll('mynodes')
         .data(data.nodes)
         .enter()
@@ -149,21 +141,28 @@ export default {
           return d.img
         })
 
-      this.draw(data)
-    },
-    draw(data) {
-      this.drawLabels(data)
-      this.drawSubLabels(data)
-      this.drawLinks(data)
-      this.drawHoverLinks(data)
-      this.drawImages(data)
-    },
-    drawLabels(data) {
-      var gLabels = this.setupGraphic.variables.svg
-        .append('g')
-        .attr('id', 'gLabels')
+      draw(data)
+    }
+
+    const draw = data => {
+      setupGraphic.circle.smallCircleRadius =
+        setupGraphic.circle.radius /
+        (setupGraphic.variables.allNodes.length * 0.5769230769)
+      setupGraphic.circle.bigCircleRadius =
+        setupGraphic.circle.radius /
+        (setupGraphic.variables.allNodes.length * 0.3846153846)
+
+      drawLabels(data)
+      drawSubLabels(data)
+      drawLinks(data)
+      drawHoverLinks(data)
+      drawImages(data)
+    }
+
+    const drawLabels = data => {
+      var gLabels = setupGraphic.variables.svg.append('g').attr('id', 'gLabels')
       // set the labels
-      this.setupGraphic.variables.labels = gLabels
+      setupGraphic.variables.labels = gLabels
         .selectAll('mylabels')
         .data(data.nodes)
         .enter()
@@ -179,61 +178,60 @@ export default {
         .attr('transform', (d, i) => {
           let rotate = null
 
-          if (i < this.setupGraphic.variables.allNodes.length / 4) {
-            rotate =
-              'rotate(' + (0 + this.setupGraphic.circle.angleLabels * i) + ')'
+          if (i < setupGraphic.variables.allNodes.length / 4) {
+            rotate = 'rotate(' + (0 + setupGraphic.circle.angleLabels * i) + ')'
           } else if (
-            i >= this.setupGraphic.variables.allNodes.length / 4 &&
-            i < this.setupGraphic.variables.allNodes.length / 2
+            i >= setupGraphic.variables.allNodes.length / 4 &&
+            i < setupGraphic.variables.allNodes.length / 2
           ) {
             rotate =
               'rotate(' +
               (-90 +
-                this.setupGraphic.circle.angleLabels *
-                  (i % (this.setupGraphic.variables.allNodes.length / 4))) +
+                setupGraphic.circle.angleLabels *
+                  (i % (setupGraphic.variables.allNodes.length / 4))) +
               ')'
           } else if (
-            i >= this.setupGraphic.variables.allNodes.length / 2 &&
-            i < (this.setupGraphic.variables.allNodes.length / 4) * 3
+            i >= setupGraphic.variables.allNodes.length / 2 &&
+            i < (setupGraphic.variables.allNodes.length / 4) * 3
           ) {
             rotate =
-              'rotate(' + (180 + this.setupGraphic.circle.angleLabels * i) + ')'
+              'rotate(' + (180 + setupGraphic.circle.angleLabels * i) + ')'
           } else {
             rotate =
               'rotate(' +
               (-90 +
-                this.setupGraphic.circle.angleLabels *
-                  (i % (this.setupGraphic.variables.allNodes.length / 4))) +
+                setupGraphic.circle.angleLabels *
+                  (i % (setupGraphic.variables.allNodes.length / 4))) +
               ')'
           }
 
           return (
             'translate(' +
-            (this.setupGraphic.circle.originX +
-              (this.setupGraphic.circle.radius +
-                this.setupGraphic.circle.distanceFromPoint) *
+            (setupGraphic.circle.originX +
+              (setupGraphic.circle.radius +
+                setupGraphic.circle.distanceFromPoint) *
                 Math.sin(
-                  this.setupGraphic.circle.angle[i] -
-                    this.setupGraphic.circle.quarterAngle
+                  setupGraphic.circle.angle[i] -
+                    setupGraphic.circle.quarterAngle
                 )) +
             ' , ' +
-            (this.setupGraphic.circle.originY -
-              (this.setupGraphic.circle.radius +
-                this.setupGraphic.circle.distanceFromPoint) *
+            (setupGraphic.circle.originY -
+              (setupGraphic.circle.radius +
+                setupGraphic.circle.distanceFromPoint) *
                 Math.cos(
-                  this.setupGraphic.circle.angle[i] -
-                    this.setupGraphic.circle.quarterAngle
+                  setupGraphic.circle.angle[i] -
+                    setupGraphic.circle.quarterAngle
                 )) +
             '),' +
             rotate
           )
         })
         .style('text-anchor', (d, i) => {
-          if (i < this.setupGraphic.variables.allNodes.length / 4) {
+          if (i < setupGraphic.variables.allNodes.length / 4) {
             return 'end'
           } else if (
-            i >= this.setupGraphic.variables.allNodes.length / 4 &&
-            i < (this.setupGraphic.variables.allNodes.length / 4) * 3
+            i >= setupGraphic.variables.allNodes.length / 4 &&
+            i < (setupGraphic.variables.allNodes.length / 4) * 3
           ) {
             return 'start'
           } else {
@@ -249,15 +247,16 @@ export default {
         })
         .style('dominant-baseline', 'middle')
 
-      this.setupGraphic.variables.labels.on('click', d => {
-        this.change(d.id)
+      setupGraphic.variables.labels.on('click', d => {
+        change(d.id)
       })
-    },
-    drawSubLabels(data) {
-      var gSubLabels = this.setupGraphic.variables.svg
+    }
+
+    const drawSubLabels = data => {
+      var gSubLabels = setupGraphic.variables.svg
         .append('g')
         .attr('id', 'gSubLabels')
-      this.setupGraphic.variables.subLabels = gSubLabels
+      setupGraphic.variables.subLabels = gSubLabels
         .selectAll('mylabels')
         .data(data.nodes)
         .enter()
@@ -272,105 +271,104 @@ export default {
           let translateX = null
           let translateY = null
 
-          if (i < this.setupGraphic.variables.allNodes.length / 4) {
-            rotate =
-              'rotate(' + (0 + this.setupGraphic.circle.angleLabels * i) + ')'
+          if (i < setupGraphic.variables.allNodes.length / 4) {
+            rotate = 'rotate(' + (0 + setupGraphic.circle.angleLabels * i) + ')'
             translateX =
-              this.setupGraphic.circle.originX +
-              (this.setupGraphic.circle.radius +
-                this.setupGraphic.circle.distanceFromPoint) *
+              setupGraphic.circle.originX +
+              (setupGraphic.circle.radius +
+                setupGraphic.circle.distanceFromPoint) *
                 Math.sin(
-                  this.setupGraphic.circle.angle[i] -
-                    this.setupGraphic.circle.smallQuarterAngleRight
+                  setupGraphic.circle.angle[i] -
+                    setupGraphic.circle.smallQuarterAngleRight
                 )
             translateY =
-              this.setupGraphic.circle.originY -
-              (this.setupGraphic.circle.radius +
-                this.setupGraphic.circle.distanceFromPoint) *
+              setupGraphic.circle.originY -
+              (setupGraphic.circle.radius +
+                setupGraphic.circle.distanceFromPoint) *
                 Math.cos(
-                  this.setupGraphic.circle.angle[i] -
-                    this.setupGraphic.circle.smallQuarterAngleRight
+                  setupGraphic.circle.angle[i] -
+                    setupGraphic.circle.smallQuarterAngleRight
                 )
           } else if (
-            i >= this.setupGraphic.variables.allNodes.length / 4 &&
-            i < this.setupGraphic.variables.allNodes.length / 2
+            i >= setupGraphic.variables.allNodes.length / 4 &&
+            i < setupGraphic.variables.allNodes.length / 2
           ) {
             rotate =
               'rotate(' +
               (-90 +
-                this.setupGraphic.circle.angleLabels *
-                  (i % (this.setupGraphic.variables.allNodes.length / 4))) +
+                setupGraphic.circle.angleLabels *
+                  (i % (setupGraphic.variables.allNodes.length / 4))) +
               ')'
             translateX =
-              this.setupGraphic.circle.originX +
-              (this.setupGraphic.circle.radius +
-                this.setupGraphic.circle.distanceFromPoint) *
+              setupGraphic.circle.originX +
+              (setupGraphic.circle.radius +
+                setupGraphic.circle.distanceFromPoint) *
                 Math.sin(
-                  this.setupGraphic.circle.angle[i] -
-                    this.setupGraphic.circle.smallQuarterAngleLeft
+                  setupGraphic.circle.angle[i] -
+                    setupGraphic.circle.smallQuarterAngleLeft
                 )
             translateY =
-              this.setupGraphic.circle.originY -
-              (this.setupGraphic.circle.radius +
-                this.setupGraphic.circle.distanceFromPoint) *
+              setupGraphic.circle.originY -
+              (setupGraphic.circle.radius +
+                setupGraphic.circle.distanceFromPoint) *
                 Math.cos(
-                  this.setupGraphic.circle.angle[i] -
-                    this.setupGraphic.circle.smallQuarterAngleLeft
+                  setupGraphic.circle.angle[i] -
+                    setupGraphic.circle.smallQuarterAngleLeft
                 )
           } else if (
-            i >= this.setupGraphic.variables.allNodes.length / 2 &&
-            i < (this.setupGraphic.variables.allNodes.length / 4) * 3
+            i >= setupGraphic.variables.allNodes.length / 2 &&
+            i < (setupGraphic.variables.allNodes.length / 4) * 3
           ) {
             rotate =
-              'rotate(' + (180 + this.setupGraphic.circle.angleLabels * i) + ')'
+              'rotate(' + (180 + setupGraphic.circle.angleLabels * i) + ')'
             translateX =
-              this.setupGraphic.circle.originX +
-              (this.setupGraphic.circle.radius +
-                this.setupGraphic.circle.distanceFromPoint) *
+              setupGraphic.circle.originX +
+              (setupGraphic.circle.radius +
+                setupGraphic.circle.distanceFromPoint) *
                 Math.sin(
-                  this.setupGraphic.circle.angle[i] -
-                    this.setupGraphic.circle.smallQuarterAngleLeft
+                  setupGraphic.circle.angle[i] -
+                    setupGraphic.circle.smallQuarterAngleLeft
                 )
             translateY =
-              this.setupGraphic.circle.originY -
-              (this.setupGraphic.circle.radius +
-                this.setupGraphic.circle.distanceFromPoint) *
+              setupGraphic.circle.originY -
+              (setupGraphic.circle.radius +
+                setupGraphic.circle.distanceFromPoint) *
                 Math.cos(
-                  this.setupGraphic.circle.angle[i] -
-                    this.setupGraphic.circle.smallQuarterAngleLeft
+                  setupGraphic.circle.angle[i] -
+                    setupGraphic.circle.smallQuarterAngleLeft
                 )
           } else {
             rotate =
               'rotate(' +
               (-90 +
-                this.setupGraphic.circle.angleLabels *
-                  (i % (this.setupGraphic.variables.allNodes.length / 4))) +
+                setupGraphic.circle.angleLabels *
+                  (i % (setupGraphic.variables.allNodes.length / 4))) +
               ')'
             translateX =
-              this.setupGraphic.circle.originX +
-              (this.setupGraphic.circle.radius +
-                this.setupGraphic.circle.distanceFromPoint) *
+              setupGraphic.circle.originX +
+              (setupGraphic.circle.radius +
+                setupGraphic.circle.distanceFromPoint) *
                 Math.sin(
-                  this.setupGraphic.circle.angle[i] -
-                    this.setupGraphic.circle.smallQuarterAngleRight
+                  setupGraphic.circle.angle[i] -
+                    setupGraphic.circle.smallQuarterAngleRight
                 )
             translateY =
-              this.setupGraphic.circle.originY -
-              (this.setupGraphic.circle.radius +
-                this.setupGraphic.circle.distanceFromPoint) *
+              setupGraphic.circle.originY -
+              (setupGraphic.circle.radius +
+                setupGraphic.circle.distanceFromPoint) *
                 Math.cos(
-                  this.setupGraphic.circle.angle[i] -
-                    this.setupGraphic.circle.smallQuarterAngleRight
+                  setupGraphic.circle.angle[i] -
+                    setupGraphic.circle.smallQuarterAngleRight
                 )
           }
           return 'translate(' + translateX + ' , ' + translateY + '),' + rotate
         })
         .style('text-anchor', (d, i) => {
-          if (i < this.setupGraphic.variables.allNodes.length / 4) {
+          if (i < setupGraphic.variables.allNodes.length / 4) {
             return 'end'
           } else if (
-            i >= this.setupGraphic.variables.allNodes.length / 4 &&
-            i < (this.setupGraphic.variables.allNodes.length / 4) * 3
+            i >= setupGraphic.variables.allNodes.length / 4 &&
+            i < (setupGraphic.variables.allNodes.length / 4) * 3
           ) {
             return 'start'
           } else {
@@ -385,67 +383,194 @@ export default {
           }
         })
         .style('dominant-baseline', 'middle')
-    },
-    drawLinks(data) {
-      var gLinks = this.setupGraphic.variables.svg
-        .append('g')
-        .attr('id', 'gLinks')
+    }
+
+    const drawLinks = data => {
+      const maxNumber = Math.max(...data.links.map(s => s.number))
+
+      var gLinks = setupGraphic.variables.svg.append('g').attr('id', 'gLinks')
       // set the links
-      this.setupGraphic.variables.links = gLinks
+      setupGraphic.variables.links = gLinks
         .selectAll('mylinks')
         .data(data.links)
         .enter()
         .append('path')
         .attr('d', d => {
           var startX =
-            this.setupGraphic.circle.originX +
-            this.setupGraphic.circle.radius *
+            setupGraphic.circle.originX +
+            setupGraphic.circle.radius *
               Math.sin(
-                this.setupGraphic.circle.angle[d.source - 1] -
-                  this.setupGraphic.circle.quarterAngle
+                setupGraphic.circle.angle[d.source - 1] -
+                  setupGraphic.circle.quarterAngle
               )
           var startY =
-            this.setupGraphic.circle.originY -
-            this.setupGraphic.circle.radius *
+            setupGraphic.circle.originY -
+            setupGraphic.circle.radius *
               Math.cos(
-                this.setupGraphic.circle.angle[d.source - 1] -
-                  this.setupGraphic.circle.quarterAngle
+                setupGraphic.circle.angle[d.source - 1] -
+                  setupGraphic.circle.quarterAngle
               )
           var endX =
-            this.setupGraphic.circle.originX +
-            this.setupGraphic.circle.radius *
+            setupGraphic.circle.originX +
+            setupGraphic.circle.radius *
               Math.sin(
-                this.setupGraphic.circle.angle[d.target - 1] -
-                  this.setupGraphic.circle.quarterAngle
+                setupGraphic.circle.angle[d.target - 1] -
+                  setupGraphic.circle.quarterAngle
               )
           var endY =
-            this.setupGraphic.circle.originY -
-            this.setupGraphic.circle.radius *
+            setupGraphic.circle.originY -
+            setupGraphic.circle.radius *
               Math.cos(
-                this.setupGraphic.circle.angle[d.target - 1] -
-                  this.setupGraphic.circle.quarterAngle
+                setupGraphic.circle.angle[d.target - 1] -
+                  setupGraphic.circle.quarterAngle
               )
-          var dx = endX - startX
-          var dy = endY - startY
-          var dr = Math.sqrt(dx * dx + dy * dy)
 
-          var curveDirection = 0
+          var cxEnd = 0
+          var cyEnd = 0
+          var cxStart = 0
+          var cyStart = 0
 
-          if (d.source + 30 < this.setupGraphic.variables.allNodes.length) {
-            if (d.target > d.source && d.target <= d.source + 30) {
-              curveDirection = 0
-            } else {
-              curveDirection = 1
-            }
-          } else {
+          // Faire un système de ratio ? En fonction de sa place ? Comment calculer la place et comment avoir la distance la plus proche ?
+          // Calculer la distance entre X et Cx Puis diviser cette distance par la place de d.target
+          // ratio a:b
+          // rloc = (x1 + b•(x2 - x1)/(a + b), y1 + b•(y2 - y1)/(a + b))
+          // rloc X = (x1 + b•(x2 - x1)/(a + b)
+          // rloc Y = y1 + b•(y2 - y1)/(a + b))
+
+          let b = Math.floor(setupGraphic.variables.allNodes.length / 4)
+          let a = 0
+
+          var sourceUpFour =
+            d.source + setupGraphic.variables.allNodes.length / 4 >
+            setupGraphic.variables.allNodes.length
+              ? d.source +
+                setupGraphic.variables.allNodes.length / 4 -
+                setupGraphic.variables.allNodes.length
+              : d.source + setupGraphic.variables.allNodes.length / 4
+          var sourceDownFour =
+            d.source - setupGraphic.variables.allNodes.length / 4 < 0
+              ? d.source -
+                setupGraphic.variables.allNodes.length / 4 +
+                (setupGraphic.variables.allNodes.length + d.source)
+              : d.source - setupGraphic.variables.allNodes.length / 4
+
+          if (
+            d.source + setupGraphic.variables.allNodes.length / 4 >
+            setupGraphic.variables.allNodes.length
+          ) {
             if (
-              d.target < d.source &&
-              d.target >=
-                d.source + 30 - this.setupGraphic.variables.allNodes.length
+              (d.target < d.source && d.target >= sourceDownFour) ||
+              (d.target > d.source &&
+                d.target <= setupGraphic.variables.allNodes.length) ||
+              (d.target > 0 && d.target <= sourceUpFour)
             ) {
-              curveDirection = 1
+              a = d.target - d.source + setupGraphic.variables.allNodes.length
+
+              a = Math.abs(a - b)
+
+              if (a === b) {
+                cxStart = setupGraphic.circle.originX
+                cyStart = setupGraphic.circle.originY
+                cxEnd = setupGraphic.circle.originX
+                cyEnd = setupGraphic.circle.originY
+              } else {
+                cxEnd =
+                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
+                cyEnd =
+                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxStart =
+                  startX +
+                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                cyStart =
+                  startY +
+                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+              }
             } else {
-              curveDirection = 0
+              cxStart = setupGraphic.circle.originX
+              cyStart = setupGraphic.circle.originY
+              cxEnd = setupGraphic.circle.originX
+              cyEnd = setupGraphic.circle.originY
+            }
+          }
+
+          if (d.source - setupGraphic.variables.allNodes.length / 4 < 0) {
+            if (
+              (d.target > d.source && d.target <= sourceUpFour) ||
+              (d.target < d.source && d.target >= 0) ||
+              (d.target <= setupGraphic.variables.allNodes.length &&
+                d.target >= sourceDownFour)
+            ) {
+              a =
+                Math.abs(d.target - d.source) > b
+                  ? Math.abs(
+                      d.target -
+                        d.source -
+                        setupGraphic.variables.allNodes.length
+                    )
+                  : Math.abs(d.target - d.source)
+
+              a = Math.abs(a - b)
+
+              if (a === b) {
+                cxStart = setupGraphic.circle.originX
+                cyStart = setupGraphic.circle.originY
+                cxEnd = setupGraphic.circle.originX
+                cyEnd = setupGraphic.circle.originY
+              } else {
+                cxEnd =
+                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
+                cyEnd =
+                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxStart =
+                  startX +
+                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                cyStart =
+                  startY +
+                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+              }
+            } else {
+              cxStart = setupGraphic.circle.originX
+              cyStart = setupGraphic.circle.originY
+              cxEnd = setupGraphic.circle.originX
+              cyEnd = setupGraphic.circle.originY
+            }
+          }
+
+          if (
+            d.source + setupGraphic.variables.allNodes.length / 4 <=
+              setupGraphic.variables.allNodes.length &&
+            d.source - setupGraphic.variables.allNodes.length / 4 >= 0
+          ) {
+            if (
+              (d.target > d.source && d.target <= sourceUpFour) ||
+              (d.target < d.source && d.target >= sourceDownFour)
+            ) {
+              a = Math.abs(d.target - d.source - b)
+
+              a = Math.abs(a - b)
+
+              if (a === b || a + 1 === b) {
+                cxStart = setupGraphic.circle.originX
+                cyStart = setupGraphic.circle.originY
+                cxEnd = setupGraphic.circle.originX
+                cyEnd = setupGraphic.circle.originY
+              } else {
+                cxEnd =
+                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
+                cyEnd =
+                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxStart =
+                  startX +
+                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                cyStart =
+                  startY +
+                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+              }
+            } else {
+              cxStart = setupGraphic.circle.originX
+              cyStart = setupGraphic.circle.originY
+              cxEnd = setupGraphic.circle.originX
+              cyEnd = setupGraphic.circle.originY
             }
           }
 
@@ -454,13 +579,15 @@ export default {
             startX +
             ' ' +
             startY +
-            ' A ' +
-            dr +
+            ' C ' +
+            cxStart +
             ' ' +
-            dr +
-            ' 0 0 ' +
-            curveDirection +
+            cyStart +
+            ', ' +
+            cxEnd +
             ' ' +
+            cyEnd +
+            ', ' +
             endX +
             ' ' +
             endY
@@ -480,78 +607,198 @@ export default {
           }
         })
         .style('fill', 'none')
-        .attr('stroke', this.setupGraphic.yellow)
+        .attr('stroke', setupGraphic.yellow)
         .attr('stroke-opacity', d => {
-          return d.source === 1 || d.target === 1 ? '1' : '0.2'
+          return d.source === 1 || d.target === 1 ? '1' : '0.1'
         })
         .attr('stroke-width', d => {
-          return d.source === 1 || d.target === 1 ? '2' : '0.5'
+          return (d.number / maxNumber) * 5 + 1
         })
         .style('filter', d => {
           if (d.source === 1 || d.target === 1) {
             return 'url(#glow)'
           }
         })
-    },
-    drawHoverLinks(data) {
-      var gHoverLinks = this.setupGraphic.variables.svg
+    }
+
+    const drawHoverLinks = data => {
+      var gHoverLinks = setupGraphic.variables.svg
         .append('g')
         .attr('id', 'gHoverLinks')
-      this.setupGraphic.variables.hoverLinks = gHoverLinks
+      setupGraphic.variables.hoverLinks = gHoverLinks
         .selectAll('mylinks')
         .data(data.links)
         .enter()
         .append('path')
         .attr('d', d => {
           var startX =
-            this.setupGraphic.circle.originX +
-            this.setupGraphic.circle.radius *
+            setupGraphic.circle.originX +
+            setupGraphic.circle.radius *
               Math.sin(
-                this.setupGraphic.circle.angle[d.source - 1] -
-                  this.setupGraphic.circle.quarterAngle
+                setupGraphic.circle.angle[d.source - 1] -
+                  setupGraphic.circle.quarterAngle
               )
           var startY =
-            this.setupGraphic.circle.originY -
-            this.setupGraphic.circle.radius *
+            setupGraphic.circle.originY -
+            setupGraphic.circle.radius *
               Math.cos(
-                this.setupGraphic.circle.angle[d.source - 1] -
-                  this.setupGraphic.circle.quarterAngle
+                setupGraphic.circle.angle[d.source - 1] -
+                  setupGraphic.circle.quarterAngle
               )
           var endX =
-            this.setupGraphic.circle.originX +
-            this.setupGraphic.circle.radius *
+            setupGraphic.circle.originX +
+            setupGraphic.circle.radius *
               Math.sin(
-                this.setupGraphic.circle.angle[d.target - 1] -
-                  this.setupGraphic.circle.quarterAngle
+                setupGraphic.circle.angle[d.target - 1] -
+                  setupGraphic.circle.quarterAngle
               )
           var endY =
-            this.setupGraphic.circle.originY -
-            this.setupGraphic.circle.radius *
+            setupGraphic.circle.originY -
+            setupGraphic.circle.radius *
               Math.cos(
-                this.setupGraphic.circle.angle[d.target - 1] -
-                  this.setupGraphic.circle.quarterAngle
+                setupGraphic.circle.angle[d.target - 1] -
+                  setupGraphic.circle.quarterAngle
               )
-          var dx = endX - startX
-          var dy = endY - startY
-          var dr = Math.sqrt(dx * dx + dy * dy)
 
-          var curveDirection = 0
+          var cxEnd = 0
+          var cyEnd = 0
+          var cxStart = 0
+          var cyStart = 0
 
-          if (d.source + 30 < this.setupGraphic.variables.allNodes.length) {
-            if (d.target > d.source && d.target <= d.source + 30) {
-              curveDirection = 0
-            } else {
-              curveDirection = 1
-            }
-          } else {
+          let b = Math.floor(setupGraphic.variables.allNodes.length / 4)
+          let a = 0
+
+          var sourceUpFour =
+            d.source + setupGraphic.variables.allNodes.length / 4 >
+            setupGraphic.variables.allNodes.length
+              ? d.source +
+                setupGraphic.variables.allNodes.length / 4 -
+                setupGraphic.variables.allNodes.length
+              : d.source + setupGraphic.variables.allNodes.length / 4
+          var sourceDownFour =
+            d.source - setupGraphic.variables.allNodes.length / 4 < 0
+              ? d.source -
+                setupGraphic.variables.allNodes.length / 4 +
+                (setupGraphic.variables.allNodes.length + d.source)
+              : d.source - setupGraphic.variables.allNodes.length / 4
+
+          if (
+            d.source + setupGraphic.variables.allNodes.length / 4 >
+            setupGraphic.variables.allNodes.length
+          ) {
             if (
-              d.target < d.source &&
-              d.target >=
-                d.source + 30 - this.setupGraphic.variables.allNodes.length
+              (d.target < d.source && d.target >= sourceDownFour) ||
+              (d.target > d.source &&
+                d.target <= setupGraphic.variables.allNodes.length) ||
+              (d.target > 0 && d.target <= sourceUpFour)
             ) {
-              curveDirection = 1
+              a = d.target - d.source + setupGraphic.variables.allNodes.length
+
+              a = Math.abs(a - b)
+
+              if (a === b) {
+                cxStart = setupGraphic.circle.originX
+                cyStart = setupGraphic.circle.originY
+                cxEnd = setupGraphic.circle.originX
+                cyEnd = setupGraphic.circle.originY
+              } else {
+                cxEnd =
+                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
+                cyEnd =
+                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxStart =
+                  startX +
+                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                cyStart =
+                  startY +
+                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+              }
             } else {
-              curveDirection = 0
+              cxStart = setupGraphic.circle.originX
+              cyStart = setupGraphic.circle.originY
+              cxEnd = setupGraphic.circle.originX
+              cyEnd = setupGraphic.circle.originY
+            }
+          }
+
+          if (d.source - setupGraphic.variables.allNodes.length / 4 < 0) {
+            if (
+              (d.target > d.source && d.target <= sourceUpFour) ||
+              (d.target < d.source && d.target >= 0) ||
+              (d.target <= setupGraphic.variables.allNodes.length &&
+                d.target >= sourceDownFour)
+            ) {
+              a =
+                Math.abs(d.target - d.source) > b
+                  ? Math.abs(
+                      d.target -
+                        d.source -
+                        setupGraphic.variables.allNodes.length
+                    )
+                  : Math.abs(d.target - d.source)
+
+              a = Math.abs(a - b)
+
+              if (a === b) {
+                cxStart = setupGraphic.circle.originX
+                cyStart = setupGraphic.circle.originY
+                cxEnd = setupGraphic.circle.originX
+                cyEnd = setupGraphic.circle.originY
+              } else {
+                cxEnd =
+                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
+                cyEnd =
+                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxStart =
+                  startX +
+                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                cyStart =
+                  startY +
+                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+              }
+            } else {
+              cxStart = setupGraphic.circle.originX
+              cyStart = setupGraphic.circle.originY
+              cxEnd = setupGraphic.circle.originX
+              cyEnd = setupGraphic.circle.originY
+            }
+          }
+
+          if (
+            d.source + setupGraphic.variables.allNodes.length / 4 <=
+              setupGraphic.variables.allNodes.length &&
+            d.source - setupGraphic.variables.allNodes.length / 4 >= 0
+          ) {
+            if (
+              (d.target > d.source && d.target <= sourceUpFour) ||
+              (d.target < d.source && d.target >= sourceDownFour)
+            ) {
+              a = Math.abs(d.target - d.source - b)
+
+              a = Math.abs(a - b)
+
+              if (a === b || a + 1 === b) {
+                cxStart = setupGraphic.circle.originX
+                cyStart = setupGraphic.circle.originY
+                cxEnd = setupGraphic.circle.originX
+                cyEnd = setupGraphic.circle.originY
+              } else {
+                cxEnd =
+                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
+                cyEnd =
+                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxStart =
+                  startX +
+                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                cyStart =
+                  startY +
+                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+              }
+            } else {
+              cxStart = setupGraphic.circle.originX
+              cyStart = setupGraphic.circle.originY
+              cxEnd = setupGraphic.circle.originX
+              cyEnd = setupGraphic.circle.originY
             }
           }
 
@@ -560,13 +807,15 @@ export default {
             startX +
             ' ' +
             startY +
-            ' A ' +
-            dr +
+            ' C ' +
+            cxStart +
             ' ' +
-            dr +
-            ' 0 0 ' +
-            curveDirection +
+            cyStart +
+            ', ' +
+            cxEnd +
             ' ' +
+            cyEnd +
+            ', ' +
             endX +
             ' ' +
             endY
@@ -593,49 +842,44 @@ export default {
         })
 
       // hover effect links
-      this.setupGraphic.variables.hoverLinks.on('mouseover', d => {
+      setupGraphic.variables.hoverLinks.on('mouseover', d => {
         if (
           d3
             .select('#_hover_link_' + d.id)
             .classed('dialogue__hoverLink--actif')
         ) {
           document.querySelector('.number').style.top =
-            d3.event.clientY - this.setupGraphic.circle.radius / 10 / 2 + 'px'
+            d3.event.clientY - setupGraphic.circle.radius / 10 / 2 + 'px'
           document.querySelector('.number').style.left =
-            d3.event.clientX -
-            5 -
-            this.setupGraphic.circle.radius / 10 / 2 +
-            'px'
+            d3.event.clientX - 5 - setupGraphic.circle.radius / 10 / 2 + 'px'
           document.querySelector('.number').innerHTML = d.number
           document.querySelector('.number').classList.add('number--actif')
 
           d3.select('#_hover_link_' + d.id).on('mousemove', () => {
             document.querySelector('.number').style.top =
-              d3.event.clientY - this.setupGraphic.circle.radius / 10 / 2 + 'px'
+              d3.event.clientY - setupGraphic.circle.radius / 10 / 2 + 'px'
             document.querySelector('.number').style.left =
-              d3.event.clientX -
-              5 -
-              this.setupGraphic.circle.radius / 10 / 2 +
-              'px'
+              d3.event.clientX - 5 - setupGraphic.circle.radius / 10 / 2 + 'px'
           })
         }
       })
 
       // mouse out effect links
-      this.setupGraphic.variables.hoverLinks.on('mouseout', d => {
+      setupGraphic.variables.hoverLinks.on('mouseout', d => {
         document.querySelector('.number').classList.remove('number--actif')
         if (d3.select('#_link_' + d.id).classed('dialogue__link--actif')) {
-          d3.select('#_link_' + d.id).style('stroke', this.setupGraphic.yellow)
+          d3.select('#_link_' + d.id).style('stroke', setupGraphic.yellow)
         }
       })
-    },
-    drawImages(data) {
-      var gCircles = this.setupGraphic.variables.svg
+    }
+
+    const drawImages = data => {
+      var gCircles = setupGraphic.variables.svg
         .append('g')
         .attr('id', 'gCircles')
 
       // add circles
-      this.setupGraphic.variables.circles = gCircles
+      setupGraphic.variables.circles = gCircles
         .selectAll('mynodes')
         .data(data.nodes)
         .enter()
@@ -646,20 +890,20 @@ export default {
         .attr('transform', (d, i) => {
           return (
             'translate(' +
-            (this.setupGraphic.circle.originX -
+            (setupGraphic.circle.originX -
               30 +
-              this.setupGraphic.circle.radius *
+              setupGraphic.circle.radius *
                 Math.sin(
-                  this.setupGraphic.circle.angle[i] -
-                    this.setupGraphic.circle.quarterAngle
+                  setupGraphic.circle.angle[i] -
+                    setupGraphic.circle.quarterAngle
                 )) +
             ',' +
-            (this.setupGraphic.circle.originY -
+            (setupGraphic.circle.originY -
               30 -
-              this.setupGraphic.circle.radius *
+              setupGraphic.circle.radius *
                 Math.cos(
-                  this.setupGraphic.circle.angle[i] -
-                    this.setupGraphic.circle.quarterAngle
+                  setupGraphic.circle.angle[i] -
+                    setupGraphic.circle.quarterAngle
                 )) +
             ')'
           )
@@ -668,9 +912,9 @@ export default {
         .attr('cy', 30)
         .attr('r', (d, i) => {
           if (i === 0) {
-            return this.setupGraphic.circle.bigCircleRadius
+            return setupGraphic.circle.bigCircleRadius
           } else {
-            return this.setupGraphic.circle.smallCircleRadius
+            return setupGraphic.circle.smallCircleRadius
           }
         })
         .attr('class', (d, i) => {
@@ -686,7 +930,7 @@ export default {
             return 'url(#desaturate)'
           }
         })
-        .style('stroke', this.setupGraphic.yellow)
+        .style('stroke', setupGraphic.yellow)
         .style('stroke-width', (d, i) => {
           if (i === 0) {
             return '1'
@@ -696,7 +940,7 @@ export default {
         })
 
       // hover effects circles
-      this.setupGraphic.variables.circles.on('mouseover', d => {
+      setupGraphic.variables.circles.on('mouseover', d => {
         d3.select('#_circles_' + d.id)
           .style('filter', null)
           .style('stroke-width', '1')
@@ -707,7 +951,7 @@ export default {
       })
 
       // mouse out effect circles
-      this.setupGraphic.variables.circles.on('mouseout', d => {
+      setupGraphic.variables.circles.on('mouseout', d => {
         d3.select('#_circles_' + d.id)
           .style('filter', 'url(#desaturate)')
           .style('stroke-width', '0')
@@ -720,60 +964,48 @@ export default {
       })
 
       // Click effect circles
-      this.setupGraphic.variables.circles.on('click', d => {
-        this.change(d.id)
+      setupGraphic.variables.circles.on('click', d => {
+        change(d.id)
       })
-    },
-    onResize() {
-      if (window.innerWidth > 1024) {
-        this.setupGraphic.width = window.innerWidth
-        this.setupGraphic.height = window.innerHeight
-        this.setupGraphic.circle.originX = this.setupGraphic.width / 2
-        this.setupGraphic.circle.originY = this.setupGraphic.height / 2
-        this.setupGraphic.circle.radius = this.setupGraphic.width / 6
-        this.setupGraphic.circle.smallCircleRadius =
-          this.setupGraphic.circle.radius / 30
-        this.setupGraphic.circle.bigCircleRadius =
-          this.setupGraphic.circle.radius / 20
-        this.setupGraphic.circle.distanceFromPoint =
-          this.setupGraphic.width / 48
-        document.querySelector('.number').style.width =
-          this.setupGraphic.circle.radius / 10 + 'px'
-        document.querySelector('.number').style.height =
-          this.setupGraphic.circle.radius / 10 + 'px'
-        document.querySelector('.number').style.fontSize =
-          this.setupGraphic.width / 129.5 + 'px'
-        document.querySelector('.dialogue').style.fontSize =
-          this.setupGraphic.width / 168 + 'px'
-        document.querySelector('.dialogue__name--active').style.fontSize =
-          this.setupGraphic.width / 100 + 'px'
+    }
+
+    const onResize = () => {
+      if (window.innerWidth > 1024 && ctx.root.$route.name === 'Dialogues') {
+        setupGraphic.width = window.innerWidth
+        setupGraphic.height = window.innerHeight
+        setupGraphic.circle.originX = setupGraphic.width / 2
+        setupGraphic.circle.originY = setupGraphic.height / 2
+        setupGraphic.circle.radius = setupGraphic.width / 6
+        setupGraphic.circle.distanceFromPoint = setupGraphic.width / 48
+
         document.getElementById('svg_container').innerHTML = ''
 
-        this.setupGraphic.variables.initial
+        setupGraphic.variables.initial
           .attr(
             'width',
-            this.setupGraphic.width +
-              this.setupGraphic.margin.left +
-              this.setupGraphic.margin.right
+            setupGraphic.width +
+              setupGraphic.margin.left +
+              setupGraphic.margin.right
           )
           .attr(
             'height',
-            this.setupGraphic.height +
-              this.setupGraphic.margin.top +
-              this.setupGraphic.margin.bottom
+            setupGraphic.height +
+              setupGraphic.margin.top +
+              setupGraphic.margin.bottom
           )
 
-        this.draw(this.DataDialogues)
+        draw(props.DataDialogues)
       }
-    },
-    change(id) {
+    }
+
+    const change = id => {
       // move the circles
-      this.setupGraphic.variables.circles
+      setupGraphic.variables.circles
         .attr('r', (x, i) => {
           if (i === id - 1) {
-            return this.setupGraphic.circle.bigCircleRadius
+            return setupGraphic.circle.bigCircleRadius
           } else {
-            return this.setupGraphic.circle.smallCircleRadius
+            return setupGraphic.circle.smallCircleRadius
           }
         })
         .attr('class', (x, i) => {
@@ -795,7 +1027,7 @@ export default {
         })
 
       // move the labels
-      this.setupGraphic.variables.labels.attr('class', (x, i) => {
+      setupGraphic.variables.labels.attr('class', (x, i) => {
         if (i === id - 1) {
           return 'dialogue__name dialogue__name--active'
         } else {
@@ -804,7 +1036,7 @@ export default {
       })
 
       // move the subLabels
-      this.setupGraphic.variables.subLabels.attr('class', (x, i) => {
+      setupGraphic.variables.subLabels.attr('class', (x, i) => {
         if (i === id - 1) {
           return 'dialogue__subtitle dialogue__subtitle--active'
         } else {
@@ -813,17 +1045,14 @@ export default {
       })
 
       // move the links
-      this.setupGraphic.variables.links
+      setupGraphic.variables.links
         .attr('class', x => {
           if (x.source === id || x.target === id) {
             return 'dialogue__link--actif'
           }
         })
         .style('stroke-opacity', function(link_d) {
-          return link_d.source === id || link_d.target === id ? '1' : '0.2'
-        })
-        .style('stroke-width', function(link_d) {
-          return link_d.source === id || link_d.target === id ? 2 : 1
+          return link_d.source === id || link_d.target === id ? '1' : '0.1'
         })
         .style('filter', x => {
           if (x.source === id || x.target === id) {
@@ -832,7 +1061,7 @@ export default {
         })
 
       // move the hover links
-      this.setupGraphic.variables.hoverLinks
+      setupGraphic.variables.hoverLinks
         .attr('class', x => {
           if (x.source === id || x.target === id) {
             return 'dialogue__hoverLink--actif'
@@ -843,9 +1072,9 @@ export default {
         })
 
       d3.select('._selected').style('filter', null)
-    },
+    }
   },
-}
+})
 </script>
 
 <style lang="scss">

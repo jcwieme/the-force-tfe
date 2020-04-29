@@ -29,7 +29,7 @@
       </h3>
     </div>
     <div class="nav__title" :class="[isNavOpen ? 'nav__title--actif' : '']">
-      <div class="nav__menu" @click="openNav">
+      <div class="nav__menu" @click="toggleNav">
         <div class="nav__btn nav__btn--top">btn1</div>
         <div class="nav__btn nav__btn--center">btn2</div>
         <div class="nav__btn nav__btn--bottom">btn3</div>
@@ -60,21 +60,20 @@
 </template>
 
 <script>
-export default {
+import { defineComponent, computed, ref } from '@vue/composition-api'
+
+export default defineComponent({
   name: 'Navigation',
-  data() {
-    return {
-      leftActif: '../../assets/img/nav/left--actif.svg',
-      leftInactif: '../../assets/img/nav/left--inactif.svg',
-      rightActif: '../../assets/img/nav/right--actif.svg',
-      rightInactif: '../../assets/img/nav/right--inactif.svg',
-      downActif: '../../assets/img/nav/down--actif.svg',
-      downInactif: '../../assets/img/nav/down--inactif.svg',
-      isNavOpen: false,
-    }
-  },
-  computed: {
-    routes: function() {
+  setup(props, ctx) {
+    const leftActif = ref('../../assets/img/nav/left--actif.svg')
+    const leftInactif = ref('../../assets/img/nav/left--inactif.svg')
+    const rightActif = ref('../../assets/img/nav/right--actif.svg')
+    const rightInactif = ref('../../assets/img/nav/right--inactif.svg')
+    const downActif = ref('../../assets/img/nav/down--actif.svg')
+    const downInactif = ref('../../assets/img/nav/down--inactif.svg')
+    let isNavOpen = ref(false)
+
+    const routes = computed(() => {
       return [
         {
           path: '/choice',
@@ -82,92 +81,100 @@ export default {
           title: 'Choice',
         },
         {
-          path: `/movie/${this.$route.params.id}/history`,
+          path: `/movie/${ctx.root.$route.params.id}/history`,
           number: '02',
           title: 'History',
         },
         {
-          path: `/movie/${this.$route.params.id}/dialogues`,
+          path: `/movie/${ctx.root.$route.params.id}/dialogues`,
           number: '03',
           title: 'Dialogues',
         },
         {
-          path: `/movie/${this.$route.params.id}/words`,
+          path: `/movie/${ctx.root.$route.params.id}/words`,
           number: '04',
           title: 'Words',
         },
         {
-          path: `/movie/${this.$route.params.id}/numbers`,
+          path: `/movie/${ctx.root.$route.params.id}/numbers`,
           number: '05',
           title: 'Numbers',
         },
       ]
-    },
-    number: function() {
-      return this.$store.state.movies[
-        this.$route.params.id - 1
+    })
+    const number = computed(() => {
+      return ctx.root.$store.state.movies[
+        ctx.root.$store.state.activeMovie
       ].number.toLowerCase()
-    },
-    title: function() {
-      return this.$store.state.movies[this.$route.params.id - 1].title
-    },
-    left: function() {
-      if (this.$route.params.id === 1) {
+    })
+    const title = computed(() => {
+      return ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie]
+        .title
+    })
+    const left = computed(() => {
+      return ctx.root.$store.state.arrowLeft
+    })
+    const right = computed(() => {
+      return ctx.root.$store.state.arrowRight
+    })
+    const down = computed(() => {
+      if (ctx.root.$route.name === 'Numbers') {
         return false
       } else {
         return true
       }
-    },
-    right: function() {
-      if (this.$route.params.id === 6) {
-        return false
-      } else {
-        return true
-      }
-    },
-    down: function() {
-      if (this.$route.name === 'Credits') {
-        return false
-      } else {
-        return true
-      }
-    },
-    chapter: function() {
-      if (this.$route.name === 'History') {
+    })
+
+    const chapter = computed(() => {
+      if (ctx.root.$route.name === 'History') {
         return '02'
-      } else if (this.$route.name === 'Dialogues') {
+      } else if (ctx.root.$route.name === 'Dialogues') {
         return '03'
-      } else if (this.$route.name === 'Words') {
+      } else if (ctx.root.$route.name === 'Words') {
         return '04'
-      } else if (this.$route.name === 'Numbers') {
-        return '05'
       } else {
-        return '06'
+        return '05'
       }
-    },
+    })
+    const toggleNav = () => {
+      let chapter = document.querySelector(
+        `.${ctx.root.$route.name.toLowerCase()}`
+      )
+      if (chapter.classList.contains('blur')) {
+        chapter.classList.remove('blur')
+      } else {
+        chapter.classList.add('blur')
+      }
+      isNavOpen.value = !isNavOpen.value
+    }
+
+    const closeNav = () => {
+      isNavOpen.value = !isNavOpen.value
+    }
+
+    return {
+      leftActif,
+      leftInactif,
+      rightActif,
+      rightInactif,
+      downActif,
+      downInactif,
+      isNavOpen,
+      routes,
+      number,
+      title,
+      left,
+      right,
+      down,
+      chapter,
+      toggleNav,
+      closeNav,
+    }
   },
-  methods: {
-    openNav() {
-      this.isNavOpen = !this.isNavOpen
-    },
-    closeNav() {
-      this.isNavOpen = !this.isNavOpen
-    },
-  },
-}
+})
 </script>
 
 <style lang="scss">
-.st0 {
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 4;
-}
-.st1 {
-  fill-rule: evenodd;
-  clip-rule: evenodd;
-  fill: #ffffff;
-}
 .nav {
   color: white;
   font-family: star_jediregular;

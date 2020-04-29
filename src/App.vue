@@ -25,141 +25,247 @@
 </template>
 
 <script>
-import Navigation from '@/components/navigation'
+import { defineComponent, ref, computed, onMounted } from '@vue/composition-api'
+import Navigation from '@/components/comp-navigation'
 
-export default {
+export default defineComponent({
   name: 'Application',
   components: {
     Navigation,
   },
-  data() {
-    return {
-      keyUp: true,
-      screen: false,
-    }
-  },
-  computed: {
-    navRender: function() {
-      if (this.$route.name !== 'Choice' && this.$route.name !== 'Loader') {
+  setup(props, ctx) {
+    const keyUp = ref(true)
+    const screen = ref(false)
+    const navRender = computed(() => {
+      if (
+        ctx.root.$route.name !== 'Choice' &&
+        ctx.root.$route.name !== 'Loader'
+      ) {
         return true
       } else {
         return false
       }
-    },
-  },
-  created() {
-    if (window.innerWidth > 1024) {
-      this.screen = false
-    } else {
-      this.screen = true
+    })
+
+    if (ctx.root.$store.state.activeMovie === 5) {
+      ctx.root.$store.commit('falseArrowRight')
+      ctx.root.$store.commit('trueArrowLeft')
     }
 
-    window.addEventListener('resize', this.onResize)
+    onMounted(() => {
+      screen.value = checkSize()
 
-    // Navigation arrows
-    document.addEventListener('keydown', e => {
-      if (this.$route.name !== 'Choice' || this.$route.name !== 'Loader') {
-        if (e.keyCode === 39) {
-          if (this.$route.params.id < 6 && this.keyUp === true) {
-            let next = this.$route.params.id
-            next++
-            this.$router.push({
-              name: this.$route.name,
-              params: { id: next },
+      window.addEventListener('resize', onResize)
+
+      // Navigation arrows
+      document.addEventListener('keydown', e => {
+        if (
+          ctx.root.$route.name !== 'Choice' ||
+          ctx.root.$route.name !== 'Loader'
+        ) {
+          // right
+          if (e.keyCode === 39) {
+            if (ctx.root.$route.params.id < 6 && keyUp.value === true) {
+              let next = ctx.root.$route.params.id
+              next++
+              ctx.root.$router.push({
+                name: ctx.root.$route.name,
+                params: { id: next },
+              })
+              if (next === 6) {
+                ctx.root.$store.commit('falseArrowRight')
+              }
+              if (next === 2) {
+                ctx.root.$store.commit('trueArrowLeft')
+              }
+            }
+          }
+          // left
+          if (e.keyCode === 37) {
+            if (ctx.root.$route.params.id > 1 && keyUp.value === true) {
+              let before = ctx.root.$route.params.id - 1
+              ctx.root.$router.push({
+                name: ctx.root.$route.name,
+                params: { id: before },
+              })
+              if (before === 1) {
+                ctx.root.$store.commit('falseArrowLeft')
+              }
+              if (before === 5) {
+                ctx.root.$store.commit('trueArrowRight')
+              }
+            }
+          }
+          // down
+          if (e.keyCode === 40) {
+            if (ctx.root.$route.name !== 'Numbers') {
+              switch (ctx.root.$route.name) {
+                case 'History':
+                  ctx.root.$router.push({
+                    name: 'Dialogues',
+                  })
+                  break
+                case 'Dialogues':
+                  ctx.root.$router.push({
+                    name: 'Words',
+                  })
+                  break
+                case 'Words':
+                  ctx.root.$router.push({
+                    name: 'Numbers',
+                  })
+                  break
+              }
+            }
+
+            let movieNumber = ctx.root.$store.state.activeMovie + 1
+
+            if (movieNumber === 1) {
+              ctx.root.$store.commit('falseArrowLeft')
+            } else {
+              ctx.root.$store.commit('trueArrowLeft')
+            }
+            if (movieNumber === 6) {
+              ctx.root.$store.commit('falseArrowRight')
+            } else {
+              ctx.root.$store.commit('trueArrowRight')
+            }
+          }
+          // up
+          if (e.keyCode === 38) {
+            switch (ctx.root.$route.name) {
+              case 'History':
+                ctx.root.$router.push({
+                  name: 'Choice',
+                })
+                break
+              case 'Dialogues':
+                ctx.root.$router.push({
+                  name: 'History',
+                })
+                break
+              case 'Words':
+                ctx.root.$router.push({
+                  name: 'Dialogues',
+                })
+                break
+              case 'Numbers':
+                ctx.root.$router.push({
+                  name: 'Words',
+                })
+                break
+            }
+          }
+        }
+
+        if (
+          ctx.root.$route.name === 'Choice' &&
+          ctx.root.$store.state.activeMovie !== null
+        ) {
+          let movies = document.querySelectorAll('.choice__movie')
+
+          // right
+          if (e.keyCode === 39) {
+            let movieNumber = ctx.root.$store.state.activeMovie + 1
+            if (ctx.root.$store.state.activeMovie !== 5) {
+              ctx.root.$store.commit('setActiveMovie', movieNumber)
+              movies.forEach(movie => {
+                movie.classList.remove('choice__movie--actif')
+              })
+              document
+                .querySelector(`.choice__movie--${movieNumber}`)
+                .classList.add('choice__movie--actif')
+            }
+          }
+          // left
+          if (e.keyCode === 37) {
+            let movieNumber = ctx.root.$store.state.activeMovie - 1
+            if (ctx.root.$store.state.activeMovie >= 0) {
+              ctx.root.$store.commit('setActiveMovie', movieNumber)
+              movies.forEach(movie => {
+                movie.classList.remove('choice__movie--actif')
+              })
+              document
+                .querySelector(`.choice__movie--${movieNumber}`)
+                .classList.add('choice__movie--actif')
+            }
+          }
+
+          // if (e.keyCode === 38) {
+          //   let movieNumber = ctx.root.$store.state.activeMovie
+          //   movies.forEach(movie => {
+          //     movie.classList.remove('choice__movie--actif')
+          //   })
+          //   document
+          //     .querySelector(`.choice__movie--${movieNumber}`)
+          //     .classList.add('choice__movie--actif')
+          // }
+
+          // down
+          if (e.keyCode === 40) {
+            let movieNumber = ctx.root.$store.state.activeMovie + 1
+            ctx.root.$router.push({
+              name: 'History',
+              params: {
+                id: movieNumber,
+              },
             })
+
+            if (movieNumber === 1) {
+              ctx.root.$store.commit('falseArrowLeft')
+            } else {
+              ctx.root.$store.commit('trueArrowLeft')
+            }
+            if (movieNumber === 6) {
+              ctx.root.$store.commit('falseArrowRight')
+            } else {
+              ctx.root.$store.commit('trueArrowRight')
+            }
           }
         }
-        if (e.keyCode === 37) {
-          if (this.$route.params.id > 1 && this.keyUp === true) {
-            let before = this.$route.params.id - 1
-            this.$router.push({
-              name: this.$route.name,
-              params: { id: before },
-            })
-          }
+
+        keyUp.value = false
+      })
+
+      document.addEventListener('keyup', e => {
+        if (
+          e.keyCode === 39 ||
+          e.keyCode === 37 ||
+          e.keyCode === 38 ||
+          e.keyCode === 40
+        ) {
+          keyUp.value = true
         }
-        if (e.keyCode === 40) {
-          switch (this.$route.name) {
-            case 'History':
-              this.$router.push({
-                name: 'Dialogues',
-              })
-              break
-            case 'Dialogues':
-              this.$router.push({
-                name: 'Words',
-              })
-              break
-            case 'Words':
-              this.$router.push({
-                name: 'Numbers',
-              })
-              break
-            case 'Numbers':
-              this.$router.push({
-                name: 'Credits',
-              })
-              break
-          }
-        }
-        if (e.keyCode === 38) {
-          switch (this.$route.name) {
-            case 'History':
-              this.$router.push({
-                name: 'Choice',
-              })
-              break
-            case 'Dialogues':
-              this.$router.push({
-                name: 'History',
-              })
-              break
-            case 'Words':
-              this.$router.push({
-                name: 'Dialogues',
-              })
-              break
-            case 'Numbers':
-              this.$router.push({
-                name: 'Words',
-              })
-              break
-            case 'Credits':
-              this.$router.push({
-                name: 'Numbers',
-              })
-              break
-          }
-        }
+      })
+
+      if (ctx.root.$store.state.activeMovie === 0) {
+        ctx.root.$store.commit('falseArrowLeft')
+        ctx.root.$store.commit('trueArrowRight')
       }
-
-      this.keyUp = false
     })
 
-    document.addEventListener('keyup', e => {
-      if (
-        e.keyCode === 39 ||
-        e.keyCode === 37 ||
-        e.keyCode === 38 ||
-        e.keyCode === 40
-      ) {
-        this.keyUp = true
+    const onResize = () => {
+      screen.value = checkSize()
+    }
+
+    const checkSize = () => {
+      if (window.innerWidth > 1024) {
+        return false
+      } else {
+        return true
       }
-    })
+    }
+
+    return {
+      keyUp,
+      screen,
+      navRender,
+    }
   },
   beforeRoute(to, from, next) {
     next()
   },
-  methods: {
-    onResize() {
-      if (window.innerWidth > 1024) {
-        this.screen = false
-      } else {
-        this.screen = true
-      }
-    },
-  },
-}
+})
 </script>
 
 <style lang="scss">
@@ -182,6 +288,13 @@ export default {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'roboto-black';
+  src: url('./assets/fonts/Roboto-Black.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   background-color: #18181c;
   color: white;
@@ -200,9 +313,7 @@ body {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition-duration: 0.3s;
-  transition-property: opacity;
-  transition-timing-function: ease;
+  transition: all 0.3s ease;
 }
 
 .fade-enter,
@@ -227,5 +338,8 @@ body {
   height: 100vh;
   width: 100vw;
   z-index: 1;
+}
+.blur {
+  filter: blur(3px);
 }
 </style>
