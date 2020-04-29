@@ -1,13 +1,31 @@
 <template>
   <div class="words">
     <div class="words__list">
-      <div v-for="(word, index) in bigFive" :key="index" class="words__el">
-        <p class="words__word" :data-number="number">{{ word }}</p>
-        <sub class="words__sub" :class="'words__sub--' + word"></sub>
+      <div v-for="(word, index) in movieWords" :key="index" class="words__el">
+        <p class="words__word" :data-number="word.number">{{ word.word }}</p>
+        <sub class="words__sub" :class="'words__sub--' + word.word">
+          <div class="words__imgs">
+            <img
+              v-for="char in word.from.slice(0, 2)"
+              :key="char.path"
+              :src="char.path"
+              alt="img"
+              class="words__img"
+            />
+            <span v-if="word.from.length - 2 > 0" class="words__more">
+              +{{ word.from.length - 2 }}
+            </span>
+          </div>
+          <p v-for="char in word.from.slice(0, 2)" :key="char.word">
+            {{ char.character.toLowerCase() }}
+          </p>
+          <p v-if="word.from.length - 2 > 0">
+            +{{ word.from.length - 2 }} other
+          </p>
+        </sub>
       </div>
     </div>
     <input class="words__input" type="text" v-model="search" />
-    <div :class="words"></div>
   </div>
 </template>
 
@@ -21,7 +39,7 @@ export default defineComponent({
       ['jedi', 'master', 'chancellor', 'mesa', 'naboo'],
       ['master', 'jedi', 'senator', 'army', 'anakin'],
       ['jedi', 'anakin', 'master', 'chancellor', 'artoo'],
-      ['beeps', 'luke', 'force', 'artoo', 'alderaan'],
+      ['luke', 'force', 'artoo', 'alderaan', 'rebel'],
       ['luke', 'artoo', 'chewie', 'vader', 'force'],
       ['luke', 'artoo', 'master', 'shield', 'jabba'],
     ]
@@ -31,29 +49,48 @@ export default defineComponent({
 
     const words = computed(() => {
       return utils.sortWords(
-        ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie].dialogs
+        ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie].dialogs,
+        ctx.root.$store.state.activeMovie + 1
       )
     })
+    console.log(words.value)
 
-    const bigFive = computed(() => {
-      return choiceWords[ctx.root.$store.state.activeMovie]
+    const movieWords = computed(() => {
+      let filteredWords = []
+      words.value.forEach(el => {
+        choiceWords[ctx.root.$store.state.activeMovie].forEach(temp => {
+          if (temp === el.word) {
+            filteredWords.push(el)
+          }
+        })
+      })
+      return filteredWords
     })
 
     onMounted(() => {
       document.querySelectorAll('.words__word').forEach(el => {
         el.addEventListener('mouseover', e => {
           let word = e.currentTarget.innerText.toLowerCase()
-          let filtered = words.value.filter(element => element.word === word)
-          number.value = filtered[0].number
+          document
+            .querySelector(`.words__sub--${word}`)
+            .classList.add('words__sub--actif')
+          e.currentTarget.classList.add('words__word--actif')
+        })
+        el.addEventListener('mouseout', e => {
+          let word = e.currentTarget.innerText.toLowerCase()
+          document
+            .querySelector(`.words__sub--${word}`)
+            .classList.remove('words__sub--actif')
+          e.currentTarget.classList.remove('words__word--actif')
         })
       })
     })
 
     return {
       words,
-      bigFive,
       search,
       number,
+      movieWords,
     }
   },
 })
@@ -116,7 +153,7 @@ export default defineComponent({
       transition: all 0ms;
     }
 
-    &:hover {
+    &--actif {
       &::after {
         content: attr(data-number);
         opacity: 0.5;
@@ -135,6 +172,70 @@ export default defineComponent({
     left: 50%;
     transform: translate(-50%, -50%);
     display: none;
+  }
+
+  &__sub {
+    display: flex;
+    font-size: 14px;
+    color: #ffe403;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 500ms ease;
+
+    &--actif {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 500ms ease;
+    }
+
+    p {
+      margin-left: 5px;
+      &:nth-child(2) {
+        margin-left: 10px;
+      }
+      &::after {
+        content: ',';
+      }
+
+      &:last-child {
+        &::after {
+          content: '';
+        }
+      }
+    }
+  }
+  &__imgs {
+    display: flex;
+  }
+
+  &__img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+
+    &:nth-child(2) {
+      margin-left: -20px;
+    }
+  }
+
+  &__more {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #999;
+    line-height: 1;
+    margin-left: -20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'roboto';
+    font-size: 12px;
+    color: white;
   }
 }
 </style>

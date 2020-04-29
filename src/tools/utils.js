@@ -2,7 +2,7 @@ export function add(a, b) {
   return a + b
 }
 
-export function sortWords(data) {
+export function sortWords(data, numberMovie) {
   let allWords = []
 
   data.forEach(el => {
@@ -11,7 +11,16 @@ export function sortWords(data) {
     words.forEach(word => {
       allWords.push({
         word: word.toLowerCase(),
-        from: [{ character: el.from, number: 1 }],
+        from: [
+          {
+            character: el.from,
+            number: 1,
+            path: `../../assets/img/characters/${numberMovie}/${el.from.replace(
+              /\s/g,
+              '-'
+            )}.jpeg`,
+          },
+        ],
         number: 1,
       })
     })
