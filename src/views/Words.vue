@@ -36,7 +36,10 @@
     >
       <div
         class="words__input"
-        :class="[animSearched ? 'words__input--searched' : '']"
+        :class="[
+          animSearched ? 'words__input--searched' : '',
+          searchedWordNumber < 10 ? 'words__input--small' : '',
+        ]"
         :data-number="searchedWordNumber"
       >
         {{ search }}
@@ -109,6 +112,7 @@ export default defineComponent({
     const canSearch = ref(false)
     const canEnter = ref(false)
     const animSearched = ref(false)
+    const canDelete = ref(true)
 
     const searchedWordNumber = computed(() => {
       if (animSearched.value) {
@@ -192,7 +196,7 @@ export default defineComponent({
                 searchActive.value = false
                 text.value = 'Type something'
                 search.value = ''
-              }, 300)
+              }, 350)
             } else {
               searchActive.value = false
               text.value = 'Type something'
@@ -266,38 +270,45 @@ export default defineComponent({
             searchAuto.value = ''
             canSearch.value = false
             animSearched.value = true
+            canDelete.value = false
           }
         }
 
         // Delete
         if (e.keyCode === 8 && searchActive.value === true) {
-          search.value = search.value.slice(0, -1)
-          document
-            .querySelector('.words__search')
-            .classList.remove('words__search--error')
-
-          if (
-            search.value === filteredWordsForSearch.value[0].word ||
-            filteredWordsForSearch.value.filter(el => el.word === search.value)
-              .length === 1
-          ) {
-            setTimeout(() => {
-              canSearch.value = true
-            }, 1000)
-          } else {
-            canSearch.value = false
-          }
-
           if (animSearched.value) {
             animSearched.value = false
             setTimeout(() => {
+              search.value = search.value.slice(0, -1)
               searchAuto.value = filteredWordsForSearch.value[0].word
+              canEnter.value = false
+              canDelete.value = true
             }, 800)
           } else {
-            searchAuto.value = filteredWordsForSearch.value[0].word
-          }
+            if (canDelete.value) {
+              search.value = search.value.slice(0, -1)
+              document
+                .querySelector('.words__search')
+                .classList.remove('words__search--error')
 
-          canEnter.value = false
+              if (
+                search.value === filteredWordsForSearch.value[0].word ||
+                filteredWordsForSearch.value.filter(
+                  el => el.word === search.value
+                ).length === 1
+              ) {
+                setTimeout(() => {
+                  canSearch.value = true
+                }, 1000)
+              } else {
+                canSearch.value = false
+              }
+              searchAuto.value = filteredWordsForSearch.value[0].word
+              canEnter.value = false
+            } else {
+              return
+            }
+          }
         }
 
         if (searchActive.value === true && search.value.length === 0) {
@@ -509,6 +520,7 @@ function compare(a, b) {
     color: white;
     font-family: 'roboto-black';
     text-transform: capitalize;
+    white-space: nowrap;
 
     position: absolute;
     top: 5px;
@@ -526,7 +538,14 @@ function compare(a, b) {
       opacity: 0;
       transform: translateY(-10px);
       z-index: -1;
-      transition: all 500ms ease;
+      transition: all 0ms ease;
+    }
+
+    &--small {
+      &::before {
+        top: -75%;
+        left: -0.4ch;
+      }
     }
 
     &::after {
