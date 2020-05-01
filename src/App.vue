@@ -4,7 +4,7 @@
       The Force arriving soon on mobile !
     </div>
     <div v-else class="myApp">
-      <!-- <vue-particles
+      <vue-particles
         color="#dedede"
         :particleOpacity="0.5"
         :particlesNumber="80"
@@ -15,7 +15,7 @@
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
-      ></vue-particles> -->
+      ></vue-particles>
       <Navigation v-if="navRender" />
       <transition name="fade" mode="out-in">
         <router-view class="router" />

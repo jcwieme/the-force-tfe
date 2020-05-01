@@ -1,90 +1,93 @@
 <template>
   <div class="words">
-    <div class="words__list" v-show="!searchActive">
-      <div v-for="(word, index) in movieWords" :key="index" class="words__el">
-        <p class="words__word" :data-number="word.number">{{ word.word }}</p>
-        <sub class="words__sub" :class="'words__sub--' + word.word">
+    <transition name="fade" mode="out-in">
+      <div class="words__list" v-show="!searchActive">
+        <div v-for="(word, index) in movieWords" :key="index" class="words__el">
+          <p class="words__word" :data-number="word.number">{{ word.word }}</p>
+          <sub class="words__sub" :class="'words__sub--' + word.word">
+            <div class="words__imgs">
+              <img
+                v-for="char in word.from.slice(0, 2)"
+                :key="char.path"
+                :src="char.path"
+                alt="img"
+                class="words__img"
+              />
+              <span v-if="word.from.length - 2 > 0" class="words__more">
+                +{{ word.from.length - 2 }}
+              </span>
+            </div>
+            <p v-for="char in word.from.slice(0, 2)" :key="char.word">
+              {{ char.character.toLowerCase() }}
+            </p>
+            <p v-if="word.from.length - 2 > 0">
+              + {{ word.from.length - 2 }} other
+            </p>
+          </sub>
+        </div>
+      </div>
+    </transition>
+    <transition name="fade" mode="out-in">
+      <div
+        class="words__search"
+        v-show="searchActive"
+        :data-complete="searchAuto"
+        :class="[
+          canSearch ? 'words__search--active' : '',
+          animSearched ? 'words__search--searched' : '',
+        ]"
+      >
+        <div
+          class="words__input"
+          :class="[
+            animSearched ? 'words__input--searched' : '',
+            searchedWordNumber < 10 ? 'words__input--small' : '',
+          ]"
+          :data-number="searchedWordNumber"
+        >
+          {{ search }}
+        </div>
+        <sub
+          class="words__search__sub"
+          :class="[animSearched ? 'words__search__sub--actif' : '']"
+        >
           <div class="words__imgs">
             <img
-              v-for="char in word.from.slice(0, 2)"
+              v-for="char in searchedWordFrom.slice(0, 2)"
               :key="char.path"
               :src="char.path"
               alt="img"
               class="words__img"
             />
-            <span v-if="word.from.length - 2 > 0" class="words__more">
-              +{{ word.from.length - 2 }}
+            <span v-if="searchedWordFrom.length - 2 > 0" class="words__more">
+              +{{ searchedWordFrom.length - 2 }}
             </span>
           </div>
-          <p v-for="char in word.from.slice(0, 2)" :key="char.word">
+          <p v-for="char in searchedWordFrom.slice(0, 2)" :key="char.word">
             {{ char.character.toLowerCase() }}
           </p>
-          <p v-if="word.from.length - 2 > 0">
-            + {{ word.from.length - 2 }} other
+          <p v-if="searchedWordFrom.length - 2 > 0">
+            + {{ searchedWordFrom.length - 2 }} other
           </p>
         </sub>
       </div>
-    </div>
-    <div
-      class="words__search"
-      v-show="searchActive"
-      :data-complete="searchAuto"
-      :class="[
-        canSearch ? 'words__search--active' : '',
-        animSearched ? 'words__search--searched' : '',
-      ]"
-    >
-      <div
-        class="words__input"
-        :class="[
-          animSearched ? 'words__input--searched' : '',
-          searchedWordNumber < 10 ? 'words__input--small' : '',
-        ]"
-        :data-number="searchedWordNumber"
-      >
-        {{ search }}
-      </div>
-      <sub
-        class="words__search__sub"
-        :class="[animSearched ? 'words__search__sub--actif' : '']"
-      >
-        <div class="words__imgs">
-          <img
-            v-for="char in searchedWordFrom.slice(0, 2)"
-            :key="char.path"
-            :src="char.path"
-            alt="img"
-            class="words__img"
-          />
-          <span v-if="searchedWordFrom.length - 2 > 0" class="words__more">
-            +{{ searchedWordFrom.length - 2 }}
-          </span>
-        </div>
-        <p v-for="char in searchedWordFrom.slice(0, 2)" :key="char.word">
-          {{ char.character.toLowerCase() }}
-        </p>
-        <p v-if="searchedWordFrom.length - 2 > 0">
-          + {{ searchedWordFrom.length - 2 }} other
-        </p>
-      </sub>
-    </div>
+    </transition>
     <div
       class="words__message"
       :class="[searchActive ? 'words__message--close' : '']"
     >
-      <img
-        v-show="!searchActive"
-        src="/assets/img/keyboard.svg"
-        alt="svg"
-        class="svg--big"
-      />
-      <img
-        v-show="searchActive"
-        src="/assets/img/cross.svg"
-        alt="svg"
-        class="svg--small"
-      />
-      <p>{{ text }}</p>
+      <transition name="fade" mode="out-in">
+        <img
+          :src="[searchActive ? picto[1] : picto[0]]"
+          alt="svg"
+          class="svg--big"
+          :key="searchActive"
+        />
+      </transition>
+
+      <transition name="fade" mode="out-in">
+        <p :key="text">{{ text }}</p>
+      </transition>
     </div>
   </div>
 </template>
@@ -103,6 +106,8 @@ export default defineComponent({
       ['luke', 'artoo', 'chewie', 'vader', 'force'],
       ['luke', 'artoo', 'master', 'shield', 'jabba'],
     ]
+
+    const picto = ['/assets/img/keyboard.svg', '/assets/img/cross.svg']
 
     const search = ref('')
     const searchAuto = ref('')
@@ -330,6 +335,7 @@ export default defineComponent({
       animSearched,
       searchedWordNumber,
       searchedWordFrom,
+      picto,
     }
   },
 })
@@ -463,6 +469,7 @@ function compare(a, b) {
     }
 
     &--active {
+      transition: border-color 500ms ease;
       &::before {
         opacity: 1;
         transition: all 500ms ease;
