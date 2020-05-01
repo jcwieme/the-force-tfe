@@ -3108,7 +3108,7 @@
     {
       "from": "LUKE",
       "to": "OBI-WAN",
-      "text": "He says it is the best he can do. Since the XP-38 came out, they are just not in demand.",
+      "text": "He says it is the best he can do. Since the came out, they are just not in demand.",
       "where": "EXT. TATOOINE - MOS EISLEY - STREET - ALLEYWAY - USED SPEEDER LOT",
       "number": 18,
       "time": 162
@@ -3548,7 +3548,7 @@
     {
       "from": "HAN SOLO",
       "to": "OBI-WAN",
-      "text": "Anyway, we should be at Alderaan about oh-two-hundred hours.",
+      "text": "Anyway, we should be at Alderaan about oh two-hundred hours.",
       "where": "INT. MILLENNIUM FALCON - CENTRAL HOLD AREA",
       "number": 9,
       "time": 81
@@ -4268,7 +4268,7 @@
     {
       "from": "OFFICER GANTRY",
       "to": "STORMTROOPER",
-      "text": "TX-four-one-two. Why are not you at your post? TX-four-one-two, do you copy?",
+      "text": "TX-four one-two. Why are not you at your post? TX-four one-two, do you copy?",
       "where": "INT. DEATH STAR - FORWARD BAY - COMMAND OFFICE",
       "number": 11,
       "time": 99
@@ -4516,7 +4516,7 @@
     {
       "from": "THREEPIO",
       "to": "LUKE",
-      "text": "Level five. Detention block A A-twenty- three. I am afraid she is scheduled to be terminated.",
+      "text": "Level five. Detention block A A twenty-three. I am afraid she is scheduled to be terminated.",
       "where": "INT. DEATH STAR - FORWARD BAY - COMMAND OFFICE",
       "number": 14,
       "time": 126
@@ -4836,7 +4836,7 @@
     {
       "from": "LUKE",
       "to": "IMPERIAL OFFICER",
-      "text": "Prisoner transfer from Block one-one-three-eight.",
+      "text": "Prisoner transfer from Block one-one three-eight.",
       "where": "INT. DETENTION AREA",
       "number": 5,
       "time": 45
@@ -4884,7 +4884,7 @@
     {
       "from": "HAN SOLO",
       "to": "LUKE",
-      "text": "we have got to find out which cell this princess of yours is in. Here it is. cell twenty-one-eight-seven. You go get her. I will hold them here.",
+      "text": "we have got to find out which cell this princess of yours is in. Here it is. cell twenty-one eight-seven. You go get her. I will hold them here.",
       "where": "INT. DETENTION AREA",
       "number": 26,
       "time": 234
@@ -5772,7 +5772,7 @@
     {
       "from": "HAN SOLO",
       "to": "THREEPIO",
-      "text": "Three-two-six-eight-two-seven.",
+      "text": "Three-two six-eight two-seven.",
       "where": "INT. DEATH STAR - MAIN FORWARD BAY - SERVICE PANEL",
       "number": 1,
       "time": 9
