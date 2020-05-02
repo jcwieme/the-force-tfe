@@ -64,8 +64,6 @@ function filterWords(data) {
     el.from = sortArray(el.from)
   })
 
-  console.log(sortArray(checkWords))
-
   return sortArray(checkWords)
 }
 

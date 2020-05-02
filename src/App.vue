@@ -4,7 +4,7 @@
       The Force arriving soon on mobile !
     </div>
     <div v-else class="myApp">
-      <vue-particles
+      <!-- <vue-particles
         color="#dedede"
         :particleOpacity="0.5"
         :particlesNumber="80"
@@ -15,10 +15,10 @@
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
-      ></vue-particles>
+      ></vue-particles> -->
       <Navigation v-if="navRender" />
       <transition name="fade" mode="out-in">
-        <router-view class="router" />
+        <router-view class="router" :key="keyTransitionHorizontal" />
       </transition>
     </div>
   </div>
@@ -45,6 +45,9 @@ export default defineComponent({
       } else {
         return false
       }
+    })
+    const keyTransitionHorizontal = computed(() => {
+      return ctx.root.$route.params.id
     })
 
     if (ctx.root.$store.state.activeMovie === 5) {
@@ -260,6 +263,7 @@ export default defineComponent({
       keyUp,
       screen,
       navRender,
+      keyTransitionHorizontal,
     }
   },
   beforeRoute(to, from, next) {

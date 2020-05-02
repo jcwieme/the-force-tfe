@@ -221,7 +221,6 @@ export default defineComponent({
             filteredWordsForSearch.value.length === 1 &&
             filteredWordsForSearch.value[0].word === search.value
           ) {
-            console.log('last word')
             return
           }
 
@@ -265,7 +264,6 @@ export default defineComponent({
             canEnter.value = false
           }
 
-          console.log(filteredWordsForSearch.value)
           searchAuto.value = filteredWordsForSearch.value[0].word
         }
 

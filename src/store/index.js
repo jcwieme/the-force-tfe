@@ -18,6 +18,8 @@ export default new Vuex.Store({
     activeMovie: null,
     arrowRight: true,
     arrowLeft: true,
+    wordsInMovie: [9380, 7566, 8078, 10336, 7707, 6604],
+    linesInMovie: [946, 620, 783, 1038, 947, 719],
   },
   mutations: {
     setActiveMovie(state, number) {
