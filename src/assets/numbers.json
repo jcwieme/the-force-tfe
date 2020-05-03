@@ -1,0 +1,1194 @@
+[
+  [
+    {
+      "name": "QUI-GON",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "REPUBLIC PILOT",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "NUTE",
+      "side": "Dark",
+      "race": "Alien"
+    },
+    {
+      "name": "TC-14",
+      "side": "Dark",
+      "race": "Droid"
+    },
+    {
+      "name": "OBI-WAN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "DARTH SIDIOUS",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "CAPTAIN DROID",
+      "side": "Dark",
+      "race": "Droid"
+    },
+    {
+      "name": "RUNE",
+      "side": "Dark",
+      "race": "Alien"
+    },
+    {
+      "name": "AMIDALA",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "PALPATINE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "PANAKA",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "BIBBLE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "CAPORAL DROID",
+      "side": "Dark",
+      "race": "Droid"
+    },
+    {
+      "name": "JAR JAR",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "TARPALS",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "BOSS NASS",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "RIC OLIE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "ARTOO",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "PADME",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "WATTO",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "ANAKIN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "SEBULBA",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "THREEPIO",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "SHMI",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "DARTH MAUL",
+      "side": "Dark",
+      "race": "Alien"
+    },
+    {
+      "name": "KITSTER",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "AMEE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "WALD",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "SEEK",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "SPEAKER A",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "SPEAKER B",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "JABBA",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "ODY",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "PUBLIC",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "VALORUM",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "KI-ADI",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "YODA",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "MACE WINDU",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "RABE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "SENAT",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "LOTT DOD",
+      "side": "Dark",
+      "race": "Alien"
+    },
+    {
+      "name": "AKS MOE",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "MAS AMEDDA",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "GENERAL CEEL",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "PILOTS",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "TEY HOW",
+      "side": "Dark",
+      "race": "Alien"
+    },
+    {
+      "name": "DOFINE",
+      "side": "Dark",
+      "race": "Alien"
+    },
+    {
+      "name": "SABE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "RACERS",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "JIRA",
+      "side": "Neutral",
+      "race": "Human"
+    },
+    {
+      "name": "VENDOR",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "SOLDIER",
+      "side": "Light",
+      "race": "Human"
+    }
+  ],
+  [
+    {
+      "name": "LIEUTENANT",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "CORDÉ",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "CAPTAIN TYPHO",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "PADME",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "PALPATINE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "MACE WINDU",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "YODA",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "DAR WAC",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "KI-ADI",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "BAIL ORGANA",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "OBI-WAN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "ANAKIN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "JAR JAR",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "ELAN SLEAZEBAGGANO",
+      "side": "Neutral",
+      "race": "Human"
+    },
+    {
+      "name": "ZAM WESSEL",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "DORME",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "ARTOO",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "THREEPIO",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "DEXTER JETTSTER",
+      "side": "Neutral",
+      "race": "Human"
+    },
+    {
+      "name": "HERMIONE BAGWA",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "JOCASTA NU",
+      "side": "Neutral",
+      "race": "Human"
+    },
+    {
+      "name": "CHILDREN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "QUEEN JAMILLIA",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "BIBBLE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "TAUN WE",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "LAMA SU",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "BOBA FETT",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "JANGO FETT",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "WATTO",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "SHMI",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "BERU",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "CLIEGG",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "OWEN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "COUNT DOOKU",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "NUTE",
+      "side": "Dark",
+      "race": "Alien"
+    },
+    {
+      "name": "ASK MOE",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "MAS AMEDDA",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "SENAT",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "DARTH SIDIOUS",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "CLONE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "RUNE",
+      "side": "Dark",
+      "race": "Alien"
+    }
+  ],
+  [
+    {
+      "name": "ANAKIN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "OBI-WAN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "ARTOO",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "ARFOUR",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "ODD BALL",
+      "side": "Light",
+      "race": "Clone"
+    },
+    {
+      "name": "GENERAL GRIEVOUS",
+      "side": "Dark",
+      "race": "Droid"
+    },
+    {
+      "name": "CAPTAIN TRADE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "PALPATINE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "COUNT DOOKU",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "PILOT DROID",
+      "side": "Dark",
+      "race": "Droid"
+    },
+    {
+      "name": "MACE WINDU",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "BAIL ORGANA",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "PADME",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "DARTH SIDIOUS",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "YODA",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "KI-ADI",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "THREEPIO",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "CLONE GREE",
+      "side": "Dark",
+      "race": "Clone"
+    },
+    {
+      "name": "CLONE CODY",
+      "side": "Dark",
+      "race": "Clone"
+    },
+    {
+      "name": "TION MEDON",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "NUTE",
+      "side": "Dark",
+      "race": "Alien"
+    },
+    {
+      "name": "PURPLE DROIDS",
+      "side": "Dark",
+      "race": "Droid"
+    },
+    {
+      "name": "CLONE BACARA",
+      "side": "Dark",
+      "race": "Clone"
+    },
+    {
+      "name": "CLONE PILOT",
+      "side": "Dark",
+      "race": "Clone"
+    },
+    {
+      "name": "CLONE SERGEANT",
+      "side": "Dark",
+      "race": "Clone"
+    },
+    {
+      "name": "CHEWBACCA",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "CAPTAIN ANTILLES",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "CLONE",
+      "side": "Dark",
+      "race": "Clone"
+    },
+    {
+      "name": "CLONE CAPTAIN",
+      "side": "Dark",
+      "race": "Clone"
+    },
+    {
+      "name": "MAS AMEDDA",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "DARTH VADER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "SENAT",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "CAPTAIN TYPHO",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "CLONE THIRE",
+      "side": "Dark",
+      "race": "Clone"
+    },
+    {
+      "name": "MEDICAL DROID",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "CLONE APPO",
+      "side": "Dark",
+      "race": "Clone"
+    }
+  ],
+  [
+    {
+      "name": "THREEPIO",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "ARTOO",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "IMPERIAL OFFICER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "DARTH VADER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "REBEL OFFICER",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "IMPERIAL CHIEF PILOT",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "IMPERIAL CAPTAIN",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "LEIA",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "IMPERIAL COMMANDER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "IMPERIAL SECOND",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "JAWA",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "STORMTROOPER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "SANDTROOPER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "BERU",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "LUKE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "OWEN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "OBI-WAN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "TAGGE",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "MOTTI",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "TARKIN",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "BARTENDER",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "BAR CREATURE",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "BAR HUMAN",
+      "side": "Neutral",
+      "race": "Human"
+    },
+    {
+      "name": "HAN SOLO",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "CHEWBACCA",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "GREEDO",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "JABBA",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "OFFICER CASS",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "OFFICER GANTRY",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "WILLARD",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "DODONNA",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "GOLD LEADER",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "REBEL PILOTS",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "WEDGE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "BIGGS",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "RED LEADER",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "ASTRO-OFFICER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "IMPERIAL PILOT",
+      "side": "Dark",
+      "race": "Human"
+    }
+  ],
+  [
+    {
+      "name": "LUKE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "HAN SOLO",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "CHEWBACCA",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "RIEEKAN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "LEIA",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "ARTOO",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "THREEPIO",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "DECK OFFICER",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "ASSISTANT OFFICER",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "LIEUTENANT",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "DERLIN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "OBI-WAN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "ZEV",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "REBEL OFFICER",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "REBEL CONTROLLER",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "PIETT",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "OZZEL",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "DARTH VADER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "REBEL CAPTAIN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "REBEL FIGHTER",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "MEDICAL DROID",
+      "side": "Neutral",
+      "race": "Droid"
+    },
+    {
+      "name": "VEERS",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "HOBBIE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "REBEL PILOTS",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "IMPERIAL CONTROLLER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "DACK",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "WEDGE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "JANSON",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "STORMTROOPER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "IMPERIAL PILOT",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "IMPERIAL OFFICER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "YODA",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "NEEDA",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "EMPEROR",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "BOBA FETT",
+      "side": "Neutral",
+      "race": "Human"
+    },
+    {
+      "name": "LANDO",
+      "side": "Neutral",
+      "race": "Human"
+    },
+    {
+      "name": "SECOND THREEPIO",
+      "side": "Neutral",
+      "race": "Droid"
+    }
+  ],
+  [
+    {
+      "name": "IMPERIAL CAPTAIN",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "IMPERIAL CONTROLLER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "IMPERIAL OFFICER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "JERJERROD",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "DARTH VADER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "THREEPIO",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "ARTOO",
+      "side": "Light",
+      "race": "Droid"
+    },
+    {
+      "name": "BIB",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "JABBA",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "LUKE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "NINEDENINE",
+      "side": "Neutral",
+      "race": "Droid"
+    },
+    {
+      "name": "BOUSHH",
+      "side": "Neutral",
+      "race": "Alien"
+    },
+    {
+      "name": "CHEWBACCA",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "HAN SOLO",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "LEIA",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "LANDO",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "EMPEROR",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "YODA",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "OBI-WAN",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "MON MOTHMA",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "REBEL PILOTS",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "ACKBAR",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "MADINE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "PIETT",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "REBEL FOREST",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "EWOK",
+      "side": "Light",
+      "race": "Alien"
+    },
+    {
+      "name": "IMPERIAL FOREST",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "IMPERIAL COMMANDER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "WEDGE",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "REBEL CONTROLLER",
+      "side": "Light",
+      "race": "Human"
+    },
+    {
+      "name": "STORMTROOPER",
+      "side": "Dark",
+      "race": "Human"
+    },
+    {
+      "name": "ANAKIN",
+      "side": "Light",
+      "race": "Human"
+    }
+  ]
+]
