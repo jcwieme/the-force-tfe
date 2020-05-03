@@ -56,6 +56,33 @@ export default defineComponent({
     }
 
     onMounted(() => {
+      const preloads = ctx.root.$store.state.loader
+
+      function preloadImages(urls, allImagesLoadedCallback) {
+        var loadedCounter = 0
+        var toBeLoadedNumber = urls.length
+        urls.forEach(function(url) {
+          preloadImage(url, function() {
+            loadedCounter++
+            // console.log('Number of loaded images: ' + loadedCounter)
+            if (loadedCounter == toBeLoadedNumber) {
+              allImagesLoadedCallback()
+            }
+          })
+        })
+        function preloadImage(url, anImageLoadedCallback) {
+          var img = new Image()
+          img.onload = anImageLoadedCallback
+          img.src = url.link
+        }
+      }
+
+      // Let's call it:
+      preloadImages(preloads, () => {
+        ctx.root.$store.commit('loaded')
+        console.log('loaded')
+      })
+
       screen.value = checkSize()
 
       window.addEventListener('resize', onResize)
