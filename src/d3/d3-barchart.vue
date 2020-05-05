@@ -1,7 +1,7 @@
 <template>
   <div class="numbers__bar" :class="dataBar.other.class">
     <h3 class="numbers__title">{{ dataBar.other.title }}</h3>
-    <div :id="dataBar.id"></div>
+    <div class="numbers__graph--bar" :id="dataBar.id"></div>
     <div class="numbers__info">
       <p class="numbers__total">{{ dataBar.other.value }}</p>
       <p>{{ dataBar.other.sub }}</p>
