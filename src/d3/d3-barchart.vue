@@ -1,7 +1,7 @@
 <template>
-  <div class="numbers__bar" :class="dataBar.other.class">
+  <div class="numbers__column" :class="dataBar.other.class">
     <h3 class="numbers__title">{{ dataBar.other.title }}</h3>
-    <div class="numbers__graph--bar" :id="dataBar.id"></div>
+    <div class="numbers__graph" :id="dataBar.id"></div>
     <div class="numbers__info">
       <p class="numbers__total">{{ dataBar.other.value }}</p>
       <p>{{ dataBar.other.sub }}</p>
@@ -29,7 +29,7 @@ export default defineComponent({
       var y = d3
         .scaleBand()
         .range([0, props.dataBar.size.height])
-        .padding(0.4)
+        .padding(0.5)
 
       var x = d3.scaleLinear().range([0, props.dataBar.size.width])
 
@@ -67,7 +67,6 @@ export default defineComponent({
         })
       )
 
-      console.log(props.dataBar.data)
       //y.domain([0, d3.max(data, function(d) { return d.value; })]);
 
       // append the rectangles for the bar chart
