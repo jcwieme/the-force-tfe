@@ -6,12 +6,12 @@
     <div v-else class="myApp">
       <!-- <vue-particles
         color="#dedede"
-        :particleOpacity="0.5"
+        :particleOpacity="1"
         :particlesNumber="80"
         shapeType="circle"
         :particleSize="2"
         :lineLinked="false"
-        :moveSpeed="1.5"
+        :moveSpeed="0"
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
