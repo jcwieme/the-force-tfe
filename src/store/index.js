@@ -25,6 +25,7 @@ export default new Vuex.Store({
     numbers,
     loader,
     loaded: false,
+    isNavOpen: false,
   },
   mutations: {
     setActiveMovie(state, number) {
@@ -44,6 +45,9 @@ export default new Vuex.Store({
     },
     loaded(state) {
       state.loaded = true
+    },
+    toggleNav(state) {
+      state.isNavOpen = !state.isNavOpen
     },
   },
   actions: {},

@@ -11,7 +11,7 @@
         shapeType="circle"
         :particleSize="2"
         :lineLinked="false"
-        :moveSpeed="0"
+        :moveSpeed="0.2"
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
@@ -90,8 +90,9 @@ export default defineComponent({
       // Navigation arrows
       document.addEventListener('keydown', e => {
         if (
-          ctx.root.$route.name !== 'Choice' ||
-          ctx.root.$route.name !== 'Loader'
+          (ctx.root.$route.name !== 'Choice' ||
+            ctx.root.$route.name !== 'Loader') &&
+          !ctx.root.$store.state.isNavOpen
         ) {
           // right
           if (e.keyCode === 39) {

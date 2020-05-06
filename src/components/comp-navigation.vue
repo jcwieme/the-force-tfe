@@ -71,7 +71,9 @@ export default defineComponent({
     const rightInactif = ref('../../assets/img/nav/right--inactif.svg')
     const downActif = ref('../../assets/img/nav/down--actif.svg')
     const downInactif = ref('../../assets/img/nav/down--inactif.svg')
-    let isNavOpen = ref(false)
+    let isNavOpen = computed(() => {
+      return ctx.root.$store.state.isNavOpen
+    })
 
     const routes = computed(() => {
       return [
@@ -145,11 +147,11 @@ export default defineComponent({
       } else {
         chapter.classList.add('blur')
       }
-      isNavOpen.value = !isNavOpen.value
+      ctx.root.$store.commit('toggleNav')
     }
 
     const closeNav = () => {
-      isNavOpen.value = !isNavOpen.value
+      ctx.root.$store.commit('toggleNav')
     }
 
     return {
@@ -191,6 +193,7 @@ export default defineComponent({
     position: fixed;
     bottom: 40px;
     right: 40px;
+    z-index: 10;
 
     width: 105px;
     height: 70px;
@@ -226,6 +229,7 @@ export default defineComponent({
     position: fixed;
     bottom: 40px;
     left: 40px;
+    z-index: 10;
 
     h3 {
       position: relative;
