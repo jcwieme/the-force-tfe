@@ -2,16 +2,26 @@ export function add(a, b) {
   return a + b
 }
 
-export function sortWords(data) {
+export function sortWords(data, numberMovie) {
   let allWords = []
 
   data.forEach(el => {
     let sentence = removePunctuation(el.text)
     let words = sentence.split(' ')
     words.forEach(word => {
+      if (word === '' || word.length === 1) return
       allWords.push({
         word: word.toLowerCase(),
-        from: [{ character: el.from, number: 1 }],
+        from: [
+          {
+            character: el.from,
+            number: 1,
+            path: `../../assets/img/characters/${numberMovie}/${el.from.replace(
+              /\s/g,
+              '-'
+            )}.jpeg`,
+          },
+        ],
         number: 1,
       })
     })
@@ -50,12 +60,20 @@ function filterWords(data) {
     }
   })
 
+  checkWords.forEach(el => {
+    el.from = sortArray(el.from)
+  })
+
   return sortArray(checkWords)
 }
 
 function removePunctuation(string) {
-  var regex = /[!"#$%&'’()*+,-./:;<=>?@[\]^_`{|}~1234567890]/g
-  return string.replace(regex, '')
+  var regexSpace = /[!"#$%&'’()*+,./:;<=>?@[\]^_`{|}~1234567890]/g
+  var regexNoSpace = /['’]/g
+  string = string.replace(regexSpace, ' ')
+  string = string.replace(regexNoSpace, '')
+  string = string.replace(/\s{2,}/g, ' ')
+  return string
 }
 
 export function filterMovies(data, numberMovie) {

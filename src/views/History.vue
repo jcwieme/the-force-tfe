@@ -110,24 +110,24 @@ export default defineComponent({
   color: #ffe403;
 
   &__message {
-    font-size: 24px;
+    font-size: calc(100vw * 0.014);
     margin-bottom: 30px;
     color: white;
     text-align: center;
   }
 
   h3 {
-    font-size: 24px;
+    font-size: calc(100vw * 0.014);
   }
 
   h4 {
     margin-bottom: 30px;
-    font-size: 34px;
+    font-size: calc(100vw * 0.02);
   }
 
   &__text {
     width: 30vw;
-    font-size: 24px;
+    font-size: calc(100vw * 0.014);
     margin-bottom: 30px;
   }
 
@@ -173,7 +173,7 @@ export default defineComponent({
 
     h4 {
       color: #ffe403;
-      font-size: 26px;
+      font-size: calc(100vw * 0.015);
       margin-bottom: 20px;
     }
 

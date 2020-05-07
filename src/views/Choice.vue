@@ -130,8 +130,8 @@ export default defineComponent({
         transition: color 200ms ease, opacity 500ms 200ms ease;
       }
 
-      .choice__star--top,
-      .choice__star--bottom {
+      .choice__franchise--star,
+      .choice__franchise--wars {
         span {
           transform: translateY(0);
           opacity: 1;
@@ -139,7 +139,7 @@ export default defineComponent({
           transition: transform 500ms 700ms ease, opacity 500ms 700ms ease;
         }
       }
-      .choice__name {
+      .choice__title {
         opacity: 1;
 
         transition: opacity 500ms 950ms ease;
@@ -147,7 +147,7 @@ export default defineComponent({
     }
   }
 
-  &__title {
+  &__el {
     width: 100%;
     height: 100%;
 
@@ -168,7 +168,7 @@ export default defineComponent({
       -1px -1px 0 #ffe403;
   }
 
-  &__reveal {
+  &__animation {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -182,7 +182,7 @@ export default defineComponent({
     }
   }
 
-  &__star {
+  &__franchise {
     font-size: 90px;
     color: #18181c;
     text-shadow: -1px 1px 0 #ffe403, 1px 1px 0 #ffe403, 1px -1px 0 #ffe403,
@@ -191,7 +191,7 @@ export default defineComponent({
     text-align: center;
     overflow-y: hidden;
 
-    &--top {
+    &--star {
       margin-bottom: 10px;
 
       span {
@@ -201,7 +201,7 @@ export default defineComponent({
       }
     }
 
-    &--bottom {
+    &--wars {
       margin-top: -5px;
 
       span {
@@ -211,7 +211,7 @@ export default defineComponent({
       }
     }
   }
-  &__name {
+  &__title {
     text-align: center;
     font-size: 18px;
     color: white;

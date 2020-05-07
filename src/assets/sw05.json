@@ -1604,7 +1604,7 @@
     {
       "from": "REBEL OFFICER",
       "to": "REBEL CONTROLLER",
-      "text": "Echo Station Three-T-Eight.",
+      "text": "Echo Station Three-Eight.",
       "where": "EXT. HOTH - ICE PLAIN - SNOW TRENCH",
       "number": 3,
       "time": 27
@@ -2317,7 +2317,7 @@
       "from": "ARTOO",
       "to": "LUKE",
       "text": "bark",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 1,
       "time": 9
     },
@@ -2325,7 +2325,7 @@
       "from": "LUKE",
       "to": "ARTOO",
       "text": "there is nothing wrong, ARTOO. I am just setting a new course.",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 10,
       "time": 90
     },
@@ -2333,7 +2333,7 @@
       "from": "ARTOO",
       "to": "LUKE",
       "text": "bark",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 1,
       "time": 9
     },
@@ -2341,7 +2341,7 @@
       "from": "LUKE",
       "to": "ARTOO",
       "text": "we are not going to regroup with the others.",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 8,
       "time": 72
     },
@@ -2349,7 +2349,7 @@
       "from": "ARTOO",
       "to": "LUKE",
       "text": "bark",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 1,
       "time": 9
     },
@@ -2357,7 +2357,7 @@
       "from": "LUKE",
       "to": "ARTOO",
       "text": "we are going to the Dagobah system.",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 6,
       "time": 54
     },
@@ -2365,7 +2365,7 @@
       "from": "ARTOO",
       "to": "LUKE",
       "text": "bark",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 1,
       "time": 9
     },
@@ -2373,7 +2373,7 @@
       "from": "LUKE",
       "to": "ARTOO",
       "text": "Yes, ARTOO?",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 2,
       "time": 18
     },
@@ -2381,7 +2381,7 @@
       "from": "ARTOO",
       "to": "LUKE",
       "text": "bark",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 1,
       "time": 9
     },
@@ -2389,7 +2389,7 @@
       "from": "LUKE",
       "to": "ARTOO",
       "text": "that is all right. I would like to keep it on manual control for a while.",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 14,
       "time": 126
     },
@@ -2397,7 +2397,7 @@
       "from": "ARTOO",
       "to": "LUKE",
       "text": "bark",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 1,
       "time": 9
     },
@@ -2877,7 +2877,7 @@
       "from": "LUKE",
       "to": "ARTOO",
       "text": "Yes, that is it. Dagobah.",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 4,
       "time": 36
     },
@@ -2885,7 +2885,7 @@
       "from": "ARTOO",
       "to": "LUKE",
       "text": "beeps",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 1,
       "time": 9
     },
@@ -2893,7 +2893,7 @@
       "from": "LUKE",
       "to": "ARTOO",
       "text": "No, I am not going to change my mind about this. I am not picking up any cities or technology. Massive life-form readings, though. there is something alive down there.",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 27,
       "time": 243
     },
@@ -2901,7 +2901,7 @@
       "from": "ARTOO",
       "to": "LUKE",
       "text": "beeps",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 1,
       "time": 9
     },
@@ -2909,7 +2909,7 @@
       "from": "LUKE",
       "to": "ARTOO",
       "text": "Yes, I am sure it is perfectly safe for droids.",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 8,
       "time": 72
     },
@@ -2917,7 +2917,7 @@
       "from": "ARTOO",
       "to": "LUKE",
       "text": "beeps",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 1,
       "time": 9
     },
@@ -2925,7 +2925,7 @@
       "from": "LUKE",
       "to": "ARTOO",
       "text": "I know, I know! All the scopes are dead. I can not see a thing! Just hang on, I am going to start the landing cycle.",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 24,
       "time": 216
     },
@@ -2933,7 +2933,7 @@
       "from": "ARTOO",
       "to": "LUKE",
       "text": "beeps",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 1,
       "time": 9
     },
@@ -5292,7 +5292,7 @@
     {
       "from": "IMPERIAL CONTROLLER",
       "to": "HAN SOLO",
-      "text": "Permission granted to land on Platform Three-two-seven.",
+      "text": "Permission granted to land on Platform Three-two seven.",
       "where": "INT. MILLENNIUM FALCON - COCKPIT",
       "number": 7,
       "time": 63
@@ -6061,7 +6061,7 @@
       "from": "ARTOO",
       "to": "LUKE",
       "text": "BEEPS",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 1,
       "time": 9
     },
@@ -6069,7 +6069,7 @@
       "from": "LUKE",
       "to": "ARTOO",
       "text": "No, Threepio's with them.",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 4,
       "time": 36
     },
@@ -6077,7 +6077,7 @@
       "from": "ARTOO",
       "to": "LUKE",
       "text": "BEEPS",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 1,
       "time": 9
     },
@@ -6085,7 +6085,7 @@
       "from": "LUKE",
       "to": "ARTOO",
       "text": "Just hang on. we are almost there.",
-      "where": "INT. LUKE'S X-WING - COCKPIT",
+      "where": "INT. LUKE'S x-wing - COCKPIT",
       "number": 6,
       "time": 54
     },
@@ -6396,7 +6396,7 @@
     {
       "from": "STORMTROOPER",
       "to": "DARTH VADER",
-      "text": "Lord Vader, ship approaching. X-wing class.",
+      "text": "Lord Vader, ship approaching. x-wing class.",
       "where": "INT. CLOUD CITY - CARBON-FREEZING CHAMBER",
       "number": 6,
       "time": 54

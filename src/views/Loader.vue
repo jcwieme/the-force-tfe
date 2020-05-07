@@ -165,24 +165,24 @@
 </template>
 
 <script>
-export default {
+import { defineComponent, computed, ref } from '@vue/composition-api'
+
+export default defineComponent({
   name: 'Loader',
-  data() {
+  setup(props, ctx) {
+    const random = ref(Math.floor(Math.random() * 4) + 1)
+    const showClass = ref('loader__enter--show')
+    const loaded = computed(() => {
+      return ctx.root.$store.state.loaded
+    })
+
     return {
-      random: Math.floor(Math.random() * 4) + 1,
-      loaded: false,
-      showClass: 'loader__enter--show',
+      random,
+      showClass,
+      loaded,
     }
   },
-  mounted() {
-    window.setTimeout(
-      function() {
-        this.loaded = true
-      }.bind(this),
-      1500
-    )
-  },
-}
+})
 </script>
 
 <style lang="scss">

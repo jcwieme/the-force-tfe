@@ -6,19 +6,19 @@
     <div v-else class="myApp">
       <!-- <vue-particles
         color="#dedede"
-        :particleOpacity="0.5"
+        :particleOpacity="1"
         :particlesNumber="80"
         shapeType="circle"
         :particleSize="2"
         :lineLinked="false"
-        :moveSpeed="1.5"
+        :moveSpeed="0.2"
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
       ></vue-particles> -->
       <Navigation v-if="navRender" />
       <transition name="fade" mode="out-in">
-        <router-view class="router" />
+        <router-view class="router" :key="keyTransitionHorizontal" />
       </transition>
     </div>
   </div>
@@ -46,6 +46,9 @@ export default defineComponent({
         return false
       }
     })
+    const keyTransitionHorizontal = computed(() => {
+      return ctx.root.$route.params.id
+    })
 
     if (ctx.root.$store.state.activeMovie === 5) {
       ctx.root.$store.commit('falseArrowRight')
@@ -53,6 +56,33 @@ export default defineComponent({
     }
 
     onMounted(() => {
+      const preloads = ctx.root.$store.state.loader
+
+      function preloadImages(urls, allImagesLoadedCallback) {
+        var loadedCounter = 0
+        var toBeLoadedNumber = urls.length
+        urls.forEach(function(url) {
+          preloadImage(url, function() {
+            loadedCounter++
+            // console.log('Number of loaded images: ' + loadedCounter)
+            if (loadedCounter == toBeLoadedNumber) {
+              allImagesLoadedCallback()
+            }
+          })
+        })
+        function preloadImage(url, anImageLoadedCallback) {
+          var img = new Image()
+          img.onload = anImageLoadedCallback
+          img.src = url.link
+        }
+      }
+
+      // Let's call it:
+      preloadImages(preloads, () => {
+        ctx.root.$store.commit('loaded')
+        console.log('loaded')
+      })
+
       screen.value = checkSize()
 
       window.addEventListener('resize', onResize)
@@ -60,8 +90,9 @@ export default defineComponent({
       // Navigation arrows
       document.addEventListener('keydown', e => {
         if (
-          ctx.root.$route.name !== 'Choice' ||
-          ctx.root.$route.name !== 'Loader'
+          (ctx.root.$route.name !== 'Choice' ||
+            ctx.root.$route.name !== 'Loader') &&
+          !ctx.root.$store.state.isNavOpen
         ) {
           // right
           if (e.keyCode === 39) {
@@ -260,6 +291,7 @@ export default defineComponent({
       keyUp,
       screen,
       navRender,
+      keyTransitionHorizontal,
     }
   },
   beforeRoute(to, from, next) {

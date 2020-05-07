@@ -1,14 +1,14 @@
 <template>
-  <div class="choice__title">
+  <div class="choice__el">
     <span class="choice__number">{{ choice.number }}</span>
-    <div class="choice__reveal">
-      <span class="choice__star choice__star--top">
+    <div class="choice__animation">
+      <span class="choice__franchise choice__franchise--star">
         <span>StaR</span>
       </span>
-      <span class="choice__name">
+      <span class="choice__title">
         {{ choice.title }}
       </span>
-      <span class="choice__star choice__star--bottom">
+      <span class="choice__franchise choice__franchise--wars">
         <span>Wars</span>
       </span>
     </div>
