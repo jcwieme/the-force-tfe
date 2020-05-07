@@ -1,5 +1,5 @@
 <template>
-  <div class="history">
+  <div class="section history">
     <h3>{{ number }}</h3>
     <h4>{{ title }}</h4>
     <div

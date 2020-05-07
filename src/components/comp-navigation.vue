@@ -1,6 +1,8 @@
 <template>
   <div class="nav">
-    <div class="nav__sound">Sound: on</div>
+    <div class="nav__sound" @click="toggleMusic()">
+      Sound: {{ musicPlay ? 'on' : 'off' }}
+    </div>
     <div class="nav__arrows">
       <img
         src="../assets/img/nav/up--actif.svg"
@@ -28,7 +30,11 @@
         {{ this.$route.name }}
       </h3>
     </div>
-    <div class="nav__title" :class="[isNavOpen ? 'nav__title--actif' : '']">
+    <div
+      class="nav__title"
+      :class="[isNavOpen ? 'nav__title--actif' : '']"
+      ref="navRef"
+    >
       <div class="nav__menu" @click="toggleNav">
         <div class="nav__btn nav__btn--top">btn1</div>
         <div class="nav__btn nav__btn--center">btn2</div>
@@ -46,7 +52,7 @@
             :to="{ path: route.path }"
             :data-number="route.number"
             tag="li"
-            @click.native="closeNav"
+            @click.native="toggleNav"
             >{{ route.title }}</router-link
           >
         </ul>
@@ -60,7 +66,7 @@
 </template>
 
 <script>
-import { defineComponent, computed, ref } from '@vue/composition-api'
+import { defineComponent, computed, ref, watch } from '@vue/composition-api'
 
 export default defineComponent({
   name: 'Navigation',
@@ -73,6 +79,12 @@ export default defineComponent({
     const downInactif = ref('../../assets/img/nav/down--inactif.svg')
     let isNavOpen = computed(() => {
       return ctx.root.$store.state.isNavOpen
+    })
+
+    const navRef = ref(null)
+
+    const musicPlay = computed(() => {
+      return ctx.root.$store.state.isMusicPlaying
     })
 
     const routes = computed(() => {
@@ -127,6 +139,10 @@ export default defineComponent({
       }
     })
 
+    const toggleMusic = () => {
+      ctx.root.$store.commit('toggleMusic')
+    }
+
     const chapter = computed(() => {
       if (ctx.root.$route.name === 'History') {
         return '02'
@@ -139,20 +155,31 @@ export default defineComponent({
       }
     })
     const toggleNav = () => {
-      let chapter = document.querySelector(
-        `.${ctx.root.$route.name.toLowerCase()}`
-      )
-      if (chapter.classList.contains('blur')) {
-        chapter.classList.remove('blur')
-      } else {
-        chapter.classList.add('blur')
-      }
       ctx.root.$store.commit('toggleNav')
     }
 
-    const closeNav = () => {
-      ctx.root.$store.commit('toggleNav')
+    const clickFunction = e => {
+      if (!navRef.value.contains(e.target)) ctx.root.$store.commit('toggleNav')
     }
+
+    watch(
+      () => ctx.root.$store.state.isNavOpen,
+      (value, prevValue) => {
+        if (value) {
+          document
+            .querySelector('.section')
+            .addEventListener('click', clickFunction)
+
+          document.querySelector('.section').classList.add('blur')
+        }
+        if (!value && prevValue !== undefined) {
+          document.querySelector('.section').classList.remove('blur')
+          document
+            .querySelector('.section')
+            .removeEventListener('click', clickFunction)
+        }
+      }
+    )
 
     return {
       leftActif,
@@ -170,7 +197,9 @@ export default defineComponent({
       down,
       chapter,
       toggleNav,
-      closeNav,
+      navRef,
+      musicPlay,
+      toggleMusic,
     }
   },
 })
@@ -195,12 +224,12 @@ export default defineComponent({
     right: 40px;
     z-index: 10;
 
-    width: 105px;
-    height: 70px;
+    width: 80px;
+    height: 52.5px;
 
     img {
-      width: 35px;
-      height: 35px;
+      width: 25px;
+      height: 25px;
     }
   }
   &__left {

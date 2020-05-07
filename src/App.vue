@@ -25,8 +25,15 @@
 </template>
 
 <script>
-import { defineComponent, ref, computed, onMounted } from '@vue/composition-api'
+import {
+  defineComponent,
+  ref,
+  computed,
+  onMounted,
+  watch,
+} from '@vue/composition-api'
 import Navigation from '@/components/comp-navigation'
+import { Howl } from 'howler'
 
 export default defineComponent({
   name: 'Application',
@@ -55,6 +62,14 @@ export default defineComponent({
       ctx.root.$store.commit('trueArrowLeft')
     }
 
+    var sound = new Howl({
+      // src: ['../../assets/music/main.mp3'],
+      src: ['main.mp3'],
+      loop: true,
+      volume: 0.5,
+      autoplay: true,
+    })
+
     onMounted(() => {
       const preloads = ctx.root.$store.state.loader
 
@@ -80,7 +95,6 @@ export default defineComponent({
       // Let's call it:
       preloadImages(preloads, () => {
         ctx.root.$store.commit('loaded')
-        console.log('loaded')
       })
 
       screen.value = checkSize()
@@ -222,16 +236,6 @@ export default defineComponent({
             }
           }
 
-          // if (e.keyCode === 38) {
-          //   let movieNumber = ctx.root.$store.state.activeMovie
-          //   movies.forEach(movie => {
-          //     movie.classList.remove('choice__movie--actif')
-          //   })
-          //   document
-          //     .querySelector(`.choice__movie--${movieNumber}`)
-          //     .classList.add('choice__movie--actif')
-          // }
-
           // down
           if (e.keyCode === 40) {
             let movieNumber = ctx.root.$store.state.activeMovie + 1
@@ -286,6 +290,19 @@ export default defineComponent({
         return true
       }
     }
+
+    watch(
+      () => ctx.root.$store.state.isMusicPlaying,
+      (value, prevValue) => {
+        if (value) {
+          sound.play()
+        }
+
+        if (!value && prevValue) {
+          sound.pause()
+        }
+      }
+    )
 
     return {
       keyUp,

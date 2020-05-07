@@ -26,6 +26,7 @@ export default new Vuex.Store({
     loader,
     loaded: false,
     isNavOpen: false,
+    isMusicPlaying: true,
   },
   mutations: {
     setActiveMovie(state, number) {
@@ -48,6 +49,12 @@ export default new Vuex.Store({
     },
     toggleNav(state) {
       state.isNavOpen = !state.isNavOpen
+    },
+    toggleMusic(state) {
+      state.isMusicPlaying = !state.isMusicPlaying
+    },
+    initializeMusic(state) {
+      state.isMusicPlaying = true
     },
   },
   actions: {},

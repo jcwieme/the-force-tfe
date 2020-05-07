@@ -1,5 +1,5 @@
 <template>
-  <div class="numbers">
+  <div class="section numbers">
     <div class="numbers__row">
       <d3-bar :data-bar="barChartDataWords" />
       <!-- <d3-pie :data-chart="racesData" /> -->

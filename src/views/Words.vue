@@ -1,5 +1,5 @@
 <template>
-  <div class="words">
+  <div class="words section">
     <transition name="fade" mode="out-in">
       <div class="words__list" v-show="!searchActive">
         <div v-for="(word, index) in movieWords" :key="index" class="words__el">
