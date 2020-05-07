@@ -5,12 +5,18 @@
       <!-- <d3-pie :data-chart="racesData" /> -->
       <d3-bar :data-bar="barChartData" />
     </div>
-    <!-- <div class="numbers__row">
-      <div class="numbers__column numbers__column--big"></div>
-
+    <div class="numbers__row">
       <d3-pie :data-chart="racesData" />
+      <div
+        class="numbers__column numbers__column--big numbers__column--right"
+      ></div>
+    </div>
+    <div class="numbers__row">
+      <div
+        class="numbers__column numbers__column--big numbers__column--left"
+      ></div>
       <d3-pie :data-chart="sidesData" />
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -109,7 +115,7 @@ export default defineComponent({
           sub: `words in the ${ctx.root.$store.state.movies[
             ctx.root.$store.state.activeMovie
           ].number.toLowerCase()}`,
-          class: 'numbers__column--big',
+          class: 'numbers__column--big numbers__column--left',
           value: wordsInMovie.value,
         },
       }
@@ -143,17 +149,17 @@ export default defineComponent({
           {
             name: 'humans',
             value: racesNumbers.human,
-            color: '#001eff',
+            color: '#196890',
           },
           {
             name: 'aliens',
             value: racesNumbers.alien,
-            color: 'red',
+            color: '#9ACD32',
           },
           {
             name: 'droids',
             value: racesNumbers.droid,
-            color: '#ffe700',
+            color: '#F5F5DC',
           },
         ],
         size: window.innerHeight * 0.25,
@@ -178,17 +184,17 @@ export default defineComponent({
           {
             name: 'dark',
             value: sidesNumbers.dark,
-            color: 'red',
+            color: '#8D2426',
           },
           {
             name: 'light',
             value: sidesNumbers.light,
-            color: '#001eff',
+            color: '#196890',
           },
           {
             name: 'neutral',
             value: sidesNumbers.neutral,
-            color: '#ffe700',
+            color: '#F5F5DC',
           },
         ],
         size: window.innerHeight * 0.25,
@@ -219,42 +225,76 @@ export default defineComponent({
   letter-spacing: 0.1em;
   color: #ffe403;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 500px);
+
+  padding-top: 250px;
+  padding-bottom: 250px;
 
   display: flex;
-  // flex-direction: column;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 
   overflow: scroll;
 
+  // position: relative;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100px;
+    background-color: #18181c;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    position: fixed;
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100px;
+    background-color: #18181c;
+    opacity: 0.5;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+  }
+
   &__row {
-    width: 1100px;
+    width: calc((100vw * 0.72) - 150px);
+    height: 55vh;
 
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
-    // padding: 0px 20px;
+    padding: 0px 75px;
 
-    // border-bottom: 1px solid #ffe403;
-    // border-top: 1px solid #ffe403;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
   }
 
   &__column {
     display: flex;
     flex-direction: column;
-    height: 60%;
+    justify-content: space-between;
+    height: calc(100% - 80px);
     padding: 40px 0px;
 
     &--big {
       width: calc(100vw * 0.39);
-      margin-right: calc(100vw * 0.06);
-      border-right: 1px solid #ffe403;
+    }
+    &--left {
+      margin-right: calc(100vw * 0.03);
+      border-right: 1px solid white;
+    }
+    &--right {
+      margin-left: calc(100vw * 0.03);
+      border-left: 1px solid white;
     }
     &--small {
-      width: calc(100vw * 0.18);
+      width: calc(100vw * 0.2);
     }
   }
 
