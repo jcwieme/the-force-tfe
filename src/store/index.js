@@ -27,6 +27,7 @@ export default new Vuex.Store({
     loaded: false,
     isNavOpen: false,
     isMusicPlaying: true,
+    animationRotate: false,
   },
   mutations: {
     setActiveMovie(state, number) {
@@ -55,6 +56,9 @@ export default new Vuex.Store({
     },
     initializeMusic(state) {
       state.isMusicPlaying = true
+    },
+    toggleAnimation(state) {
+      state.animationRotate = !state.animationRotate
     },
   },
   actions: {},

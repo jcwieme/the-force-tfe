@@ -2,6 +2,11 @@
   "number": "Episode V",
   "title": "The Empire Strikes Back",
   "text": {
+    "animation": [
+      "It is a dark time for the <span  data-word='eleven'>Rebellion</span>. Although the Death Star has been destroyed, <span  data-word='fifteen'>Imperial troops</span> have driven the Rebel forces from their hidden base and pursued them across the galaxy.",
+      "Evading the dreaded <span  data-word='sixteen'>Imperial Starfleet</span>, a group of freedom fighters led by <span  data-word='seventeen'>Luke Skywalker</span> has established a new secret base on the remote ice world of <span  data-word='eighteen'>Hoth</span>.",
+      "The evil lord <span  data-word='nineteen'>Darth Vader</span>, obsessed with finding young Skywalker, has dispatched thousands of remote probes into the far reaches of space..."
+    ],
     "intro": [
       "It is a dark time for the <span class='history__word' data-word='eleven'>Rebellion</span>. Although the Death Star has been destroyed, <span class='history__word' data-word='fifteen'>Imperial troops</span> have driven the Rebel forces from their hidden base and pursued them across the galaxy.",
       "Evading the dreaded <span class='history__word' data-word='sixteen'>Imperial Starfleet</span>, a group of freedom fighters led by <span class='history__word' data-word='seventeen'>Luke Skywalker</span> has established a new secret base on the remote ice world of <span class='history__word' data-word='eighteen'>Hoth</span>.",

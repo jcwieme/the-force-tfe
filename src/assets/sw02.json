@@ -2,6 +2,11 @@
   "number": "Episode II",
   "title": "Attack of the Clones",
   "text": {
+    "animation": [
+      "There is unrest in the <span  data-word='four'>Galactic Senate</span>. Several thousand solar systems have declared their intentions to leave the <span  data-word='one'>Republic</span>.",
+      "This separatist movement, under the leadership of the mysterious <span  data-word='six'>Count Dooku</span>, has made it difficult for the limited number of <span  data-word='five'>Jedi Knights</span> to maintain peace and order in the galaxy.",
+      "Senator <span  data-word='seven'>Amidala</span>, the former Queen of Naboo, is returning to the Galactic Senate to vote on the critical issue of creating an ARMY OF THE REPUBLIC to assist the overwhelmed Jedi...."
+    ],
     "intro": [
       "There is unrest in the <span class='history__word' data-word='four'>Galactic Senate</span>. Several thousand solar systems have declared their intentions to leave the <span class='history__word' data-word='one'>Republic</span>.",
       "This separatist movement, under the leadership of the mysterious <span class='history__word' data-word='six'>Count Dooku</span>, has made it difficult for the limited number of <span class='history__word' data-word='five'>Jedi Knights</span> to maintain peace and order in the galaxy.",

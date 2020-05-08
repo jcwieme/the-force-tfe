@@ -7,7 +7,7 @@
       <!-- <vue-particles
         color="#dedede"
         :particleOpacity="1"
-        :particlesNumber="80"
+        :particlesNumber="160"
         shapeType="circle"
         :particleSize="2"
         :lineLinked="false"
@@ -370,10 +370,22 @@ body {
   opacity: 0;
 }
 
+.fade-history-enter-active,
+.fade-history-leave-active {
+  transition: all 0.15s ease;
+}
+
+.fade-history-enter,
+.fade-history-leave-active {
+  opacity: 0;
+}
+
 .mobile {
   color: white;
   font-family: star_jediregular;
   letter-spacing: 0.1em;
+  padding: 40px;
+  text-align: center;
 }
 
 .router {

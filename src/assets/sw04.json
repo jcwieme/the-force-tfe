@@ -2,6 +2,11 @@
   "number": "Episode IV",
   "title": "New Hope",
   "text": {
+    "animation": [
+      "It is a period of civil war. <span  data-word='eleven'>Rebel</span> spaceships, striking from a hidden base, have won their first victory against the evil <span  data-word='twelve'>Galactic Empire</span>.",
+      "During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the <span  data-word='thirteen'>DEATH STAR</span>, an armored space station with enough power to destroy an entire planet.",
+      "Pursued by the Empire's sinister agents, <span  data-word='fourteen'>Princess Leia</span> races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy..."
+    ],
     "intro": [
       "It is a period of civil war. <span class='history__word' data-word='eleven'>Rebel</span> spaceships, striking from a hidden base, have won their first victory against the evil <span class='history__word' data-word='twelve'>Galactic Empire</span>.",
       "During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the <span class='history__word' data-word='thirteen'>DEATH STAR</span>, an armored space station with enough power to destroy an entire planet.",
