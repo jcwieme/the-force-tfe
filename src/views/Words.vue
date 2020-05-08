@@ -89,14 +89,21 @@
         <p :key="text">{{ text }}</p>
       </transition>
     </div>
+    <comp-words v-if="hoverEffect" :data-speakers="dataForSpeakers" />
   </div>
 </template>
 
 <script>
 import { defineComponent, computed, onMounted, ref } from '@vue/composition-api'
 import * as utils from '@/tools/utils'
+
+import compWords from '@/components/comp-words'
+
 export default defineComponent({
   name: 'Words',
+  components: {
+    compWords,
+  },
   setup(props, ctx) {
     const choiceWords = [
       ['jedi', 'master', 'chancellor', 'mesa', 'naboo'],
@@ -118,6 +125,7 @@ export default defineComponent({
     const canEnter = ref(false)
     const animSearched = ref(false)
     const canDelete = ref(true)
+    const hoverEffect = ref(false)
 
     const searchedWordNumber = computed(() => {
       if (animSearched.value) {
@@ -126,6 +134,16 @@ export default defineComponent({
         )[0].number
       } else {
         return filteredWordsForSearch.value[0].number
+      }
+    })
+
+    const dataForSpeakers = computed(() => {
+      if (animSearched.value) {
+        return filteredWordsForSearch.value.filter(
+          el => el.word === search.value
+        )[0]
+      } else {
+        return ''
       }
     })
 
@@ -174,6 +192,16 @@ export default defineComponent({
     })
 
     onMounted(() => {
+      document
+        .querySelector('.words__input')
+        .addEventListener('mouseover', () => {
+          if (animSearched.value) hoverEffect.value = true
+        })
+      document
+        .querySelector('.words__input')
+        .addEventListener('mouseout', () => {
+          if (animSearched.value) hoverEffect.value = false
+        })
       document.querySelectorAll('.words__word').forEach(el => {
         el.addEventListener('mouseover', e => {
           let word = e.currentTarget.innerText.toLowerCase()
@@ -334,6 +362,8 @@ export default defineComponent({
       searchedWordNumber,
       searchedWordFrom,
       picto,
+      dataForSpeakers,
+      hoverEffect,
     }
   },
 })
@@ -531,7 +561,7 @@ function compare(a, b) {
     top: 5px;
     left: 20px;
 
-    cursor: pointer;
+    cursor: default;
 
     &::before {
       content: attr(data-number);
@@ -567,6 +597,7 @@ function compare(a, b) {
 
     transition: all 300ms 500ms ease;
     &--searched {
+      cursor: pointer;
       left: 50%;
       transform: translateX(-50%);
 
@@ -576,6 +607,13 @@ function compare(a, b) {
         height: 30%;
         transition: height 300ms 1000ms ease;
       }
+
+      // &:hover {
+      //   &::after {
+      //     height: 100%;
+      //     transition: height 300ms ease;
+      //   }
+      // }
 
       &::before {
         content: attr(data-number);
