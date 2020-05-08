@@ -3,20 +3,22 @@
     <div class="numbers__row">
       <d3-bar :data-bar="barChartDataWords" />
       <!-- <d3-pie :data-chart="racesData" /> -->
-      <d3-bar :data-bar="barChartData" />
+      <!-- <d3-bar :data-bar="barChartData" /> -->
+      <d3-pie :data-chart="sidesData" />
     </div>
     <div class="numbers__row">
       <d3-pie :data-chart="racesData" />
-      <div
+      <d3-bar :data-bar="barChartData" />
+      <!-- <div
         class="numbers__column numbers__column--big numbers__column--right"
-      ></div>
+      ></div> -->
     </div>
-    <div class="numbers__row">
+    <!-- <div class="numbers__row">
       <div
         class="numbers__column numbers__column--big numbers__column--left"
       ></div>
       <d3-pie :data-chart="sidesData" />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -77,7 +79,7 @@ export default defineComponent({
           },
         ],
         size: {
-          width: window.innerWidth * 0.7 * 0.3,
+          width: window.innerWidth * 0.7 * 0.4,
           height: window.innerHeight * 0.25,
         },
         other: {
@@ -85,7 +87,7 @@ export default defineComponent({
           sub: `lines in the  ${ctx.root.$store.state.movies[
             ctx.root.$store.state.activeMovie
           ].number.toLowerCase()}`,
-          class: 'numbers__column--small',
+          class: 'numbers__column--big numbers__column--right',
           value: linesInMovie.value,
         },
       }
@@ -291,6 +293,7 @@ export default defineComponent({
     }
     &--right {
       margin-left: calc(100vw * 0.03);
+      padding-left: calc(100vw * 0.03);
       border-left: 1px solid white;
     }
     &--small {
