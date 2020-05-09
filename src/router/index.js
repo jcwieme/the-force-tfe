@@ -51,6 +51,11 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  if (from.name === null) {
+    if (to.name !== 'History' && to.name !== 'Loader' && to.name !== 'Choice') {
+      store.commit('toggleAnimation')
+    }
+  }
   if (to.params.id) {
     store.commit('setActiveMovie', to.params.id - 1)
 

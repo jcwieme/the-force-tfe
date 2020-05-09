@@ -1,7 +1,24 @@
 <template>
   <div class="nav">
     <div class="nav__sound" @click="toggleMusic()">
-      Sound: {{ musicPlay ? 'on' : 'off' }}
+      <div class="nav__bar" :class="[musicPlay ? 'nav__bar--actif' : '']">
+        Bar
+      </div>
+      <div class="nav__bar" :class="[musicPlay ? 'nav__bar--actif' : '']">
+        Bar
+      </div>
+      <div class="nav__bar" :class="[musicPlay ? 'nav__bar--actif' : '']">
+        Bar
+      </div>
+      <div class="nav__bar" :class="[musicPlay ? 'nav__bar--actif' : '']">
+        Bar
+      </div>
+      <div class="nav__bar" :class="[musicPlay ? 'nav__bar--actif' : '']">
+        Bar
+      </div>
+      <div class="nav__bar" :class="[musicPlay ? 'nav__bar--actif' : '']">
+        Bar
+      </div>
     </div>
     <div class="nav__arrows">
       <img
@@ -57,8 +74,14 @@
           >
         </ul>
         <ul class="nav__extra">
-          <div>About</div>
           <div @click="toggleCredits()">Credits</div>
+          <div>
+            <a
+              href="https://medium.com/@jeanchristophewieme/tfe-chapitre-1-la-t%C3%AAte-dans-les-%C3%A9toiles-ead3075aec9f"
+              target="_blank"
+              >medium</a
+            >
+          </div>
         </ul>
       </div>
     </div>
@@ -221,7 +244,63 @@ export default defineComponent({
     top: 40px;
     right: 40px;
 
+    width: 28px;
+    height: 20px;
+
     z-index: 11;
+
+    cursor: pointer;
+  }
+
+  &__bar {
+    background: white;
+    opacity: 0.5;
+    bottom: 1px;
+    height: 15px;
+    position: absolute;
+    width: 3px;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 500ms ease;
+
+    &--actif {
+      opacity: 1;
+      height: 3px;
+      transition: all 500ms ease;
+      animation: sound 0ms -800ms linear infinite alternate;
+    }
+
+    &:nth-child(1) {
+      left: 1px;
+      animation-duration: 1274ms;
+      animation-delay: 40ms;
+    }
+    &:nth-child(2) {
+      left: 5px;
+      animation-duration: 1233ms;
+      animation-delay: 25ms;
+    }
+    &:nth-child(3) {
+      left: 9px;
+      animation-duration: 1207ms;
+      animation-delay: 10ms;
+    }
+    &:nth-child(4) {
+      left: 13px;
+      animation-duration: 1258ms;
+      animation-delay: 32ms;
+    }
+    &:nth-child(5) {
+      left: 17px;
+      animation-duration: 1200ms;
+      animation-delay: 4ms;
+    }
+    &:nth-child(6) {
+      left: 21px;
+      animation-duration: 1227ms;
+      animation-delay: 0ms;
+    }
   }
   &__arrows {
     position: fixed;
@@ -264,6 +343,7 @@ export default defineComponent({
     bottom: 40px;
     left: 40px;
     z-index: 10;
+    cursor: pointer;
 
     h3 {
       position: relative;
@@ -475,6 +555,15 @@ export default defineComponent({
         color: #ffe403;
       }
     }
+  }
+}
+
+@keyframes sound {
+  0% {
+    height: 3px;
+  }
+  100% {
+    height: 15px;
   }
 }
 </style>
