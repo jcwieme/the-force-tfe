@@ -116,7 +116,7 @@ export default defineComponent({
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
 
   position: absolute;
@@ -139,6 +139,7 @@ export default defineComponent({
   &__container {
     width: fit-content;
     max-width: 1200px;
+    margin: auto;
   }
 
   &__title {

@@ -16,7 +16,9 @@
         :clickEffect="false"
         class="particules"
       ></vue-particles> -->
-      <Navigation v-if="navRender" />
+      <transition name="fade">
+        <Navigation v-if="navRender" />
+      </transition>
       <transition name="fade" mode="out-in">
         <router-view class="router" :key="keyTransitionHorizontal" />
       </transition>
@@ -54,7 +56,8 @@ export default defineComponent({
     const navRender = computed(() => {
       if (
         ctx.root.$route.name !== 'Choice' &&
-        ctx.root.$route.name !== 'Loader'
+        ctx.root.$route.name !== 'Loader' &&
+        ctx.root.$store.state.animationRotate
       ) {
         return true
       } else {
@@ -71,12 +74,16 @@ export default defineComponent({
     }
 
     var sound = new Howl({
-      // src: ['../../assets/music/main.mp3'],
-      src: ['main.mp3'],
+      src: ['../../assets/music/main.mp3'],
+      // src: ['main.mp3'],
       loop: true,
       volume: 0.5,
-      autoplay: true,
+      onload: function() {
+        sound.fade(0, 0.5, 3000)
+      },
     })
+
+    var myMusic = sound.play()
 
     onMounted(() => {
       const preloads = ctx.root.$store.state.loader
@@ -111,6 +118,12 @@ export default defineComponent({
 
       // Navigation arrows
       document.addEventListener('keydown', e => {
+        if (
+          ctx.root.$route.name === 'History' &&
+          !ctx.root.$store.state.animationRotate
+        ) {
+          return
+        }
         if (
           (ctx.root.$route.name !== 'Choice' ||
             ctx.root.$route.name !== 'Loader') &&
@@ -211,61 +224,61 @@ export default defineComponent({
           }
         }
 
-        if (
-          ctx.root.$route.name === 'Choice' &&
-          ctx.root.$store.state.activeMovie !== null
-        ) {
-          let movies = document.querySelectorAll('.choice__movie')
+        // if (
+        //   ctx.root.$route.name === 'Choice' &&
+        //   ctx.root.$store.state.activeMovie !== null
+        // ) {
+        //   let movies = document.querySelectorAll('.choice__movie')
 
-          // right
-          if (e.keyCode === 39) {
-            let movieNumber = ctx.root.$store.state.activeMovie + 1
-            if (ctx.root.$store.state.activeMovie !== 5) {
-              ctx.root.$store.commit('setActiveMovie', movieNumber)
-              movies.forEach(movie => {
-                movie.classList.remove('choice__movie--actif')
-              })
-              document
-                .querySelector(`.choice__movie--${movieNumber}`)
-                .classList.add('choice__movie--actif')
-            }
-          }
-          // left
-          if (e.keyCode === 37) {
-            let movieNumber = ctx.root.$store.state.activeMovie - 1
-            if (ctx.root.$store.state.activeMovie >= 0) {
-              ctx.root.$store.commit('setActiveMovie', movieNumber)
-              movies.forEach(movie => {
-                movie.classList.remove('choice__movie--actif')
-              })
-              document
-                .querySelector(`.choice__movie--${movieNumber}`)
-                .classList.add('choice__movie--actif')
-            }
-          }
+        //   // right
+        //   if (e.keyCode === 39) {
+        //     let movieNumber = ctx.root.$store.state.activeMovie + 1
+        //     if (ctx.root.$store.state.activeMovie !== 5) {
+        //       ctx.root.$store.commit('setActiveMovie', movieNumber)
+        //       movies.forEach(movie => {
+        //         movie.classList.remove('choice__movie--actif')
+        //       })
+        //       document
+        //         .querySelector(`.choice__movie--${movieNumber}`)
+        //         .classList.add('choice__movie--actif')
+        //     }
+        //   }
+        //   // left
+        //   if (e.keyCode === 37) {
+        //     let movieNumber = ctx.root.$store.state.activeMovie - 1
+        //     if (ctx.root.$store.state.activeMovie >= 0) {
+        //       ctx.root.$store.commit('setActiveMovie', movieNumber)
+        //       movies.forEach(movie => {
+        //         movie.classList.remove('choice__movie--actif')
+        //       })
+        //       document
+        //         .querySelector(`.choice__movie--${movieNumber}`)
+        //         .classList.add('choice__movie--actif')
+        //     }
+        //   }
 
-          // down
-          if (e.keyCode === 40) {
-            let movieNumber = ctx.root.$store.state.activeMovie + 1
-            ctx.root.$router.push({
-              name: 'History',
-              params: {
-                id: movieNumber,
-              },
-            })
+        //   // down
+        //   if (e.keyCode === 40) {
+        //     let movieNumber = ctx.root.$store.state.activeMovie + 1
+        //     ctx.root.$router.push({
+        //       name: 'History',
+        //       params: {
+        //         id: movieNumber,
+        //       },
+        //     })
 
-            if (movieNumber === 1) {
-              ctx.root.$store.commit('falseArrowLeft')
-            } else {
-              ctx.root.$store.commit('trueArrowLeft')
-            }
-            if (movieNumber === 6) {
-              ctx.root.$store.commit('falseArrowRight')
-            } else {
-              ctx.root.$store.commit('trueArrowRight')
-            }
-          }
-        }
+        //     if (movieNumber === 1) {
+        //       ctx.root.$store.commit('falseArrowLeft')
+        //     } else {
+        //       ctx.root.$store.commit('trueArrowLeft')
+        //     }
+        //     if (movieNumber === 6) {
+        //       ctx.root.$store.commit('falseArrowRight')
+        //     } else {
+        //       ctx.root.$store.commit('trueArrowRight')
+        //     }
+        //   }
+        // }
 
         keyUp.value = false
       })
@@ -303,11 +316,15 @@ export default defineComponent({
       () => ctx.root.$store.state.isMusicPlaying,
       (value, prevValue) => {
         if (value) {
-          sound.play()
+          sound.play(myMusic)
+          sound.fade(0, 0.5, 500, myMusic)
         }
 
         if (!value && prevValue) {
-          sound.pause()
+          sound.fade(0.5, 0, 500, myMusic)
+          sound.on('fade', function() {
+            if (this.volume === 0) sound.pause(myMusic)
+          })
         }
       }
     )
