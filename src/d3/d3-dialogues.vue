@@ -112,10 +112,13 @@ export default defineComponent({
         )
 
       //Filter for the outside glow
-      var filter = gDefs.append('filter').attr('id', 'glow')
+      var filter = gDefs
+        .append('filter')
+        .attr('id', 'glow')
+        .attr('filterUnits', 'userSpaceOnUse')
       filter
         .append('feGaussianBlur')
-        .attr('stdDeviation', '2')
+        .attr('stdDeviation', '3')
         .attr('result', 'coloredBlur')
       var feMerge = filter.append('feMerge')
       feMerge.append('feMergeNode').attr('in', 'coloredBlur')
@@ -430,13 +433,6 @@ export default defineComponent({
           var cxStart = 0
           var cyStart = 0
 
-          // Faire un système de ratio ? En fonction de sa place ? Comment calculer la place et comment avoir la distance la plus proche ?
-          // Calculer la distance entre X et Cx Puis diviser cette distance par la place de d.target
-          // ratio a:b
-          // rloc = (x1 + b•(x2 - x1)/(a + b), y1 + b•(y2 - y1)/(a + b))
-          // rloc X = (x1 + b•(x2 - x1)/(a + b)
-          // rloc Y = y1 + b•(y2 - y1)/(a + b))
-
           let b = Math.floor(setupGraphic.variables.allNodes.length / 4)
           let a = 0
 
@@ -614,11 +610,11 @@ export default defineComponent({
         .attr('stroke-width', d => {
           return (d.number / maxNumber) * 5 + 1
         })
-        .style('filter', d => {
-          if (d.source === 1 || d.target === 1) {
-            return 'url(#glow)'
-          }
-        })
+      // .attr('filter', d => {
+      //   if (d.source === 1 || d.target === 1) {
+      //     return 'url(#glow)'
+      //   }
+      // })
     }
 
     const drawHoverLinks = data => {
@@ -1054,11 +1050,11 @@ export default defineComponent({
         .style('stroke-opacity', function(link_d) {
           return link_d.source === id || link_d.target === id ? '1' : '0.1'
         })
-        .style('filter', x => {
-          if (x.source === id || x.target === id) {
-            return 'url(#glow)'
-          }
-        })
+      // .style('filter', x => {
+      //   if (x.source === id || x.target === id) {
+      //     return 'url(#glow)'
+      //   }
+      // })
 
       // move the hover links
       setupGraphic.variables.hoverLinks
@@ -1124,6 +1120,7 @@ export default defineComponent({
 
     &--actif {
       cursor: none;
+      filter: url('#glow');
     }
   }
 
