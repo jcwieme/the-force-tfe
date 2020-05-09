@@ -38,7 +38,11 @@ export default defineComponent({
   setup(props) {
     const sliceN = ref(0)
     const columns = computed(() => {
-      return Math.ceil(props.dataSpeakers.from.length / 10)
+      if (props.dataSpeakers.from.length >= 20) {
+        return '2'
+      } else {
+        return Math.ceil(props.dataSpeakers.from.length / 10)
+      }
     })
 
     if (props.dataSpeakers.from.length % 2 === 1) {
@@ -46,10 +50,9 @@ export default defineComponent({
     }
 
     if (props.dataSpeakers.from.length >= 20) {
-      sliceN.value = 20
+      sliceN.value = 19
     }
 
-    console.log(props.dataSpeakers.from.length % 2)
     return {
       columns,
       sliceN,

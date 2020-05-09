@@ -28,6 +28,8 @@ export default new Vuex.Store({
     isNavOpen: false,
     isMusicPlaying: true,
     animationRotate: false,
+    isCreditsOpen: false,
+    isAboutOpen: false,
   },
   mutations: {
     setActiveMovie(state, number) {
@@ -59,6 +61,12 @@ export default new Vuex.Store({
     },
     toggleAnimation(state) {
       state.animationRotate = !state.animationRotate
+    },
+    toggleAbout(state) {
+      state.isAboutOpen = !state.isAboutOpen
+    },
+    toggleCredits(state) {
+      state.isCreditsOpen = !state.isCreditsOpen
     },
   },
   actions: {},

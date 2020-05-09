@@ -21,6 +21,9 @@
         <router-view class="router" :key="keyTransitionHorizontal" />
       </transition>
     </div>
+    <transition name="fade" mode="out-in">
+      <comp-credits v-if="creditsBool" />
+    </transition>
   </div>
 </template>
 
@@ -33,16 +36,21 @@ import {
   watch,
 } from '@vue/composition-api'
 import Navigation from '@/components/comp-navigation'
+import compCredits from '@/components/comp-credits'
 import { Howl } from 'howler'
 
 export default defineComponent({
   name: 'Application',
   components: {
     Navigation,
+    compCredits,
   },
   setup(props, ctx) {
     const keyUp = ref(true)
     const screen = ref(false)
+    const creditsBool = computed(() => {
+      return ctx.root.$store.state.isCreditsOpen
+    })
     const navRender = computed(() => {
       if (
         ctx.root.$route.name !== 'Choice' &&
@@ -309,6 +317,7 @@ export default defineComponent({
       screen,
       navRender,
       keyTransitionHorizontal,
+      creditsBool,
     }
   },
   beforeRoute(to, from, next) {
@@ -358,6 +367,11 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .fade-enter-active,

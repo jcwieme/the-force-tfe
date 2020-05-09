@@ -57,8 +57,8 @@
           >
         </ul>
         <ul class="nav__extra">
-          <router-link to="/" tag="li">Credits</router-link>
-          <a href="/" target="_blank">Case-Study</a>
+          <div>About</div>
+          <div @click="toggleCredits()">Credits</div>
         </ul>
       </div>
     </div>
@@ -162,6 +162,10 @@ export default defineComponent({
       if (!navRef.value.contains(e.target)) ctx.root.$store.commit('toggleNav')
     }
 
+    const toggleCredits = () => {
+      ctx.root.$store.commit('toggleCredits')
+    }
+
     watch(
       () => ctx.root.$store.state.isNavOpen,
       (value, prevValue) => {
@@ -182,6 +186,7 @@ export default defineComponent({
     )
 
     return {
+      toggleCredits,
       leftActif,
       leftInactif,
       rightActif,
@@ -445,37 +450,29 @@ export default defineComponent({
 
     width: 100%;
 
-    li {
+    div {
       cursor: pointer;
       transition: all 500ms ease;
 
-      &:hover {
-        color: #ffe403;
-      }
-    }
+      &:last-child {
+        margin-left: 7px;
+        padding-left: 10px;
 
-    a {
-      cursor: pointer;
-      text-decoration: none;
-      color: inherit;
-      margin-left: 7px;
-      padding-left: 10px;
+        position: relative;
 
-      position: relative;
-      transition: all 500ms ease;
-
-      &:hover {
-        color: #ffe403;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 3px;
+          height: 100%;
+          background-color: white;
+        }
       }
 
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 3px;
-        height: 100%;
-        background-color: white;
+      &:hover {
+        color: #ffe403;
       }
     }
   }
