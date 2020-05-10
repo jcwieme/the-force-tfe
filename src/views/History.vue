@@ -47,6 +47,7 @@ export default defineComponent({
     compHistory,
   },
   setup(props, ctx) {
+    // Variables
     const article = ref('one')
     const word = ref('Republic')
     let open = ref(false)
@@ -54,11 +55,24 @@ export default defineComponent({
       return ctx.root.$store.state.checks.animation
     })
 
+    // Data for the view
+    let text = computed(() => {
+      return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].text
+    })
+    let number = computed(() => {
+      return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].number
+    })
+    let title = computed(() => {
+      return ctx.root.$store.state.movies[
+        ctx.root.$route.params.id - 1
+      ].title.toUpperCase()
+    })
+
     onMounted(() => {
       let words = document.querySelectorAll('.history__word')
       words.forEach(word => {
-        word.addEventListener('mouseover', openWord)
-        word.addEventListener('mouseout', closeWord)
+        word.addEventListener('mouseover', functionWord)
+        word.addEventListener('mouseout', functionWord)
       })
 
       if (!animationRotate.value) {
@@ -102,35 +116,24 @@ export default defineComponent({
     onUpdated(() => {
       let words = document.querySelectorAll('.history__word')
       words.forEach(word => {
-        word.addEventListener('mouseover', openWord)
-        word.addEventListener('mouseout', closeWord)
+        word.addEventListener('mouseover', functionWord)
+        word.addEventListener('mouseout', functionWord)
       })
     })
 
     onBeforeUpdate(() => {
       let words = document.querySelectorAll('.history__word')
       words.forEach(word => {
-        word.removeEventListener('click', openWord)
+        word.removeEventListener('mouseover', functionWord)
       })
     })
-    let text = computed(() => {
-      return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].text
-    })
-    let number = computed(() => {
-      return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].number
-    })
-    let title = computed(() => {
-      return ctx.root.$store.state.movies[
-        ctx.root.$route.params.id - 1
-      ].title.toUpperCase()
-    })
-    const openWord = e => {
-      article.value = e.currentTarget.dataset.word
-      word.value = e.currentTarget.innerText
-      open.value = !open.value
-    }
 
-    const closeWord = () => {
+    // Function hover
+    const functionWord = e => {
+      if (!open.value) {
+        article.value = e.currentTarget.dataset.word
+        word.value = e.currentTarget.innerText
+      }
       open.value = !open.value
     }
 
@@ -153,22 +156,11 @@ export default defineComponent({
 
 <style lang="scss">
 .history {
-  // width: 100%;
-  // height: 100%;
-
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
-
   font-family: roboto, sans-serif;
-  // display: flex;
-  // justify-content: center;
   height: 100%;
   width: 100%;
   color: #ffe403;
   text-align: justify;
-  // overflow: hidden;
   perspective: calc(100vh * 0.4);
 
   &__crawl {
