@@ -31,6 +31,7 @@ export default new Vuex.Store({
       credit: false,
       animation: false,
       screen: false,
+      load: 0,
     },
     arrows: {
       right: true,
@@ -82,6 +83,9 @@ export default new Vuex.Store({
     },
     checkScreen(state, option) {
       state.checks.screen = option
+    },
+    addLoad(state) {
+      state.checks.load++
     },
   },
   actions: {},

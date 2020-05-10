@@ -93,7 +93,7 @@ export default defineComponent({
 
     onMounted(() => {
       // Let's preload images
-      preloadImages(ctx.root.$store.state.loader, () => {
+      preloadImages(ctx.root.$store.state.loader, ctx.root.$store, () => {
         ctx.root.$store.commit('toggleCheck', 'loaded')
       })
 
@@ -207,6 +207,11 @@ export default defineComponent({
   margin: 0;
 }
 
+:root {
+  font-size: 62.5%; // 10px
+  // font-size: calc(100vw * 0.006);
+}
+
 @font-face {
   font-family: 'star_jediregular';
   src: url('./assets/fonts/starjedi-webfont.woff2') format('woff2'),
@@ -232,17 +237,14 @@ export default defineComponent({
 body {
   background-color: #18181c;
   color: white;
-  margin: 0 auto;
   padding: 0;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.4;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  font-family: 'roboto', sans-serif;
 }
 
 a {
@@ -250,6 +252,7 @@ a {
   text-decoration: none;
 }
 
+// Transition
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.3s ease;
@@ -260,6 +263,7 @@ a {
   opacity: 0;
 }
 
+// Transition History
 .fade-history-enter-active,
 .fade-history-leave-active {
   transition: all 0.15s ease;
@@ -270,14 +274,16 @@ a {
   opacity: 0;
 }
 
+// Mobile screen
 .mobile {
   color: white;
   font-family: star_jediregular;
   letter-spacing: 0.1em;
-  padding: 40px;
+  padding: 4rem;
   text-align: center;
 }
 
+// Router position
 .router {
   position: absolute;
   top: 0;
@@ -285,11 +291,14 @@ a {
   z-index: 2;
 }
 
+// Particles position
 .particules {
   height: 100vh;
   width: 100vw;
   z-index: 1;
 }
+
+// Blur filter
 .blur {
   filter: blur(3px);
 }

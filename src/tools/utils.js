@@ -11,13 +11,14 @@ export function isMobile(x) {
 }
 
 // Pre-loads Images
-export function preloadImages(urls, allImagesLoadedCallback) {
+export function preloadImages(urls, store, allImagesLoadedCallback) {
   var loadedCounter = 0
   var toBeLoadedNumber = urls.length
   urls.forEach(function(url) {
     preloadImage(url, function() {
       loadedCounter++
       // console.log('Number of loaded images: ' + loadedCounter)
+      store.commit('addLoad')
       if (loadedCounter == toBeLoadedNumber) {
         allImagesLoadedCallback()
       }
