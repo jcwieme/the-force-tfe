@@ -23,50 +23,9 @@ export default defineComponent({
     compChoice,
   },
   setup(props, ctx) {
-    const choices = [
-      {
-        title: 'the phantom menace',
-        path: 'movie/1/history',
-        number: 'i',
-      },
-      {
-        title: 'attack of the clones',
-        path: 'movie/2/history',
-        number: 'ii',
-      },
-      {
-        title: 'revenge of the sith',
-        path: 'movie/3/history',
-        number: 'iii',
-      },
-      {
-        title: 'a new hope',
-        path: 'movie/4/history',
-        number: 'iv',
-      },
-      {
-        title: 'the empire strike back',
-        path: 'movie/5/history',
-        number: 'v',
-      },
-      {
-        title: 'return of the jedi',
-        path: 'movie/6/history',
-        number: 'vi',
-      },
-    ]
+    const choices = ctx.root.$store.state.choices
 
     onMounted(() => {
-      if (ctx.root.$store.state.activeMovie) {
-        setTimeout(() => {
-          document
-            .querySelector(
-              `.choice__movie--${ctx.root.$store.state.activeMovie}`
-            )
-            .classList.add('choice__movie--actif')
-        }, 250)
-      }
-
       document.querySelectorAll('.choice__movie').forEach(choice => {
         choice.addEventListener('mouseover', e => {
           document.querySelectorAll('.choice__movie').forEach(choice => {
