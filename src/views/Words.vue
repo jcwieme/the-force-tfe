@@ -48,8 +48,8 @@
           {{ data.search }}
         </div>
         <sub
-          class="words__search__sub"
-          :class="[data.animState ? 'words__search__sub--actif' : '']"
+          class="words__sub words__sub--search"
+          :class="[data.animState ? 'words__sub--search-actif' : '']"
         >
           <div class="words__imgs">
             <img
@@ -390,11 +390,11 @@ function compare(a, b) {
   &__el {
     font-family: 'roboto-black';
     text-transform: capitalize;
-    font-size: calc(100vw * 0.038);
+    font-size: 6.5rem;
     line-height: 1.2;
-    margin-right: calc(100vw * 0.03); // 50px
-    margin-left: calc(100vw * 0.03);
-    margin-top: calc(100vw * 0.042); // 70pxs
+    margin-right: 5rem; // 50px
+    margin-left: 5rem;
+    margin-top: 7rem; // 70pxs
   }
 
   &__word {
@@ -405,10 +405,10 @@ function compare(a, b) {
     &::before {
       content: '';
       position: absolute;
-      left: -10px;
+      left: -1rem;
       bottom: 0;
       height: 30%;
-      width: calc(100% + 20px);
+      width: calc(100% + 2rem);
       background-color: #ffe403;
       opacity: 0.5;
       transition: all 300ms ease;
@@ -418,11 +418,11 @@ function compare(a, b) {
       content: attr(data-number);
       font-family: 'star_jediregular';
       position: absolute;
-      top: calc(-100vw * 0.06);
-      left: calc(-100vw * 0.03);
-      font-size: calc(100vw * 0.077);
+      top: -10rem;
+      left: -5rem;
+      font-size: 12rem;
       opacity: 0;
-      transform: translateY(-10px);
+      transform: translateY(-1rem);
       z-index: -1;
       transition: all 0ms;
     }
@@ -446,10 +446,10 @@ function compare(a, b) {
     top: 50%;
     transform: translate(-50%, -50%);
 
-    font-size: calc(100vw * 0.038);
-    padding: 10px 20px;
+    font-size: 6.4rem;
+    padding: 1rem 2rem;
     width: 15ch;
-    height: calc(100vw * 0.038);
+    height: 6.4rem;
     line-height: 1.2;
     border: 1px solid white;
     transition: border-color 500ms 800ms ease;
@@ -460,11 +460,11 @@ function compare(a, b) {
       font-family: 'roboto-black';
       width: 100%;
       text-transform: capitalize;
-      font-size: calc(100vw * 0.038);
+      font-size: 6.4rem;
       position: absolute;
       line-height: 1.2;
-      left: 20px;
-      top: 5px;
+      left: 2rem;
+      top: 0.5rem;
       z-index: -1;
     }
     &::before {
@@ -473,10 +473,10 @@ function compare(a, b) {
       background-repeat: no-repeat;
       background-position: center center;
       background-size: contain;
-      height: 45px;
-      width: 45px;
+      height: 4.5rem;
+      width: 4.5rem;
       position: absolute;
-      right: -60px;
+      right: -6rem;
       top: 50%;
       transform: translateY(-50%);
 
@@ -497,43 +497,6 @@ function compare(a, b) {
 
       transition: border-color 500ms ease;
     }
-
-    &__sub {
-      display: flex;
-      font-size: calc(100vw * 0.0083);
-      color: #ffe403;
-      align-items: center;
-      justify-content: center;
-      margin-top: 85px;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 500ms ease;
-      text-transform: capitalize;
-      font-family: 'roboto-black';
-      transition: all 500ms ease;
-
-      &--actif {
-        opacity: 1;
-        transform: translateY(0);
-        transition: all 500ms 1300ms ease;
-      }
-
-      p {
-        margin-left: calc(100vw * 0.003); // 5px
-        &:nth-child(2) {
-          margin-left: calc(100vw * 0.006); // 10px
-          &::after {
-            content: ',';
-          }
-        }
-
-        &:last-child {
-          &::after {
-            content: '';
-          }
-        }
-      }
-    }
     &--error {
       border-color: red;
       transition: border-color 300ms ease;
@@ -546,8 +509,8 @@ function compare(a, b) {
     white-space: nowrap;
 
     position: absolute;
-    top: 5px;
-    left: 20px;
+    top: 0.5rem;
+    left: 2rem;
 
     cursor: default;
 
@@ -557,9 +520,9 @@ function compare(a, b) {
       position: absolute;
       top: -75%;
       left: -1ch;
-      font-size: 90px;
+      font-size: 9rem;
       opacity: 0;
-      transform: translateY(-10px);
+      transform: translateY(-1rem);
       z-index: -1;
       transition: all 0ms ease;
     }
@@ -574,10 +537,10 @@ function compare(a, b) {
     &::after {
       content: '';
       position: absolute;
-      left: -10px;
+      left: -1rem;
       bottom: 0;
       height: 0;
-      width: calc(100% + 20px);
+      width: calc(100% + 2rem);
       background-color: #ffe403;
       opacity: 0.5;
       transition: all 300ms ease;
@@ -596,13 +559,6 @@ function compare(a, b) {
         transition: height 300ms 1000ms ease;
       }
 
-      // &:hover {
-      //   &::after {
-      //     height: 100%;
-      //     transition: height 300ms ease;
-      //   }
-      // }
-
       &::before {
         content: attr(data-number);
         opacity: 0.5;
@@ -614,13 +570,13 @@ function compare(a, b) {
 
   &__sub {
     display: flex;
-    font-size: calc(100vw * 0.0083);
+    font-size: 1.4rem;
     color: #ffe403;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 1rem;
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(1rem);
     transition: all 500ms ease;
 
     &--actif {
@@ -629,10 +585,22 @@ function compare(a, b) {
       transition: all 500ms ease;
     }
 
+    &--search {
+      margin-top: 8.5rem;
+      text-transform: capitalize;
+      font-family: 'roboto-black';
+
+      &-actif {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 500ms 1300ms ease;
+      }
+    }
+
     p {
-      margin-left: calc(100vw * 0.003); // 5px
+      margin-left: 0.5rem; // 5px
       &:nth-child(2) {
-        margin-left: calc(100vw * 0.006); // 10px
+        margin-left: 1rem; // 10px
         &::after {
           content: ',';
         }
@@ -645,36 +613,37 @@ function compare(a, b) {
       }
     }
   }
+
   &__imgs {
     display: flex;
   }
 
   &__img {
     border-radius: 50%;
-    width: calc(100vw * 0.018); // 30px
-    height: calc(100vw * 0.018);
+    width: 3rem; // 30px
+    height: 3rem;
 
     border: 1px solid #ffe403;
 
     &:nth-child(2) {
-      margin-left: calc(-100vw * 0.012);
+      margin-left: -2rem;
     }
   }
 
   &__more {
     border-radius: 50%;
-    width: calc(100vw * 0.018);
-    height: calc(100vw * 0.018);
+    width: 3rem;
+    height: 3rem;
     background-color: rgba(24, 24, 28, 0.9);
     line-height: 1;
-    margin-left: calc(-100vw * 0.012);
+    margin-left: -2rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     font-family: 'roboto';
-    font-size: calc(100vw * 0.0072);
+    font-size: 1.3rem;
     color: white;
 
     border: 1px solid #ffe403;
@@ -683,7 +652,7 @@ function compare(a, b) {
   &__message {
     position: fixed;
     left: 50%;
-    bottom: 20px;
+    bottom: 2rem;
     transform: translateX(-50%);
 
     display: flex;
@@ -706,14 +675,14 @@ function compare(a, b) {
 
 .svg {
   &--big {
-    width: 75px;
-    height: 55px;
-    margin-bottom: 10px;
+    width: 7.5rem;
+    height: 5.5rem;
+    margin-bottom: 1rem;
   }
   &--small {
-    width: 35px;
-    height: 35px;
-    margin-bottom: 10px;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
   }
 }
 </style>
