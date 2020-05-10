@@ -22,7 +22,6 @@ export default new Vuex.Store({
     linesInMovie: [946, 620, 783, 1038, 947, 719],
     numbers,
     loader,
-    animationRotate: false,
     checks: {
       loaded: false,
       music: true,

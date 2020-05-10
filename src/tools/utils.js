@@ -2,7 +2,7 @@ export function add(a, b) {
   return a + b
 }
 
-export function checkSize(x) {
+export function isMobile(x) {
   if (x.innerWidth > 1024) {
     return false
   } else {
@@ -10,7 +10,7 @@ export function checkSize(x) {
   }
 }
 
-// Preloads Images
+// Pre-loads Images
 export function preloadImages(urls, allImagesLoadedCallback) {
   var loadedCounter = 0
   var toBeLoadedNumber = urls.length

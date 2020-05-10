@@ -20,7 +20,7 @@
         <Navigation v-if="navRender" />
       </transition>
       <transition name="fade" mode="out-in">
-        <router-view class="router" :key="keyTransitionHorizontal" />
+        <router-view class="router" :key="id" />
       </transition>
     </div>
     <transition name="fade" mode="out-in">
@@ -40,7 +40,7 @@ import {
 import Navigation from '@/components/comp-navigation'
 import compCredits from '@/components/comp-credits'
 import { Howl } from 'howler'
-import { checkSize, preloadImages } from '@/tools/utils'
+import { isMobile, preloadImages } from '@/tools/utils'
 
 export default defineComponent({
   name: 'Application',
@@ -53,20 +53,6 @@ export default defineComponent({
     const screen = ref(false)
     const creditsBool = computed(() => {
       return ctx.root.$store.state.checks.credit
-    })
-    const navRender = computed(() => {
-      if (
-        ctx.root.$route.name !== 'Choice' &&
-        ctx.root.$route.name !== 'Loader' &&
-        ctx.root.$store.state.animationRotate
-      ) {
-        return true
-      } else {
-        return false
-      }
-    })
-    const keyTransitionHorizontal = computed(() => {
-      return ctx.root.$route.params.id
     })
 
     var sound = new Howl({
@@ -81,98 +67,91 @@ export default defineComponent({
 
     var myMusic = sound.play()
 
+    const routes = ctx.root.$router.options.routes
+    const route = computed(() => {
+      return ctx.root.$route.name
+    })
+    const index = computed(() => {
+      return routes.findIndex(x => x.name === route.value)
+    })
+    const id = computed(() => {
+      return ctx.root.$route.params.id
+    })
+    const navRender = computed(() => {
+      if (
+        route.value !== 'Choice' &&
+        route.value !== 'Loader' &&
+        ctx.root.$store.state.checks.animation
+      ) {
+        return true
+      } else {
+        return false
+      }
+    })
+
     onMounted(() => {
       // Let's preload images
       preloadImages(ctx.root.$store.state.loader, () => {
         ctx.root.$store.commit('toggleCheck', 'loaded')
       })
 
-      screen.value = checkSize(window)
+      // Check is mobile version
+      screen.value = isMobile(window)
 
+      // Check is Mobile version on resize
       window.addEventListener('resize', () => {
-        screen.value = checkSize(window)
+        screen.value = isMobile(window)
       })
 
       // Navigation arrows
       document.addEventListener('keydown', e => {
+        // Get the KeyCode
+        const key = e.keyCode
+        // if History and animation running return
         if (
-          ctx.root.$route.name === 'History' &&
-          !ctx.root.$store.state.animationRotate
+          route.value === 'History' &&
+          !ctx.root.$store.state.checks.animation
         ) {
           return
         }
+
+        // If is not Choice or Loader, arrow navigation
         if (
-          (ctx.root.$route.name !== 'Choice' ||
-            ctx.root.$route.name !== 'Loader') &&
+          route.value !== 'Choice' &&
+          route.value !== 'Loader' &&
           !ctx.root.$store.state.checks.nav
         ) {
           // right
-          if (e.keyCode === 39) {
-            if (ctx.root.$route.params.id < 6 && keyUp.value === true) {
-              let next = ctx.root.$route.params.id
-              next++
+          if (key === 39) {
+            if (id.value < 6 && keyUp.value === true) {
               ctx.root.$router.push({
-                name: ctx.root.$route.name,
-                params: { id: next },
+                name: route.value,
+                params: { id: parseInt(id.value) + 1 },
               })
             }
           }
           // left
-          if (e.keyCode === 37) {
-            if (ctx.root.$route.params.id > 1 && keyUp.value === true) {
-              let before = ctx.root.$route.params.id - 1
+          if (key === 37) {
+            if (id.value > 1 && keyUp.value === true) {
               ctx.root.$router.push({
-                name: ctx.root.$route.name,
-                params: { id: before },
+                name: route.value,
+                params: { id: parseInt(id.value) - 1 },
               })
             }
           }
           // down
-          if (e.keyCode === 40) {
-            if (ctx.root.$route.name !== 'Numbers') {
-              switch (ctx.root.$route.name) {
-                case 'History':
-                  ctx.root.$router.push({
-                    name: 'Dialogues',
-                  })
-                  break
-                case 'Dialogues':
-                  ctx.root.$router.push({
-                    name: 'Words',
-                  })
-                  break
-                case 'Words':
-                  ctx.root.$router.push({
-                    name: 'Numbers',
-                  })
-                  break
-              }
+          if (key === 40) {
+            if (route.value !== 'Numbers') {
+              ctx.root.$router.push({
+                name: routes[index.value + 1].name,
+              })
             }
           }
           // up
-          if (e.keyCode === 38) {
-            switch (ctx.root.$route.name) {
-              case 'History':
-                ctx.root.$router.push({
-                  name: 'Choice',
-                })
-                break
-              case 'Dialogues':
-                ctx.root.$router.push({
-                  name: 'History',
-                })
-                break
-              case 'Words':
-                ctx.root.$router.push({
-                  name: 'Dialogues',
-                })
-                break
-              case 'Numbers':
-                ctx.root.$router.push({
-                  name: 'Words',
-                })
-                break
-            }
+          if (key === 38) {
+            ctx.root.$router.push({
+              name: routes[index.value - 1].name,
+            })
           }
         }
 
@@ -190,14 +169,6 @@ export default defineComponent({
         }
       })
     })
-
-    // const checkSize = () => {
-    //   if (window.innerWidth > 1024) {
-    //     return false
-    //   } else {
-    //     return true
-    //   }
-    // }
 
     watch(
       () => ctx.root.$store.state.checks.music,
@@ -217,10 +188,9 @@ export default defineComponent({
     )
 
     return {
-      keyUp,
       screen,
       navRender,
-      keyTransitionHorizontal,
+      id,
       creditsBool,
     }
   },
