@@ -73,7 +73,7 @@ export default defineComponent({
   &__popup {
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: -100%;
     transform: translateY(-50%);
     background-color: #18181c;
     border: 3px solid #ffe403;

@@ -73,6 +73,7 @@
             + {{ dataWordSearched.from.length - 2 }} other
           </p>
         </sub>
+        <comp-words v-if="data.hoverState" :data-speakers="dataWordSearched" />
       </div>
     </transition>
     <div
@@ -92,7 +93,6 @@
         <p :key="data.instruction">{{ data.instruction }}</p>
       </transition>
     </div>
-    <comp-words v-if="data.hoverState" :data-speakers="dataWordSearched" />
   </div>
 </template>
 
@@ -181,12 +181,14 @@ export default defineComponent({
     })
 
     const hoverFn = () => {
+      if (ctx.root.$store.state.checks.nav) return
       if (data.animState) {
         data.hoverState = !data.hoverState
       }
     }
 
     const hoverFnWords = e => {
+      if (ctx.root.$store.state.checks.nav) return
       let word = e.currentTarget.innerText.toLowerCase()
 
       if (e.currentTarget.classList.contains('words__word--actif')) {
