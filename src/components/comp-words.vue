@@ -45,13 +45,20 @@ export default defineComponent({
       }
     })
 
-    if (props.dataSpeakers.from.length % 2 === 1) {
+    if (
+      props.dataSpeakers.from.length % 2 === 1 &&
+      props.dataSpeakers.from.length >= 10
+    ) {
       sliceN.value = props.dataSpeakers.from.length - 2
+    } else {
+      sliceN.value = props.dataSpeakers.from.length
     }
 
     if (props.dataSpeakers.from.length >= 20) {
       sliceN.value = 19
     }
+
+    console.log(sliceN.value)
 
     return {
       columns,
