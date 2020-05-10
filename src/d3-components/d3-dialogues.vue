@@ -12,7 +12,7 @@ export default defineComponent({
     DataDialogues: Object,
   },
   setup(props, ctx) {
-    const setupGraphic = {
+    const setup = {
       margin: {
         top: 150,
         right: 150,
@@ -61,21 +61,21 @@ export default defineComponent({
         () => props.DataDialogues,
         newVal => {
           document.querySelector('#my_dataviz').innerHTML = ''
-          setupGraphic.circle.angle = []
+          setup.circle.angle = []
           generateGraph(newVal)
         }
       )
     })
 
     const generateGraph = data => {
-      setupGraphic.circle.angleLabels = 90 / (data.nodes.length / 4)
-      setupGraphic.variables.initial = d3
+      setup.circle.angleLabels = 90 / (data.nodes.length / 4)
+      setup.variables.initial = d3
         .select('#my_dataviz')
         .append('svg')
-        .attr('width', setupGraphic.width)
-        .attr('height', setupGraphic.height)
+        .attr('width', setup.width)
+        .attr('height', setup.height)
 
-      setupGraphic.variables.svg = setupGraphic.variables.initial
+      setup.variables.svg = setup.variables.initial
         .append('g')
         .attr('id', 'svg_container')
 
@@ -83,25 +83,25 @@ export default defineComponent({
     }
 
     const initializeData = data => {
-      setupGraphic.variables.allNodes = data.nodes.map(function(d) {
+      setup.variables.allNodes = data.nodes.map(function(d) {
         return d.name
       })
 
       // Loop on total character
-      for (let i = 0; i < setupGraphic.variables.allNodes.length; i++) {
+      for (let i = 0; i < setup.variables.allNodes.length; i++) {
         // Add one more to add space
-        setupGraphic.circle.angle.push(
-          (i / (setupGraphic.variables.allNodes.length / 2)) * Math.PI
+        setup.circle.angle.push(
+          (i / (setup.variables.allNodes.length / 2)) * Math.PI
         )
       }
 
-      var gDefs = setupGraphic.variables.initial.append('g').attr('id', 'gDefs')
+      var gDefs = setup.variables.initial.append('g').attr('id', 'gDefs')
 
       // set the defs group for the images
-      setupGraphic.variables.defs = gDefs.append('svg:defs')
+      setup.variables.defs = gDefs.append('svg:defs')
 
       // set up filter
-      setupGraphic.variables.grayscale = gDefs
+      setup.variables.grayscale = gDefs
         .append('filter')
         .attr('id', 'desaturate')
         .append('feColorMatrix')
@@ -125,7 +125,7 @@ export default defineComponent({
       feMerge.append('feMergeNode').attr('in', 'SourceGraphic')
 
       // add defs and img
-      setupGraphic.variables.defsAppends = setupGraphic.variables.defs
+      setup.variables.defsAppends = setup.variables.defs
         .selectAll('mynodes')
         .data(data.nodes)
         .enter()
@@ -148,12 +148,10 @@ export default defineComponent({
     }
 
     const draw = data => {
-      setupGraphic.circle.smallCircleRadius =
-        setupGraphic.circle.radius /
-        (setupGraphic.variables.allNodes.length * 0.5769230769)
-      setupGraphic.circle.bigCircleRadius =
-        setupGraphic.circle.radius /
-        (setupGraphic.variables.allNodes.length * 0.3846153846)
+      setup.circle.smallCircleRadius =
+        setup.circle.radius / (setup.variables.allNodes.length * 0.5769230769)
+      setup.circle.bigCircleRadius =
+        setup.circle.radius / (setup.variables.allNodes.length * 0.3846153846)
 
       drawLabels(data)
       drawSubLabels(data)
@@ -163,9 +161,9 @@ export default defineComponent({
     }
 
     const drawLabels = data => {
-      var gLabels = setupGraphic.variables.svg.append('g').attr('id', 'gLabels')
+      var gLabels = setup.variables.svg.append('g').attr('id', 'gLabels')
       // set the labels
-      setupGraphic.variables.labels = gLabels
+      setup.variables.labels = gLabels
         .selectAll('mylabels')
         .data(data.nodes)
         .enter()
@@ -181,60 +179,51 @@ export default defineComponent({
         .attr('transform', (d, i) => {
           let rotate = null
 
-          if (i < setupGraphic.variables.allNodes.length / 4) {
-            rotate = 'rotate(' + (0 + setupGraphic.circle.angleLabels * i) + ')'
+          if (i < setup.variables.allNodes.length / 4) {
+            rotate = 'rotate(' + (0 + setup.circle.angleLabels * i) + ')'
           } else if (
-            i >= setupGraphic.variables.allNodes.length / 4 &&
-            i < setupGraphic.variables.allNodes.length / 2
+            i >= setup.variables.allNodes.length / 4 &&
+            i < setup.variables.allNodes.length / 2
           ) {
             rotate =
               'rotate(' +
               (-90 +
-                setupGraphic.circle.angleLabels *
-                  (i % (setupGraphic.variables.allNodes.length / 4))) +
+                setup.circle.angleLabels *
+                  (i % (setup.variables.allNodes.length / 4))) +
               ')'
           } else if (
-            i >= setupGraphic.variables.allNodes.length / 2 &&
-            i < (setupGraphic.variables.allNodes.length / 4) * 3
+            i >= setup.variables.allNodes.length / 2 &&
+            i < (setup.variables.allNodes.length / 4) * 3
           ) {
-            rotate =
-              'rotate(' + (180 + setupGraphic.circle.angleLabels * i) + ')'
+            rotate = 'rotate(' + (180 + setup.circle.angleLabels * i) + ')'
           } else {
             rotate =
               'rotate(' +
               (-90 +
-                setupGraphic.circle.angleLabels *
-                  (i % (setupGraphic.variables.allNodes.length / 4))) +
+                setup.circle.angleLabels *
+                  (i % (setup.variables.allNodes.length / 4))) +
               ')'
           }
 
           return (
             'translate(' +
-            (setupGraphic.circle.originX +
-              (setupGraphic.circle.radius +
-                setupGraphic.circle.distanceFromPoint) *
-                Math.sin(
-                  setupGraphic.circle.angle[i] -
-                    setupGraphic.circle.quarterAngle
-                )) +
+            (setup.circle.originX +
+              (setup.circle.radius + setup.circle.distanceFromPoint) *
+                Math.sin(setup.circle.angle[i] - setup.circle.quarterAngle)) +
             ' , ' +
-            (setupGraphic.circle.originY -
-              (setupGraphic.circle.radius +
-                setupGraphic.circle.distanceFromPoint) *
-                Math.cos(
-                  setupGraphic.circle.angle[i] -
-                    setupGraphic.circle.quarterAngle
-                )) +
+            (setup.circle.originY -
+              (setup.circle.radius + setup.circle.distanceFromPoint) *
+                Math.cos(setup.circle.angle[i] - setup.circle.quarterAngle)) +
             '),' +
             rotate
           )
         })
         .style('text-anchor', (d, i) => {
-          if (i < setupGraphic.variables.allNodes.length / 4) {
+          if (i < setup.variables.allNodes.length / 4) {
             return 'end'
           } else if (
-            i >= setupGraphic.variables.allNodes.length / 4 &&
-            i < (setupGraphic.variables.allNodes.length / 4) * 3
+            i >= setup.variables.allNodes.length / 4 &&
+            i < (setup.variables.allNodes.length / 4) * 3
           ) {
             return 'start'
           } else {
@@ -250,16 +239,14 @@ export default defineComponent({
         })
         .style('dominant-baseline', 'middle')
 
-      setupGraphic.variables.labels.on('click', d => {
+      setup.variables.labels.on('click', d => {
         change(d.id)
       })
     }
 
     const drawSubLabels = data => {
-      var gSubLabels = setupGraphic.variables.svg
-        .append('g')
-        .attr('id', 'gSubLabels')
-      setupGraphic.variables.subLabels = gSubLabels
+      var gSubLabels = setup.variables.svg.append('g').attr('id', 'gSubLabels')
+      setup.variables.subLabels = gSubLabels
         .selectAll('mylabels')
         .data(data.nodes)
         .enter()
@@ -274,104 +261,87 @@ export default defineComponent({
           let translateX = null
           let translateY = null
 
-          if (i < setupGraphic.variables.allNodes.length / 4) {
-            rotate = 'rotate(' + (0 + setupGraphic.circle.angleLabels * i) + ')'
+          if (i < setup.variables.allNodes.length / 4) {
+            rotate = 'rotate(' + (0 + setup.circle.angleLabels * i) + ')'
             translateX =
-              setupGraphic.circle.originX +
-              (setupGraphic.circle.radius +
-                setupGraphic.circle.distanceFromPoint) *
+              setup.circle.originX +
+              (setup.circle.radius + setup.circle.distanceFromPoint) *
                 Math.sin(
-                  setupGraphic.circle.angle[i] -
-                    setupGraphic.circle.smallQuarterAngleRight
+                  setup.circle.angle[i] - setup.circle.smallQuarterAngleRight
                 )
             translateY =
-              setupGraphic.circle.originY -
-              (setupGraphic.circle.radius +
-                setupGraphic.circle.distanceFromPoint) *
+              setup.circle.originY -
+              (setup.circle.radius + setup.circle.distanceFromPoint) *
                 Math.cos(
-                  setupGraphic.circle.angle[i] -
-                    setupGraphic.circle.smallQuarterAngleRight
+                  setup.circle.angle[i] - setup.circle.smallQuarterAngleRight
                 )
           } else if (
-            i >= setupGraphic.variables.allNodes.length / 4 &&
-            i < setupGraphic.variables.allNodes.length / 2
+            i >= setup.variables.allNodes.length / 4 &&
+            i < setup.variables.allNodes.length / 2
           ) {
             rotate =
               'rotate(' +
               (-90 +
-                setupGraphic.circle.angleLabels *
-                  (i % (setupGraphic.variables.allNodes.length / 4))) +
+                setup.circle.angleLabels *
+                  (i % (setup.variables.allNodes.length / 4))) +
               ')'
             translateX =
-              setupGraphic.circle.originX +
-              (setupGraphic.circle.radius +
-                setupGraphic.circle.distanceFromPoint) *
+              setup.circle.originX +
+              (setup.circle.radius + setup.circle.distanceFromPoint) *
                 Math.sin(
-                  setupGraphic.circle.angle[i] -
-                    setupGraphic.circle.smallQuarterAngleLeft
+                  setup.circle.angle[i] - setup.circle.smallQuarterAngleLeft
                 )
             translateY =
-              setupGraphic.circle.originY -
-              (setupGraphic.circle.radius +
-                setupGraphic.circle.distanceFromPoint) *
+              setup.circle.originY -
+              (setup.circle.radius + setup.circle.distanceFromPoint) *
                 Math.cos(
-                  setupGraphic.circle.angle[i] -
-                    setupGraphic.circle.smallQuarterAngleLeft
+                  setup.circle.angle[i] - setup.circle.smallQuarterAngleLeft
                 )
           } else if (
-            i >= setupGraphic.variables.allNodes.length / 2 &&
-            i < (setupGraphic.variables.allNodes.length / 4) * 3
+            i >= setup.variables.allNodes.length / 2 &&
+            i < (setup.variables.allNodes.length / 4) * 3
           ) {
-            rotate =
-              'rotate(' + (180 + setupGraphic.circle.angleLabels * i) + ')'
+            rotate = 'rotate(' + (180 + setup.circle.angleLabels * i) + ')'
             translateX =
-              setupGraphic.circle.originX +
-              (setupGraphic.circle.radius +
-                setupGraphic.circle.distanceFromPoint) *
+              setup.circle.originX +
+              (setup.circle.radius + setup.circle.distanceFromPoint) *
                 Math.sin(
-                  setupGraphic.circle.angle[i] -
-                    setupGraphic.circle.smallQuarterAngleLeft
+                  setup.circle.angle[i] - setup.circle.smallQuarterAngleLeft
                 )
             translateY =
-              setupGraphic.circle.originY -
-              (setupGraphic.circle.radius +
-                setupGraphic.circle.distanceFromPoint) *
+              setup.circle.originY -
+              (setup.circle.radius + setup.circle.distanceFromPoint) *
                 Math.cos(
-                  setupGraphic.circle.angle[i] -
-                    setupGraphic.circle.smallQuarterAngleLeft
+                  setup.circle.angle[i] - setup.circle.smallQuarterAngleLeft
                 )
           } else {
             rotate =
               'rotate(' +
               (-90 +
-                setupGraphic.circle.angleLabels *
-                  (i % (setupGraphic.variables.allNodes.length / 4))) +
+                setup.circle.angleLabels *
+                  (i % (setup.variables.allNodes.length / 4))) +
               ')'
             translateX =
-              setupGraphic.circle.originX +
-              (setupGraphic.circle.radius +
-                setupGraphic.circle.distanceFromPoint) *
+              setup.circle.originX +
+              (setup.circle.radius + setup.circle.distanceFromPoint) *
                 Math.sin(
-                  setupGraphic.circle.angle[i] -
-                    setupGraphic.circle.smallQuarterAngleRight
+                  setup.circle.angle[i] - setup.circle.smallQuarterAngleRight
                 )
             translateY =
-              setupGraphic.circle.originY -
-              (setupGraphic.circle.radius +
-                setupGraphic.circle.distanceFromPoint) *
+              setup.circle.originY -
+              (setup.circle.radius + setup.circle.distanceFromPoint) *
                 Math.cos(
-                  setupGraphic.circle.angle[i] -
-                    setupGraphic.circle.smallQuarterAngleRight
+                  setup.circle.angle[i] - setup.circle.smallQuarterAngleRight
                 )
           }
           return 'translate(' + translateX + ' , ' + translateY + '),' + rotate
         })
         .style('text-anchor', (d, i) => {
-          if (i < setupGraphic.variables.allNodes.length / 4) {
+          if (i < setup.variables.allNodes.length / 4) {
             return 'end'
           } else if (
-            i >= setupGraphic.variables.allNodes.length / 4 &&
-            i < (setupGraphic.variables.allNodes.length / 4) * 3
+            i >= setup.variables.allNodes.length / 4 &&
+            i < (setup.variables.allNodes.length / 4) * 3
           ) {
             return 'start'
           } else {
@@ -391,41 +361,37 @@ export default defineComponent({
     const drawLinks = data => {
       const maxNumber = Math.max(...data.links.map(s => s.number))
 
-      var gLinks = setupGraphic.variables.svg.append('g').attr('id', 'gLinks')
+      var gLinks = setup.variables.svg.append('g').attr('id', 'gLinks')
       // set the links
-      setupGraphic.variables.links = gLinks
+      setup.variables.links = gLinks
         .selectAll('mylinks')
         .data(data.links)
         .enter()
         .append('path')
         .attr('d', d => {
           var startX =
-            setupGraphic.circle.originX +
-            setupGraphic.circle.radius *
+            setup.circle.originX +
+            setup.circle.radius *
               Math.sin(
-                setupGraphic.circle.angle[d.source - 1] -
-                  setupGraphic.circle.quarterAngle
+                setup.circle.angle[d.source - 1] - setup.circle.quarterAngle
               )
           var startY =
-            setupGraphic.circle.originY -
-            setupGraphic.circle.radius *
+            setup.circle.originY -
+            setup.circle.radius *
               Math.cos(
-                setupGraphic.circle.angle[d.source - 1] -
-                  setupGraphic.circle.quarterAngle
+                setup.circle.angle[d.source - 1] - setup.circle.quarterAngle
               )
           var endX =
-            setupGraphic.circle.originX +
-            setupGraphic.circle.radius *
+            setup.circle.originX +
+            setup.circle.radius *
               Math.sin(
-                setupGraphic.circle.angle[d.target - 1] -
-                  setupGraphic.circle.quarterAngle
+                setup.circle.angle[d.target - 1] - setup.circle.quarterAngle
               )
           var endY =
-            setupGraphic.circle.originY -
-            setupGraphic.circle.radius *
+            setup.circle.originY -
+            setup.circle.radius *
               Math.cos(
-                setupGraphic.circle.angle[d.target - 1] -
-                  setupGraphic.circle.quarterAngle
+                setup.circle.angle[d.target - 1] - setup.circle.quarterAngle
               )
 
           var cxEnd = 0
@@ -433,109 +399,99 @@ export default defineComponent({
           var cxStart = 0
           var cyStart = 0
 
-          let b = Math.floor(setupGraphic.variables.allNodes.length / 4)
+          let b = Math.floor(setup.variables.allNodes.length / 4)
           let a = 0
 
           var sourceUpFour =
-            d.source + setupGraphic.variables.allNodes.length / 4 >
-            setupGraphic.variables.allNodes.length
+            d.source + setup.variables.allNodes.length / 4 >
+            setup.variables.allNodes.length
               ? d.source +
-                setupGraphic.variables.allNodes.length / 4 -
-                setupGraphic.variables.allNodes.length
-              : d.source + setupGraphic.variables.allNodes.length / 4
+                setup.variables.allNodes.length / 4 -
+                setup.variables.allNodes.length
+              : d.source + setup.variables.allNodes.length / 4
           var sourceDownFour =
-            d.source - setupGraphic.variables.allNodes.length / 4 < 0
+            d.source - setup.variables.allNodes.length / 4 < 0
               ? d.source -
-                setupGraphic.variables.allNodes.length / 4 +
-                (setupGraphic.variables.allNodes.length + d.source)
-              : d.source - setupGraphic.variables.allNodes.length / 4
+                setup.variables.allNodes.length / 4 +
+                (setup.variables.allNodes.length + d.source)
+              : d.source - setup.variables.allNodes.length / 4
 
           if (
-            d.source + setupGraphic.variables.allNodes.length / 4 >
-            setupGraphic.variables.allNodes.length
+            d.source + setup.variables.allNodes.length / 4 >
+            setup.variables.allNodes.length
           ) {
             if (
               (d.target < d.source && d.target >= sourceDownFour) ||
               (d.target > d.source &&
-                d.target <= setupGraphic.variables.allNodes.length) ||
+                d.target <= setup.variables.allNodes.length) ||
               (d.target > 0 && d.target <= sourceUpFour)
             ) {
-              a = d.target - d.source + setupGraphic.variables.allNodes.length
+              a = d.target - d.source + setup.variables.allNodes.length
 
               a = Math.abs(a - b)
 
               if (a === b) {
-                cxStart = setupGraphic.circle.originX
-                cyStart = setupGraphic.circle.originY
-                cxEnd = setupGraphic.circle.originX
-                cyEnd = setupGraphic.circle.originY
+                cxStart = setup.circle.originX
+                cyStart = setup.circle.originY
+                cxEnd = setup.circle.originX
+                cyEnd = setup.circle.originY
               } else {
-                cxEnd =
-                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
-                cyEnd =
-                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxEnd = endX + (b * (setup.circle.originX - endX)) / (a + b)
+                cyEnd = endY + (b * (setup.circle.originY - endY)) / (a + b)
                 cxStart =
-                  startX +
-                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                  startX + (b * (setup.circle.originX - startX)) / (a + b)
                 cyStart =
-                  startY +
-                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+                  startY + (b * (setup.circle.originY - startY)) / (a + b)
               }
             } else {
-              cxStart = setupGraphic.circle.originX
-              cyStart = setupGraphic.circle.originY
-              cxEnd = setupGraphic.circle.originX
-              cyEnd = setupGraphic.circle.originY
+              cxStart = setup.circle.originX
+              cyStart = setup.circle.originY
+              cxEnd = setup.circle.originX
+              cyEnd = setup.circle.originY
             }
           }
 
-          if (d.source - setupGraphic.variables.allNodes.length / 4 < 0) {
+          if (d.source - setup.variables.allNodes.length / 4 < 0) {
             if (
               (d.target > d.source && d.target <= sourceUpFour) ||
               (d.target < d.source && d.target >= 0) ||
-              (d.target <= setupGraphic.variables.allNodes.length &&
+              (d.target <= setup.variables.allNodes.length &&
                 d.target >= sourceDownFour)
             ) {
               a =
                 Math.abs(d.target - d.source) > b
                   ? Math.abs(
-                      d.target -
-                        d.source -
-                        setupGraphic.variables.allNodes.length
+                      d.target - d.source - setup.variables.allNodes.length
                     )
                   : Math.abs(d.target - d.source)
 
               a = Math.abs(a - b)
 
               if (a === b) {
-                cxStart = setupGraphic.circle.originX
-                cyStart = setupGraphic.circle.originY
-                cxEnd = setupGraphic.circle.originX
-                cyEnd = setupGraphic.circle.originY
+                cxStart = setup.circle.originX
+                cyStart = setup.circle.originY
+                cxEnd = setup.circle.originX
+                cyEnd = setup.circle.originY
               } else {
-                cxEnd =
-                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
-                cyEnd =
-                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxEnd = endX + (b * (setup.circle.originX - endX)) / (a + b)
+                cyEnd = endY + (b * (setup.circle.originY - endY)) / (a + b)
                 cxStart =
-                  startX +
-                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                  startX + (b * (setup.circle.originX - startX)) / (a + b)
                 cyStart =
-                  startY +
-                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+                  startY + (b * (setup.circle.originY - startY)) / (a + b)
               }
             } else {
-              cxStart = setupGraphic.circle.originX
-              cyStart = setupGraphic.circle.originY
-              cxEnd = setupGraphic.circle.originX
-              cyEnd = setupGraphic.circle.originY
+              cxStart = setup.circle.originX
+              cyStart = setup.circle.originY
+              cxEnd = setup.circle.originX
+              cyEnd = setup.circle.originY
             }
           }
 
           if (
-            d.source + setupGraphic.variables.allNodes.length / 4 <=
-              setupGraphic.variables.allNodes.length &&
-            d.source - setupGraphic.variables.allNodes.length / 4 >= 0
+            d.source + setup.variables.allNodes.length / 4 <=
+              setup.variables.allNodes.length &&
+            d.source - setup.variables.allNodes.length / 4 >= 0
           ) {
             if (
               (d.target > d.source && d.target <= sourceUpFour) ||
@@ -546,27 +502,23 @@ export default defineComponent({
               a = Math.abs(a - b)
 
               if (a === b || a + 1 === b) {
-                cxStart = setupGraphic.circle.originX
-                cyStart = setupGraphic.circle.originY
-                cxEnd = setupGraphic.circle.originX
-                cyEnd = setupGraphic.circle.originY
+                cxStart = setup.circle.originX
+                cyStart = setup.circle.originY
+                cxEnd = setup.circle.originX
+                cyEnd = setup.circle.originY
               } else {
-                cxEnd =
-                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
-                cyEnd =
-                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxEnd = endX + (b * (setup.circle.originX - endX)) / (a + b)
+                cyEnd = endY + (b * (setup.circle.originY - endY)) / (a + b)
                 cxStart =
-                  startX +
-                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                  startX + (b * (setup.circle.originX - startX)) / (a + b)
                 cyStart =
-                  startY +
-                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+                  startY + (b * (setup.circle.originY - startY)) / (a + b)
               }
             } else {
-              cxStart = setupGraphic.circle.originX
-              cyStart = setupGraphic.circle.originY
-              cxEnd = setupGraphic.circle.originX
-              cyEnd = setupGraphic.circle.originY
+              cxStart = setup.circle.originX
+              cyStart = setup.circle.originY
+              cxEnd = setup.circle.originX
+              cyEnd = setup.circle.originY
             }
           }
 
@@ -603,7 +555,7 @@ export default defineComponent({
           }
         })
         .style('fill', 'none')
-        .attr('stroke', setupGraphic.yellow)
+        .attr('stroke', setup.yellow)
         .attr('stroke-opacity', d => {
           return d.source === 1 || d.target === 1 ? '1' : '0.1'
         })
@@ -618,42 +570,38 @@ export default defineComponent({
     }
 
     const drawHoverLinks = data => {
-      var gHoverLinks = setupGraphic.variables.svg
+      var gHoverLinks = setup.variables.svg
         .append('g')
         .attr('id', 'gHoverLinks')
-      setupGraphic.variables.hoverLinks = gHoverLinks
+      setup.variables.hoverLinks = gHoverLinks
         .selectAll('mylinks')
         .data(data.links)
         .enter()
         .append('path')
         .attr('d', d => {
           var startX =
-            setupGraphic.circle.originX +
-            setupGraphic.circle.radius *
+            setup.circle.originX +
+            setup.circle.radius *
               Math.sin(
-                setupGraphic.circle.angle[d.source - 1] -
-                  setupGraphic.circle.quarterAngle
+                setup.circle.angle[d.source - 1] - setup.circle.quarterAngle
               )
           var startY =
-            setupGraphic.circle.originY -
-            setupGraphic.circle.radius *
+            setup.circle.originY -
+            setup.circle.radius *
               Math.cos(
-                setupGraphic.circle.angle[d.source - 1] -
-                  setupGraphic.circle.quarterAngle
+                setup.circle.angle[d.source - 1] - setup.circle.quarterAngle
               )
           var endX =
-            setupGraphic.circle.originX +
-            setupGraphic.circle.radius *
+            setup.circle.originX +
+            setup.circle.radius *
               Math.sin(
-                setupGraphic.circle.angle[d.target - 1] -
-                  setupGraphic.circle.quarterAngle
+                setup.circle.angle[d.target - 1] - setup.circle.quarterAngle
               )
           var endY =
-            setupGraphic.circle.originY -
-            setupGraphic.circle.radius *
+            setup.circle.originY -
+            setup.circle.radius *
               Math.cos(
-                setupGraphic.circle.angle[d.target - 1] -
-                  setupGraphic.circle.quarterAngle
+                setup.circle.angle[d.target - 1] - setup.circle.quarterAngle
               )
 
           var cxEnd = 0
@@ -661,109 +609,99 @@ export default defineComponent({
           var cxStart = 0
           var cyStart = 0
 
-          let b = Math.floor(setupGraphic.variables.allNodes.length / 4)
+          let b = Math.floor(setup.variables.allNodes.length / 4)
           let a = 0
 
           var sourceUpFour =
-            d.source + setupGraphic.variables.allNodes.length / 4 >
-            setupGraphic.variables.allNodes.length
+            d.source + setup.variables.allNodes.length / 4 >
+            setup.variables.allNodes.length
               ? d.source +
-                setupGraphic.variables.allNodes.length / 4 -
-                setupGraphic.variables.allNodes.length
-              : d.source + setupGraphic.variables.allNodes.length / 4
+                setup.variables.allNodes.length / 4 -
+                setup.variables.allNodes.length
+              : d.source + setup.variables.allNodes.length / 4
           var sourceDownFour =
-            d.source - setupGraphic.variables.allNodes.length / 4 < 0
+            d.source - setup.variables.allNodes.length / 4 < 0
               ? d.source -
-                setupGraphic.variables.allNodes.length / 4 +
-                (setupGraphic.variables.allNodes.length + d.source)
-              : d.source - setupGraphic.variables.allNodes.length / 4
+                setup.variables.allNodes.length / 4 +
+                (setup.variables.allNodes.length + d.source)
+              : d.source - setup.variables.allNodes.length / 4
 
           if (
-            d.source + setupGraphic.variables.allNodes.length / 4 >
-            setupGraphic.variables.allNodes.length
+            d.source + setup.variables.allNodes.length / 4 >
+            setup.variables.allNodes.length
           ) {
             if (
               (d.target < d.source && d.target >= sourceDownFour) ||
               (d.target > d.source &&
-                d.target <= setupGraphic.variables.allNodes.length) ||
+                d.target <= setup.variables.allNodes.length) ||
               (d.target > 0 && d.target <= sourceUpFour)
             ) {
-              a = d.target - d.source + setupGraphic.variables.allNodes.length
+              a = d.target - d.source + setup.variables.allNodes.length
 
               a = Math.abs(a - b)
 
               if (a === b) {
-                cxStart = setupGraphic.circle.originX
-                cyStart = setupGraphic.circle.originY
-                cxEnd = setupGraphic.circle.originX
-                cyEnd = setupGraphic.circle.originY
+                cxStart = setup.circle.originX
+                cyStart = setup.circle.originY
+                cxEnd = setup.circle.originX
+                cyEnd = setup.circle.originY
               } else {
-                cxEnd =
-                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
-                cyEnd =
-                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxEnd = endX + (b * (setup.circle.originX - endX)) / (a + b)
+                cyEnd = endY + (b * (setup.circle.originY - endY)) / (a + b)
                 cxStart =
-                  startX +
-                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                  startX + (b * (setup.circle.originX - startX)) / (a + b)
                 cyStart =
-                  startY +
-                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+                  startY + (b * (setup.circle.originY - startY)) / (a + b)
               }
             } else {
-              cxStart = setupGraphic.circle.originX
-              cyStart = setupGraphic.circle.originY
-              cxEnd = setupGraphic.circle.originX
-              cyEnd = setupGraphic.circle.originY
+              cxStart = setup.circle.originX
+              cyStart = setup.circle.originY
+              cxEnd = setup.circle.originX
+              cyEnd = setup.circle.originY
             }
           }
 
-          if (d.source - setupGraphic.variables.allNodes.length / 4 < 0) {
+          if (d.source - setup.variables.allNodes.length / 4 < 0) {
             if (
               (d.target > d.source && d.target <= sourceUpFour) ||
               (d.target < d.source && d.target >= 0) ||
-              (d.target <= setupGraphic.variables.allNodes.length &&
+              (d.target <= setup.variables.allNodes.length &&
                 d.target >= sourceDownFour)
             ) {
               a =
                 Math.abs(d.target - d.source) > b
                   ? Math.abs(
-                      d.target -
-                        d.source -
-                        setupGraphic.variables.allNodes.length
+                      d.target - d.source - setup.variables.allNodes.length
                     )
                   : Math.abs(d.target - d.source)
 
               a = Math.abs(a - b)
 
               if (a === b) {
-                cxStart = setupGraphic.circle.originX
-                cyStart = setupGraphic.circle.originY
-                cxEnd = setupGraphic.circle.originX
-                cyEnd = setupGraphic.circle.originY
+                cxStart = setup.circle.originX
+                cyStart = setup.circle.originY
+                cxEnd = setup.circle.originX
+                cyEnd = setup.circle.originY
               } else {
-                cxEnd =
-                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
-                cyEnd =
-                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxEnd = endX + (b * (setup.circle.originX - endX)) / (a + b)
+                cyEnd = endY + (b * (setup.circle.originY - endY)) / (a + b)
                 cxStart =
-                  startX +
-                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                  startX + (b * (setup.circle.originX - startX)) / (a + b)
                 cyStart =
-                  startY +
-                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+                  startY + (b * (setup.circle.originY - startY)) / (a + b)
               }
             } else {
-              cxStart = setupGraphic.circle.originX
-              cyStart = setupGraphic.circle.originY
-              cxEnd = setupGraphic.circle.originX
-              cyEnd = setupGraphic.circle.originY
+              cxStart = setup.circle.originX
+              cyStart = setup.circle.originY
+              cxEnd = setup.circle.originX
+              cyEnd = setup.circle.originY
             }
           }
 
           if (
-            d.source + setupGraphic.variables.allNodes.length / 4 <=
-              setupGraphic.variables.allNodes.length &&
-            d.source - setupGraphic.variables.allNodes.length / 4 >= 0
+            d.source + setup.variables.allNodes.length / 4 <=
+              setup.variables.allNodes.length &&
+            d.source - setup.variables.allNodes.length / 4 >= 0
           ) {
             if (
               (d.target > d.source && d.target <= sourceUpFour) ||
@@ -774,27 +712,23 @@ export default defineComponent({
               a = Math.abs(a - b)
 
               if (a === b || a + 1 === b) {
-                cxStart = setupGraphic.circle.originX
-                cyStart = setupGraphic.circle.originY
-                cxEnd = setupGraphic.circle.originX
-                cyEnd = setupGraphic.circle.originY
+                cxStart = setup.circle.originX
+                cyStart = setup.circle.originY
+                cxEnd = setup.circle.originX
+                cyEnd = setup.circle.originY
               } else {
-                cxEnd =
-                  endX + (b * (setupGraphic.circle.originX - endX)) / (a + b)
-                cyEnd =
-                  endY + (b * (setupGraphic.circle.originY - endY)) / (a + b)
+                cxEnd = endX + (b * (setup.circle.originX - endX)) / (a + b)
+                cyEnd = endY + (b * (setup.circle.originY - endY)) / (a + b)
                 cxStart =
-                  startX +
-                  (b * (setupGraphic.circle.originX - startX)) / (a + b)
+                  startX + (b * (setup.circle.originX - startX)) / (a + b)
                 cyStart =
-                  startY +
-                  (b * (setupGraphic.circle.originY - startY)) / (a + b)
+                  startY + (b * (setup.circle.originY - startY)) / (a + b)
               }
             } else {
-              cxStart = setupGraphic.circle.originX
-              cyStart = setupGraphic.circle.originY
-              cxEnd = setupGraphic.circle.originX
-              cyEnd = setupGraphic.circle.originY
+              cxStart = setup.circle.originX
+              cyStart = setup.circle.originY
+              cxEnd = setup.circle.originX
+              cyEnd = setup.circle.originY
             }
           }
 
@@ -838,44 +772,42 @@ export default defineComponent({
         })
 
       // hover effect links
-      setupGraphic.variables.hoverLinks.on('mouseover', d => {
+      setup.variables.hoverLinks.on('mouseover', d => {
         if (
           d3
             .select('#_hover_link_' + d.id)
             .classed('dialogue__hoverLink--actif')
         ) {
           document.querySelector('.number').style.top =
-            d3.event.clientY - setupGraphic.circle.radius / 10 / 2 + 'px'
+            d3.event.clientY - setup.circle.radius / 10 / 2 + 'px'
           document.querySelector('.number').style.left =
-            d3.event.clientX - 5 - setupGraphic.circle.radius / 10 / 2 + 'px'
+            d3.event.clientX - 5 - setup.circle.radius / 10 / 2 + 'px'
           document.querySelector('.number').innerHTML = d.number
           document.querySelector('.number').classList.add('number--actif')
 
           d3.select('#_hover_link_' + d.id).on('mousemove', () => {
             document.querySelector('.number').style.top =
-              d3.event.clientY - setupGraphic.circle.radius / 10 / 2 + 'px'
+              d3.event.clientY - setup.circle.radius / 10 / 2 + 'px'
             document.querySelector('.number').style.left =
-              d3.event.clientX - 5 - setupGraphic.circle.radius / 10 / 2 + 'px'
+              d3.event.clientX - 5 - setup.circle.radius / 10 / 2 + 'px'
           })
         }
       })
 
       // mouse out effect links
-      setupGraphic.variables.hoverLinks.on('mouseout', d => {
+      setup.variables.hoverLinks.on('mouseout', d => {
         document.querySelector('.number').classList.remove('number--actif')
         if (d3.select('#_link_' + d.id).classed('dialogue__link--actif')) {
-          d3.select('#_link_' + d.id).style('stroke', setupGraphic.yellow)
+          d3.select('#_link_' + d.id).style('stroke', setup.yellow)
         }
       })
     }
 
     const drawImages = data => {
-      var gCircles = setupGraphic.variables.svg
-        .append('g')
-        .attr('id', 'gCircles')
+      var gCircles = setup.variables.svg.append('g').attr('id', 'gCircles')
 
       // add circles
-      setupGraphic.variables.circles = gCircles
+      setup.variables.circles = gCircles
         .selectAll('mynodes')
         .data(data.nodes)
         .enter()
@@ -886,21 +818,15 @@ export default defineComponent({
         .attr('transform', (d, i) => {
           return (
             'translate(' +
-            (setupGraphic.circle.originX -
+            (setup.circle.originX -
               30 +
-              setupGraphic.circle.radius *
-                Math.sin(
-                  setupGraphic.circle.angle[i] -
-                    setupGraphic.circle.quarterAngle
-                )) +
+              setup.circle.radius *
+                Math.sin(setup.circle.angle[i] - setup.circle.quarterAngle)) +
             ',' +
-            (setupGraphic.circle.originY -
+            (setup.circle.originY -
               30 -
-              setupGraphic.circle.radius *
-                Math.cos(
-                  setupGraphic.circle.angle[i] -
-                    setupGraphic.circle.quarterAngle
-                )) +
+              setup.circle.radius *
+                Math.cos(setup.circle.angle[i] - setup.circle.quarterAngle)) +
             ')'
           )
         })
@@ -908,9 +834,9 @@ export default defineComponent({
         .attr('cy', 30)
         .attr('r', (d, i) => {
           if (i === 0) {
-            return setupGraphic.circle.bigCircleRadius
+            return setup.circle.bigCircleRadius
           } else {
-            return setupGraphic.circle.smallCircleRadius
+            return setup.circle.smallCircleRadius
           }
         })
         .attr('class', (d, i) => {
@@ -926,7 +852,7 @@ export default defineComponent({
             return 'url(#desaturate)'
           }
         })
-        .style('stroke', setupGraphic.yellow)
+        .style('stroke', setup.yellow)
         .style('stroke-width', (d, i) => {
           if (i === 0) {
             return '1'
@@ -936,7 +862,7 @@ export default defineComponent({
         })
 
       // hover effects circles
-      setupGraphic.variables.circles.on('mouseover', d => {
+      setup.variables.circles.on('mouseover', d => {
         d3.select('#_circles_' + d.id)
           .style('filter', null)
           .style('stroke-width', '1')
@@ -947,7 +873,7 @@ export default defineComponent({
       })
 
       // mouse out effect circles
-      setupGraphic.variables.circles.on('mouseout', d => {
+      setup.variables.circles.on('mouseout', d => {
         d3.select('#_circles_' + d.id)
           .style('filter', 'url(#desaturate)')
           .style('stroke-width', '0')
@@ -960,35 +886,25 @@ export default defineComponent({
       })
 
       // Click effect circles
-      setupGraphic.variables.circles.on('click', d => {
+      setup.variables.circles.on('click', d => {
         change(d.id)
       })
     }
 
     const onResize = () => {
       if (window.innerWidth > 1024 && ctx.root.$route.name === 'Dialogues') {
-        setupGraphic.width = window.innerWidth
-        setupGraphic.height = window.innerHeight
-        setupGraphic.circle.originX = setupGraphic.width / 2
-        setupGraphic.circle.originY = setupGraphic.height / 2
-        setupGraphic.circle.radius = setupGraphic.width / 6
-        setupGraphic.circle.distanceFromPoint = setupGraphic.width / 48
+        setup.width = window.innerWidth
+        setup.height = window.innerHeight
+        setup.circle.originX = setup.width / 2
+        setup.circle.originY = setup.height / 2
+        setup.circle.radius = setup.width / 6
+        setup.circle.distanceFromPoint = setup.width / 48
 
         document.getElementById('svg_container').innerHTML = ''
 
-        setupGraphic.variables.initial
-          .attr(
-            'width',
-            setupGraphic.width +
-              setupGraphic.margin.left +
-              setupGraphic.margin.right
-          )
-          .attr(
-            'height',
-            setupGraphic.height +
-              setupGraphic.margin.top +
-              setupGraphic.margin.bottom
-          )
+        setup.variables.initial
+          .attr('width', setup.width + setup.margin.left + setup.margin.right)
+          .attr('height', setup.height + setup.margin.top + setup.margin.bottom)
 
         draw(props.DataDialogues)
       }
@@ -996,12 +912,12 @@ export default defineComponent({
 
     const change = id => {
       // move the circles
-      setupGraphic.variables.circles
+      setup.variables.circles
         .attr('r', (x, i) => {
           if (i === id - 1) {
-            return setupGraphic.circle.bigCircleRadius
+            return setup.circle.bigCircleRadius
           } else {
-            return setupGraphic.circle.smallCircleRadius
+            return setup.circle.smallCircleRadius
           }
         })
         .attr('class', (x, i) => {
@@ -1023,7 +939,7 @@ export default defineComponent({
         })
 
       // move the labels
-      setupGraphic.variables.labels.attr('class', (x, i) => {
+      setup.variables.labels.attr('class', (x, i) => {
         if (i === id - 1) {
           return 'dialogue__name dialogue__name--active'
         } else {
@@ -1032,7 +948,7 @@ export default defineComponent({
       })
 
       // move the subLabels
-      setupGraphic.variables.subLabels.attr('class', (x, i) => {
+      setup.variables.subLabels.attr('class', (x, i) => {
         if (i === id - 1) {
           return 'dialogue__subtitle dialogue__subtitle--active'
         } else {
@@ -1041,7 +957,7 @@ export default defineComponent({
       })
 
       // move the links
-      setupGraphic.variables.links
+      setup.variables.links
         .attr('class', x => {
           if (x.source === id || x.target === id) {
             return 'dialogue__link--actif'
@@ -1057,7 +973,7 @@ export default defineComponent({
       // })
 
       // move the hover links
-      setupGraphic.variables.hoverLinks
+      setup.variables.hoverLinks
         .attr('class', x => {
           if (x.source === id || x.target === id) {
             return 'dialogue__hoverLink--actif'
