@@ -1,45 +1,22 @@
 <template>
   <div class="nav">
-    <div class="nav__sound" @click="toggleMusic()">
-      <div class="nav__bar" :class="[musicPlay ? 'nav__bar--actif' : '']">
-        Bar
-      </div>
-      <div class="nav__bar" :class="[musicPlay ? 'nav__bar--actif' : '']">
-        Bar
-      </div>
-      <div class="nav__bar" :class="[musicPlay ? 'nav__bar--actif' : '']">
-        Bar
-      </div>
-      <div class="nav__bar" :class="[musicPlay ? 'nav__bar--actif' : '']">
-        Bar
-      </div>
-      <div class="nav__bar" :class="[musicPlay ? 'nav__bar--actif' : '']">
-        Bar
-      </div>
-      <div class="nav__bar" :class="[musicPlay ? 'nav__bar--actif' : '']">
+    <div class="nav__sound" @click="toggleFn('music')">
+      <div
+        class="nav__bar"
+        :class="[musicPlay ? 'nav__bar--actif' : '']"
+        v-for="n in 6"
+        :key="n"
+      >
         Bar
       </div>
     </div>
     <div class="nav__arrows">
       <img
-        src="../assets/img/nav/up--actif.svg"
-        alt="actif up"
-        class="nav__up"
-      />
-      <img
-        :src="down ? downActif : downInactif"
-        alt="actif down"
-        class="nav__down"
-      />
-      <img
-        :src="left ? leftActif : leftInactif"
-        alt="actif left"
-        class="nav__left"
-      />
-      <img
-        :src="right ? rightActif : rightInactif"
-        alt="actif right"
-        class="nav__right"
+        v-for="arrow in arrows"
+        :key="arrow.name"
+        :src="arrow.path"
+        alt="picto arrow"
+        :class="`nav__${arrow.name}`"
       />
     </div>
     <div class="nav__chapter">
@@ -52,14 +29,19 @@
       :class="[isNavOpen ? 'nav__title--actif' : '']"
       ref="navRef"
     >
-      <div class="nav__menu" @click="toggleNav">
-        <div class="nav__btn nav__btn--top">btn1</div>
-        <div class="nav__btn nav__btn--center">btn2</div>
-        <div class="nav__btn nav__btn--bottom">btn3</div>
+      <div class="nav__menu" @click="toggleFn('nav')">
+        <div
+          class="nav__btn"
+          v-for="n in 3"
+          :key="`btn${n}`"
+          :class="`nav__btn--${n}`"
+        >
+          btn
+        </div>
       </div>
       <h2 class="nav__movie">
-        <span>Star Wars: {{ number }}</span>
-        <span>{{ title }}</span>
+        <span>Star Wars: {{ title.number }}</span>
+        <span>{{ title.title }}</span>
       </h2>
       <div class="nav__choice">
         <ul class="nav__list">
@@ -69,12 +51,12 @@
             :to="{ path: route.path }"
             :data-number="route.number"
             tag="li"
-            @click.native="toggleNav"
+            @click.native="toggleFn('nav')"
             >{{ route.title }}</router-link
           >
         </ul>
         <ul class="nav__extra">
-          <div @click="toggleCredits()">Credits</div>
+          <div @click="toggleFn('credit')">Credits</div>
           <div>
             <a
               href="https://medium.com/@jeanchristophewieme/tfe-chapitre-1-la-t%C3%AAte-dans-les-%C3%A9toiles-ead3075aec9f"
@@ -94,22 +76,48 @@ import { defineComponent, computed, ref, watch } from '@vue/composition-api'
 export default defineComponent({
   name: 'Navigation',
   setup(props, ctx) {
-    const leftActif = ref('../../assets/img/nav/left--actif.svg')
-    const leftInactif = ref('../../assets/img/nav/left--inactif.svg')
-    const rightActif = ref('../../assets/img/nav/right--actif.svg')
-    const rightInactif = ref('../../assets/img/nav/right--inactif.svg')
-    const downActif = ref('../../assets/img/nav/down--actif.svg')
-    const downInactif = ref('../../assets/img/nav/down--inactif.svg')
+    // Get arrow's path
+    const arrows = computed(() => {
+      let store = ctx.root.$store.state.arrows
+      let arrows = [
+        {
+          name: 'left',
+          path: '../../assets/img/nav/left--actif.svg',
+        },
+        {
+          name: 'right',
+          path: '../../assets/img/nav/right--actif.svg',
+        },
+        {
+          name: 'down',
+          path: '../../assets/img/nav/down--actif.svg',
+        },
+        {
+          name: 'up',
+          path: '../../assets/img/nav/up--actif.svg',
+        },
+      ]
+
+      if (!store.left) arrows[0].path = '../../assets/img/nav/left--inactif.svg'
+      if (!store.right)
+        arrows[1].path = '../../assets/img/nav/right--inactif.svg'
+      if (!store.down) arrows[2].path = '../../assets/img/nav/down--inactif.svg'
+
+      return arrows
+    })
+
+    // Check navigation open or not
     let isNavOpen = computed(() => {
       return ctx.root.$store.state.checks.nav
     })
-
     const navRef = ref(null)
 
+    // Check music is playing
     const musicPlay = computed(() => {
       return ctx.root.$store.state.checks.music
     })
 
+    // Chapter explanation texts
     const chapterText = computed(() => {
       switch (ctx.root.$route.name) {
         case 'History':
@@ -123,6 +131,7 @@ export default defineComponent({
       }
     })
 
+    // Get routes for menu
     const routes = computed(() => {
       return [
         {
@@ -152,29 +161,24 @@ export default defineComponent({
         },
       ]
     })
-    const number = computed(() => {
-      return ctx.root.$store.state.movies[
-        ctx.root.$store.state.activeMovie
-      ].number.toLowerCase()
-    })
+
+    // Get info dor the title
     const title = computed(() => {
-      return ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie]
-        .title
-    })
-    const left = computed(() => {
-      return ctx.root.$store.state.arrows.left
-    })
-    const right = computed(() => {
-      return ctx.root.$store.state.arrows.right
-    })
-    const down = computed(() => {
-      return ctx.root.$store.state.arrows.down
+      return {
+        title:
+          ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie].title,
+        number: ctx.root.$store.state.movies[
+          ctx.root.$store.state.activeMovie
+        ].number.toLowerCase(),
+      }
     })
 
-    const toggleMusic = () => {
-      ctx.root.$store.commit('toggleCheck', 'music')
+    // Toggle global function
+    const toggleFn = state => {
+      ctx.root.$store.commit('toggleCheck', state)
     }
 
+    // Get chapter number
     const chapter = computed(() => {
       if (ctx.root.$route.name === 'History') {
         return '02'
@@ -186,59 +190,38 @@ export default defineComponent({
         return '05'
       }
     })
-    const toggleNav = () => {
-      ctx.root.$store.commit('toggleCheck', 'nav')
-    }
 
     const clickFunction = e => {
       if (!navRef.value.contains(e.target))
         ctx.root.$store.commit('toggleCheck', 'nav')
     }
 
-    const toggleCredits = () => {
-      ctx.root.$store.commit('toggleCheck', 'credit')
-    }
-
     watch(
       () => ctx.root.$store.state.checks.nav,
       (value, prevValue) => {
+        let sections = document.querySelector('.section')
         if (value) {
-          document
-            .querySelector('.section')
-            .addEventListener('click', clickFunction)
+          sections.addEventListener('click', clickFunction)
 
-          document.querySelector('.section').classList.add('blur')
+          sections.classList.add('blur')
         }
         if (!value && prevValue !== undefined) {
-          document.querySelector('.section').classList.remove('blur')
-          document
-            .querySelector('.section')
-            .removeEventListener('click', clickFunction)
+          sections.classList.remove('blur')
+          sections.removeEventListener('click', clickFunction)
         }
       }
     )
 
     return {
-      toggleCredits,
-      leftActif,
-      leftInactif,
-      rightActif,
-      rightInactif,
-      downActif,
-      downInactif,
+      arrows,
       isNavOpen,
       routes,
-      number,
       title,
-      left,
-      right,
-      down,
       chapter,
-      toggleNav,
       navRef,
       musicPlay,
-      toggleMusic,
       chapterText,
+      toggleFn,
     }
   },
 })
@@ -415,17 +398,17 @@ export default defineComponent({
       }
 
       .nav__btn {
-        &--top {
+        &--1 {
           width: 45px;
           transform-origin: center center;
           transform: translateY(17px) rotate(45deg);
 
           transition: all 500ms ease, opacity 0s;
         }
-        &--center {
+        &--2 {
           opacity: 0;
         }
-        &--bottom {
+        &--3 {
           transform-origin: center center;
           transform: translateY(-17px) rotate(-45deg);
 
@@ -450,10 +433,10 @@ export default defineComponent({
 
     &:hover {
       .nav__btn {
-        &--top {
+        &--1 {
           width: 45px;
         }
-        &--center {
+        &--2 {
           width: 45px;
         }
       }
@@ -469,14 +452,14 @@ export default defineComponent({
 
     transition: all 500ms ease, opacity 0s;
 
-    &--top {
+    &--1 {
       width: 25px;
     }
 
-    &--center {
+    &--2 {
       width: 35px;
     }
-    &--bottom {
+    &--3 {
       width: 45px;
     }
   }
