@@ -1,7 +1,7 @@
 <template>
-  <div class="words">
+  <div class="words section">
     <transition name="fade" mode="out-in">
-      <div class="words__list" v-show="!searchActive">
+      <div class="words__list" v-show="!data.searchState">
         <div v-for="(word, index) in movieWords" :key="index" class="words__el">
           <p class="words__word" :data-number="word.number">{{ word.word }}</p>
           <sub class="words__sub" :class="'words__sub--' + word.word">
@@ -30,73 +30,88 @@
     <transition name="fade" mode="out-in">
       <div
         class="words__search"
-        v-show="searchActive"
-        :data-complete="searchAuto"
+        v-show="data.searchState"
+        :data-complete="data.suggestion"
         :class="[
-          canSearch ? 'words__search--active' : '',
-          animSearched ? 'words__search--searched' : '',
+          data.isSearchable ? 'words__search--active' : '',
+          data.animState ? 'words__search--searched' : '',
         ]"
       >
         <div
           class="words__input"
           :class="[
-            animSearched ? 'words__input--searched' : '',
-            searchedWordNumber < 10 ? 'words__input--small' : '',
+            data.animState ? 'words__input--searched' : '',
+            dataWordSearched.number < 10 ? 'words__input--small' : '',
           ]"
-          :data-number="searchedWordNumber"
+          :data-number="dataWordSearched.number"
         >
-          {{ search }}
+          {{ data.search }}
         </div>
         <sub
           class="words__search__sub"
-          :class="[animSearched ? 'words__search__sub--actif' : '']"
+          :class="[data.animState ? 'words__search__sub--actif' : '']"
         >
           <div class="words__imgs">
             <img
-              v-for="char in searchedWordFrom.slice(0, 2)"
+              v-for="char in dataWordSearched.from.slice(0, 2)"
               :key="char.path"
               :src="char.path"
               alt="img"
               class="words__img"
             />
-            <span v-if="searchedWordFrom.length - 2 > 0" class="words__more">
-              +{{ searchedWordFrom.length - 2 }}
+            <span
+              v-if="dataWordSearched.from.length - 2 > 0"
+              class="words__more"
+            >
+              +{{ dataWordSearched.from.length - 2 }}
             </span>
           </div>
-          <p v-for="char in searchedWordFrom.slice(0, 2)" :key="char.word">
+          <p v-for="char in dataWordSearched.from.slice(0, 2)" :key="char.word">
             {{ char.character.toLowerCase() }}
           </p>
-          <p v-if="searchedWordFrom.length - 2 > 0">
-            + {{ searchedWordFrom.length - 2 }} other
+          <p v-if="dataWordSearched.from.length - 2 > 0">
+            + {{ dataWordSearched.from.length - 2 }} other
           </p>
         </sub>
+        <comp-words v-if="data.hoverState" :data-speakers="dataWordSearched" />
       </div>
     </transition>
     <div
       class="words__message"
-      :class="[searchActive ? 'words__message--close' : '']"
+      :class="[data.searchState ? 'words__message--close' : '']"
     >
       <transition name="fade" mode="out-in">
         <img
-          :src="[searchActive ? picto[1] : picto[0]]"
+          :src="[data.searchState ? picto[1] : picto[0]]"
           alt="svg"
           class="svg--big"
-          :key="searchActive"
+          :key="data.searchState"
         />
       </transition>
 
       <transition name="fade" mode="out-in">
-        <p :key="text">{{ text }}</p>
+        <p :key="data.instruction">{{ data.instruction }}</p>
       </transition>
     </div>
   </div>
 </template>
 
 <script>
-import { defineComponent, computed, onMounted, ref } from '@vue/composition-api'
+import {
+  defineComponent,
+  computed,
+  onMounted,
+  reactive,
+} from '@vue/composition-api'
 import * as utils from '@/tools/utils'
+
+import compWords from '@/components/comp-words'
+
 export default defineComponent({
   name: 'Words',
+  components: {
+    compWords,
+  },
   setup(props, ctx) {
     const choiceWords = [
       ['jedi', 'master', 'chancellor', 'mesa', 'naboo'],
@@ -109,33 +124,25 @@ export default defineComponent({
 
     const picto = ['/assets/img/keyboard.svg', '/assets/img/cross.svg']
 
-    const search = ref('')
-    const searchAuto = ref('')
-    const number = ref('')
-    const searchActive = ref(false)
-    const text = ref('Type something')
-    const canSearch = ref(false)
-    const canEnter = ref(false)
-    const animSearched = ref(false)
-    const canDelete = ref(true)
-
-    const searchedWordNumber = computed(() => {
-      if (animSearched.value) {
-        return filteredWordsForSearch.value.filter(
-          el => el.word === search.value
-        )[0].number
-      } else {
-        return filteredWordsForSearch.value[0].number
-      }
+    const data = reactive({
+      search: '',
+      suggestion: '',
+      searchState: false,
+      instruction: 'Type Something',
+      isSearchable: false,
+      isEnterable: false,
+      animState: false,
+      isDeletable: true,
+      hoverState: false,
     })
 
-    const searchedWordFrom = computed(() => {
-      if (animSearched.value) {
+    const dataWordSearched = computed(() => {
+      if (data.animState) {
         return filteredWordsForSearch.value.filter(
-          el => el.word === search.value
-        )[0].from
+          el => el.word === data.search
+        )[0]
       } else {
-        return filteredWordsForSearch.value[0].from
+        return filteredWordsForSearch.value[0]
       }
     })
 
@@ -143,10 +150,10 @@ export default defineComponent({
       return sortArray(
         words.value.filter(el => {
           if (
-            (el.word.slice(0, search.value.length) === search.value &&
-              el.word.length > search.value.length) ||
-            (el.word.slice(0, search.value.length) === search.value &&
-              el.word.includes(search.value))
+            (el.word.slice(0, data.search.length) === data.search &&
+              el.word.length > data.search.length) ||
+            (el.word.slice(0, data.search.length) === data.search &&
+              el.word.includes(data.search))
           ) {
             return el
           }
@@ -173,167 +180,178 @@ export default defineComponent({
       return filteredWords
     })
 
+    const hoverFn = () => {
+      if (ctx.root.$store.state.checks.nav) return
+      if (data.animState) {
+        data.hoverState = !data.hoverState
+      }
+    }
+
+    const hoverFnWords = e => {
+      if (ctx.root.$store.state.checks.nav) return
+      let word = e.currentTarget.innerText.toLowerCase()
+
+      if (e.currentTarget.classList.contains('words__word--actif')) {
+        document
+          .querySelector(`.words__sub--${word}`)
+          .classList.remove('words__sub--actif')
+        e.currentTarget.classList.remove('words__word--actif')
+      } else {
+        document
+          .querySelector(`.words__sub--${word}`)
+          .classList.add('words__sub--actif')
+        e.currentTarget.classList.add('words__word--actif')
+      }
+    }
+
     onMounted(() => {
-      document.querySelectorAll('.words__word').forEach(el => {
-        el.addEventListener('mouseover', e => {
-          let word = e.currentTarget.innerText.toLowerCase()
-          document
-            .querySelector(`.words__sub--${word}`)
-            .classList.add('words__sub--actif')
-          e.currentTarget.classList.add('words__word--actif')
-        })
-        el.addEventListener('mouseout', e => {
-          let word = e.currentTarget.innerText.toLowerCase()
-          document
-            .querySelector(`.words__sub--${word}`)
-            .classList.remove('words__sub--actif')
-          e.currentTarget.classList.remove('words__word--actif')
-        })
+      const inputWord = document.querySelector('.words__input')
+      const wordsSelection = document.querySelectorAll('.words__word')
+      const wordSearched = document.querySelector('.words__search')
+
+      // Hover word searched
+      inputWord.addEventListener('mouseover', hoverFn)
+      // Mouse out mouse out word searched
+      inputWord.addEventListener('mouseout', hoverFn)
+
+      wordsSelection.forEach(el => {
+        // Hover five words
+        el.addEventListener('mouseover', hoverFnWords)
+        // Mouse out five words
+        el.addEventListener('mouseout', hoverFnWords)
       })
 
+      // Close search box with animation
       document
         .querySelector('.words__message')
         .addEventListener('click', () => {
-          if (searchActive.value) {
-            if (animSearched.value) {
-              animSearched.value = false
+          if (data.searchState) {
+            if (data.animState) {
+              data.animState = false
               setTimeout(() => {
-                searchActive.value = false
-                text.value = 'Type something'
-                search.value = ''
+                data.searchState = false
+                data.instruction = 'Type something'
+                data.search = ''
               }, 350)
             } else {
-              searchActive.value = false
-              text.value = 'Type something'
-              search.value = ''
+              data.searchState = false
+              data.instruction = 'Type something'
+              data.search = ''
             }
           }
         })
 
+      // Fire event on search keydown
       document.addEventListener('keydown', e => {
+        if (ctx.root.$store.state.checks.nav) return
         let charCode = e.keyCode
+
+        // Check if it's a character
         if (
           (charCode > 64 && charCode < 91) ||
           (charCode > 96 && charCode < 123) ||
           charCode === 189
         ) {
+          // Check if ther's more possibilities else return
           if (
             filteredWordsForSearch.value.length === 1 &&
-            filteredWordsForSearch.value[0].word === search.value
+            filteredWordsForSearch.value[0].word === data.search
           ) {
             return
           }
 
-          search.value += e.key
-          searchActive.value = true
-          text.value = 'Close'
+          // Add input to search
+          data.search += e.key
+          data.searchState = true
+          data.instruction = 'Close'
 
+          // Check if error
           if (filteredWordsForSearch.value.length === 0) {
-            //red border
-            if (
-              !document
-                .querySelector('.words__search')
-                .classList.contains('words__search--error')
-            ) {
-              document
-                .querySelector('.words__search')
-                .classList.add('words__search--error')
+            // Add red border and slice to block user
+            if (!wordSearched.classList.contains('words__search--error')) {
+              wordSearched.classList.add('words__search--error')
             }
-            search.value = search.value.slice(0, -1)
+            data.search = data.search.slice(0, -1)
           } else {
-            if (
-              document
-                .querySelector('.words__search')
-                .classList.contains('words__search--error')
-            ) {
-              document
-                .querySelector('.words__search')
-                .classList.remove('words__search--error')
+            // Remove red border
+            if (wordSearched.classList.contains('words__search--error')) {
+              wordSearched.classList.remove('words__search--error')
             }
           }
 
+          // Add enter icon
           if (
-            search.value === filteredWordsForSearch.value[0].word ||
-            filteredWordsForSearch.value.filter(el => el.word === search.value)
+            data.search === filteredWordsForSearch.value[0].word ||
+            filteredWordsForSearch.value.filter(el => el.word === data.search)
               .length === 1
           ) {
-            canSearch.value = true
-            canEnter.value = true
+            data.isSearchable = true
+            data.isEnterable = true
           } else {
-            canSearch.value = false
-            canEnter.value = false
+            data.isSearchable = false
+            data.isEnterable = false
           }
 
-          searchAuto.value = filteredWordsForSearch.value[0].word
+          // Update data suggestion
+          data.suggestion = filteredWordsForSearch.value[0].word
         }
 
-        // Enter
+        // Enter event animation
         if (e.keyCode === 13) {
-          if (canEnter.value) {
-            searchAuto.value = ''
-            canSearch.value = false
-            animSearched.value = true
-            canDelete.value = false
+          if (data.isEnterable) {
+            data.suggestion = ''
+            data.isSearchable = false
+            data.animState = true
+            data.isDeletable = false
           }
         }
 
-        // Delete
-        if (e.keyCode === 8 && searchActive.value === true) {
-          if (animSearched.value) {
-            animSearched.value = false
+        // Delete event
+        if (e.keyCode === 8 && data.searchState === true) {
+          // If enter event fired make append normal
+          if (data.animState) {
+            data.animState = false
             setTimeout(() => {
-              search.value = search.value.slice(0, -1)
-              searchAuto.value = filteredWordsForSearch.value[0].word
-              canEnter.value = false
-              canDelete.value = true
+              data.search = data.search.slice(0, -1)
+              data.suggestion = filteredWordsForSearch.value[0].word
+              data.isEnterable = false
+              data.isDeletable = true
             }, 800)
           } else {
-            if (canDelete.value) {
-              search.value = search.value.slice(0, -1)
-              document
-                .querySelector('.words__search')
-                .classList.remove('words__search--error')
+            if (!data.isDeletable) return
 
-              if (
-                search.value === filteredWordsForSearch.value[0].word ||
-                filteredWordsForSearch.value.filter(
-                  el => el.word === search.value
-                ).length === 1
-              ) {
-                setTimeout(() => {
-                  canSearch.value = true
-                }, 1000)
-              } else {
-                canSearch.value = false
-              }
-              searchAuto.value = filteredWordsForSearch.value[0].word
-              canEnter.value = false
+            data.search = data.search.slice(0, -1)
+            wordSearched.classList.remove('words__search--error')
+
+            if (
+              data.search === filteredWordsForSearch.value[0].word ||
+              filteredWordsForSearch.value.filter(el => el.word === data.search)
+                .length === 1
+            ) {
+              setTimeout(() => {
+                data.isSearchable = true
+              }, 1000)
             } else {
-              return
+              data.isSearchable = false
             }
+            data.suggestion = filteredWordsForSearch.value[0].word
+            data.isEnterable = false
           }
         }
 
-        if (searchActive.value === true && search.value.length === 0) {
-          searchActive.value = false
-          text.value = 'Type something'
+        // Close search window
+        if (data.searchState === true && data.search.length === 0) {
+          data.searchState = false
+          data.instruction = 'Type something'
         }
       })
     })
 
     return {
-      words,
-      search,
-      number,
       movieWords,
-      searchActive,
-      searchAuto,
-      text,
-      canSearch,
-      animSearched,
-      searchedWordNumber,
-      searchedWordFrom,
+      data,
       picto,
+      dataWordSearched,
     }
   },
 })
@@ -531,7 +549,7 @@ function compare(a, b) {
     top: 5px;
     left: 20px;
 
-    cursor: pointer;
+    cursor: default;
 
     &::before {
       content: attr(data-number);
@@ -567,6 +585,7 @@ function compare(a, b) {
 
     transition: all 300ms 500ms ease;
     &--searched {
+      cursor: pointer;
       left: 50%;
       transform: translateX(-50%);
 
@@ -576,6 +595,13 @@ function compare(a, b) {
         height: 30%;
         transition: height 300ms 1000ms ease;
       }
+
+      // &:hover {
+      //   &::after {
+      //     height: 100%;
+      //     transition: height 300ms ease;
+      //   }
+      // }
 
       &::before {
         content: attr(data-number);

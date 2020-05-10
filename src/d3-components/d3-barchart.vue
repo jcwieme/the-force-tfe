@@ -45,7 +45,10 @@ export default defineComponent({
 
       var gDefs = svg.append('g').attr('id', 'gDefs')
       //Filter for the outside glow
-      var filter = gDefs.append('filter').attr('id', 'glow')
+      var filter = gDefs
+        .append('filter')
+        .attr('id', 'glowBar')
+        .attr('filterUnits', 'userSpaceOnUse')
       filter
         .append('feGaussianBlur')
         .attr('stdDeviation', '5')
@@ -94,7 +97,7 @@ export default defineComponent({
           }
         })
         .attr('stroke-width', '2')
-        .style('filter', 'url(#glow)')
+        .style('filter', 'url(#glowBar)')
 
       var marginRight = 30
       // add the y Axis

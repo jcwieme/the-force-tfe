@@ -149,7 +149,11 @@
       </svg>
     </div>
     <div class="loader__tuto">
-      <p>Swipe between movies with the right and left arrow</p>
+      <transition name="fade" mode="out-in">
+        <p :key="nextTip">
+          {{ texts }}
+        </p>
+      </transition>
     </div>
     <div class="loader__enter" :class="[loaded ? showClass : '']">
       <router-link class="loaded" to="choice">enter</router-link>
@@ -173,13 +177,23 @@ export default defineComponent({
     const random = ref(Math.floor(Math.random() * 4) + 1)
     const showClass = ref('loader__enter--show')
     const loaded = computed(() => {
-      return ctx.root.$store.state.loaded
+      return ctx.root.$store.state.checks.loaded
     })
+
+    const nextTip = ref(true)
+    const texts = ref('Navigate into the experience with the keyboard arrows')
+
+    setTimeout(() => {
+      nextTip.value = false
+      texts.value = 'Swipe between movies with the right and left arrow'
+    }, 2500)
 
     return {
       random,
       showClass,
       loaded,
+      nextTip,
+      texts,
     }
   },
 })

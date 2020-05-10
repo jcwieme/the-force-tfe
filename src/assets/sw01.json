@@ -2,6 +2,11 @@
   "number": "Episode I",
   "title": "The Phantom Menace",
   "text": {
+    "animation": [
+      "Turmoil has engulfed the <span data-word='one'>Galactic Republic</span>. The taxation of trade routes to outlying star systems is in dispute.",
+      "Hoping to resolve the matter with a blockade of deadly battleships, the greedy <span data-word='two'>Trade Federation</span> has stopped all shipping to the small planet of <span data-word='three'>Naboo</span>.",
+      "While the <span data-word='four'>Congress</span> of the Republic endlessly debates this alarming chain of events, the Supreme Chancellor has secretly dispatched two <span data-word='five'>Jedi Knights</span>, the guardians of peace and justice in the galaxy, to settle the conflict...."
+    ],
     "intro": [
       "Turmoil has engulfed the <span class='history__word' data-word='one'>Galactic Republic</span>. The taxation of trade routes to outlying star systems is in dispute.",
       "Hoping to resolve the matter with a blockade of deadly battleships, the greedy <span class='history__word' data-word='two'>Trade Federation</span> has stopped all shipping to the small planet of <span class='history__word' data-word='three'>Naboo</span>.",

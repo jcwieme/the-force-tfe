@@ -9,6 +9,7 @@ import movie5 from '@/assets/sw05.json'
 import movie6 from '@/assets/sw06.json'
 import numbers from '@/assets/numbers.json'
 import loader from '@/assets/loader.json'
+import credits from '@/assets/credits.json'
 import definitions from '@/assets/definitions.json'
 
 Vue.use(Vuex)
@@ -18,36 +19,69 @@ export default new Vuex.Store({
     movies: [movie1, movie2, movie3, movie4, movie5, movie6],
     definitions,
     activeMovie: null,
-    arrowRight: true,
-    arrowLeft: true,
     wordsInMovie: [9380, 7566, 8078, 10336, 7707, 6604],
     linesInMovie: [946, 620, 783, 1038, 947, 719],
     numbers,
+    credits,
     loader,
-    loaded: false,
-    isNavOpen: false,
+    checks: {
+      loaded: false,
+      music: true,
+      nav: false,
+      credit: false,
+      animation: false,
+      screen: false,
+    },
+    arrows: {
+      right: true,
+      left: true,
+      down: true,
+    },
+    choices: [
+      {
+        title: 'the phantom menace',
+        path: 'movie/1/history',
+        number: 'i',
+      },
+      {
+        title: 'attack of the clones',
+        path: 'movie/2/history',
+        number: 'ii',
+      },
+      {
+        title: 'revenge of the sith',
+        path: 'movie/3/history',
+        number: 'iii',
+      },
+      {
+        title: 'a new hope',
+        path: 'movie/4/history',
+        number: 'iv',
+      },
+      {
+        title: 'the empire strike back',
+        path: 'movie/5/history',
+        number: 'v',
+      },
+      {
+        title: 'return of the jedi',
+        path: 'movie/6/history',
+        number: 'vi',
+      },
+    ],
   },
   mutations: {
     setActiveMovie(state, number) {
       state.activeMovie = number
     },
-    falseArrowLeft(state) {
-      state.arrowLeft = false
+    arrows(state, options) {
+      state.arrows[options.direction] = options.state
     },
-    falseArrowRight(state) {
-      state.arrowRight = false
+    toggleCheck(state, name) {
+      state.checks[name] = !state.checks[name]
     },
-    trueArrowLeft(state) {
-      state.arrowLeft = true
-    },
-    trueArrowRight(state) {
-      state.arrowRight = true
-    },
-    loaded(state) {
-      state.loaded = true
-    },
-    toggleNav(state) {
-      state.isNavOpen = !state.isNavOpen
+    checkScreen(state, option) {
+      state.checks.screen = option
     },
   },
   actions: {},

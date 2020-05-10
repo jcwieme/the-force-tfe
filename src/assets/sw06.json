@@ -2,6 +2,11 @@
   "number": "Episode VI",
   "title": "Return of the Jedi",
   "text": {
+    "animation": [
+      "<span  data-word='seventeen'>Luke Skywalker</span> has returned to his home planet of <span  data-word='twenty'>Tatooine</span> in an attempt to rescue his friend <span  data-word='twenty-one'>Han Solo</span> from the clutches of the vile gangster <span  data-word='twenty-two'>Jabba the Hutt</span>.",
+      "Little does Luke know that the <span  data-word='twelve'>GALACTIC EMPIRE</span> has secretly begun construction on a new armored space station even more powerful than the first dreaded <span  data-word='thirteen'>Death Star</span>.",
+      "When completed, this ultimate weapon will spell certain doom for the small band of <span  data-word='eleven'>rebels</span> struggling to restore freedom to the galaxy..."
+    ],
     "intro": [
       "<span class='history__word' data-word='seventeen'>Luke Skywalker</span> has returned to his home planet of <span class='history__word' data-word='twenty'>Tatooine</span> in an attempt to rescue his friend <span class='history__word' data-word='twenty-one'>Han Solo</span> from the clutches of the vile gangster <span class='history__word' data-word='twenty-two'>Jabba the Hutt</span>.",
       "Little does Luke know that the <span class='history__word' data-word='twelve'>GALACTIC EMPIRE</span> has secretly begun construction on a new armored space station even more powerful than the first dreaded <span class='history__word' data-word='thirteen'>Death Star</span>.",

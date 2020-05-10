@@ -51,15 +51,32 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  if (from.name === null) {
+    if (to.name !== 'History' && to.name !== 'Loader' && to.name !== 'Choice') {
+      store.commit('toggleCheck', 'animation')
+    }
+  }
+  if (to.name === 'Numbers') {
+    store.commit('arrows', { direction: 'down', state: false })
+  } else {
+    store.commit('arrows', { direction: 'down', state: true })
+  }
   if (to.params.id) {
     store.commit('setActiveMovie', to.params.id - 1)
 
-    if (to.params.id === '6' && from.name === 'Choice') {
-      store.commit('falseArrowRight')
-    }
-
-    if (to.params.id === '1' && from.name === 'Choice') {
-      store.commit('falseArrowLeft')
+    if (to.params.id.toString() !== '6' && to.params.id.toString() !== '1') {
+      // store.commit('trueArrowRight')
+      // store.commit('trueArrowLeft')
+      store.commit('arrows', { direction: 'left', state: true })
+      store.commit('arrows', { direction: 'right', state: true })
+    } else {
+      if (to.params.id.toString() === '6') {
+        // store.commit('falseArrowRight')
+        store.commit('arrows', { direction: 'right', state: false })
+      } else {
+        // store.commit('falseArrowLeft')
+        store.commit('arrows', { direction: 'left', state: false })
+      }
     }
   }
   next()

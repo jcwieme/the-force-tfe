@@ -1,5 +1,5 @@
 <template>
-  <div class="data-viz dialogues">
+  <div class="data-viz dialogues section">
     <number-bubble />
     <d3-dialogues :data-dialogues="movieChoice" />
   </div>
@@ -7,7 +7,7 @@
 
 <script>
 import { defineComponent, computed } from '@vue/composition-api'
-import d3Dialogues from '@/d3/d3-dialogues.vue'
+import d3Dialogues from '@/d3-components/d3-dialogues.vue'
 import numberBubble from '@/components/comp-number-bubble.vue'
 import * as utils from '@/tools/utils'
 

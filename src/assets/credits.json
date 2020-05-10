@@ -1,0 +1,80 @@
+[
+  [
+    {
+      "title": "Scripts",
+      "data": [
+        {
+          "title": "IMSDB",
+          "path": "https://www.imsdb.com/"
+        },
+        {
+          "title": "YTS-Subs",
+          "path": "https://yts-subs.com/"
+        }
+      ]
+    },
+    {
+      "title": "Sources",
+      "data": [
+        {
+          "title": "SW Databank",
+          "path": "https://www.starwars.com/databank"
+        },
+        {
+          "title": "Archive.org",
+          "path": "https://archive.org/details/13BinarySunsetAlternate/"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "title": "Librairies",
+      "data": [
+        {
+          "title": "Vue.js",
+          "path": "https://vuejs.org/"
+        },
+        {
+          "title": "Vue Particles (Particles.js)",
+          "path": "https://vue-particles.netlify.app/"
+        },
+        {
+          "title": "Vue Composition API",
+          "path": "https://composition-api.vuejs.org/"
+        },
+        {
+          "title": "D3.js",
+          "path": "https://d3js.org/"
+        },
+        {
+          "title": "GSAP",
+          "path": "https://greensock.com/gsap/"
+        },
+        {
+          "title": "Howler.js",
+          "path": "https://howlerjs.com/"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "title": "Other",
+      "data": [
+        {
+          "title": "Crawl Text",
+          "path": "https://medium.com/better-programming/create-a-star-wars-title-crawl-in-html-c25a76fea401"
+        },
+        {
+          "title": "Bl.ocks.org",
+          "path": "http://bl.ocks.org/"
+        },
+        {
+          "title": "D3 Graph Gallery",
+          "path": "https://www.d3-graph-gallery.com/"
+        }
+      ]
+    }
+  ]
+]

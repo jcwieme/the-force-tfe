@@ -43,7 +43,7 @@ export default defineComponent({
 
       var gDefs = svg.append('g').attr('id', 'gDefs')
       //Filter for the outside glow
-      var filter = gDefs.append('filter').attr('id', 'glow')
+      var filter = gDefs.append('filter').attr('id', 'glowPie')
       filter
         .append('feGaussianBlur')
         .attr('stdDeviation', '2')
@@ -83,7 +83,7 @@ export default defineComponent({
         .style('stroke-width', '3')
         .style('stroke-alignement', 'inner')
         .style('opacity', 0.7)
-        .attr('filter', 'url(#glow)')
+        .attr('filter', 'url(#glowPie)')
 
       svg
         .append('text')

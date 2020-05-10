@@ -7,7 +7,7 @@
       <!-- <vue-particles
         color="#dedede"
         :particleOpacity="1"
-        :particlesNumber="80"
+        :particlesNumber="160"
         shapeType="circle"
         :particleSize="2"
         :lineLinked="false"
@@ -16,242 +16,144 @@
         :clickEffect="false"
         class="particules"
       ></vue-particles> -->
-      <Navigation v-if="navRender" />
+      <transition name="fade">
+        <Navigation v-if="navRender" />
+      </transition>
       <transition name="fade" mode="out-in">
-        <router-view class="router" :key="keyTransitionHorizontal" />
+        <router-view class="router" :key="id" />
       </transition>
     </div>
+    <transition name="fade" mode="out-in">
+      <comp-credits v-if="creditsBool" />
+    </transition>
   </div>
 </template>
 
 <script>
-import { defineComponent, ref, computed, onMounted } from '@vue/composition-api'
+import {
+  defineComponent,
+  ref,
+  computed,
+  onMounted,
+  watch,
+} from '@vue/composition-api'
 import Navigation from '@/components/comp-navigation'
+import compCredits from '@/components/comp-credits'
+import { Howl } from 'howler'
+import { isMobile, preloadImages } from '@/tools/utils'
 
 export default defineComponent({
   name: 'Application',
   components: {
     Navigation,
+    compCredits,
   },
   setup(props, ctx) {
     const keyUp = ref(true)
-    const screen = ref(false)
+    const screen = computed(() => {
+      return ctx.root.$store.state.checks.screen
+    })
+    const creditsBool = computed(() => {
+      return ctx.root.$store.state.checks.credit
+    })
+
+    var sound = new Howl({
+      // src: ['../../assets/music/main.mp3'],
+      src: ['main.mp3'],
+      loop: true,
+      volume: 0.5,
+      onload: function() {
+        sound.fade(0, 0.5, 3000)
+      },
+    })
+
+    var myMusic = sound.play()
+
+    const routes = ctx.root.$router.options.routes
+    const route = computed(() => {
+      return ctx.root.$route.name
+    })
+    const index = computed(() => {
+      return routes.findIndex(x => x.name === route.value)
+    })
+    const id = computed(() => {
+      return ctx.root.$route.params.id
+    })
     const navRender = computed(() => {
       if (
-        ctx.root.$route.name !== 'Choice' &&
-        ctx.root.$route.name !== 'Loader'
+        route.value !== 'Choice' &&
+        route.value !== 'Loader' &&
+        ctx.root.$store.state.checks.animation
       ) {
         return true
       } else {
         return false
       }
     })
-    const keyTransitionHorizontal = computed(() => {
-      return ctx.root.$route.params.id
-    })
-
-    if (ctx.root.$store.state.activeMovie === 5) {
-      ctx.root.$store.commit('falseArrowRight')
-      ctx.root.$store.commit('trueArrowLeft')
-    }
 
     onMounted(() => {
-      const preloads = ctx.root.$store.state.loader
-
-      function preloadImages(urls, allImagesLoadedCallback) {
-        var loadedCounter = 0
-        var toBeLoadedNumber = urls.length
-        urls.forEach(function(url) {
-          preloadImage(url, function() {
-            loadedCounter++
-            // console.log('Number of loaded images: ' + loadedCounter)
-            if (loadedCounter == toBeLoadedNumber) {
-              allImagesLoadedCallback()
-            }
-          })
-        })
-        function preloadImage(url, anImageLoadedCallback) {
-          var img = new Image()
-          img.onload = anImageLoadedCallback
-          img.src = url.link
-        }
-      }
-
-      // Let's call it:
-      preloadImages(preloads, () => {
-        ctx.root.$store.commit('loaded')
-        console.log('loaded')
+      // Let's preload images
+      preloadImages(ctx.root.$store.state.loader, () => {
+        ctx.root.$store.commit('toggleCheck', 'loaded')
       })
 
-      screen.value = checkSize()
+      // Check is mobile version
+      ctx.root.$store.commit('checkScreen', isMobile(window))
 
-      window.addEventListener('resize', onResize)
+      // Check is Mobile version on resize
+      window.addEventListener('resize', () => {
+        ctx.root.$store.commit('checkScreen', isMobile(window))
+      })
 
       // Navigation arrows
       document.addEventListener('keydown', e => {
+        // Get the KeyCode
+        const key = e.keyCode
+        // if History and animation running return
         if (
-          (ctx.root.$route.name !== 'Choice' ||
-            ctx.root.$route.name !== 'Loader') &&
-          !ctx.root.$store.state.isNavOpen
+          route.value === 'History' &&
+          !ctx.root.$store.state.checks.animation
+        ) {
+          return
+        }
+
+        // If is not Choice or Loader, arrow navigation
+        if (
+          route.value !== 'Choice' &&
+          route.value !== 'Loader' &&
+          !ctx.root.$store.state.checks.nav
         ) {
           // right
-          if (e.keyCode === 39) {
-            if (ctx.root.$route.params.id < 6 && keyUp.value === true) {
-              let next = ctx.root.$route.params.id
-              next++
+          if (key === 39) {
+            if (id.value < 6 && keyUp.value === true) {
               ctx.root.$router.push({
-                name: ctx.root.$route.name,
-                params: { id: next },
+                name: route.value,
+                params: { id: parseInt(id.value) + 1 },
               })
-              if (next === 6) {
-                ctx.root.$store.commit('falseArrowRight')
-              }
-              if (next === 2) {
-                ctx.root.$store.commit('trueArrowLeft')
-              }
             }
           }
           // left
-          if (e.keyCode === 37) {
-            if (ctx.root.$route.params.id > 1 && keyUp.value === true) {
-              let before = ctx.root.$route.params.id - 1
+          if (key === 37) {
+            if (id.value > 1 && keyUp.value === true) {
               ctx.root.$router.push({
-                name: ctx.root.$route.name,
-                params: { id: before },
+                name: route.value,
+                params: { id: parseInt(id.value) - 1 },
               })
-              if (before === 1) {
-                ctx.root.$store.commit('falseArrowLeft')
-              }
-              if (before === 5) {
-                ctx.root.$store.commit('trueArrowRight')
-              }
             }
           }
           // down
-          if (e.keyCode === 40) {
-            if (ctx.root.$route.name !== 'Numbers') {
-              switch (ctx.root.$route.name) {
-                case 'History':
-                  ctx.root.$router.push({
-                    name: 'Dialogues',
-                  })
-                  break
-                case 'Dialogues':
-                  ctx.root.$router.push({
-                    name: 'Words',
-                  })
-                  break
-                case 'Words':
-                  ctx.root.$router.push({
-                    name: 'Numbers',
-                  })
-                  break
-              }
-            }
-
-            let movieNumber = ctx.root.$store.state.activeMovie + 1
-
-            if (movieNumber === 1) {
-              ctx.root.$store.commit('falseArrowLeft')
-            } else {
-              ctx.root.$store.commit('trueArrowLeft')
-            }
-            if (movieNumber === 6) {
-              ctx.root.$store.commit('falseArrowRight')
-            } else {
-              ctx.root.$store.commit('trueArrowRight')
+          if (key === 40) {
+            if (route.value !== 'Numbers') {
+              ctx.root.$router.push({
+                name: routes[index.value + 1].name,
+              })
             }
           }
           // up
-          if (e.keyCode === 38) {
-            switch (ctx.root.$route.name) {
-              case 'History':
-                ctx.root.$router.push({
-                  name: 'Choice',
-                })
-                break
-              case 'Dialogues':
-                ctx.root.$router.push({
-                  name: 'History',
-                })
-                break
-              case 'Words':
-                ctx.root.$router.push({
-                  name: 'Dialogues',
-                })
-                break
-              case 'Numbers':
-                ctx.root.$router.push({
-                  name: 'Words',
-                })
-                break
-            }
-          }
-        }
-
-        if (
-          ctx.root.$route.name === 'Choice' &&
-          ctx.root.$store.state.activeMovie !== null
-        ) {
-          let movies = document.querySelectorAll('.choice__movie')
-
-          // right
-          if (e.keyCode === 39) {
-            let movieNumber = ctx.root.$store.state.activeMovie + 1
-            if (ctx.root.$store.state.activeMovie !== 5) {
-              ctx.root.$store.commit('setActiveMovie', movieNumber)
-              movies.forEach(movie => {
-                movie.classList.remove('choice__movie--actif')
-              })
-              document
-                .querySelector(`.choice__movie--${movieNumber}`)
-                .classList.add('choice__movie--actif')
-            }
-          }
-          // left
-          if (e.keyCode === 37) {
-            let movieNumber = ctx.root.$store.state.activeMovie - 1
-            if (ctx.root.$store.state.activeMovie >= 0) {
-              ctx.root.$store.commit('setActiveMovie', movieNumber)
-              movies.forEach(movie => {
-                movie.classList.remove('choice__movie--actif')
-              })
-              document
-                .querySelector(`.choice__movie--${movieNumber}`)
-                .classList.add('choice__movie--actif')
-            }
-          }
-
-          // if (e.keyCode === 38) {
-          //   let movieNumber = ctx.root.$store.state.activeMovie
-          //   movies.forEach(movie => {
-          //     movie.classList.remove('choice__movie--actif')
-          //   })
-          //   document
-          //     .querySelector(`.choice__movie--${movieNumber}`)
-          //     .classList.add('choice__movie--actif')
-          // }
-
-          // down
-          if (e.keyCode === 40) {
-            let movieNumber = ctx.root.$store.state.activeMovie + 1
+          if (key === 38) {
             ctx.root.$router.push({
-              name: 'History',
-              params: {
-                id: movieNumber,
-              },
+              name: routes[index.value - 1].name,
             })
-
-            if (movieNumber === 1) {
-              ctx.root.$store.commit('falseArrowLeft')
-            } else {
-              ctx.root.$store.commit('trueArrowLeft')
-            }
-            if (movieNumber === 6) {
-              ctx.root.$store.commit('falseArrowRight')
-            } else {
-              ctx.root.$store.commit('trueArrowRight')
-            }
           }
         }
 
@@ -268,30 +170,30 @@ export default defineComponent({
           keyUp.value = true
         }
       })
-
-      if (ctx.root.$store.state.activeMovie === 0) {
-        ctx.root.$store.commit('falseArrowLeft')
-        ctx.root.$store.commit('trueArrowRight')
-      }
     })
 
-    const onResize = () => {
-      screen.value = checkSize()
-    }
+    watch(
+      () => ctx.root.$store.state.checks.music,
+      (value, prevValue) => {
+        if (value) {
+          sound.play(myMusic)
+          sound.fade(0, 0.5, 500, myMusic)
+        }
 
-    const checkSize = () => {
-      if (window.innerWidth > 1024) {
-        return false
-      } else {
-        return true
+        if (!value && prevValue) {
+          sound.fade(0.5, 0, 500, myMusic)
+          sound.on('fade', function() {
+            if (this.volume === 0) sound.pause(myMusic)
+          })
+        }
       }
-    }
+    )
 
     return {
-      keyUp,
       screen,
       navRender,
-      keyTransitionHorizontal,
+      id,
+      creditsBool,
     }
   },
   beforeRoute(to, from, next) {
@@ -343,6 +245,11 @@ body {
   overflow: hidden;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.3s ease;
@@ -353,10 +260,22 @@ body {
   opacity: 0;
 }
 
+.fade-history-enter-active,
+.fade-history-leave-active {
+  transition: all 0.15s ease;
+}
+
+.fade-history-enter,
+.fade-history-leave-active {
+  opacity: 0;
+}
+
 .mobile {
   color: white;
   font-family: star_jediregular;
   letter-spacing: 0.1em;
+  padding: 40px;
+  text-align: center;
 }
 
 .router {

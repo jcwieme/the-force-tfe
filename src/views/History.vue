@@ -1,13 +1,29 @@
 <template>
-  <div class="history">
-    <h3>{{ number }}</h3>
-    <h4>{{ title }}</h4>
-    <div
-      class="history__text"
-      v-for="(p, index) in text"
-      :key="index"
-      v-html="p"
-    ></div>
+  <div class="section history" id="crawl-container">
+    <div class="history__crawl" id="crawl" v-show="!animationRotate">
+      <div class="history__content" id="crawl-content">
+        <h3>{{ number }}</h3>
+        <h4>{{ title }}</h4>
+        <div
+          class="history__crawl--text"
+          v-for="(p, index) in text.animation"
+          :key="index"
+          v-html="p"
+        ></div>
+      </div>
+    </div>
+    <transition name="fade-history">
+      <div class="history__base" v-show="animationRotate">
+        <h3>{{ number }}</h3>
+        <h4>{{ title }}</h4>
+        <div
+          class="history__text"
+          v-for="(p, index) in text.intro"
+          :key="index"
+          v-html="p"
+        ></div>
+      </div>
+    </transition>
     <comp-history v-show="open" :number="article" :word="word" />
   </div>
 </template>
@@ -31,35 +47,17 @@ export default defineComponent({
     compHistory,
   },
   setup(props, ctx) {
+    // Variables
     const article = ref('one')
     const word = ref('Republic')
     let open = ref(false)
-
-    onMounted(() => {
-      let words = document.querySelectorAll('.history__word')
-      words.forEach(word => {
-        word.addEventListener('mouseover', openWord)
-        word.addEventListener('mouseout', closeWord)
-      })
+    const animationRotate = computed(() => {
+      return ctx.root.$store.state.checks.animation
     })
 
-    onUpdated(() => {
-      let words = document.querySelectorAll('.history__word')
-      words.forEach(word => {
-        word.addEventListener('mouseover', openWord)
-        word.addEventListener('mouseout', closeWord)
-      })
-    })
-
-    onBeforeUpdate(() => {
-      let words = document.querySelectorAll('.history__word')
-      words.forEach(word => {
-        word.removeEventListener('click', openWord)
-      })
-    })
+    // Data for the view
     let text = computed(() => {
       return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].text
-        .intro
     })
     let number = computed(() => {
       return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].number
@@ -69,13 +67,73 @@ export default defineComponent({
         ctx.root.$route.params.id - 1
       ].title.toUpperCase()
     })
-    const openWord = e => {
-      article.value = e.currentTarget.dataset.word
-      word.value = e.currentTarget.innerText
-      open.value = !open.value
-    }
 
-    const closeWord = () => {
+    onMounted(() => {
+      let words = document.querySelectorAll('.history__word')
+      words.forEach(word => {
+        word.addEventListener('mouseover', functionWord)
+        word.addEventListener('mouseout', functionWord)
+      })
+
+      if (!animationRotate.value) {
+        const crawl = document.getElementById('crawl')
+        const crawlContent = document.getElementById('crawl-content')
+        const crawlContentStyle = crawlContent.style
+
+        let crawlPos = crawl.clientHeight
+
+        const moveCrawl = distance => {
+          crawlPos -= distance
+          crawlContentStyle.top = crawlPos + 'px'
+
+          if (crawlPos < -crawlContent.clientHeight) {
+            ctx.root.$store.commit('toggleCheck', 'animation')
+          } else {
+            requestAnimationFrame(tick)
+          }
+        }
+        let prevTime
+        const init = time => {
+          prevTime = time
+          requestAnimationFrame(tick)
+        }
+
+        let i = 1
+        const tick = time => {
+          let elapsed = time - prevTime
+          prevTime = time
+
+          i += 0.001
+
+          // time-scale of crawl, increase factor to go faster
+          moveCrawl(elapsed * (0.1 * i))
+        }
+
+        requestAnimationFrame(init)
+      }
+    })
+
+    onUpdated(() => {
+      let words = document.querySelectorAll('.history__word')
+      words.forEach(word => {
+        word.addEventListener('mouseover', functionWord)
+        word.addEventListener('mouseout', functionWord)
+      })
+    })
+
+    onBeforeUpdate(() => {
+      let words = document.querySelectorAll('.history__word')
+      words.forEach(word => {
+        word.removeEventListener('mouseover', functionWord)
+      })
+    })
+
+    // Function hover
+    const functionWord = e => {
+      if (!open.value) {
+        article.value = e.currentTarget.dataset.word
+        word.value = e.currentTarget.innerText
+      }
       open.value = !open.value
     }
 
@@ -90,6 +148,7 @@ export default defineComponent({
       article,
       word,
       open,
+      animationRotate,
     }
   },
 })
@@ -97,17 +156,59 @@ export default defineComponent({
 
 <style lang="scss">
 .history {
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
   font-family: roboto, sans-serif;
-
+  height: 100%;
+  width: 100%;
   color: #ffe403;
+  text-align: justify;
+  perspective: calc(100vh * 0.4);
+
+  &__crawl {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    bottom: 15%;
+    height: 100%;
+    overflow: hidden;
+
+    transform-origin: 50% 100%;
+    transform: rotate3d(1, 0, 0, 45deg);
+    mask-image: linear-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.66),
+      rgba(0, 0, 0, 1)
+    );
+
+    cursor: default;
+    &--text {
+      width: 50vw;
+      font-size: calc(100vw * 0.024);
+      margin-bottom: 50px;
+    }
+
+    h3 {
+      font-size: calc(100vw * 0.04);
+      text-align: center;
+    }
+
+    h4 {
+      margin-bottom: 30px;
+      font-size: calc(100vw * 0.05);
+      line-height: 1;
+      margin-top: 30px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
   &__message {
     font-size: calc(100vw * 0.014);
@@ -116,13 +217,23 @@ export default defineComponent({
     text-align: center;
   }
 
-  h3 {
-    font-size: calc(100vw * 0.014);
-  }
+  &__base {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 
-  h4 {
-    margin-bottom: 30px;
-    font-size: calc(100vw * 0.02);
+    h3 {
+      font-size: calc(100vw * 0.014);
+      text-align: center;
+    }
+
+    h4 {
+      margin-bottom: 30px;
+      font-size: calc(100vw * 0.02);
+      text-align: center;
+    }
   }
 
   &__text {
