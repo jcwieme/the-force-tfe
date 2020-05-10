@@ -9,6 +9,7 @@ import movie5 from '@/assets/sw05.json'
 import movie6 from '@/assets/sw06.json'
 import numbers from '@/assets/numbers.json'
 import loader from '@/assets/loader.json'
+import credits from '@/assets/credits.json'
 import definitions from '@/assets/definitions.json'
 
 Vue.use(Vuex)
@@ -21,6 +22,7 @@ export default new Vuex.Store({
     wordsInMovie: [9380, 7566, 8078, 10336, 7707, 6604],
     linesInMovie: [946, 620, 783, 1038, 947, 719],
     numbers,
+    credits,
     loader,
     checks: {
       loaded: false,
