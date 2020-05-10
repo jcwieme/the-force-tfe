@@ -50,7 +50,9 @@ export default defineComponent({
   },
   setup(props, ctx) {
     const keyUp = ref(true)
-    const screen = ref(false)
+    const screen = computed(() => {
+      return ctx.root.$store.state.checks.screen
+    })
     const creditsBool = computed(() => {
       return ctx.root.$store.state.checks.credit
     })
@@ -96,11 +98,11 @@ export default defineComponent({
       })
 
       // Check is mobile version
-      screen.value = isMobile(window)
+      ctx.root.$store.commit('checkScreen', isMobile(window))
 
       // Check is Mobile version on resize
       window.addEventListener('resize', () => {
-        screen.value = isMobile(window)
+        ctx.root.$store.commit('checkScreen', isMobile(window))
       })
 
       // Navigation arrows

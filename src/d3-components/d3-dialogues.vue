@@ -900,7 +900,8 @@ export default defineComponent({
         setup.circle.radius = setup.width / 6
         setup.circle.distanceFromPoint = setup.width / 48
 
-        document.getElementById('svg_container').innerHTML = ''
+        if (document.getElementById('svg_container'))
+          document.getElementById('svg_container').innerHTML = ''
 
         setup.variables.initial
           .attr('width', setup.width + setup.margin.left + setup.margin.right)

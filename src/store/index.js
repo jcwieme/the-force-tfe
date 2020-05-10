@@ -30,6 +30,7 @@ export default new Vuex.Store({
       nav: false,
       credit: false,
       animation: false,
+      screen: false,
     },
     arrows: {
       right: true,
@@ -78,6 +79,9 @@ export default new Vuex.Store({
     },
     toggleCheck(state, name) {
       state.checks[name] = !state.checks[name]
+    },
+    checkScreen(state, option) {
+      state.checks.screen = option
     },
   },
   actions: {},
