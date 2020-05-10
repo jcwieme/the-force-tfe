@@ -40,6 +40,7 @@ import {
 import Navigation from '@/components/comp-navigation'
 import compCredits from '@/components/comp-credits'
 import { Howl } from 'howler'
+import { checkSize, preloadImages } from '@/tools/utils'
 
 export default defineComponent({
   name: 'Application',
@@ -51,7 +52,7 @@ export default defineComponent({
     const keyUp = ref(true)
     const screen = ref(false)
     const creditsBool = computed(() => {
-      return ctx.root.$store.state.isCreditsOpen
+      return ctx.root.$store.state.checks.credit
     })
     const navRender = computed(() => {
       if (
@@ -68,14 +69,9 @@ export default defineComponent({
       return ctx.root.$route.params.id
     })
 
-    if (ctx.root.$store.state.activeMovie === 5) {
-      ctx.root.$store.commit('falseArrowRight')
-      ctx.root.$store.commit('trueArrowLeft')
-    }
-
     var sound = new Howl({
-      src: ['../../assets/music/main.mp3'],
-      // src: ['main.mp3'],
+      // src: ['../../assets/music/main.mp3'],
+      src: ['main.mp3'],
       loop: true,
       volume: 0.5,
       onload: function() {
@@ -86,35 +82,16 @@ export default defineComponent({
     var myMusic = sound.play()
 
     onMounted(() => {
-      const preloads = ctx.root.$store.state.loader
-
-      function preloadImages(urls, allImagesLoadedCallback) {
-        var loadedCounter = 0
-        var toBeLoadedNumber = urls.length
-        urls.forEach(function(url) {
-          preloadImage(url, function() {
-            loadedCounter++
-            // console.log('Number of loaded images: ' + loadedCounter)
-            if (loadedCounter == toBeLoadedNumber) {
-              allImagesLoadedCallback()
-            }
-          })
-        })
-        function preloadImage(url, anImageLoadedCallback) {
-          var img = new Image()
-          img.onload = anImageLoadedCallback
-          img.src = url.link
-        }
-      }
-
-      // Let's call it:
-      preloadImages(preloads, () => {
-        ctx.root.$store.commit('loaded')
+      // Let's preload images
+      preloadImages(ctx.root.$store.state.loader, () => {
+        ctx.root.$store.commit('toggleCheck', 'loaded')
       })
 
-      screen.value = checkSize()
+      screen.value = checkSize(window)
 
-      window.addEventListener('resize', onResize)
+      window.addEventListener('resize', () => {
+        screen.value = checkSize(window)
+      })
 
       // Navigation arrows
       document.addEventListener('keydown', e => {
@@ -127,7 +104,7 @@ export default defineComponent({
         if (
           (ctx.root.$route.name !== 'Choice' ||
             ctx.root.$route.name !== 'Loader') &&
-          !ctx.root.$store.state.isNavOpen
+          !ctx.root.$store.state.checks.nav
         ) {
           // right
           if (e.keyCode === 39) {
@@ -138,12 +115,6 @@ export default defineComponent({
                 name: ctx.root.$route.name,
                 params: { id: next },
               })
-              if (next === 6) {
-                ctx.root.$store.commit('falseArrowRight')
-              }
-              if (next === 2) {
-                ctx.root.$store.commit('trueArrowLeft')
-              }
             }
           }
           // left
@@ -154,12 +125,6 @@ export default defineComponent({
                 name: ctx.root.$route.name,
                 params: { id: before },
               })
-              if (before === 1) {
-                ctx.root.$store.commit('falseArrowLeft')
-              }
-              if (before === 5) {
-                ctx.root.$store.commit('trueArrowRight')
-              }
             }
           }
           // down
@@ -182,19 +147,6 @@ export default defineComponent({
                   })
                   break
               }
-            }
-
-            let movieNumber = ctx.root.$store.state.activeMovie + 1
-
-            if (movieNumber === 1) {
-              ctx.root.$store.commit('falseArrowLeft')
-            } else {
-              ctx.root.$store.commit('trueArrowLeft')
-            }
-            if (movieNumber === 6) {
-              ctx.root.$store.commit('falseArrowRight')
-            } else {
-              ctx.root.$store.commit('trueArrowRight')
             }
           }
           // up
@@ -224,62 +176,6 @@ export default defineComponent({
           }
         }
 
-        // if (
-        //   ctx.root.$route.name === 'Choice' &&
-        //   ctx.root.$store.state.activeMovie !== null
-        // ) {
-        //   let movies = document.querySelectorAll('.choice__movie')
-
-        //   // right
-        //   if (e.keyCode === 39) {
-        //     let movieNumber = ctx.root.$store.state.activeMovie + 1
-        //     if (ctx.root.$store.state.activeMovie !== 5) {
-        //       ctx.root.$store.commit('setActiveMovie', movieNumber)
-        //       movies.forEach(movie => {
-        //         movie.classList.remove('choice__movie--actif')
-        //       })
-        //       document
-        //         .querySelector(`.choice__movie--${movieNumber}`)
-        //         .classList.add('choice__movie--actif')
-        //     }
-        //   }
-        //   // left
-        //   if (e.keyCode === 37) {
-        //     let movieNumber = ctx.root.$store.state.activeMovie - 1
-        //     if (ctx.root.$store.state.activeMovie >= 0) {
-        //       ctx.root.$store.commit('setActiveMovie', movieNumber)
-        //       movies.forEach(movie => {
-        //         movie.classList.remove('choice__movie--actif')
-        //       })
-        //       document
-        //         .querySelector(`.choice__movie--${movieNumber}`)
-        //         .classList.add('choice__movie--actif')
-        //     }
-        //   }
-
-        //   // down
-        //   if (e.keyCode === 40) {
-        //     let movieNumber = ctx.root.$store.state.activeMovie + 1
-        //     ctx.root.$router.push({
-        //       name: 'History',
-        //       params: {
-        //         id: movieNumber,
-        //       },
-        //     })
-
-        //     if (movieNumber === 1) {
-        //       ctx.root.$store.commit('falseArrowLeft')
-        //     } else {
-        //       ctx.root.$store.commit('trueArrowLeft')
-        //     }
-        //     if (movieNumber === 6) {
-        //       ctx.root.$store.commit('falseArrowRight')
-        //     } else {
-        //       ctx.root.$store.commit('trueArrowRight')
-        //     }
-        //   }
-        // }
-
         keyUp.value = false
       })
 
@@ -293,27 +189,18 @@ export default defineComponent({
           keyUp.value = true
         }
       })
-
-      if (ctx.root.$store.state.activeMovie === 0) {
-        ctx.root.$store.commit('falseArrowLeft')
-        ctx.root.$store.commit('trueArrowRight')
-      }
     })
 
-    const onResize = () => {
-      screen.value = checkSize()
-    }
-
-    const checkSize = () => {
-      if (window.innerWidth > 1024) {
-        return false
-      } else {
-        return true
-      }
-    }
+    // const checkSize = () => {
+    //   if (window.innerWidth > 1024) {
+    //     return false
+    //   } else {
+    //     return true
+    //   }
+    // }
 
     watch(
-      () => ctx.root.$store.state.isMusicPlaying,
+      () => ctx.root.$store.state.checks.music,
       (value, prevValue) => {
         if (value) {
           sound.play(myMusic)

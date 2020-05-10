@@ -51,7 +51,7 @@ export default defineComponent({
     const word = ref('Republic')
     let open = ref(false)
     const animationRotate = computed(() => {
-      return ctx.root.$store.state.animationRotate
+      return ctx.root.$store.state.checks.animation
     })
 
     onMounted(() => {
@@ -73,7 +73,7 @@ export default defineComponent({
           crawlContentStyle.top = crawlPos + 'px'
 
           if (crawlPos < -crawlContent.clientHeight) {
-            ctx.root.$store.commit('toggleAnimation')
+            ctx.root.$store.commit('toggleCheck', 'animation')
           } else {
             requestAnimationFrame(tick)
           }
@@ -186,6 +186,8 @@ export default defineComponent({
       rgba(0, 0, 0, 0.66),
       rgba(0, 0, 0, 1)
     );
+
+    cursor: default;
     &--text {
       width: 50vw;
       font-size: calc(100vw * 0.024);

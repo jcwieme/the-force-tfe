@@ -2,6 +2,34 @@ export function add(a, b) {
   return a + b
 }
 
+export function checkSize(x) {
+  if (x.innerWidth > 1024) {
+    return false
+  } else {
+    return true
+  }
+}
+
+// Preloads Images
+export function preloadImages(urls, allImagesLoadedCallback) {
+  var loadedCounter = 0
+  var toBeLoadedNumber = urls.length
+  urls.forEach(function(url) {
+    preloadImage(url, function() {
+      loadedCounter++
+      // console.log('Number of loaded images: ' + loadedCounter)
+      if (loadedCounter == toBeLoadedNumber) {
+        allImagesLoadedCallback()
+      }
+    })
+  })
+  function preloadImage(url, anImageLoadedCallback) {
+    var img = new Image()
+    img.onload = anImageLoadedCallback
+    img.src = url.link
+  }
+}
+
 export function sortWords(data, numberMovie) {
   let allWords = []
 

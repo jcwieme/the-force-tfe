@@ -47,7 +47,7 @@ export default defineComponent({
       //Filter for the outside glow
       var filter = gDefs
         .append('filter')
-        .attr('id', 'glow')
+        .attr('id', 'glowBar')
         .attr('filterUnits', 'userSpaceOnUse')
       filter
         .append('feGaussianBlur')
@@ -97,7 +97,7 @@ export default defineComponent({
           }
         })
         .attr('stroke-width', '2')
-        .style('filter', 'url(#glow)')
+        .style('filter', 'url(#glowBar)')
 
       var marginRight = 30
       // add the y Axis

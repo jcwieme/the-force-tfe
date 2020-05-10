@@ -43,7 +43,7 @@
       />
     </div>
     <div class="nav__chapter">
-      <h3 :data-number="chapter">
+      <h3 :data-number="chapter" :data-text="chapterText">
         {{ this.$route.name }}
       </h3>
     </div>
@@ -101,13 +101,26 @@ export default defineComponent({
     const downActif = ref('../../assets/img/nav/down--actif.svg')
     const downInactif = ref('../../assets/img/nav/down--inactif.svg')
     let isNavOpen = computed(() => {
-      return ctx.root.$store.state.isNavOpen
+      return ctx.root.$store.state.checks.nav
     })
 
     const navRef = ref(null)
 
     const musicPlay = computed(() => {
-      return ctx.root.$store.state.isMusicPlaying
+      return ctx.root.$store.state.checks.music
+    })
+
+    const chapterText = computed(() => {
+      switch (ctx.root.$route.name) {
+        case 'History':
+          return 'Iconic text of the Star Wars sagas, it will give you a preview of the film. Do not hesitate to hover highlighted words!'
+        case 'Dialogues':
+          return 'Explore the interactions in the film, the character who speaks most and with whom. Do not hesitate to hover the arcs for with the precise number of lines!'
+        case 'Words':
+          return 'Discover the most emblematic words of the film and who said them. Write a word to find out how popular it is.'
+        case 'Numbers':
+          return 'Nothing better than a few graphics to get a general view of the film.'
+      }
     })
 
     const routes = computed(() => {
@@ -149,21 +162,17 @@ export default defineComponent({
         .title
     })
     const left = computed(() => {
-      return ctx.root.$store.state.arrowLeft
+      return ctx.root.$store.state.arrows.left
     })
     const right = computed(() => {
-      return ctx.root.$store.state.arrowRight
+      return ctx.root.$store.state.arrows.right
     })
     const down = computed(() => {
-      if (ctx.root.$route.name === 'Numbers') {
-        return false
-      } else {
-        return true
-      }
+      return ctx.root.$store.state.arrows.down
     })
 
     const toggleMusic = () => {
-      ctx.root.$store.commit('toggleMusic')
+      ctx.root.$store.commit('toggleCheck', 'music')
     }
 
     const chapter = computed(() => {
@@ -178,19 +187,20 @@ export default defineComponent({
       }
     })
     const toggleNav = () => {
-      ctx.root.$store.commit('toggleNav')
+      ctx.root.$store.commit('toggleCheck', 'nav')
     }
 
     const clickFunction = e => {
-      if (!navRef.value.contains(e.target)) ctx.root.$store.commit('toggleNav')
+      if (!navRef.value.contains(e.target))
+        ctx.root.$store.commit('toggleCheck', 'nav')
     }
 
     const toggleCredits = () => {
-      ctx.root.$store.commit('toggleCredits')
+      ctx.root.$store.commit('toggleCheck', 'credit')
     }
 
     watch(
-      () => ctx.root.$store.state.isNavOpen,
+      () => ctx.root.$store.state.checks.nav,
       (value, prevValue) => {
         if (value) {
           document
@@ -228,6 +238,7 @@ export default defineComponent({
       navRef,
       musicPlay,
       toggleMusic,
+      chapterText,
     }
   },
 })
@@ -345,6 +356,8 @@ export default defineComponent({
     z-index: 10;
     cursor: pointer;
 
+    font-size: 20px;
+
     h3 {
       position: relative;
       transform-origin: left center;
@@ -356,6 +369,34 @@ export default defineComponent({
         left: 0;
         position: absolute;
         color: #ffe403;
+      }
+
+      &::after {
+        content: attr(data-text);
+        color: white;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 0px;
+        width: 250px;
+        font-family: 'roboto';
+        transform-origin: left center;
+        transform: rotate(90deg) translateX(20px);
+        border: 1px solid #ffe403;
+        background-color: #18181c;
+        padding: 20px;
+        font-size: 14px;
+        pointer-events: none;
+        opacity: 0;
+        transition: all 300ms ease;
+      }
+
+      &:hover {
+        &::after {
+          opacity: 1;
+          transform: rotate(90deg) translateX(0px);
+          transition: all 300ms ease;
+        }
       }
     }
   }

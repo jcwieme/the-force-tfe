@@ -18,55 +18,33 @@ export default new Vuex.Store({
     movies: [movie1, movie2, movie3, movie4, movie5, movie6],
     definitions,
     activeMovie: null,
-    arrowRight: true,
-    arrowLeft: true,
     wordsInMovie: [9380, 7566, 8078, 10336, 7707, 6604],
     linesInMovie: [946, 620, 783, 1038, 947, 719],
     numbers,
     loader,
-    loaded: false,
-    isNavOpen: false,
-    isMusicPlaying: true,
     animationRotate: false,
-    isCreditsOpen: false,
-    isAboutOpen: false,
+    checks: {
+      loaded: false,
+      music: true,
+      nav: false,
+      credit: false,
+      animation: false,
+    },
+    arrows: {
+      right: true,
+      left: true,
+      down: true,
+    },
   },
   mutations: {
     setActiveMovie(state, number) {
       state.activeMovie = number
     },
-    falseArrowLeft(state) {
-      state.arrowLeft = false
+    arrows(state, options) {
+      state.arrows[options.direction] = options.state
     },
-    falseArrowRight(state) {
-      state.arrowRight = false
-    },
-    trueArrowLeft(state) {
-      state.arrowLeft = true
-    },
-    trueArrowRight(state) {
-      state.arrowRight = true
-    },
-    loaded(state) {
-      state.loaded = true
-    },
-    toggleNav(state) {
-      state.isNavOpen = !state.isNavOpen
-    },
-    toggleMusic(state) {
-      state.isMusicPlaying = !state.isMusicPlaying
-    },
-    initializeMusic(state) {
-      state.isMusicPlaying = true
-    },
-    toggleAnimation(state) {
-      state.animationRotate = !state.animationRotate
-    },
-    toggleAbout(state) {
-      state.isAboutOpen = !state.isAboutOpen
-    },
-    toggleCredits(state) {
-      state.isCreditsOpen = !state.isCreditsOpen
+    toggleCheck(state, name) {
+      state.checks[name] = !state.checks[name]
     },
   },
   actions: {},

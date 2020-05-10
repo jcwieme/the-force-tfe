@@ -177,7 +177,7 @@ export default defineComponent({
     const random = ref(Math.floor(Math.random() * 4) + 1)
     const showClass = ref('loader__enter--show')
     const loaded = computed(() => {
-      return ctx.root.$store.state.loaded
+      return ctx.root.$store.state.checks.loaded
     })
 
     const nextTip = ref(true)

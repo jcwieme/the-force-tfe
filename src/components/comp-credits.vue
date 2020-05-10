@@ -99,7 +99,7 @@ export default defineComponent({
   name: 'comp-credits',
   setup(props, ctx) {
     const toggleCredits = () => {
-      ctx.root.$store.commit('toggleCredits')
+      ctx.root.$store.commit('toggleCheck', 'credit')
     }
 
     return {
