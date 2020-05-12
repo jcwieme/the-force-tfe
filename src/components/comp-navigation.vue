@@ -235,11 +235,11 @@ export default defineComponent({
 
   &__sound {
     position: fixed;
-    top: 40px;
-    right: 40px;
+    top: 4rem;
+    right: 4rem;
 
-    width: 28px;
-    height: 20px;
+    width: 2.8rem;
+    height: 2rem;
 
     z-index: 11;
 
@@ -249,10 +249,10 @@ export default defineComponent({
   &__bar {
     background: white;
     opacity: 0.5;
-    bottom: 1px;
-    height: 15px;
+    bottom: 0.1rem;
+    height: 1.5rem;
     position: absolute;
-    width: 3px;
+    width: 0.3rem;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -260,54 +260,54 @@ export default defineComponent({
 
     &--actif {
       opacity: 1;
-      height: 3px;
+      height: 0.3rem;
       transition: all 500ms ease;
       animation: sound 0ms -800ms linear infinite alternate;
     }
 
     &:nth-child(1) {
-      left: 1px;
+      left: 0.1rem;
       animation-duration: 1274ms;
       animation-delay: 40ms;
     }
     &:nth-child(2) {
-      left: 5px;
+      left: 0.5rem;
       animation-duration: 1233ms;
       animation-delay: 25ms;
     }
     &:nth-child(3) {
-      left: 9px;
+      left: 0.9rem;
       animation-duration: 1207ms;
       animation-delay: 10ms;
     }
     &:nth-child(4) {
-      left: 13px;
+      left: 1.3rem;
       animation-duration: 1258ms;
       animation-delay: 32ms;
     }
     &:nth-child(5) {
-      left: 17px;
+      left: 1.7rem;
       animation-duration: 1200ms;
       animation-delay: 4ms;
     }
     &:nth-child(6) {
-      left: 21px;
+      left: 2.1rem;
       animation-duration: 1227ms;
       animation-delay: 0ms;
     }
   }
   &__arrows {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: 4rem;
+    right: 4rem;
     z-index: 10;
 
-    width: 80px;
-    height: 52.5px;
+    width: 8rem;
+    height: 5.25rem;
 
     img {
-      width: 25px;
-      height: 25px;
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
   &__left {
@@ -334,12 +334,12 @@ export default defineComponent({
   }
   &__chapter {
     position: fixed;
-    bottom: 40px;
-    left: 40px;
+    bottom: 4rem;
+    left: 4rem;
     z-index: 10;
     cursor: pointer;
 
-    font-size: 20px;
+    font-size: 2rem;
 
     h3 {
       position: relative;
@@ -361,14 +361,14 @@ export default defineComponent({
         position: absolute;
         left: 50%;
         top: 0px;
-        width: 250px;
+        width: 25rem;
         font-family: 'roboto';
         transform-origin: left center;
         transform: rotate(90deg) translateX(20px);
         border: 1px solid #ffe403;
         background-color: #18181c;
-        padding: 20px;
-        font-size: 14px;
+        padding: 2rem;
+        font-size: 1.4rem;
         pointer-events: none;
         opacity: 0;
         transition: all 300ms ease;
@@ -385,8 +385,8 @@ export default defineComponent({
   }
   &__title {
     position: fixed;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 
     z-index: 11;
 
@@ -399,9 +399,9 @@ export default defineComponent({
 
       .nav__btn {
         &--1 {
-          width: 45px;
+          width: 4.5rem;
           transform-origin: center center;
-          transform: translateY(17px) rotate(45deg);
+          transform: translateY(1.7rem) rotate(45deg);
 
           transition: all 500ms ease, opacity 0s;
         }
@@ -410,7 +410,7 @@ export default defineComponent({
         }
         &--3 {
           transform-origin: center center;
-          transform: translateY(-17px) rotate(-45deg);
+          transform: translateY(-1.7rem) rotate(-45deg);
 
           transition: all 500ms ease, opacity 0s;
         }
@@ -418,8 +418,8 @@ export default defineComponent({
     }
   }
   &__menu {
-    width: 45px;
-    height: 40px;
+    width: 4.5rem;
+    height: 4rem;
 
     align-self: center;
 
@@ -434,16 +434,16 @@ export default defineComponent({
     &:hover {
       .nav__btn {
         &--1 {
-          width: 45px;
+          width: 4.5rem;
         }
         &--2 {
-          width: 45px;
+          width: 4.5rem;
         }
       }
     }
   }
   &__btn {
-    height: 6px;
+    height: 0.6rem;
     background-color: white;
 
     overflow: hidden;
@@ -453,23 +453,23 @@ export default defineComponent({
     transition: all 500ms ease, opacity 0s;
 
     &--1 {
-      width: 25px;
+      width: 2.5rem;
     }
 
     &--2 {
-      width: 35px;
+      width: 3.5rem;
     }
     &--3 {
-      width: 45px;
+      width: 4.5rem;
     }
   }
   &__movie {
-    padding-left: 10px;
-    margin-left: 10px;
-    border-left: 6px solid white;
+    padding-left: 1rem;
+    margin-left: 1rem;
+    border-left: 0.6rem solid white;
     line-height: 1;
-    height: 45px;
-    font-size: 20px;
+    height: 4.5rem;
+    font-size: 2rem;
 
     display: flex;
     flex-direction: column;
@@ -485,10 +485,10 @@ export default defineComponent({
     position: fixed;
     top: 0;
     left: 0;
-    width: 445px;
-    height: calc(100vh - 6px);
+    width: 44.5rem;
+    height: calc(100vh - 0.6rem);
     background-color: #18181c;
-    border: 3px solid #ffe403;
+    border: 0.3rem solid #ffe403;
     z-index: 19;
 
     display: flex;
@@ -499,16 +499,16 @@ export default defineComponent({
 
   &__list {
     list-style: none;
-    padding-left: 95px;
+    padding-left: 9.5rem;
 
-    font-size: 35px;
+    font-size: 3.5rem;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
     li {
-      margin-bottom: 70px;
+      margin-bottom: 7rem;
       position: relative;
 
       cursor: pointer;
@@ -523,9 +523,9 @@ export default defineComponent({
         content: attr(data-number);
         position: absolute;
         top: -80%;
-        left: -35px;
+        left: -3.5rem;
 
-        font-size: 60px;
+        font-size: 6rem;
 
         color: #ffe403;
         opacity: 0.5;
@@ -543,7 +543,7 @@ export default defineComponent({
   }
   &__extra {
     position: absolute;
-    bottom: 40px;
+    bottom: 4rem;
     left: 50%;
     transform: translateX(-50%);
     padding: 0;
@@ -559,8 +559,8 @@ export default defineComponent({
       transition: all 500ms ease;
 
       &:last-child {
-        margin-left: 7px;
-        padding-left: 10px;
+        margin-left: 0.7rem;
+        padding-left: 1rem;
 
         position: relative;
 
@@ -569,7 +569,7 @@ export default defineComponent({
           position: absolute;
           top: 0;
           left: 0;
-          width: 3px;
+          width: 0.3rem;
           height: 100%;
           background-color: white;
         }
@@ -584,10 +584,10 @@ export default defineComponent({
 
 @keyframes sound {
   0% {
-    height: 3px;
+    height: 0.3rem;
   }
   100% {
-    height: 15px;
+    height: 1.5rem;
   }
 }
 </style>

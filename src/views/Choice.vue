@@ -120,8 +120,8 @@ export default defineComponent({
   }
 
   &__number {
-    font-size: 140px;
-    letter-spacing: 10px;
+    font-size: 14rem;
+    letter-spacing: 1rem;
     color: #18181c;
     text-shadow: -1px 1px 0 #ffe403, 1px 1px 0 #ffe403, 1px -1px 0 #ffe403,
       -1px -1px 0 #ffe403;
@@ -142,7 +142,7 @@ export default defineComponent({
   }
 
   &__franchise {
-    font-size: 90px;
+    font-size: 9rem;
     color: #18181c;
     text-shadow: -1px 1px 0 #ffe403, 1px 1px 0 #ffe403, 1px -1px 0 #ffe403,
       -1px -1px 0 #ffe403;
@@ -151,7 +151,7 @@ export default defineComponent({
     overflow-y: hidden;
 
     &--star {
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
 
       span {
         display: block;
@@ -161,7 +161,7 @@ export default defineComponent({
     }
 
     &--wars {
-      margin-top: -5px;
+      margin-top: -0.5rem;
 
       span {
         display: block;
@@ -172,7 +172,7 @@ export default defineComponent({
   }
   &__title {
     text-align: center;
-    font-size: 18px;
+    font-size: 1.8rem;
     color: white;
     opacity: 0;
   }

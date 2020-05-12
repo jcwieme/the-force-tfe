@@ -161,7 +161,7 @@ export default defineComponent({
   width: 100%;
   color: #ffe403;
   text-align: justify;
-  perspective: calc(100vh * 0.4);
+  perspective: 38rem;
 
   &__crawl {
     position: absolute;
@@ -180,23 +180,24 @@ export default defineComponent({
     );
 
     cursor: default;
+
     &--text {
       width: 50vw;
-      font-size: calc(100vw * 0.024);
-      margin-bottom: 50px;
+      font-size: 3.5rem;
+      margin-bottom: 5rem;
     }
 
     h3 {
-      font-size: calc(100vw * 0.04);
+      font-size: 5.8rem;
       text-align: center;
     }
 
     h4 {
-      margin-bottom: 30px;
-      font-size: calc(100vw * 0.05);
+      margin-bottom: 3rem; // 30px
+      font-size: 7rem;
       line-height: 1;
-      margin-top: 30px;
-      margin-bottom: 50px;
+      margin-top: 3rem;
+      margin-bottom: 5rem;
       text-align: center;
     }
   }
@@ -210,13 +211,6 @@ export default defineComponent({
     transform: translateX(-50%);
   }
 
-  &__message {
-    font-size: calc(100vw * 0.014);
-    margin-bottom: 30px;
-    color: white;
-    text-align: center;
-  }
-
   &__base {
     display: flex;
     flex-direction: column;
@@ -225,21 +219,21 @@ export default defineComponent({
     height: 100%;
 
     h3 {
-      font-size: calc(100vw * 0.014);
+      font-size: 2rem;
       text-align: center;
     }
 
     h4 {
-      margin-bottom: 30px;
-      font-size: calc(100vw * 0.02);
+      margin-bottom: 3rem;
+      font-size: 3rem;
       text-align: center;
     }
   }
 
   &__text {
-    width: 30vw;
-    font-size: calc(100vw * 0.014);
-    margin-bottom: 30px;
+    width: 43rem;
+    font-size: 2rem;
+    margin-bottom: 3rem;
   }
 
   &__word {
@@ -270,13 +264,13 @@ export default defineComponent({
   &__popup {
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 2rem;
     transform: translateY(-50%);
     height: auto;
-    width: calc(30vw - 86px);
+    width: calc(40rem - 86px);
     background-color: #18181c;
     border: 3px solid #ffe403;
-    padding: 40px;
+    padding: 4rem;
 
     pointer-events: none;
 
@@ -284,14 +278,14 @@ export default defineComponent({
 
     h4 {
       color: #ffe403;
-      font-size: calc(100vw * 0.015);
-      margin-bottom: 20px;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
     }
 
     img {
-      width: calc(30vw - 86px);
+      width: calc(40rem - 86px);
       height: auto;
-      margin-bottom: 20px;
+      margin-bottom: 2rem;
     }
   }
 }
