@@ -177,14 +177,16 @@ export default defineComponent({
       (value, prevValue) => {
         if (value) {
           sound.play(myMusic)
-          sound.fade(0, 0.5, 500, myMusic)
+          // sound.fade(0, 0.5, 500, myMusic)
         }
 
         if (!value && prevValue) {
-          sound.fade(0.5, 0, 500, myMusic)
-          sound.on('fade', function() {
-            if (this.volume === 0) sound.pause(myMusic)
-          })
+          sound.pause(myMusic)
+          // sound.fade(0.5, 0, 500, myMusic)
+          // console.log(sound.fade(0.5, 0, 500, myMusic))
+          // sound.on('fade', function() {
+          //   if (this.volume === 0) sound.pause(myMusic)
+          // })
         }
       }
     )
@@ -208,8 +210,12 @@ export default defineComponent({
 }
 
 :root {
-  font-size: 62.5%; // 10px
-  // font-size: calc(100vw * 0.006);
+  // font-size: 62.5%; // 10px
+  font-size: calc(100vw * 0.006);
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 @font-face {
@@ -280,7 +286,13 @@ a {
   font-family: star_jediregular;
   letter-spacing: 0.1em;
   padding: 4rem;
+  width: calc(100vw - 8rem);
+  height: calc(100vh - 8rem);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 // Router position

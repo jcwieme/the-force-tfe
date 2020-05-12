@@ -20,18 +20,29 @@ export default defineComponent({
       type: Object,
     },
   },
-  setup(props) {
+  setup(props, ctx) {
     onMounted(() => {
+      window.addEventListener('resize', onResize)
+      draw()
+    })
+    const onResize = () => {
+      if (window.innerWidth > 1024 && ctx.root.$route.name === 'Numbers') {
+        if (document.querySelector(`#${props.dataBar.id}`))
+          document.querySelector(`#${props.dataBar.id}`).innerHTML = ''
+        draw()
+      }
+    }
+    const draw = () => {
       // set the dimensions and margins of the graph
       // var margin = 20
 
       // set the ranges
       var y = d3
         .scaleBand()
-        .range([0, props.dataBar.size.height])
+        .range([0, window.innerHeight * 0.25])
         .padding(0.5)
 
-      var x = d3.scaleLinear().range([0, props.dataBar.size.width])
+      var x = d3.scaleLinear().range([0, window.innerWidth * 0.7 * 0.4])
 
       // append the svg object to the body of the page
       // append a 'group' element to 'svg'
@@ -39,8 +50,8 @@ export default defineComponent({
       var svg = d3
         .select(`#${props.dataBar.id}`)
         .append('svg')
-        .attr('width', props.dataBar.size.width)
-        .attr('height', props.dataBar.size.height)
+        .attr('width', window.innerWidth * 0.7 * 0.4)
+        .attr('height', window.innerHeight * 0.25)
         .append('g')
 
       var gDefs = svg.append('g').attr('id', 'gDefs')
@@ -99,7 +110,7 @@ export default defineComponent({
         .attr('stroke-width', '2')
         .style('filter', 'url(#glowBar)')
 
-      var marginRight = 30
+      var marginRight = window.innerWidth * 0.018
       // add the y Axis
       svg
         .append('g')
@@ -107,7 +118,7 @@ export default defineComponent({
         .selectAll('text')
         .style('fill', '#ffe403')
         .style('text-anchor', 'start')
-        .style('font-size', 11)
+        .style('font-size', window.innerWidth * 0.00655)
         .attr('transform', 'translate(' + marginRight + ',' + 0 + ')')
 
       // Remove line
@@ -118,14 +129,14 @@ export default defineComponent({
         .attr('width', '1')
         .attr('y', 0)
         .attr('x', 0)
-        .attr('height', props.dataBar.size.height)
+        .attr('height', window.innerHeight * 0.25)
         .attr('stroke', '#ffe403')
         .attr('stroke-width', '5')
 
       bar.on('mouseover', d => {
         console.log(d)
       })
-    })
+    }
   },
 })
 </script>

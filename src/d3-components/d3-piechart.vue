@@ -22,10 +22,22 @@ export default defineComponent({
       type: Object,
     },
   },
-  setup(props) {
+  setup(props, ctx) {
     onMounted(() => {
-      var width = props.dataChart.size
-      var height = props.dataChart.size
+      window.addEventListener('resize', onResize)
+      draw()
+    })
+    const onResize = () => {
+      if (window.innerWidth > 1024 && ctx.root.$route.name === 'Numbers') {
+        if (document.querySelector(`#${props.dataChart.id}`))
+          document.querySelector(`#${props.dataChart.id}`).innerHTML = ''
+        draw()
+      }
+    }
+
+    const draw = () => {
+      var width = Math.min(window.innerHeight, window.innerWidth) * 0.25
+      var height = Math.min(window.innerHeight, window.innerWidth) * 0.25
       var margin = 10
       var data = props.dataChart.data
         .slice()
@@ -136,7 +148,7 @@ export default defineComponent({
           .transition()
           .attr('fill', 'transparent')
       })
-    })
+    }
   },
 })
 </script>

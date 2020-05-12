@@ -71,29 +71,29 @@ export default defineComponent({
 <style lang="scss">
 .words {
   &__popup {
-    position: absolute;
+    position: fixed;
     top: 50%;
-    right: -100%;
+    right: 20px;
     transform: translateY(-50%);
     background-color: #18181c;
     border: 3px solid #ffe403;
 
     pointer-events: none;
 
-    font-size: calc(100vw * 0.0095);
+    font-size: 1.6rem;
     line-height: 1;
 
     sub {
       font-family: 'roboto';
       color: white;
-      font-size: cacl(100vw * 0.007);
+      font-size: 1.1rem;
     }
 
     &--more {
       span {
         border-radius: 50%;
-        width: calc(100vw * 0.018);
-        height: calc(100vw * 0.018);
+        width: 3rem;
+        height: 3rem;
         background-color: rgba(24, 24, 28, 0.9);
         line-height: 1;
 
@@ -102,7 +102,7 @@ export default defineComponent({
         justify-content: center;
 
         font-family: 'roboto-black';
-        font-size: calc(100vw * 0.0072);
+        font-size: 1.2rem;
         color: white;
 
         border: 1px solid #ffe403;
@@ -115,20 +115,24 @@ export default defineComponent({
 
     img {
       border-radius: 50%;
-      width: calc(100vw * 0.018); // 30px
-      height: calc(100vw * 0.018);
+      width: 3rem; // 30px
+      height: 3rem;
 
       border: 1px solid #ffe403;
     }
   }
 
   &__speakers {
-    padding: calc(100vw * 0.024);
+    padding: 4rem;
     list-style: none;
 
     li {
-      margin-bottom: calc(100vw * 0.0059);
+      margin-bottom: 1rem;
       height: 32px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     &--2 {
@@ -141,7 +145,7 @@ export default defineComponent({
   }
 
   &__data {
-    margin-left: calc(100vw * 0.0059);
+    margin-left: 1rem;
 
     display: flex;
     flex-direction: column;

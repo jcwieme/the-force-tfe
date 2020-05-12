@@ -78,10 +78,6 @@ export default defineComponent({
             value: linesInMovie,
           },
         ],
-        size: {
-          width: window.innerWidth * 0.7 * 0.4,
-          height: window.innerHeight * 0.25,
-        },
         other: {
           title: 'Lines in the movie ',
           sub: `lines in the  ${ctx.root.$store.state.movies[
@@ -108,10 +104,6 @@ export default defineComponent({
             value: wordsInMovie,
           },
         ],
-        size: {
-          width: window.innerWidth * 0.7 * 0.4,
-          height: window.innerHeight * 0.25,
-        },
         other: {
           title: 'how much words in the movie ?',
           sub: `words in the ${ctx.root.$store.state.movies[
@@ -164,7 +156,6 @@ export default defineComponent({
             color: '#F5F5DC',
           },
         ],
-        size: window.innerHeight * 0.25,
         title: 'Races in the movie',
         sub:
           ctx.root.$store.state.activeMovie === 0
@@ -199,7 +190,6 @@ export default defineComponent({
             color: '#F5F5DC',
           },
         ],
-        size: window.innerHeight * 0.25,
         title: 'Ligth vs Dark side',
         sub: 'characters from light side',
         class: 'numbers__column--small',
@@ -227,10 +217,10 @@ export default defineComponent({
   letter-spacing: 0.1em;
   color: #ffe403;
   width: 100%;
-  height: calc(100% - 500px);
+  height: calc(100% - 50rem);
 
-  padding-top: 250px;
-  padding-bottom: 250px;
+  padding-top: 25rem;
+  padding-bottom: 25rem;
 
   display: flex;
   flex-direction: column;
@@ -243,7 +233,7 @@ export default defineComponent({
   &::before {
     content: '';
     width: 100%;
-    height: 100px;
+    height: 10vh;
     background-color: #18181c;
     opacity: 0.5;
     top: 0;
@@ -254,7 +244,7 @@ export default defineComponent({
   &::after {
     content: '';
     width: 100%;
-    height: 100px;
+    height: 10vh;
     background-color: #18181c;
     opacity: 0.5;
     bottom: 0;
@@ -263,15 +253,15 @@ export default defineComponent({
   }
 
   &__row {
-    width: calc((100vw * 0.72) - 150px);
-    height: 55vh;
+    width: calc((100vw * 0.72) - 15rem);
+    height: fit-content;
 
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0px 75px;
+    padding: 0px 7.5rem;
 
     border-bottom: 1px solid white;
     border-top: 1px solid white;
@@ -281,8 +271,8 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100% - 80px);
-    padding: 40px 0px;
+    height: fit-content;
+    padding: 4rem 0px;
 
     &--big {
       width: calc(100vw * 0.39);
@@ -303,21 +293,26 @@ export default defineComponent({
 
   &__title {
     color: white;
-    font-size: 24px;
+    font-size: calc(100vw * 0.014);
   }
 
   &__total {
     color: white;
-    font-size: 80px;
+    font-size: calc(100vw * 0.048);
     line-height: 1;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
   }
 
   &__graph {
-    margin: 30px 0 20px;
+    margin: 3rem 0 2rem;
   }
   &__special {
     font-family: 'roboto-black';
+  }
+  &__info {
+    p {
+      white-space: nowrap;
+    }
   }
 }
 </style>
