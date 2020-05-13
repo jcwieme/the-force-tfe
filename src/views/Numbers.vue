@@ -79,6 +79,7 @@ export default defineComponent({
           },
         ],
         other: {
+          global: 'average lines',
           title: 'Lines in the movie ',
           sub: `lines in the  ${ctx.root.$store.state.movies[
             ctx.root.$store.state.activeMovie
@@ -105,6 +106,7 @@ export default defineComponent({
           },
         ],
         other: {
+          global: 'average words',
           title: 'how much words in the movie ?',
           sub: `words in the ${ctx.root.$store.state.movies[
             ctx.root.$store.state.activeMovie

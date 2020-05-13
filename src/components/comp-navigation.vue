@@ -184,13 +184,13 @@ export default defineComponent({
     const chapterText = computed(() => {
       switch (ctx.root.$route.name) {
         case 'History':
-          return 'Iconic text of the Star Wars sagas, it will give you a preview of the film. Do not hesitate to hover highlighted words!'
+          return 'Iconic text of the Star Wars sagas, it will give you a preview of the movie. Do not hesitate to hover highlighted words!'
         case 'Dialogues':
-          return 'Explore the interactions in the film, the character who speaks most and with whom. Do not hesitate to hover the arcs for with the precise number of lines! (IMP. is the abbreviation for Imperial)'
+          return 'Explore the interactions in the movie, the character who speaks most and with whom. Do not hesitate to hover the arcs for with the precise number of lines! (IMP. is the abbreviation for Imperial)'
         case 'Words':
-          return 'Discover the most emblematic words of the film and who said them. Write a word to find out how popular it is.'
+          return 'Discover the most emblematic words of the movie and who said them. Write a word to find out how popular it is.'
         case 'Numbers':
-          return 'Nothing better than a few graphics to get a general view of the film.'
+          return 'Nothing better than a few graphics to get a general view of the movie. Discover the richness of the movie, the proportion of the dark side or the number of humans in each movie.'
       }
     })
 
@@ -427,13 +427,14 @@ export default defineComponent({
         font-family: 'roboto';
         transform-origin: left center;
         transform: rotate(90deg) translateX(20px);
-        border: 1px solid #ffe403;
+        border: 2px solid #ffe403;
         background-color: #18181c;
         padding: 2rem;
         font-size: 1.4rem;
         pointer-events: none;
         opacity: 0;
         transition: all 300ms ease;
+        z-index: 11;
       }
 
       &:hover {

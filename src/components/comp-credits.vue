@@ -117,6 +117,12 @@ export default defineComponent({
 
   &__el {
     margin-bottom: 5px;
+    transition: all 500ms ease;
+
+    &:hover {
+      color: #ffe403;
+      transition: all 500ms ease;
+    }
   }
 
   &__close {

@@ -42,6 +42,10 @@ const routes = [
     name: 'Numbers',
     component: Numbers,
   },
+  {
+    path: '*',
+    redirect: '/',
+  },
 ]
 
 const router = new VueRouter({

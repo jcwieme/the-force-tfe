@@ -57,15 +57,28 @@ export default defineComponent({
 
     // Data for the view
     let text = computed(() => {
-      return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].text
+      if (ctx.root.$store.state.movies[ctx.root.$route.params.id - 1]) {
+        return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].text
+      } else {
+        return ''
+      }
     })
     let number = computed(() => {
-      return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].number
+      if (ctx.root.$store.state.movies[ctx.root.$route.params.id - 1]) {
+        return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1]
+          .number
+      } else {
+        return ''
+      }
     })
     let title = computed(() => {
-      return ctx.root.$store.state.movies[
-        ctx.root.$route.params.id - 1
-      ].title.toUpperCase()
+      if (ctx.root.$store.state.movies[ctx.root.$route.params.id - 1]) {
+        return ctx.root.$store.state.movies[
+          ctx.root.$route.params.id - 1
+        ].title.toUpperCase()
+      } else {
+        return ''
+      }
     })
 
     onMounted(() => {
@@ -106,7 +119,7 @@ export default defineComponent({
           i += 0.001
 
           // time-scale of crawl, increase factor to go faster
-          moveCrawl(elapsed * (0.1 * i))
+          moveCrawl(elapsed * (0.05 * i))
         }
 
         requestAnimationFrame(init)

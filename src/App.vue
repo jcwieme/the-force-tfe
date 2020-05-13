@@ -4,7 +4,7 @@
       The Force arriving soon on mobile !
     </div>
     <div v-else class="myApp">
-      <!-- <vue-particles
+      <vue-particles
         color="#dedede"
         :particleOpacity="1"
         :particlesNumber="160"
@@ -15,7 +15,7 @@
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
-      ></vue-particles> -->
+      ></vue-particles>
       <transition name="fade">
         <Navigation v-if="navRender" />
       </transition>
@@ -65,16 +65,80 @@ export default defineComponent({
     })
 
     var sound = new Howl({
-      // src: ['../../assets/music/main.mp3'],
-      src: ['main.mp3'],
-      loop: true,
+      src: ['../../assets/music/main.mp3'],
+      // src: ['main.mp3'],
+      preload: true,
       volume: 0.5,
       onload: function() {
         sound.fade(0, 0.5, 3000)
       },
+      onend: function() {
+        if (!soundCantina.playing()) {
+          soundCantina.play()
+        }
+      },
+      onpause: function() {
+        ctx.root.$store.commit('changeMusic', 0)
+      },
     })
 
-    var myMusic = sound.play()
+    var soundHistory = new Howl({
+      src: ['../../assets/music/history.ogg'],
+      // src: ['main.mp3'],
+      preload: true,
+      volume: 0.3,
+      onload: function() {
+        sound.fade(0, 0.5, 3000)
+      },
+      onend: function() {
+        if (!sound.playing()) {
+          sound.play()
+        }
+      },
+      onpause: function() {
+        ctx.root.$store.commit('changeMusic', 1)
+      },
+    })
+
+    var soundCantina = new Howl({
+      src: ['../../assets/music/cantina.ogg'],
+      // src: ['main.mp3'],
+      preload: true,
+      volume: 0.5,
+      onload: function() {
+        sound.fade(0, 0.5, 3000)
+      },
+      onend: function() {
+        if (!soundCantina2.playing()) {
+          soundCantina2.play()
+        }
+      },
+      onpause: function() {
+        ctx.root.$store.commit('changeMusic', 2)
+      },
+    })
+
+    var soundCantina2 = new Howl({
+      src: ['../../assets/music/cantina.ogg'],
+      // src: ['main.mp3'],
+      preload: true,
+      volume: 0.5,
+      onload: function() {
+        sound.fade(0, 0.5, 3000)
+      },
+      onend: function() {
+        if (!sound.playing()) {
+          sound.play()
+        }
+      },
+      onpause: function() {
+        ctx.root.$store.commit('changeMusic', 3)
+      },
+    })
+
+    var sounds = [sound, soundHistory, soundCantina, soundCantina2]
+
+    sound.play()
 
     const routes = ctx.root.$router.options.routes
     const route = computed(() => {
@@ -183,17 +247,13 @@ export default defineComponent({
       () => ctx.root.$store.state.checks.music,
       (value, prevValue) => {
         if (value) {
-          sound.play(myMusic)
-          // sound.fade(0, 0.5, 500, myMusic)
+          sounds[ctx.root.$store.state.checks.player].play()
         }
 
         if (!value && prevValue) {
-          sound.pause(myMusic)
-          // sound.fade(0.5, 0, 500, myMusic)
-          // console.log(sound.fade(0.5, 0, 500, myMusic))
-          // sound.on('fade', function() {
-          //   if (this.volume === 0) sound.pause(myMusic)
-          // })
+          sounds.forEach(el => {
+            if (el.playing()) el.pause()
+          })
         }
       }
     )
@@ -205,6 +265,28 @@ export default defineComponent({
           creditAnimation.value = 'slide-bottom'
         } else {
           creditAnimation.value = 'slide-top'
+        }
+      }
+    )
+
+    watch(
+      () => ctx.root.$route.name,
+      (value, prevValue) => {
+        if (
+          (value === 'History' &&
+            prevValue === 'Choice' &&
+            !ctx.root.$store.state.checks.animation) ||
+          (value === 'History' &&
+            prevValue === undefined &&
+            !ctx.root.$store.state.checks.animation)
+        ) {
+          sound.pause()
+          soundHistory.play()
+        } else {
+          if (!sound.playing()) {
+            sound.play()
+            soundHistory.pause()
+          }
         }
       }
     )
@@ -307,7 +389,7 @@ a {
 .slide-top-leave-active,
 .slide-bottom-enter-active,
 .slide-bottom-leave-active {
-  transition-duration: 1000ms;
+  transition-duration: 750ms;
   transition-property: height, opacity, transform;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
   overflow: hidden;

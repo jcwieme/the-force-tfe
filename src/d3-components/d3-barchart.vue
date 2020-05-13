@@ -7,7 +7,7 @@
       <p>
         {{
           value !== dataBar.other.value && value !== null
-            ? 'In all star wars movies'
+            ? dataBar.other.global + ' in star wars movies'
             : dataBar.other.sub
         }}
       </p>
@@ -137,6 +137,7 @@ export default defineComponent({
         .style('text-anchor', 'start')
         .style('font-size', window.innerWidth * 0.00655)
         .attr('transform', 'translate(' + marginRight + ',' + 0 + ')')
+        .style('pointer-events', 'none')
 
       // Remove line
       svg.select('.domain').remove()
@@ -165,8 +166,6 @@ export default defineComponent({
         d3.select(`#bar_${d.value.value}`)
           .transition()
           .style('fill', 'transparent')
-
-        value.value = null
       })
     }
 

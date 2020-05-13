@@ -32,6 +32,7 @@ export default new Vuex.Store({
       animation: false,
       screen: false,
       load: 0,
+      player: 0,
     },
     arrows: {
       right: true,
@@ -94,6 +95,9 @@ export default new Vuex.Store({
     changeAnimation(state, options) {
       state.animation.name = options.name
       state.animation.mode = options.mode
+    },
+    changeMusic(state, option) {
+      state.checks.player = option
     },
   },
   actions: {},
