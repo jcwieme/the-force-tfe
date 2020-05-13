@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div class="words__popup">
+    <div class="words__popup" :class="`words__popup--${columns}`">
       <ul class="words__speakers" :class="`words__speakers--${columns}`">
         <li
           v-for="(speaker, index) in dataSpeakers.from.slice(0, sliceN)"
@@ -82,6 +82,10 @@ export default defineComponent({
 
     font-size: 1.6rem;
     line-height: 1;
+
+    &--1 {
+      right: 15%;
+    }
 
     sub {
       font-family: 'roboto';

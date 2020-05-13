@@ -16,12 +16,13 @@
         :key="arrow.name"
         :src="arrow.path"
         alt="picto arrow"
-        :class="`nav__${arrow.name}`"
+        :class="`nav__arrow nav__${arrow.name}`"
+        @click="changeNav(arrow.state)"
       />
     </div>
     <div class="nav__chapter">
-      <h3 :data-number="chapter" :data-text="chapterText">
-        {{ this.$route.name }}
+      <h3 :data-number="chapter.number" :data-text="chapterText">
+        {{ chapter.name }}
       </h3>
     </div>
     <div
@@ -82,26 +83,38 @@ export default defineComponent({
       let arrows = [
         {
           name: 'left',
+          state: 'left',
           path: '../../assets/img/nav/left--actif.svg',
         },
         {
           name: 'right',
+          state: 'right',
           path: '../../assets/img/nav/right--actif.svg',
         },
         {
           name: 'down',
+          state: 'down',
           path: '../../assets/img/nav/down--actif.svg',
         },
         {
           name: 'up',
+          state: 'up',
           path: '../../assets/img/nav/up--actif.svg',
         },
       ]
 
-      if (!store.left) arrows[0].path = '../../assets/img/nav/left--inactif.svg'
-      if (!store.right)
+      if (!store.left) {
+        arrows[0].path = '../../assets/img/nav/left--inactif.svg'
+        arrows[0].state = 'left--inactif'
+      }
+      if (!store.right) {
         arrows[1].path = '../../assets/img/nav/right--inactif.svg'
-      if (!store.down) arrows[2].path = '../../assets/img/nav/down--inactif.svg'
+        arrows[1].state = 'right--inactif'
+      }
+      if (!store.down) {
+        arrows[2].path = '../../assets/img/nav/down--inactif.svg'
+        arrows[2].state = 'down--inactif'
+      }
 
       return arrows
     })
@@ -117,13 +130,63 @@ export default defineComponent({
       return ctx.root.$store.state.checks.music
     })
 
+    const router = ctx.root.$router.options.routes
+    const route = computed(() => {
+      return ctx.root.$route.name
+    })
+    const index = computed(() => {
+      return router.findIndex(x => x.name === route.value)
+    })
+    const id = computed(() => {
+      return ctx.root.$route.params.id
+    })
+
+    const changeNav = name => {
+      if (
+        name === 'right--inactive' ||
+        name === 'left--inactif' ||
+        name === 'down--inactif'
+      )
+        return
+
+      if (name === 'up') {
+        ctx.root.$router.push({
+          name: router[index.value - 1].name,
+        })
+      }
+
+      if (name === 'down') {
+        ctx.root.$router.push({
+          name: router[index.value + 1].name,
+        })
+      }
+
+      if (name === 'right') {
+        if (id.value < 6) {
+          ctx.root.$router.push({
+            name: route.value,
+            params: { id: parseInt(id.value) + 1 },
+          })
+        }
+      }
+
+      if (name === 'left') {
+        if (id.value > 1) {
+          ctx.root.$router.push({
+            name: route.value,
+            params: { id: parseInt(id.value) - 1 },
+          })
+        }
+      }
+    }
+
     // Chapter explanation texts
     const chapterText = computed(() => {
       switch (ctx.root.$route.name) {
         case 'History':
           return 'Iconic text of the Star Wars sagas, it will give you a preview of the film. Do not hesitate to hover highlighted words!'
         case 'Dialogues':
-          return 'Explore the interactions in the film, the character who speaks most and with whom. Do not hesitate to hover the arcs for with the precise number of lines!'
+          return 'Explore the interactions in the film, the character who speaks most and with whom. Do not hesitate to hover the arcs for with the precise number of lines! (IMP. is the abbreviation for Imperial)'
         case 'Words':
           return 'Discover the most emblematic words of the film and who said them. Write a word to find out how popular it is.'
         case 'Numbers':
@@ -136,27 +199,27 @@ export default defineComponent({
       return [
         {
           path: '/choice',
-          number: '01',
-          title: 'Choice',
+          number: '',
+          title: 'Back to movies',
         },
         {
           path: `/movie/${ctx.root.$route.params.id}/history`,
-          number: '02',
+          number: '01',
           title: 'History',
         },
         {
           path: `/movie/${ctx.root.$route.params.id}/dialogues`,
-          number: '03',
+          number: '02',
           title: 'Dialogues',
         },
         {
           path: `/movie/${ctx.root.$route.params.id}/words`,
-          number: '04',
+          number: '03',
           title: 'Words',
         },
         {
           path: `/movie/${ctx.root.$route.params.id}/numbers`,
-          number: '05',
+          number: '04',
           title: 'Numbers',
         },
       ]
@@ -180,14 +243,9 @@ export default defineComponent({
 
     // Get chapter number
     const chapter = computed(() => {
-      if (ctx.root.$route.name === 'History') {
-        return '02'
-      } else if (ctx.root.$route.name === 'Dialogues') {
-        return '03'
-      } else if (ctx.root.$route.name === 'Words') {
-        return '04'
-      } else {
-        return '05'
+      return {
+        name: ctx.root.$route.name,
+        number: '0' + (index.value - 1),
       }
     })
 
@@ -222,6 +280,7 @@ export default defineComponent({
       musicPlay,
       chapterText,
       toggleFn,
+      changeNav,
     }
   },
 })
@@ -309,6 +368,9 @@ export default defineComponent({
       width: 2.5rem;
       height: 2.5rem;
     }
+  }
+  &__arrow {
+    cursor: pointer;
   }
   &__left {
     position: absolute;
@@ -517,6 +579,26 @@ export default defineComponent({
 
       &:last-child {
         margin-bottom: 0;
+      }
+
+      &:first-child {
+        text-align: center;
+        margin-bottom: 9rem;
+        font-size: 2rem;
+        font-family: 'roboto-black';
+        letter-spacing: 0;
+        text-transform: uppercase;
+        &::after {
+          content: '';
+          height: 3px;
+          background-color: white;
+          width: 30%;
+          position: absolute;
+          bottom: -2.5rem;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: all 500ms ease;
+        }
       }
 
       &::before {

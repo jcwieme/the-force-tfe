@@ -19,11 +19,11 @@
       <transition name="fade">
         <Navigation v-if="navRender" />
       </transition>
-      <transition name="fade" mode="out-in">
+      <transition :name="animation" :mode="mode">
         <router-view class="router" :key="id" />
       </transition>
     </div>
-    <transition name="fade" mode="out-in">
+    <transition :name="creditAnimation">
       <comp-credits v-if="creditsBool" />
     </transition>
   </div>
@@ -55,6 +55,13 @@ export default defineComponent({
     })
     const creditsBool = computed(() => {
       return ctx.root.$store.state.checks.credit
+    })
+    const creditAnimation = ref('slide-top')
+    const animation = computed(() => {
+      return ctx.root.$store.state.animation.name
+    })
+    const mode = computed(() => {
+      return ctx.root.$store.state.animation.mode
     })
 
     var sound = new Howl({
@@ -191,11 +198,25 @@ export default defineComponent({
       }
     )
 
+    watch(
+      () => ctx.root.$store.state.checks.credit,
+      (value, prevValue) => {
+        if (value && !prevValue) {
+          creditAnimation.value = 'slide-bottom'
+        } else {
+          creditAnimation.value = 'slide-top'
+        }
+      }
+    )
+
     return {
       screen,
       navRender,
       id,
       creditsBool,
+      animation,
+      mode,
+      creditAnimation,
     }
   },
   beforeRoute(to, from, next) {
@@ -212,6 +233,8 @@ export default defineComponent({
 :root {
   // font-size: 62.5%; // 10px
   font-size: calc(100vw * 0.006);
+  --overlay-bg: #1867c0;
+  --transition-duration: 2s;
 }
 
 ::-webkit-scrollbar {
@@ -272,12 +295,34 @@ a {
 // Transition History
 .fade-history-enter-active,
 .fade-history-leave-active {
-  transition: all 0.15s ease;
+  transition: all 0.3s ease;
 }
 
 .fade-history-enter,
 .fade-history-leave-active {
   opacity: 0;
+}
+
+.slide-top-enter-active,
+.slide-top-leave-active,
+.slide-bottom-enter-active,
+.slide-bottom-leave-active {
+  transition-duration: 1000ms;
+  transition-property: height, opacity, transform;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  overflow: hidden;
+}
+
+.slide-top-enter,
+.slide-bottom-leave-active {
+  opacity: 0;
+  transform: translate(0, 100%);
+}
+
+.slide-top-leave-active,
+.slide-bottom-enter {
+  opacity: 0;
+  transform: translate(0, -100%);
 }
 
 // Mobile screen
@@ -293,6 +338,7 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 16px;
 }
 
 // Router position

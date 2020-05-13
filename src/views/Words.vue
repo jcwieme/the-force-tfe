@@ -652,7 +652,7 @@ function compare(a, b) {
   &__message {
     position: fixed;
     left: 50%;
-    bottom: 2rem;
+    bottom: 4rem;
     transform: translateX(-50%);
 
     display: flex;

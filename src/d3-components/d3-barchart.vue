@@ -3,14 +3,20 @@
     <h3 class="numbers__title">{{ dataBar.other.title }}</h3>
     <div class="numbers__graph" :id="dataBar.id"></div>
     <div class="numbers__info">
-      <p class="numbers__total">{{ dataBar.other.value }}</p>
-      <p>{{ dataBar.other.sub }}</p>
+      <p class="numbers__total">{{ value ? value : dataBar.other.value }}</p>
+      <p>
+        {{
+          value !== dataBar.other.value && value !== null
+            ? 'In all star wars movies'
+            : dataBar.other.sub
+        }}
+      </p>
     </div>
   </div>
 </template>
 
 <script>
-import { defineComponent, onMounted } from '@vue/composition-api'
+import { defineComponent, onMounted, ref } from '@vue/composition-api'
 import * as d3 from 'd3'
 
 export default defineComponent({
@@ -32,6 +38,7 @@ export default defineComponent({
         draw()
       }
     }
+    const value = ref(null)
     const draw = () => {
       // set the dimensions and margins of the graph
       // var margin = 20
@@ -90,13 +97,23 @@ export default defineComponent({
         .enter()
         .append('rect')
         .attr('class', 'bar')
+        .attr('id', d => {
+          return 'bar_' + d.value.value
+        })
+        .attr('data-color', (d, i) => {
+          if (i === 1) {
+            return '#8D2426'
+          } else {
+            return '#196890'
+          }
+        })
         .attr('data-number', d => {
           return d.value.value
         })
-        .attr('width', function(d) {
+        .attr('width', d => {
           return x(d.value.value)
         })
-        .attr('y', function(d) {
+        .attr('y', d => {
           return y(d.name)
         })
         .attr('height', y.bandwidth())
@@ -134,8 +151,27 @@ export default defineComponent({
         .attr('stroke-width', '5')
 
       bar.on('mouseover', d => {
-        console.log(d)
+        d3.select(`#bar_${d.value.value}`)
+          .transition()
+          .style(
+            'fill',
+            d3.select(`#bar_${d.value.value}`)._groups[0][0].dataset.color
+          )
+
+        value.value = d.value.value
       })
+
+      bar.on('mouseout', d => {
+        d3.select(`#bar_${d.value.value}`)
+          .transition()
+          .style('fill', 'transparent')
+
+        value.value = null
+      })
+    }
+
+    return {
+      value,
     }
   },
 })
@@ -143,7 +179,6 @@ export default defineComponent({
 
 <style lang="scss">
 .bar {
-  fill: transparent;
   cursor: pointer;
 }
 .tick {

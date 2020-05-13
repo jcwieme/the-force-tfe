@@ -38,6 +38,10 @@ export default new Vuex.Store({
       left: true,
       down: true,
     },
+    animation: {
+      name: 'slide-top',
+      mode: '',
+    },
     choices: [
       {
         title: 'the phantom menace',
@@ -86,6 +90,10 @@ export default new Vuex.Store({
     },
     addLoad(state) {
       state.checks.load++
+    },
+    changeAnimation(state, options) {
+      state.animation.name = options.name
+      state.animation.mode = options.mode
     },
   },
   actions: {},
