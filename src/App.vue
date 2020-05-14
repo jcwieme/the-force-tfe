@@ -11,7 +11,7 @@
         shapeType="circle"
         :particleSize="2"
         :lineLinked="false"
-        :moveSpeed="0.2"
+        :moveSpeed="0.1"
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
@@ -81,7 +81,7 @@ export default defineComponent({
           preload: true,
           volume: 0.5,
           onend: function() {
-            if (index === 2) {
+            if (index === 2 || index === 3) {
               if (!sounds[0].playing()) {
                 sounds[0].play()
                 ctx.root.$store.commit('changeMusic', 0)
@@ -248,7 +248,7 @@ export default defineComponent({
           sounds[0].pause()
           setTimeout(() => {
             sounds[3].play()
-          }, 1250)
+          }, 250)
         } else {
           if (sounds[3].playing()) {
             sounds[3].pause()

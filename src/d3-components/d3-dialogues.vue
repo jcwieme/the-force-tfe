@@ -551,6 +551,8 @@ export default defineComponent({
         .attr('data-number', d => {
           return d.number
         })
+        .style('fill', 'none')
+        .attr('stroke', setup.yellow)
         .attr('class', d => {
           if (d.source === 1 || d.target === 1) {
             return 'dialogue__link dialogue__link--actif'
@@ -558,19 +560,28 @@ export default defineComponent({
             return 'dialogue__link'
           }
         })
-        .style('fill', 'none')
-        .attr('stroke', setup.yellow)
         .attr('stroke-opacity', d => {
           return d.source === 1 || d.target === 1 ? '1' : '0.1'
         })
         .attr('stroke-width', d => {
           return (d.number / maxNumber) * 5 + 1
         })
-      // .attr('filter', d => {
-      //   if (d.source === 1 || d.target === 1) {
-      //     return 'url(#glow)'
-      //   }
+      // .transition()
+      // .duration(2000)
+      // .attr('stroke-opacity', d => {
+      //   return d.source === 1 || d.target === 1 ? '1' : '0.1'
       // })
+      // .attr('stroke-dasharray', function() {
+      //   return this.getTotalLength()
+      // })
+      // .attr('stroke-dashoffset', function() {
+      //   return this.getTotalLength()
+      // })
+      // .transition()
+      // .duration(2000)
+      // .delay(500)
+      // .attr('stroke-dashoffset', 0)
+      // .transition()
     }
 
     const drawHoverLinks = data => {
@@ -970,11 +981,6 @@ export default defineComponent({
         })
         .style('stroke-opacity', function(link_d) {
           return link_d.source === id || link_d.target === id ? '1' : '0.1'
-        })
-        .style('filter', x => {
-          if (x.source === id || x.target === id) {
-            return 'url(#glow)'
-          }
         })
 
       // move the hover links

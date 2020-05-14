@@ -117,7 +117,7 @@ export default defineComponent({
             moveCrawl(elapsed * (0.05 * i))
           }
           requestAnimationFrame(init)
-        }, 2000)
+        }, 1000)
       }
     })
 
