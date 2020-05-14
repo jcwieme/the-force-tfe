@@ -12,7 +12,7 @@
         ></div>
       </div>
     </div>
-    <transition name="fade-history">
+    <transition name="fade">
       <div class="history__base" v-show="animationRotate">
         <h3>{{ number }}</h3>
         <h4>{{ title }}</h4>

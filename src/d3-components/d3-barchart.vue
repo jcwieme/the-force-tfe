@@ -11,20 +11,32 @@
       class="numbers__info"
       :class="[!checkNumbers ? 'numbers__info--fade' : '']"
     >
-      <p class="numbers__total">{{ value ? value : dataBar.other.value }}</p>
-      <p>
-        {{
-          value !== dataBar.other.value && value !== null
-            ? dataBar.other.global + ' in star wars movies'
-            : dataBar.other.sub
-        }}
-      </p>
+      <transition name="fade" mode="out-in">
+        <p class="numbers__total" :key="value">
+          {{ value ? value : dataBar.other.value }}
+        </p>
+      </transition>
+      <transition name="fade" mode="out-in">
+        <p :key="value">
+          {{
+            value !== dataBar.other.value && value !== null
+              ? dataBar.other.global + ' in star wars movies'
+              : dataBar.other.sub
+          }}
+        </p>
+      </transition>
     </div>
   </div>
 </template>
 
 <script>
-import { defineComponent, onMounted, ref, computed } from '@vue/composition-api'
+import {
+  defineComponent,
+  onMounted,
+  ref,
+  computed,
+  watch,
+} from '@vue/composition-api'
 import * as d3 from 'd3'
 
 export default defineComponent({
@@ -189,22 +201,29 @@ export default defineComponent({
         line.style('height', window.innerHeight * 0.25)
       }
 
-      bar.on('mouseover', d => {
-        d3.select(`#bar_${d.value.value}`)
-          .transition()
-          .style(
-            'fill',
-            d3.select(`#bar_${d.value.value}`)._groups[0][0].dataset.color
-          )
+      watch(
+        () => ctx.root.$store.state.checks.numbers,
+        newV => {
+          if (newV) {
+            bar.on('mouseover', d => {
+              d3.select(`#bar_${d.value.value}`)
+                .transition()
+                .style(
+                  'fill',
+                  d3.select(`#bar_${d.value.value}`)._groups[0][0].dataset.color
+                )
 
-        value.value = d.value.value
-      })
+              value.value = d.value.value
+            })
 
-      bar.on('mouseout', d => {
-        d3.select(`#bar_${d.value.value}`)
-          .transition()
-          .style('fill', 'transparent')
-      })
+            bar.on('mouseout', d => {
+              d3.select(`#bar_${d.value.value}`)
+                .transition()
+                .style('fill', 'transparent')
+            })
+          }
+        }
+      )
     }
 
     return {
