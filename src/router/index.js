@@ -42,6 +42,10 @@ const routes = [
     name: 'Numbers',
     component: Numbers,
   },
+  {
+    path: '*',
+    redirect: '/',
+  },
 ]
 
 const router = new VueRouter({
@@ -65,19 +69,40 @@ router.beforeEach((to, from, next) => {
     store.commit('setActiveMovie', to.params.id - 1)
 
     if (to.params.id.toString() !== '6' && to.params.id.toString() !== '1') {
-      // store.commit('trueArrowRight')
-      // store.commit('trueArrowLeft')
       store.commit('arrows', { direction: 'left', state: true })
       store.commit('arrows', { direction: 'right', state: true })
     } else {
       if (to.params.id.toString() === '6') {
-        // store.commit('falseArrowRight')
         store.commit('arrows', { direction: 'right', state: false })
       } else {
-        // store.commit('falseArrowLeft')
         store.commit('arrows', { direction: 'left', state: false })
       }
     }
+  }
+
+  if (from.name !== to.name) {
+    if (
+      !from.name ||
+      from.name === 'Loader' ||
+      from.name === 'Choice' ||
+      to.name === 'Choice'
+    ) {
+      store.commit('changeAnimation', { name: 'fade', mode: 'out-in' })
+    } else {
+      let indexTo = routes.findIndex(el => el.name === to.name)
+      let indexFrom = routes.findIndex(el => el.name === from.name)
+      if (indexFrom < indexTo) {
+        store.commit('changeAnimation', { name: 'slide-top', mode: '' })
+      } else {
+        store.commit('changeAnimation', { name: 'slide-bottom', mode: '' })
+      }
+    }
+  } else {
+    store.commit('changeAnimation', { name: 'fade', mode: 'out-in' })
+  }
+
+  if (from.name === 'Numbers' && to.name !== 'Numbers') {
+    store.commit('toggleCheck', 'numbers')
   }
   next()
 })

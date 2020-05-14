@@ -1,8 +1,16 @@
 <template>
   <div class="numbers__column" :class="dataChart.class">
-    <h3 class="numbers__title">{{ dataChart.title }}</h3>
+    <h3
+      class="numbers__title"
+      :class="[!checkNumbers ? 'numbers__title--fade' : '']"
+    >
+      {{ dataChart.title }}
+    </h3>
     <div class="numbers__graph" :id="dataChart.id"></div>
-    <div class="numbers__info">
+    <div
+      class="numbers__info"
+      :class="[!checkNumbers ? 'numbers__info--fade' : '']"
+    >
       <p class="numbers__total">
         {{ dataChart.value }}<span class="numbers__special">%</span>
       </p>
@@ -12,7 +20,12 @@
 </template>
 
 <script>
-import { defineComponent, onMounted } from '@vue/composition-api'
+import {
+  defineComponent,
+  onMounted,
+  computed,
+  watch,
+} from '@vue/composition-api'
 import * as d3 from 'd3'
 
 export default defineComponent({
@@ -23,6 +36,9 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
+    const checkNumbers = computed(() => {
+      return ctx.root.$store.state.checks.numbers
+    })
     onMounted(() => {
       window.addEventListener('resize', onResize)
       draw()
@@ -86,8 +102,10 @@ export default defineComponent({
         .attr('id', d => {
           return 'circle_' + d.data.value.name
         })
-        .attr('class', 'portions')
-        .attr('d', arc)
+        .attr('class', () => {
+          return 'portions pie_' + props.dataChart.id
+        })
+        .transition()
         .attr('fill', 'transparent')
         .attr('stroke', function(d) {
           return d.data.value.color
@@ -117,37 +135,65 @@ export default defineComponent({
         .attr('y', -5)
         .text('')
 
-      circles.on('mouseover', d => {
-        // console.log(d)
-
-        d3.select(`#text_${props.dataChart.id}`)
-          .text(d.data.value.name)
+      if (!ctx.root.$store.state.checks.numbers) {
+        circles
           .transition()
-          .attr('opacity', 1)
+          .delay(function(d, i) {
+            return 2400 + i * 500
+          })
+          .duration(500)
+          .attrTween('d', function(d) {
+            var i = d3.interpolate(d.startAngle + 0.1, d.endAngle)
+            return function(t) {
+              d.endAngle = i(t)
+              return arc(d)
+            }
+          })
+      } else {
+        circles.attr('d', function(d) {
+          return arc(d)
+        })
+      }
 
-        d3.select(`#number_${props.dataChart.id}`)
-          .text(d.data.value.value)
-          .transition()
-          .attr('opacity', 1)
+      watch(
+        () => ctx.root.$store.state.checks.numbers,
+        newV => {
+          if (newV) {
+            d3.selectAll(`.pie_${props.dataChart.id}`).on('mouseover', d => {
+              d3.select(`#text_${props.dataChart.id}`)
+                .text(d.data.value.name)
+                .transition()
+                .attr('opacity', 1)
 
-        d3.select(`#circle_${d.data.value.name}`)
-          .transition()
-          .attr('fill', d.data.value.color)
-      })
+              d3.select(`#number_${props.dataChart.id}`)
+                .text(d.data.value.value)
+                .transition()
+                .attr('opacity', 1)
 
-      circles.on('mouseout', d => {
-        d3.select(`#text_${props.dataChart.id}`)
-          .transition()
-          .attr('opacity', 0)
+              d3.select(`#circle_${d.data.value.name}`)
+                .transition()
+                .attr('fill', d.data.value.color)
+            })
 
-        d3.select(`#number_${props.dataChart.id}`)
-          .transition()
-          .attr('opacity', 0)
+            d3.selectAll(`.pie_${props.dataChart.id}`).on('mouseout', d => {
+              d3.select(`#text_${props.dataChart.id}`)
+                .transition()
+                .attr('opacity', 0)
 
-        d3.select(`#circle_${d.data.value.name}`)
-          .transition()
-          .attr('fill', 'transparent')
-      })
+              d3.select(`#number_${props.dataChart.id}`)
+                .transition()
+                .attr('opacity', 0)
+
+              d3.select(`#circle_${d.data.value.name}`)
+                .transition()
+                .attr('fill', 'transparent')
+            })
+          }
+        }
+      )
+    }
+    return {
+      checkNumbers,
     }
   },
 })

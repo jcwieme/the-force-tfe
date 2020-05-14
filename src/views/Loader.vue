@@ -3,7 +3,7 @@
     <div class="loader__title">
       <h1>The Force</h1>
       <h2 class="loader__subtitle">An interactive Star Wars visualization</h2>
-      <p>
+      <p id="introText">
         Using data collected from scripts dialogue as well as other sources,
         this interactive experience aims to make you want to see Star Wars
         movies. The Force visualizes character’s interactions, musics and some
@@ -181,8 +181,8 @@
     </div>
     <div class="loader__tuto">
       <transition name="fade" mode="out-in">
-        <p :key="nextTip">
-          {{ texts }}
+        <p :key="i">
+          {{ text }}
         </p>
       </transition>
     </div>
@@ -200,7 +200,13 @@
 </template>
 
 <script>
-import { defineComponent, computed, ref, watch } from '@vue/composition-api'
+import {
+  defineComponent,
+  computed,
+  ref,
+  watch,
+  onMounted,
+} from '@vue/composition-api'
 import { gsap } from 'gsap'
 
 export default defineComponent({
@@ -212,13 +218,23 @@ export default defineComponent({
       return ctx.root.$store.state.checks.loaded
     })
 
-    const nextTip = ref(true)
-    const texts = ref('Navigate into the experience with the keyboard arrows')
+    const text = ref('')
+    const texts = [
+      'Navigate into the experience with the keyboard arrows',
+      'Swipe between movies with the right and left arrow',
+    ]
+    const i = ref(0)
+    text.value = texts[i.value % 2]
 
-    setTimeout(() => {
-      nextTip.value = false
-      texts.value = 'Swipe between movies with the right and left arrow'
-    }, 2500)
+    setInterval(() => {
+      i.value++
+
+      text.value = texts[i.value % 2]
+    }, 6000)
+
+    onMounted(() => {
+      console.log(gsap)
+    })
 
     const loadProgress = computed(() => {
       return (
@@ -239,8 +255,8 @@ export default defineComponent({
       random,
       showClass,
       loaded,
-      nextTip,
-      texts,
+      i,
+      text,
     }
   },
 })
@@ -264,10 +280,18 @@ export default defineComponent({
       letter-spacing: 0.05em;
       font-size: 10.5rem;
       line-height: 1;
+      opacity: 0;
+      animation: rollUp 1000ms normal forwards;
     }
     h2 {
       font-size: 4rem;
       margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: rollUp 1000ms 500ms normal forwards;
+    }
+    p {
+      opacity: 0;
+      animation: rollUp 1000ms 1000ms normal forwards;
     }
   }
 
@@ -279,6 +303,8 @@ export default defineComponent({
 
     display: flex;
     flex-direction: row;
+    opacity: 0;
+    animation: rollUp 1000ms 2000ms normal forwards;
 
     img {
       height: auto;
@@ -310,16 +336,17 @@ export default defineComponent({
     font-size: 2rem;
     color: #ffe403;
     text-shadow: 0px 0px 2px #d1bc03;
+    opacity: 0;
+    animation: rollUp 1000ms 1500ms normal forwards;
   }
 
   &__enter {
     margin: auto;
     opacity: 0;
     pointer-events: none;
-    transition: all 500ms ease;
 
     &--show {
-      opacity: 1;
+      animation: rollUp 500ms 2000ms normal forwards;
       pointer-events: all;
     }
   }
@@ -337,6 +364,16 @@ export default defineComponent({
   &:hover {
     color: #ffe403;
     border-color: #ffe403;
+  }
+}
+
+@keyframes rollUp {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 </style>

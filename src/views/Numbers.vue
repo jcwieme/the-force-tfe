@@ -1,12 +1,18 @@
 <template>
   <div class="section numbers">
-    <div class="numbers__row">
+    <div
+      class="numbers__row"
+      :class="[!checkNumbers ? 'numbers__row--border' : '']"
+    >
       <d3-bar :data-bar="barChartDataWords" />
       <!-- <d3-pie :data-chart="racesData" /> -->
       <!-- <d3-bar :data-bar="barChartData" /> -->
       <d3-pie :data-chart="sidesData" />
     </div>
-    <div class="numbers__row">
+    <div
+      class="numbers__row"
+      :class="[!checkNumbers ? 'numbers__row--fade' : '']"
+    >
       <d3-pie :data-chart="racesData" />
       <d3-bar :data-bar="barChartData" />
       <!-- <div
@@ -35,6 +41,9 @@ export default defineComponent({
     d3Pie,
   },
   setup(props, ctx) {
+    const checkNumbers = computed(() => {
+      return ctx.root.$store.state.checks.numbers
+    })
     const numbers = computed(() => {
       return ctx.root.$store.state.numbers[ctx.root.$store.state.activeMovie]
     })
@@ -79,11 +88,14 @@ export default defineComponent({
           },
         ],
         other: {
+          global: 'average lines',
           title: 'Lines in the movie ',
           sub: `lines in the  ${ctx.root.$store.state.movies[
             ctx.root.$store.state.activeMovie
           ].number.toLowerCase()}`,
-          class: 'numbers__column--big numbers__column--right',
+          class:
+            'numbers__column--big numbers__column--right ' +
+            (!checkNumbers.value ? 'numbers__column--border' : ''),
           value: linesInMovie.value,
         },
       }
@@ -105,11 +117,14 @@ export default defineComponent({
           },
         ],
         other: {
+          global: 'average words',
           title: 'how much words in the movie ?',
           sub: `words in the ${ctx.root.$store.state.movies[
             ctx.root.$store.state.activeMovie
           ].number.toLowerCase()}`,
-          class: 'numbers__column--big numbers__column--left',
+          class:
+            'numbers__column--big numbers__column--left ' +
+            (!checkNumbers.value ? 'numbers__column--border' : ''),
           value: wordsInMovie.value,
         },
       }
@@ -201,11 +216,18 @@ export default defineComponent({
       }
     })
 
+    if (!checkNumbers.value) {
+      setTimeout(() => {
+        ctx.root.$store.commit('toggleCheck', 'numbers')
+      }, 4400)
+    }
+
     return {
       barChartData,
       barChartDataWords,
       racesData,
       sidesData,
+      checkNumbers,
     }
   },
 })
@@ -265,6 +287,17 @@ export default defineComponent({
 
     border-bottom: 1px solid white;
     border-top: 1px solid white;
+
+    &--border {
+      border-color: transparent;
+      animation: border 500ms 3900ms forwards ease-in;
+    }
+
+    &--fade {
+      opacity: 0;
+
+      animation: fadeIn 500ms 3900ms forwards ease-in;
+    }
   }
 
   &__column {
@@ -289,9 +322,18 @@ export default defineComponent({
     &--small {
       width: calc(100vw * 0.2);
     }
+    &--border {
+      border-color: transparent;
+      animation: border 500ms 3900ms forwards ease-in;
+    }
   }
 
   &__title {
+    &--fade {
+      opacity: 0;
+
+      animation: fadeIn 500ms 3900ms forwards ease-in;
+    }
     color: white;
     font-size: calc(100vw * 0.014);
   }
@@ -310,9 +352,34 @@ export default defineComponent({
     font-family: 'roboto-black';
   }
   &__info {
+    &--fade {
+      opacity: 0;
+
+      animation: fadeIn 500ms 3900ms forwards ease-in;
+    }
     p {
       white-space: nowrap;
     }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes border {
+  0% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: white;
   }
 }
 </style>

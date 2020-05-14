@@ -125,6 +125,7 @@ export default defineComponent({
     color: #18181c;
     text-shadow: -1px 1px 0 #ffe403, 1px 1px 0 #ffe403, 1px -1px 0 #ffe403,
       -1px -1px 0 #ffe403;
+    height: 2ch;
   }
 
   &__animation {

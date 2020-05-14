@@ -33,10 +33,10 @@ export default {
   left: 0;
 
   z-index: 11;
+  cursor: none;
 
   &--actif {
     transform: scale(1);
-    cursor: none;
   }
 }
 </style>

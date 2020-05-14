@@ -1,16 +1,42 @@
 <template>
   <div class="numbers__column" :class="dataBar.other.class">
-    <h3 class="numbers__title">{{ dataBar.other.title }}</h3>
+    <h3
+      class="numbers__title"
+      :class="[!checkNumbers ? 'numbers__title--fade' : '']"
+    >
+      {{ dataBar.other.title }}
+    </h3>
     <div class="numbers__graph" :id="dataBar.id"></div>
-    <div class="numbers__info">
-      <p class="numbers__total">{{ dataBar.other.value }}</p>
-      <p>{{ dataBar.other.sub }}</p>
+    <div
+      class="numbers__info"
+      :class="[!checkNumbers ? 'numbers__info--fade' : '']"
+    >
+      <transition name="fade" mode="out-in">
+        <p class="numbers__total" :key="value">
+          {{ value ? value : dataBar.other.value }}
+        </p>
+      </transition>
+      <transition name="fade" mode="out-in">
+        <p :key="value">
+          {{
+            value !== dataBar.other.value && value !== null
+              ? dataBar.other.global + ' in star wars movies'
+              : dataBar.other.sub
+          }}
+        </p>
+      </transition>
     </div>
   </div>
 </template>
 
 <script>
-import { defineComponent, onMounted } from '@vue/composition-api'
+import {
+  defineComponent,
+  onMounted,
+  ref,
+  computed,
+  watch,
+} from '@vue/composition-api'
 import * as d3 from 'd3'
 
 export default defineComponent({
@@ -21,6 +47,9 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
+    const checkNumbers = computed(() => {
+      return ctx.root.$store.state.checks.numbers
+    })
     onMounted(() => {
       window.addEventListener('resize', onResize)
       draw()
@@ -32,6 +61,7 @@ export default defineComponent({
         draw()
       }
     }
+    const value = ref(null)
     const draw = () => {
       // set the dimensions and margins of the graph
       // var margin = 20
@@ -90,13 +120,21 @@ export default defineComponent({
         .enter()
         .append('rect')
         .attr('class', 'bar')
+        .attr('id', d => {
+          return 'bar_' + d.value.value
+        })
+        .attr('data-color', (d, i) => {
+          if (i === 1) {
+            return '#8D2426'
+          } else {
+            return '#196890'
+          }
+        })
         .attr('data-number', d => {
           return d.value.value
         })
-        .attr('width', function(d) {
-          return x(d.value.value)
-        })
-        .attr('y', function(d) {
+        .attr('width', 0)
+        .attr('y', d => {
           return y(d.name)
         })
         .attr('height', y.bandwidth())
@@ -112,7 +150,7 @@ export default defineComponent({
 
       var marginRight = window.innerWidth * 0.018
       // add the y Axis
-      svg
+      var text = svg
         .append('g')
         .call(d3.axisLeft(y))
         .selectAll('text')
@@ -120,22 +158,77 @@ export default defineComponent({
         .style('text-anchor', 'start')
         .style('font-size', window.innerWidth * 0.00655)
         .attr('transform', 'translate(' + marginRight + ',' + 0 + ')')
+        .style('pointer-events', 'none')
+        .style('opacity', 0)
 
       // Remove line
       svg.select('.domain').remove()
 
-      svg
+      var line = svg
         .append('rect')
         .attr('width', '1')
         .attr('y', 0)
         .attr('x', 0)
-        .attr('height', window.innerHeight * 0.25)
+        .attr('height', 0)
         .attr('stroke', '#ffe403')
         .attr('stroke-width', '5')
 
-      bar.on('mouseover', d => {
-        console.log(d)
-      })
+      if (!ctx.root.$store.state.checks.numbers) {
+        bar
+          .transition()
+          .duration(800)
+          .attr('width', d => {
+            return x(d.value.value)
+          })
+          .delay(function(d, i) {
+            return 800 + i * 400
+          })
+        text
+          .transition()
+          .duration(400)
+          .style('opacity', 1)
+          .delay(2400)
+        line
+          .transition()
+          .duration(400)
+          .style('height', window.innerHeight * 0.25)
+          .delay(400)
+      } else {
+        bar.attr('width', d => {
+          return x(d.value.value)
+        })
+        text.style('opacity', 1)
+        line.style('height', window.innerHeight * 0.25)
+      }
+
+      watch(
+        () => ctx.root.$store.state.checks.numbers,
+        newV => {
+          if (newV) {
+            bar.on('mouseover', d => {
+              d3.select(`#bar_${d.value.value}`)
+                .transition()
+                .style(
+                  'fill',
+                  d3.select(`#bar_${d.value.value}`)._groups[0][0].dataset.color
+                )
+
+              value.value = d.value.value
+            })
+
+            bar.on('mouseout', d => {
+              d3.select(`#bar_${d.value.value}`)
+                .transition()
+                .style('fill', 'transparent')
+            })
+          }
+        }
+      )
+    }
+
+    return {
+      value,
+      checkNumbers,
     }
   },
 })
@@ -143,7 +236,6 @@ export default defineComponent({
 
 <style lang="scss">
 .bar {
-  fill: transparent;
   cursor: pointer;
 }
 .tick {

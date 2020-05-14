@@ -25,11 +25,11 @@ export default defineComponent({
       circle: {
         originX: window.innerWidth / 2,
         originY: window.innerHeight / 2,
-        radius: window.innerWidth / 6,
+        radius: window.innerWidth / 7,
         angle: [],
         quarterAngle: Math.PI / 2,
-        smallQuarterAngleRight: (92.5 * Math.PI) / 180,
-        smallQuarterAngleLeft: (87.5 * Math.PI) / 180,
+        smallQuarterAngleRight: (93.5 * Math.PI) / 180,
+        smallQuarterAngleLeft: (86.5 * Math.PI) / 180,
         distanceFromPoint: window.innerWidth / 48,
         smallCircleRadius: null,
         bigCircleRadius: null,
@@ -169,7 +169,11 @@ export default defineComponent({
         .enter()
         .append('text')
         .text(function(d) {
-          return d.name.toLowerCase()
+          let name = d.name.toLowerCase().split(' ')
+          if (name.findIndex(el => el === 'imperial') === 0) {
+            name[name.findIndex(el => el === 'imperial')] = 'imp.'
+          }
+          return name.join(' ')
         })
         .attr('id', d => {
           return '_text_' + d.id
@@ -547,6 +551,8 @@ export default defineComponent({
         .attr('data-number', d => {
           return d.number
         })
+        .style('fill', 'none')
+        .attr('stroke', setup.yellow)
         .attr('class', d => {
           if (d.source === 1 || d.target === 1) {
             return 'dialogue__link dialogue__link--actif'
@@ -554,19 +560,28 @@ export default defineComponent({
             return 'dialogue__link'
           }
         })
-        .style('fill', 'none')
-        .attr('stroke', setup.yellow)
         .attr('stroke-opacity', d => {
           return d.source === 1 || d.target === 1 ? '1' : '0.1'
         })
         .attr('stroke-width', d => {
           return (d.number / maxNumber) * 5 + 1
         })
-      // .attr('filter', d => {
-      //   if (d.source === 1 || d.target === 1) {
-      //     return 'url(#glow)'
-      //   }
+      // .transition()
+      // .duration(2000)
+      // .attr('stroke-opacity', d => {
+      //   return d.source === 1 || d.target === 1 ? '1' : '0.1'
       // })
+      // .attr('stroke-dasharray', function() {
+      //   return this.getTotalLength()
+      // })
+      // .attr('stroke-dashoffset', function() {
+      //   return this.getTotalLength()
+      // })
+      // .transition()
+      // .duration(2000)
+      // .delay(500)
+      // .attr('stroke-dashoffset', 0)
+      // .transition()
     }
 
     const drawHoverLinks = data => {
@@ -967,11 +982,6 @@ export default defineComponent({
         .style('stroke-opacity', function(link_d) {
           return link_d.source === id || link_d.target === id ? '1' : '0.1'
         })
-      // .style('filter', x => {
-      //   if (x.source === id || x.target === id) {
-      //     return 'url(#glow)'
-      //   }
-      // })
 
       // move the hover links
       setup.variables.hoverLinks
@@ -998,6 +1008,9 @@ export default defineComponent({
   font-family: star_jediregular;
   letter-spacing: 0.1em;
   font-size: calc(100vw / 168);
+  * {
+    user-select: none;
+  }
 
   &__name {
     fill: #ffe403;
