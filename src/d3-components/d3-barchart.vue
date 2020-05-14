@@ -1,8 +1,16 @@
 <template>
   <div class="numbers__column" :class="dataBar.other.class">
-    <h3 class="numbers__title">{{ dataBar.other.title }}</h3>
+    <h3
+      class="numbers__title"
+      :class="[!checkNumbers ? 'numbers__title--fade' : '']"
+    >
+      {{ dataBar.other.title }}
+    </h3>
     <div class="numbers__graph" :id="dataBar.id"></div>
-    <div class="numbers__info">
+    <div
+      class="numbers__info"
+      :class="[!checkNumbers ? 'numbers__info--fade' : '']"
+    >
       <p class="numbers__total">{{ value ? value : dataBar.other.value }}</p>
       <p>
         {{
@@ -16,7 +24,7 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, ref } from '@vue/composition-api'
+import { defineComponent, onMounted, ref, computed } from '@vue/composition-api'
 import * as d3 from 'd3'
 
 export default defineComponent({
@@ -27,6 +35,9 @@ export default defineComponent({
     },
   },
   setup(props, ctx) {
+    const checkNumbers = computed(() => {
+      return ctx.root.$store.state.checks.numbers
+    })
     onMounted(() => {
       window.addEventListener('resize', onResize)
       draw()
@@ -110,9 +121,7 @@ export default defineComponent({
         .attr('data-number', d => {
           return d.value.value
         })
-        .attr('width', d => {
-          return x(d.value.value)
-        })
+        .attr('width', 0)
         .attr('y', d => {
           return y(d.name)
         })
@@ -129,7 +138,7 @@ export default defineComponent({
 
       var marginRight = window.innerWidth * 0.018
       // add the y Axis
-      svg
+      var text = svg
         .append('g')
         .call(d3.axisLeft(y))
         .selectAll('text')
@@ -138,18 +147,47 @@ export default defineComponent({
         .style('font-size', window.innerWidth * 0.00655)
         .attr('transform', 'translate(' + marginRight + ',' + 0 + ')')
         .style('pointer-events', 'none')
+        .style('opacity', 0)
 
       // Remove line
       svg.select('.domain').remove()
 
-      svg
+      var line = svg
         .append('rect')
         .attr('width', '1')
         .attr('y', 0)
         .attr('x', 0)
-        .attr('height', window.innerHeight * 0.25)
+        .attr('height', 0)
         .attr('stroke', '#ffe403')
         .attr('stroke-width', '5')
+
+      if (!ctx.root.$store.state.checks.numbers) {
+        bar
+          .transition()
+          .duration(800)
+          .attr('width', d => {
+            return x(d.value.value)
+          })
+          .delay(function(d, i) {
+            return 800 + i * 400
+          })
+        text
+          .transition()
+          .duration(400)
+          .style('opacity', 1)
+          .delay(2400)
+        line
+          .transition()
+          .duration(400)
+          .style('height', window.innerHeight * 0.25)
+          .delay(400)
+      } else {
+        bar.attr('width', d => {
+          return x(d.value.value)
+        })
+        text.style('opacity', 1)
+        line.style('height', window.innerHeight * 0.25)
+      }
 
       bar.on('mouseover', d => {
         d3.select(`#bar_${d.value.value}`)
@@ -171,6 +209,7 @@ export default defineComponent({
 
     return {
       value,
+      checkNumbers,
     }
   },
 })

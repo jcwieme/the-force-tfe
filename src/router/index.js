@@ -100,6 +100,10 @@ router.beforeEach((to, from, next) => {
   } else {
     store.commit('changeAnimation', { name: 'fade', mode: 'out-in' })
   }
+
+  if (from.name === 'Numbers' && to.name !== 'Numbers') {
+    store.commit('toggleCheck', 'numbers')
+  }
   next()
 })
 

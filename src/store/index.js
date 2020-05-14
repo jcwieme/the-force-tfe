@@ -33,6 +33,7 @@ export default new Vuex.Store({
       screen: false,
       load: 0,
       player: 0,
+      numbers: false,
     },
     arrows: {
       right: true,

@@ -92,37 +92,32 @@ export default defineComponent({
         const crawl = document.getElementById('crawl')
         const crawlContent = document.getElementById('crawl-content')
         const crawlContentStyle = crawlContent.style
-
         let crawlPos = crawl.clientHeight
-
-        const moveCrawl = distance => {
-          crawlPos -= distance
-          crawlContentStyle.top = crawlPos + 'px'
-
-          if (crawlPos < -crawlContent.clientHeight) {
-            ctx.root.$store.commit('toggleCheck', 'animation')
-          } else {
+        setTimeout(() => {
+          const moveCrawl = distance => {
+            crawlPos -= distance
+            crawlContentStyle.top = crawlPos + 'px'
+            if (crawlPos < -crawlContent.clientHeight) {
+              ctx.root.$store.commit('toggleCheck', 'animation')
+            } else {
+              requestAnimationFrame(tick)
+            }
+          }
+          let prevTime
+          const init = time => {
+            prevTime = time
             requestAnimationFrame(tick)
           }
-        }
-        let prevTime
-        const init = time => {
-          prevTime = time
-          requestAnimationFrame(tick)
-        }
-
-        let i = 1
-        const tick = time => {
-          let elapsed = time - prevTime
-          prevTime = time
-
-          i += 0.001
-
-          // time-scale of crawl, increase factor to go faster
-          moveCrawl(elapsed * (0.05 * i))
-        }
-
-        requestAnimationFrame(init)
+          let i = 1
+          const tick = time => {
+            let elapsed = time - prevTime
+            prevTime = time
+            i += 0.001
+            // time-scale of crawl, increase factor to go faster
+            moveCrawl(elapsed * (0.05 * i))
+          }
+          requestAnimationFrame(init)
+        }, 2000)
       }
     })
 
@@ -222,6 +217,7 @@ export default defineComponent({
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    top: 110%;
   }
 
   &__base {

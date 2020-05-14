@@ -4,7 +4,7 @@
       The Force arriving soon on mobile !
     </div>
     <div v-else class="myApp">
-      <vue-particles
+      <!-- <vue-particles
         color="#dedede"
         :particleOpacity="1"
         :particlesNumber="160"
@@ -15,7 +15,7 @@
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
-      ></vue-particles>
+      ></vue-particles> -->
       <transition name="fade">
         <Navigation v-if="navRender" />
       </transition>
@@ -64,81 +64,44 @@ export default defineComponent({
       return ctx.root.$store.state.animation.mode
     })
 
-    var sound = new Howl({
-      src: ['../../assets/music/main.mp3'],
-      // src: ['main.mp3'],
-      preload: true,
-      volume: 0.5,
-      onload: function() {
-        sound.fade(0, 0.5, 3000)
-      },
-      onend: function() {
-        if (!soundCantina.playing()) {
-          soundCantina.play()
-        }
-      },
-      onpause: function() {
-        ctx.root.$store.commit('changeMusic', 0)
-      },
+    var sources = [
+      '../../assets/music/main.ogg',
+      '../../assets/music/cantina.ogg',
+      '../../assets/music/cantina2.ogg',
+      '../../assets/music/history.ogg',
+    ]
+
+    var sounds = []
+
+    sources.forEach((el, index) => {
+      sounds.push(
+        new Howl({
+          // src: [el],
+          src: ['main.mp3'],
+          preload: true,
+          volume: 0.5,
+          onend: function() {
+            if (index === 2) {
+              if (!sounds[0].playing()) {
+                sounds[0].play()
+                ctx.root.$store.commit('changeMusic', 0)
+              }
+            } else {
+              if (!sounds[index + 1].playing()) {
+                sounds[index + 1].play()
+                ctx.root.$store.commit('changeMusic', index + 1)
+              }
+            }
+          },
+          onpause: function() {
+            if (index === 3) return
+            ctx.root.$store.commit('changeMusic', index)
+          },
+        })
+      )
     })
 
-    var soundHistory = new Howl({
-      src: ['../../assets/music/history.ogg'],
-      // src: ['main.mp3'],
-      preload: true,
-      volume: 0.3,
-      onload: function() {
-        sound.fade(0, 0.5, 3000)
-      },
-      onend: function() {
-        if (!sound.playing()) {
-          sound.play()
-        }
-      },
-      onpause: function() {
-        ctx.root.$store.commit('changeMusic', 1)
-      },
-    })
-
-    var soundCantina = new Howl({
-      src: ['../../assets/music/cantina.ogg'],
-      // src: ['main.mp3'],
-      preload: true,
-      volume: 0.5,
-      onload: function() {
-        sound.fade(0, 0.5, 3000)
-      },
-      onend: function() {
-        if (!soundCantina2.playing()) {
-          soundCantina2.play()
-        }
-      },
-      onpause: function() {
-        ctx.root.$store.commit('changeMusic', 2)
-      },
-    })
-
-    var soundCantina2 = new Howl({
-      src: ['../../assets/music/cantina.ogg'],
-      // src: ['main.mp3'],
-      preload: true,
-      volume: 0.5,
-      onload: function() {
-        sound.fade(0, 0.5, 3000)
-      },
-      onend: function() {
-        if (!sound.playing()) {
-          sound.play()
-        }
-      },
-      onpause: function() {
-        ctx.root.$store.commit('changeMusic', 3)
-      },
-    })
-
-    var sounds = [sound, soundHistory, soundCantina, soundCantina2]
-
-    sound.play()
+    sounds[0].play()
 
     const routes = ctx.root.$router.options.routes
     const route = computed(() => {
@@ -272,6 +235,8 @@ export default defineComponent({
     watch(
       () => ctx.root.$route.name,
       (value, prevValue) => {
+        if (!ctx.root.$store.state.checks.music) return
+
         if (
           (value === 'History' &&
             prevValue === 'Choice' &&
@@ -280,12 +245,14 @@ export default defineComponent({
             prevValue === undefined &&
             !ctx.root.$store.state.checks.animation)
         ) {
-          sound.pause()
-          soundHistory.play()
+          sounds[0].pause()
+          setTimeout(() => {
+            sounds[3].play()
+          }, 1250)
         } else {
-          if (!sound.playing()) {
-            sound.play()
-            soundHistory.pause()
+          if (sounds[3].playing()) {
+            sounds[3].pause()
+            sounds[ctx.root.$store.state.checks.player].play()
           }
         }
       }
