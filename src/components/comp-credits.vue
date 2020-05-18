@@ -75,10 +75,10 @@ export default defineComponent({
 
   z-index: 30;
 
-  font-family: 'roboto';
+  font-family: 'roboto', sans-serif;
 
   h3 {
-    font-family: 'roboto';
+    font-family: 'roboto', sans-serif;
     font-size: 36px;
     margin-bottom: 20px;
     // color: #ffe403;
@@ -92,7 +92,7 @@ export default defineComponent({
 
   &__title {
     h2 {
-      font-family: 'roboto-black';
+      font-family: 'roboto-black', sans-serif;
       font-size: 90px;
       line-height: 0.85;
       max-width: 600px;

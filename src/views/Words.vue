@@ -388,7 +388,7 @@ function compare(a, b) {
   }
 
   &__el {
-    font-family: 'roboto-black';
+    font-family: 'roboto-black', sans-serif;
     text-transform: capitalize;
     font-size: 6.5rem;
     line-height: 1.2;
@@ -416,7 +416,7 @@ function compare(a, b) {
 
     &::after {
       content: attr(data-number);
-      font-family: 'star_jediregular';
+      font-family: 'star_jediregular', sans-serif;
       position: absolute;
       top: -10rem;
       left: -5rem;
@@ -457,7 +457,7 @@ function compare(a, b) {
     &::after {
       content: attr(data-complete);
       color: rgba(255, 255, 255, 0.3);
-      font-family: 'roboto-black';
+      font-family: 'roboto-black', sans-serif;
       width: 100%;
       text-transform: capitalize;
       font-size: 6.4rem;
@@ -504,7 +504,7 @@ function compare(a, b) {
   }
   &__input {
     color: white;
-    font-family: 'roboto-black';
+    font-family: 'roboto-black', sans-serif;
     text-transform: capitalize;
     white-space: nowrap;
 
@@ -516,7 +516,7 @@ function compare(a, b) {
 
     &::before {
       content: attr(data-number);
-      font-family: 'star_jediregular';
+      font-family: 'star_jediregular', sans-serif;
       position: absolute;
       top: -75%;
       left: -1ch;
@@ -588,7 +588,7 @@ function compare(a, b) {
     &--search {
       margin-top: 8.5rem;
       text-transform: capitalize;
-      font-family: 'roboto-black';
+      font-family: 'roboto-black', sans-serif;
 
       &-actif {
         opacity: 1;
@@ -642,7 +642,7 @@ function compare(a, b) {
     align-items: center;
     justify-content: center;
 
-    font-family: 'roboto';
+    font-family: 'roboto', sans-serif;
     font-size: 1.3rem;
     color: white;
 
@@ -666,7 +666,7 @@ function compare(a, b) {
 
     p {
       white-space: nowrap;
-      font-family: 'star_jediregular';
+      font-family: 'star_jediregular', sans-serif;
       letter-spacing: 0.05em;
       color: #ffe403;
     }

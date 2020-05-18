@@ -1005,7 +1005,7 @@ export default defineComponent({
   z-index: 10;
 }
 .dialogue {
-  font-family: star_jediregular;
+  font-family: 'star_jediregular', sans-serif;
   letter-spacing: 0.1em;
   font-size: calc(100vw / 168);
   * {

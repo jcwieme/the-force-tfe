@@ -88,7 +88,7 @@ export default defineComponent({
     }
 
     sub {
-      font-family: 'roboto';
+      font-family: 'roboto', sans-serif;
       color: white;
       font-size: 1.1rem;
     }
@@ -105,7 +105,7 @@ export default defineComponent({
         align-items: center;
         justify-content: center;
 
-        font-family: 'roboto-black';
+        font-family: 'roboto-black', sans-serif;
         font-size: 1.2rem;
         color: white;
 
@@ -155,7 +155,7 @@ export default defineComponent({
     flex-direction: column;
 
     p {
-      font-family: 'star_jediregular';
+      font-family: 'star_jediregular', sans-serif;
       letter-spacing: 0.1em;
       color: #ffe403;
       margin-bottom: 5px;

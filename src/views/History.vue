@@ -164,7 +164,7 @@ export default defineComponent({
 
 <style lang="scss">
 .history {
-  font-family: roboto, sans-serif;
+  font-family: 'roboto', sans-serif;
   height: 100%;
   width: 100%;
   color: #ffe403;

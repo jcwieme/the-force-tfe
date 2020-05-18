@@ -4,7 +4,7 @@
       The Force arriving soon on mobile !
     </div>
     <div v-else class="myApp">
-      <vue-particles
+      <!-- <vue-particles
         color="#dedede"
         :particleOpacity="1"
         :particlesNumber="160"
@@ -15,7 +15,7 @@
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
-      ></vue-particles>
+      ></vue-particles> -->
       <transition name="fade">
         <Navigation v-if="navRender" />
       </transition>
@@ -80,8 +80,8 @@ export default defineComponent({
     sources.forEach((el, index) => {
       sounds.push(
         new Howl({
-          src: [el],
-          // src: ['main.mp3'],
+          // src: [el],
+          src: ['main.mp3'],
           preload: true,
           volume: 0.5,
           onend: function() {
@@ -477,7 +477,7 @@ a {
 // Transition
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-out;
 }
 
 .fade-enter,
@@ -521,7 +521,7 @@ a {
 // Mobile screen
 .mobile {
   color: white;
-  font-family: star_jediregular;
+  font-family: 'star_jediregular', sans-serif;
   letter-spacing: 0.1em;
   padding: 4rem;
   width: calc(100vw - 8rem);

@@ -270,13 +270,13 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: roboto;
+  font-family: 'roboto', sans-serif;
 
   &__title {
     text-align: center;
     max-width: 70rem;
     h1 {
-      font-family: star_jediregular;
+      font-family: 'star_jediregular', sans-serif;
       letter-spacing: 0.05em;
       font-size: 10.5rem;
       line-height: 1;
@@ -353,7 +353,7 @@ export default defineComponent({
 }
 .loaded {
   color: white;
-  font-family: star_jediregular;
+  font-family: 'star_jediregular', sans-serif;
   letter-spacing: 0.1em;
   text-decoration: none;
   font-size: 4rem;
