@@ -4,7 +4,7 @@
       The Force arriving soon on mobile !
     </div>
     <div v-else class="myApp">
-      <!-- <vue-particles
+      <vue-particles
         color="#dedede"
         :particleOpacity="1"
         :particlesNumber="160"
@@ -15,7 +15,7 @@
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
-      ></vue-particles> -->
+      ></vue-particles>
       <transition name="fade">
         <Navigation v-if="navRender" />
       </transition>
@@ -26,6 +26,8 @@
     <transition :name="creditAnimation">
       <comp-credits v-if="creditsBool" />
     </transition>
+    <div class="progress progress-down">Progress</div>
+    <div class="progress progress-up">Progress</div>
   </div>
 </template>
 
@@ -41,6 +43,8 @@ import Navigation from '@/components/comp-navigation'
 import compCredits from '@/components/comp-credits'
 import { Howl } from 'howler'
 import { isMobile, preloadImages } from '@/tools/utils'
+import { _ } from 'vue-underscore'
+import gsap from 'gsap'
 
 export default defineComponent({
   name: 'Application',
@@ -76,8 +80,8 @@ export default defineComponent({
     sources.forEach((el, index) => {
       sounds.push(
         new Howl({
-          // src: [el],
-          src: ['main.mp3'],
+          src: [el],
+          // src: ['main.mp3'],
           preload: true,
           volume: 0.5,
           onend: function() {
@@ -124,8 +128,148 @@ export default defineComponent({
         return false
       }
     })
+    const count = ref(0)
+    const direction = ref('')
+    const prevDir = ref(null)
+
+    const debounce_scroll = _.throttle(event => {
+      if (ctx.root.$store.state.checks.scroll) return
+      if (
+        route.value === 'Choice' ||
+        route.value === 'Loader' ||
+        (route.value === 'History' &&
+          !ctx.root.$store.state.checks.animation) ||
+        (route.value === 'Numbers' && !ctx.root.$store.state.checks.numbers)
+      )
+        return
+
+      document.querySelectorAll('.progress').forEach(el => {
+        el.style.opacity = 0.5
+      })
+
+      if (event.deltaY > 0) {
+        if (route.value === 'Numbers') return
+
+        direction.value = 'down'
+
+        if (prevDir.value === null) {
+          prevDir.value = 'down'
+        } else {
+          // If change direction
+          if (prevDir.value !== direction.value) {
+            ctx.root.$store.commit('changeScroll', true)
+
+            gsap.to('.progress-down', {
+              width: 0,
+              duration: 0.5,
+              onComplete: function() {
+                ctx.root.$store.commit('changeScroll', false)
+                prevDir.value = null
+              },
+            })
+            count.value = 0
+            return
+          }
+        }
+      } else {
+        if (
+          route.value === 'Numbers' &&
+          document.querySelector('.numbers').scrollTop > 0
+        )
+          return
+
+        direction.value = 'up'
+
+        if (prevDir.value === null) {
+          prevDir.value = 'up'
+        } else {
+          // If change direction
+          if (prevDir.value !== direction.value) {
+            ctx.root.$store.commit('changeScroll', true)
+            gsap.to('.progress-up', {
+              width: 0,
+              duration: 0.5,
+              onComplete: function() {
+                ctx.root.$store.commit('changeScroll', false)
+                prevDir.value = null
+              },
+            })
+            count.value = 0
+            return
+          }
+        }
+      }
+      prevDir.value = direction.value
+      count.value += 1
+      transitionScreen(count.value)
+    }, 50)
+
+    const transitionScreen = nbr => {
+      if (nbr > 21) {
+        gsap.to(`.progress-${direction.value}`, {
+          width: '100%',
+          duration: 0.2,
+        })
+
+        // Block the scroll
+        ctx.root.$store.commit('changeScroll', true)
+
+        // Change to top or bottom
+        if (direction.value === 'down') {
+          if (route.value !== 'Numbers') {
+            ctx.root.$router.push({
+              name: routes[index.value + 1].name,
+            })
+          }
+        } else {
+          ctx.root.$router.push({
+            name: routes[index.value - 1].name,
+          })
+        }
+        document.querySelectorAll('.progress').forEach(el => {
+          el.style.opacity = 0
+        })
+        gsap.to('.progress', { width: 0, duration: 1 })
+        count.value = 0
+      } else {
+        nbr *= 5
+        gsap.to(`.progress-${direction.value}`, {
+          width: nbr + '%',
+          duration: 0.2,
+        })
+      }
+    }
+
+    let scrollingTimeout = null
 
     onMounted(() => {
+      //Scroll function
+      window.addEventListener('mousewheel', debounce_scroll)
+      window.addEventListener(
+        'mousewheel',
+        () => {
+          if (ctx.root.$store.state.checks.scroll) return
+          if (
+            route.value === 'Choice' ||
+            route.value === 'Loader' ||
+            (route.value === 'History' &&
+              !ctx.root.$store.state.checks.animation) ||
+            (route.value === 'Numbers' && !ctx.root.$store.state.checks.numbers)
+          )
+            return
+
+          window.clearTimeout(scrollingTimeout)
+          scrollingTimeout = setTimeout(function() {
+            if (count.value > 21) return
+
+            // If not 100% then let's begin it again
+            gsap.to('.progress', { width: 0, duration: 1 })
+            count.value = 0
+          }, 66)
+        },
+        false
+      )
+
       // Let's preload images
       preloadImages(ctx.root.$store.state.loader, ctx.root.$store, () => {
         ctx.root.$store.commit('toggleCheck', 'loaded')
@@ -408,5 +552,23 @@ a {
 // Blur filter
 .blur {
   filter: blur(3px);
+}
+
+.progress {
+  background-color: #ffe403;
+  opacity: 0.5;
+  height: 5px;
+  width: 0%;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: fixed;
+
+  &-down {
+    bottom: 0;
+  }
+  &-up {
+    top: 0;
+  }
 }
 </style>

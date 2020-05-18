@@ -248,7 +248,8 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
 
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   // position: relative;
 

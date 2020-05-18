@@ -4,10 +4,12 @@ import router from './router'
 import store from './store'
 import VueParticles from 'vue-particles'
 import VueCompositionApi from '@vue/composition-api'
+import underscore from 'vue-underscore'
 
 Vue.use(VueCompositionApi)
 Vue.use(VueParticles)
 Vue.config.productionTip = false
+Vue.use(underscore)
 
 new Vue({
   router,

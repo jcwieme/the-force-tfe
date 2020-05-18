@@ -98,6 +98,13 @@ export default defineComponent({
       max-width: 600px;
       margin-bottom: 20px;
     }
+
+    a {
+      &:hover {
+        color: #ffe403;
+        transition: all 500ms ease;
+      }
+    }
   }
 
   &__data {
