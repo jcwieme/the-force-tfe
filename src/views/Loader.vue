@@ -200,13 +200,7 @@
 </template>
 
 <script>
-import {
-  defineComponent,
-  computed,
-  ref,
-  watch,
-  onMounted,
-} from '@vue/composition-api'
+import { defineComponent, computed, ref, watch } from '@vue/composition-api'
 import { gsap } from 'gsap'
 
 export default defineComponent({
@@ -231,10 +225,6 @@ export default defineComponent({
 
       text.value = texts[i.value % 2]
     }, 6000)
-
-    onMounted(() => {
-      console.log(gsap)
-    })
 
     const loadProgress = computed(() => {
       return (
@@ -307,7 +297,7 @@ export default defineComponent({
     animation: rollUp 1000ms 2000ms normal forwards;
 
     img {
-      height: auto;
+      height: 4rem;
       width: 4rem;
 
       margin-right: 1rem;

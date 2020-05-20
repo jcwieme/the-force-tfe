@@ -401,6 +401,7 @@ function compare(a, b) {
     display: inline-block;
     position: relative;
     cursor: pointer;
+    font-family: 'roboto-black', sans-serif;
 
     &::before {
       content: '';

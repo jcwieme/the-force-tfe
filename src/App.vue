@@ -1,10 +1,17 @@
 <template>
   <div id="app">
     <div v-if="screen" class="mobile">
-      The Force arriving soon on mobile !
+      The Force arriving very soon on tablet and soon on mobile !
     </div>
-    <div v-else class="myApp">
-      <!-- <vue-particles
+    <div
+      v-else
+      class="myApp"
+      v-touch:swipe.bottom="upHandler"
+      v-touch:swipe.top="downHandler"
+      v-touch:swipe.right="leftHandler"
+      v-touch:swipe.left="rightHandler"
+    >
+      <vue-particles
         color="#dedede"
         :particleOpacity="1"
         :particlesNumber="160"
@@ -15,7 +22,7 @@
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
-      ></vue-particles> -->
+      ></vue-particles>
       <transition name="fade">
         <Navigation v-if="navRender" />
       </transition>
@@ -80,8 +87,8 @@ export default defineComponent({
     sources.forEach((el, index) => {
       sounds.push(
         new Howl({
-          // src: [el],
-          src: ['main.mp3'],
+          src: [el],
+          // src: ['main.mp3'],
           preload: true,
           volume: 0.5,
           onend: function() {
@@ -128,6 +135,70 @@ export default defineComponent({
         return false
       }
     })
+
+    // Nav functions
+    const upHandler = () => {
+      if (
+        route.value === 'History' &&
+        !ctx.root.$store.state.checks.animation
+      ) {
+        return
+      }
+
+      // If is not Choice or Loader, arrow navigation
+      if (
+        route.value === 'Choice' ||
+        route.value === 'Loader' ||
+        ctx.root.$store.state.checks.nav
+      )
+        return
+
+      ctx.root.$router.push({
+        name: routes[index.value - 1].name,
+      })
+    }
+
+    const downHandler = () => {
+      if (
+        route.value === 'History' &&
+        !ctx.root.$store.state.checks.animation
+      ) {
+        return
+      }
+
+      // If is not Choice or Loader, arrow navigation
+      if (
+        route.value === 'Choice' ||
+        route.value === 'Loader' ||
+        ctx.root.$store.state.checks.nav
+      )
+        return
+
+      if (route.value !== 'Numbers') {
+        ctx.root.$router.push({
+          name: routes[index.value + 1].name,
+        })
+      }
+    }
+
+    const leftHandler = () => {
+      if (id.value > 1) {
+        ctx.root.$router.push({
+          name: route.value,
+          params: { id: parseInt(id.value) - 1 },
+        })
+      }
+    }
+
+    const rightHandler = () => {
+      if (id.value < 6) {
+        ctx.root.$router.push({
+          name: route.value,
+          params: { id: parseInt(id.value) + 1 },
+        })
+      }
+    }
+
     const count = ref(0)
     const direction = ref('')
     const prevDir = ref(null)
@@ -216,15 +287,9 @@ export default defineComponent({
 
         // Change to top or bottom
         if (direction.value === 'down') {
-          if (route.value !== 'Numbers') {
-            ctx.root.$router.push({
-              name: routes[index.value + 1].name,
-            })
-          }
+          downHandler()
         } else {
-          ctx.root.$router.push({
-            name: routes[index.value - 1].name,
-          })
+          upHandler()
         }
         document.querySelectorAll('.progress').forEach(el => {
           el.style.opacity = 0
@@ -303,35 +368,23 @@ export default defineComponent({
         ) {
           // right
           if (key === 39) {
-            if (id.value < 6 && keyUp.value === true) {
-              ctx.root.$router.push({
-                name: route.value,
-                params: { id: parseInt(id.value) + 1 },
-              })
+            if (keyUp.value === true) {
+              rightHandler()
             }
           }
           // left
           if (key === 37) {
-            if (id.value > 1 && keyUp.value === true) {
-              ctx.root.$router.push({
-                name: route.value,
-                params: { id: parseInt(id.value) - 1 },
-              })
+            if (keyUp.value === true) {
+              leftHandler()
             }
           }
           // down
           if (key === 40) {
-            if (route.value !== 'Numbers') {
-              ctx.root.$router.push({
-                name: routes[index.value + 1].name,
-              })
-            }
+            downHandler()
           }
           // up
           if (key === 38) {
-            ctx.root.$router.push({
-              name: routes[index.value - 1].name,
-            })
+            upHandler()
           }
         }
 
@@ -410,6 +463,10 @@ export default defineComponent({
       animation,
       mode,
       creditAnimation,
+      upHandler,
+      rightHandler,
+      leftHandler,
+      downHandler,
     }
   },
   beforeRoute(to, from, next) {
@@ -444,14 +501,16 @@ export default defineComponent({
 
 @font-face {
   font-family: 'roboto';
-  src: url('./assets/fonts/Roboto-Medium.ttf') format('ttf');
+  src: url('./assets/fonts/Roboto-Medium.woff2') format('woff2'),
+    url('./assets/fonts/Roboto-Medium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'roboto-black';
-  src: url('./assets/fonts/Roboto-Black.ttf') format('ttf');
+  src: url('./assets/fonts/Roboto-Black.woff2') format('woff2'),
+    url('./assets/fonts/Roboto-Black.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -523,9 +582,9 @@ a {
   color: white;
   font-family: 'star_jediregular', sans-serif;
   letter-spacing: 0.1em;
-  padding: 4rem;
-  width: calc(100vw - 8rem);
-  height: calc(100vh - 8rem);
+  padding: 8rem;
+  width: calc(100vw - 16rem);
+  height: calc(100vh - 16rem);
   text-align: center;
   display: flex;
   flex-direction: column;

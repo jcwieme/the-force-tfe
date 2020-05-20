@@ -404,7 +404,9 @@ export default defineComponent({
     font-size: 2rem;
 
     h3 {
-      position: relative;
+      position: fixed;
+      bottom: 4rem;
+      left: 4rem;
       transform-origin: left center;
       transform: rotate(-90deg) translateY(100%);
 
@@ -435,6 +437,7 @@ export default defineComponent({
         opacity: 0;
         transition: all 300ms ease;
         z-index: 11;
+        letter-spacing: 0;
       }
 
       &:hover {

@@ -266,6 +266,7 @@ export default defineComponent({
 
   &__row {
     width: calc((100vw * 0.72) - 15rem);
+    min-height: fit-content;
     height: fit-content;
 
     display: flex;
