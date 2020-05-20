@@ -289,7 +289,7 @@ export default defineComponent({
 <style lang="scss">
 .nav {
   color: white;
-  font-family: star_jediregular;
+  font-family: 'star_jediregular', sans-serif;
   letter-spacing: 0.1em;
 
   &__sound {
@@ -404,7 +404,9 @@ export default defineComponent({
     font-size: 2rem;
 
     h3 {
-      position: relative;
+      position: fixed;
+      bottom: 4rem;
+      left: 4rem;
       transform-origin: left center;
       transform: rotate(-90deg) translateY(100%);
 
@@ -424,7 +426,7 @@ export default defineComponent({
         left: 50%;
         top: 0px;
         width: 25rem;
-        font-family: 'roboto';
+        font-family: 'roboto', sans-serif;
         transform-origin: left center;
         transform: rotate(90deg) translateX(20px);
         border: 2px solid #ffe403;
@@ -435,6 +437,7 @@ export default defineComponent({
         opacity: 0;
         transition: all 300ms ease;
         z-index: 11;
+        letter-spacing: 0;
       }
 
       &:hover {
@@ -586,7 +589,7 @@ export default defineComponent({
         text-align: center;
         margin-bottom: 9rem;
         font-size: 2rem;
-        font-family: 'roboto-black';
+        font-family: 'roboto-black', sans-serif;
         letter-spacing: 0;
         text-transform: uppercase;
         &::after {

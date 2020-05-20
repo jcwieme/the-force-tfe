@@ -14,7 +14,7 @@ export default {
   font-size: calc(100vw / 129.5);
   border: #ffe403 2px solid;
   color: white;
-  font-family: star_jediregular;
+  font-family: 'star_jediregular', sans-serif;
   border-radius: 50%;
   width: calc(100vw * 0.021);
   height: calc(100vw * 0.021);

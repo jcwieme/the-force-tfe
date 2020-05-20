@@ -55,16 +55,19 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  // Set animation History to false if loading directly a page
   if (from.name === null) {
     if (to.name !== 'History' && to.name !== 'Loader' && to.name !== 'Choice') {
       store.commit('toggleCheck', 'animation')
     }
   }
+  // Arrows check down
   if (to.name === 'Numbers') {
     store.commit('arrows', { direction: 'down', state: false })
   } else {
     store.commit('arrows', { direction: 'down', state: true })
   }
+  // Arrows check left/right
   if (to.params.id) {
     store.commit('setActiveMovie', to.params.id - 1)
 
@@ -80,6 +83,7 @@ router.beforeEach((to, from, next) => {
     }
   }
 
+  // Transitions effect
   if (from.name !== to.name) {
     if (
       !from.name ||
@@ -101,9 +105,17 @@ router.beforeEach((to, from, next) => {
     store.commit('changeAnimation', { name: 'fade', mode: 'out-in' })
   }
 
+  // Check numbers animation
   if (from.name === 'Numbers' && to.name !== 'Numbers') {
     store.commit('toggleCheck', 'numbers')
   }
+
+  // Set scroll to false after a timeout to let the animation done
+  setTimeout(() => {
+    store.commit('changeScroll', false)
+  }, 1000)
+
+  // Call next function
   next()
 })
 

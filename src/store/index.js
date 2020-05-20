@@ -34,6 +34,7 @@ export default new Vuex.Store({
       load: 0,
       player: 0,
       numbers: false,
+      scroll: false,
     },
     arrows: {
       right: true,
@@ -99,6 +100,9 @@ export default new Vuex.Store({
     },
     changeMusic(state, option) {
       state.checks.player = option
+    },
+    changeScroll(state, option) {
+      state.checks.scroll = option
     },
   },
   actions: {},

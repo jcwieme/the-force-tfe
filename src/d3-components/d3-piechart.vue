@@ -205,7 +205,7 @@ export default defineComponent({
   cursor: pointer;
 }
 .tick {
-  font-family: star_jediregular;
+  font-family: 'star_jediregular', sans-serif;
   letter-spacing: 0.1em;
 }
 

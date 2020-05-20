@@ -1,10 +1,17 @@
 <template>
   <div id="app">
     <div v-if="screen" class="mobile">
-      The Force arriving soon on mobile !
+      The Force arriving very soon on tablet and soon on mobile !
     </div>
-    <div v-else class="myApp">
-      <!-- <vue-particles
+    <div
+      v-else
+      class="myApp"
+      v-touch:swipe.bottom="upHandler"
+      v-touch:swipe.top="downHandler"
+      v-touch:swipe.right="leftHandler"
+      v-touch:swipe.left="rightHandler"
+    >
+      <vue-particles
         color="#dedede"
         :particleOpacity="1"
         :particlesNumber="160"
@@ -15,7 +22,7 @@
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
-      ></vue-particles> -->
+      ></vue-particles>
       <transition name="fade">
         <Navigation v-if="navRender" />
       </transition>
@@ -26,6 +33,8 @@
     <transition :name="creditAnimation">
       <comp-credits v-if="creditsBool" />
     </transition>
+    <div class="progress progress-down">Progress</div>
+    <div class="progress progress-up">Progress</div>
   </div>
 </template>
 
@@ -41,6 +50,8 @@ import Navigation from '@/components/comp-navigation'
 import compCredits from '@/components/comp-credits'
 import { Howl } from 'howler'
 import { isMobile, preloadImages } from '@/tools/utils'
+import { _ } from 'vue-underscore'
+import gsap from 'gsap'
 
 export default defineComponent({
   name: 'Application',
@@ -76,8 +87,8 @@ export default defineComponent({
     sources.forEach((el, index) => {
       sounds.push(
         new Howl({
-          // src: [el],
-          src: ['main.mp3'],
+          src: [el],
+          // src: ['main.mp3'],
           preload: true,
           volume: 0.5,
           onend: function() {
@@ -125,7 +136,205 @@ export default defineComponent({
       }
     })
 
+    // Nav functions
+    const upHandler = () => {
+      if (
+        route.value === 'History' &&
+        !ctx.root.$store.state.checks.animation
+      ) {
+        return
+      }
+
+      // If is not Choice or Loader, arrow navigation
+      if (
+        route.value === 'Choice' ||
+        route.value === 'Loader' ||
+        ctx.root.$store.state.checks.nav
+      )
+        return
+
+      ctx.root.$router.push({
+        name: routes[index.value - 1].name,
+      })
+    }
+
+    const downHandler = () => {
+      if (
+        route.value === 'History' &&
+        !ctx.root.$store.state.checks.animation
+      ) {
+        return
+      }
+
+      // If is not Choice or Loader, arrow navigation
+      if (
+        route.value === 'Choice' ||
+        route.value === 'Loader' ||
+        ctx.root.$store.state.checks.nav
+      )
+        return
+
+      if (route.value !== 'Numbers') {
+        ctx.root.$router.push({
+          name: routes[index.value + 1].name,
+        })
+      }
+    }
+
+    const leftHandler = () => {
+      if (id.value > 1) {
+        ctx.root.$router.push({
+          name: route.value,
+          params: { id: parseInt(id.value) - 1 },
+        })
+      }
+    }
+
+    const rightHandler = () => {
+      if (id.value < 6) {
+        ctx.root.$router.push({
+          name: route.value,
+          params: { id: parseInt(id.value) + 1 },
+        })
+      }
+    }
+
+    const count = ref(0)
+    const direction = ref('')
+    const prevDir = ref(null)
+
+    const debounce_scroll = _.throttle(event => {
+      if (ctx.root.$store.state.checks.scroll) return
+      if (
+        route.value === 'Choice' ||
+        route.value === 'Loader' ||
+        (route.value === 'History' &&
+          !ctx.root.$store.state.checks.animation) ||
+        (route.value === 'Numbers' && !ctx.root.$store.state.checks.numbers)
+      )
+        return
+
+      document.querySelectorAll('.progress').forEach(el => {
+        el.style.opacity = 0.5
+      })
+
+      if (event.deltaY > 0) {
+        if (route.value === 'Numbers') return
+
+        direction.value = 'down'
+
+        if (prevDir.value === null) {
+          prevDir.value = 'down'
+        } else {
+          // If change direction
+          if (prevDir.value !== direction.value) {
+            ctx.root.$store.commit('changeScroll', true)
+
+            gsap.to('.progress-down', {
+              width: 0,
+              duration: 0.5,
+              onComplete: function() {
+                ctx.root.$store.commit('changeScroll', false)
+                prevDir.value = null
+              },
+            })
+            count.value = 0
+            return
+          }
+        }
+      } else {
+        if (
+          route.value === 'Numbers' &&
+          document.querySelector('.numbers').scrollTop > 0
+        )
+          return
+
+        direction.value = 'up'
+
+        if (prevDir.value === null) {
+          prevDir.value = 'up'
+        } else {
+          // If change direction
+          if (prevDir.value !== direction.value) {
+            ctx.root.$store.commit('changeScroll', true)
+            gsap.to('.progress-up', {
+              width: 0,
+              duration: 0.5,
+              onComplete: function() {
+                ctx.root.$store.commit('changeScroll', false)
+                prevDir.value = null
+              },
+            })
+            count.value = 0
+            return
+          }
+        }
+      }
+      prevDir.value = direction.value
+      count.value += 1
+      transitionScreen(count.value)
+    }, 50)
+
+    const transitionScreen = nbr => {
+      if (nbr > 21) {
+        gsap.to(`.progress-${direction.value}`, {
+          width: '100%',
+          duration: 0.2,
+        })
+
+        // Block the scroll
+        ctx.root.$store.commit('changeScroll', true)
+
+        // Change to top or bottom
+        if (direction.value === 'down') {
+          downHandler()
+        } else {
+          upHandler()
+        }
+        document.querySelectorAll('.progress').forEach(el => {
+          el.style.opacity = 0
+        })
+        gsap.to('.progress', { width: 0, duration: 1 })
+        count.value = 0
+      } else {
+        nbr *= 5
+        gsap.to(`.progress-${direction.value}`, {
+          width: nbr + '%',
+          duration: 0.2,
+        })
+      }
+    }
+
+    let scrollingTimeout = null
+
     onMounted(() => {
+      //Scroll function
+      window.addEventListener('mousewheel', debounce_scroll)
+      window.addEventListener(
+        'mousewheel',
+        () => {
+          if (ctx.root.$store.state.checks.scroll) return
+          if (
+            route.value === 'Choice' ||
+            route.value === 'Loader' ||
+            (route.value === 'History' &&
+              !ctx.root.$store.state.checks.animation) ||
+            (route.value === 'Numbers' && !ctx.root.$store.state.checks.numbers)
+          )
+            return
+
+          window.clearTimeout(scrollingTimeout)
+          scrollingTimeout = setTimeout(function() {
+            if (count.value > 21) return
+
+            // If not 100% then let's begin it again
+            gsap.to('.progress', { width: 0, duration: 1 })
+            count.value = 0
+          }, 66)
+        },
+        false
+      )
+
       // Let's preload images
       preloadImages(ctx.root.$store.state.loader, ctx.root.$store, () => {
         ctx.root.$store.commit('toggleCheck', 'loaded')
@@ -159,35 +368,23 @@ export default defineComponent({
         ) {
           // right
           if (key === 39) {
-            if (id.value < 6 && keyUp.value === true) {
-              ctx.root.$router.push({
-                name: route.value,
-                params: { id: parseInt(id.value) + 1 },
-              })
+            if (keyUp.value === true) {
+              rightHandler()
             }
           }
           // left
           if (key === 37) {
-            if (id.value > 1 && keyUp.value === true) {
-              ctx.root.$router.push({
-                name: route.value,
-                params: { id: parseInt(id.value) - 1 },
-              })
+            if (keyUp.value === true) {
+              leftHandler()
             }
           }
           // down
           if (key === 40) {
-            if (route.value !== 'Numbers') {
-              ctx.root.$router.push({
-                name: routes[index.value + 1].name,
-              })
-            }
+            downHandler()
           }
           // up
           if (key === 38) {
-            ctx.root.$router.push({
-              name: routes[index.value - 1].name,
-            })
+            upHandler()
           }
         }
 
@@ -266,6 +463,10 @@ export default defineComponent({
       animation,
       mode,
       creditAnimation,
+      upHandler,
+      rightHandler,
+      leftHandler,
+      downHandler,
     }
   },
   beforeRoute(to, from, next) {
@@ -300,14 +501,16 @@ export default defineComponent({
 
 @font-face {
   font-family: 'roboto';
-  src: url('./assets/fonts/Roboto-Medium.ttf') format('ttf');
+  src: url('./assets/fonts/Roboto-Medium.woff2') format('woff2'),
+    url('./assets/fonts/Roboto-Medium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'roboto-black';
-  src: url('./assets/fonts/Roboto-Black.ttf') format('ttf');
+  src: url('./assets/fonts/Roboto-Black.woff2') format('woff2'),
+    url('./assets/fonts/Roboto-Black.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -333,7 +536,7 @@ a {
 // Transition
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-out;
 }
 
 .fade-enter,
@@ -377,11 +580,11 @@ a {
 // Mobile screen
 .mobile {
   color: white;
-  font-family: star_jediregular;
+  font-family: 'star_jediregular', sans-serif;
   letter-spacing: 0.1em;
-  padding: 4rem;
-  width: calc(100vw - 8rem);
-  height: calc(100vh - 8rem);
+  padding: 8rem;
+  width: calc(100vw - 16rem);
+  height: calc(100vh - 16rem);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -408,5 +611,23 @@ a {
 // Blur filter
 .blur {
   filter: blur(3px);
+}
+
+.progress {
+  background-color: #ffe403;
+  opacity: 0.5;
+  height: 5px;
+  width: 0%;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: fixed;
+
+  &-down {
+    bottom: 0;
+  }
+  &-up {
+    top: 0;
+  }
 }
 </style>

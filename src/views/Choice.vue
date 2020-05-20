@@ -49,7 +49,7 @@ export default defineComponent({
 <style lang="scss">
 .choice {
   color: #ffe403;
-  font-family: star_jediregular;
+  font-family: 'star_jediregular', sans-serif;
   letter-spacing: 0.1em;
   text-decoration: none;
   list-style-type: none;

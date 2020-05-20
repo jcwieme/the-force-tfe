@@ -5,8 +5,6 @@
       :class="[!checkNumbers ? 'numbers__row--border' : '']"
     >
       <d3-bar :data-bar="barChartDataWords" />
-      <!-- <d3-pie :data-chart="racesData" /> -->
-      <!-- <d3-bar :data-bar="barChartData" /> -->
       <d3-pie :data-chart="sidesData" />
     </div>
     <div
@@ -15,16 +13,7 @@
     >
       <d3-pie :data-chart="racesData" />
       <d3-bar :data-bar="barChartData" />
-      <!-- <div
-        class="numbers__column numbers__column--big numbers__column--right"
-      ></div> -->
     </div>
-    <!-- <div class="numbers__row">
-      <div
-        class="numbers__column numbers__column--big numbers__column--left"
-      ></div>
-      <d3-pie :data-chart="sidesData" />
-    </div> -->
   </div>
 </template>
 
@@ -235,7 +224,7 @@ export default defineComponent({
 
 <style lang="scss">
 .numbers {
-  font-family: star_jediregular;
+  font-family: 'star_jediregular', sans-serif;
   letter-spacing: 0.1em;
   color: #ffe403;
   width: 100%;
@@ -248,7 +237,8 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
 
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   // position: relative;
 
@@ -276,6 +266,7 @@ export default defineComponent({
 
   &__row {
     width: calc((100vw * 0.72) - 15rem);
+    min-height: fit-content;
     height: fit-content;
 
     display: flex;
@@ -349,7 +340,7 @@ export default defineComponent({
     margin: 3rem 0 2rem;
   }
   &__special {
-    font-family: 'roboto-black';
+    font-family: 'roboto-black', sans-serif;
   }
   &__info {
     &--fade {
