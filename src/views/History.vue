@@ -249,7 +249,7 @@ export default defineComponent({
     white-space: nowrap;
     position: relative;
 
-    cursor: pointer;
+    cursor: default;
 
     &:hover {
       &::before {
