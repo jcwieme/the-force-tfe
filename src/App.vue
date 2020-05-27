@@ -11,7 +11,7 @@
       v-touch:swipe.right="leftHandler"
       v-touch:swipe.left="rightHandler"
     >
-      <vue-particles
+      <!-- <vue-particles
         color="#dedede"
         :particleOpacity="1"
         :particlesNumber="160"
@@ -22,7 +22,7 @@
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
-      ></vue-particles>
+      ></vue-particles> -->
       <transition name="fade">
         <Navigation v-if="navRender" />
       </transition>
@@ -87,8 +87,8 @@ export default defineComponent({
     sources.forEach((el, index) => {
       sounds.push(
         new Howl({
-          src: [el],
-          // src: ['main.mp3'],
+          // src: [el],
+          src: ['main.mp3'],
           preload: true,
           volume: 0.5,
           onend: function() {
@@ -489,6 +489,11 @@ export default defineComponent({
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+::selection {
+  color: #ffffff;
+  background-color: rgba(255, 228, 3, 0.6);
 }
 
 @font-face {

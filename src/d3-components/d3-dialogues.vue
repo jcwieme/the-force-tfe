@@ -243,6 +243,27 @@ export default defineComponent({
         })
         .style('dominant-baseline', 'middle')
 
+      // hover effects circles
+      setup.variables.labels.on('mouseover', d => {
+        d3.select('#_circles_' + d.id)
+          .style('filter', null)
+          .style('stroke-width', '1')
+        document
+          .querySelector(`#_text_${d.id}`)
+          .classList.add('dialogue__name--hover')
+      })
+      // mouse out effect circles
+      setup.variables.labels.on('mouseout', d => {
+        d3.select('#_circles_' + d.id)
+          .style('filter', 'url(#desaturate)')
+          .style('stroke-width', '0')
+        d3.select('._circle_selected')
+          .style('filter', null)
+          .style('stroke-width', '1')
+        document
+          .querySelector(`#_text_${d.id}`)
+          .classList.remove('dialogue__name--hover')
+      })
       setup.variables.labels.on('click', d => {
         change(d.id)
       })
@@ -1016,7 +1037,7 @@ export default defineComponent({
     fill: #ffe403;
     opacity: 0.5;
     position: relative;
-    cursor: default;
+    cursor: pointer;
 
     &--hover {
       opacity: 1;
