@@ -228,7 +228,8 @@ export default defineComponent({
   letter-spacing: 0.1em;
   color: #ffe403;
   width: 100%;
-  height: calc(100% - 50rem);
+  height: 100%;
+  box-sizing: border-box;
 
   padding-top: 25rem;
   padding-bottom: 25rem;
@@ -265,7 +266,8 @@ export default defineComponent({
   }
 
   &__row {
-    width: calc((100vw * 0.72) - 15rem);
+    width: calc((100vw * 0.72));
+    box-sizing: border-box;
     min-height: fit-content;
     height: fit-content;
 
