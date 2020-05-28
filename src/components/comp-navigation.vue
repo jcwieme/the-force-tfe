@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-    <div class="nav__sound" @click="toggleFn('music')">
+    <!-- <div class="nav__sound" @click="toggleFn('music')">
       <div
         class="nav__bar"
         :class="[musicPlay ? 'nav__bar--actif' : '']"
@@ -9,7 +9,7 @@
       >
         Bar
       </div>
-    </div>
+    </div> -->
     <div class="nav__arrows">
       <img
         v-for="arrow in arrows"
@@ -41,8 +41,10 @@
         </div>
       </div>
       <h2 class="nav__movie">
-        <span>Star Wars: {{ title.number }}</span>
-        <span>{{ title.title }}</span>
+        <p>
+          Star Wars: <span>{{ title.number }}</span>
+        </p>
+        <p>{{ title.title }}</p>
       </h2>
       <div class="nav__choice">
         <ul class="nav__list">
@@ -126,9 +128,9 @@ export default defineComponent({
     const navRef = ref(null)
 
     // Check music is playing
-    const musicPlay = computed(() => {
-      return ctx.root.$store.state.checks.music
-    })
+    // const musicPlay = computed(() => {
+    //   return ctx.root.$store.state.checks.music
+    // })
 
     const router = ctx.root.$router.options.routes
     const route = computed(() => {
@@ -277,7 +279,7 @@ export default defineComponent({
       title,
       chapter,
       navRef,
-      musicPlay,
+      // musicPlay,
       chapterText,
       toggleFn,
       changeNav,
@@ -292,69 +294,69 @@ export default defineComponent({
   font-family: 'star_jediregular', sans-serif;
   letter-spacing: 0.1em;
 
-  &__sound {
-    position: fixed;
-    top: 4rem;
-    right: 4rem;
+  // &__sound {
+  //   position: fixed;
+  //   top: 4rem;
+  //   right: 4rem;
 
-    width: 2.8rem;
-    height: 2rem;
+  //   width: 2.8rem;
+  //   height: 2rem;
 
-    z-index: 11;
+  //   z-index: 11;
 
-    cursor: pointer;
-  }
+  //   cursor: pointer;
+  // }
 
-  &__bar {
-    background: white;
-    opacity: 0.5;
-    bottom: 0.1rem;
-    height: 1.5rem;
-    position: absolute;
-    width: 0.3rem;
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    transition: all 500ms ease;
+  // &__bar {
+  //   background: white;
+  //   opacity: 0.5;
+  //   bottom: 0.1rem;
+  //   height: 1.5rem;
+  //   position: absolute;
+  //   width: 0.3rem;
+  //   text-indent: 100%;
+  //   white-space: nowrap;
+  //   overflow: hidden;
+  //   transition: all 500ms ease;
 
-    &--actif {
-      opacity: 1;
-      height: 0.3rem;
-      transition: all 500ms ease;
-      animation: sound 0ms -800ms linear infinite alternate;
-    }
+  //   &--actif {
+  //     opacity: 1;
+  //     height: 0.3rem;
+  //     transition: all 500ms ease;
+  //     animation: sound 0ms -800ms linear infinite alternate;
+  //   }
 
-    &:nth-child(1) {
-      left: 0.1rem;
-      animation-duration: 1274ms;
-      animation-delay: 40ms;
-    }
-    &:nth-child(2) {
-      left: 0.5rem;
-      animation-duration: 1233ms;
-      animation-delay: 25ms;
-    }
-    &:nth-child(3) {
-      left: 0.9rem;
-      animation-duration: 1207ms;
-      animation-delay: 10ms;
-    }
-    &:nth-child(4) {
-      left: 1.3rem;
-      animation-duration: 1258ms;
-      animation-delay: 32ms;
-    }
-    &:nth-child(5) {
-      left: 1.7rem;
-      animation-duration: 1200ms;
-      animation-delay: 4ms;
-    }
-    &:nth-child(6) {
-      left: 2.1rem;
-      animation-duration: 1227ms;
-      animation-delay: 0ms;
-    }
-  }
+  //   &:nth-child(1) {
+  //     left: 0.1rem;
+  //     animation-duration: 1274ms;
+  //     animation-delay: 40ms;
+  //   }
+  //   &:nth-child(2) {
+  //     left: 0.5rem;
+  //     animation-duration: 1233ms;
+  //     animation-delay: 25ms;
+  //   }
+  //   &:nth-child(3) {
+  //     left: 0.9rem;
+  //     animation-duration: 1207ms;
+  //     animation-delay: 10ms;
+  //   }
+  //   &:nth-child(4) {
+  //     left: 1.3rem;
+  //     animation-duration: 1258ms;
+  //     animation-delay: 32ms;
+  //   }
+  //   &:nth-child(5) {
+  //     left: 1.7rem;
+  //     animation-duration: 1200ms;
+  //     animation-delay: 4ms;
+  //   }
+  //   &:nth-child(6) {
+  //     left: 2.1rem;
+  //     animation-duration: 1227ms;
+  //     animation-delay: 0ms;
+  //   }
+  // }
   &__arrows {
     position: fixed;
     bottom: 4rem;
@@ -543,7 +545,7 @@ export default defineComponent({
     z-index: 20;
 
     span {
-      display: block;
+      color: #ffe403;
     }
   }
 
@@ -552,7 +554,8 @@ export default defineComponent({
     top: 0;
     left: 0;
     width: 44.5rem;
-    height: calc(100vh - 0.6rem);
+    height: 100vh;
+    box-sizing: border-box;
     background-color: #18181c;
     border: 0.3rem solid #ffe403;
     z-index: 19;
@@ -668,12 +671,12 @@ export default defineComponent({
   }
 }
 
-@keyframes sound {
-  0% {
-    height: 0.3rem;
-  }
-  100% {
-    height: 1.5rem;
-  }
-}
+// @keyframes sound {
+//   0% {
+//     height: 0.3rem;
+//   }
+//   100% {
+//     height: 1.5rem;
+//   }
+// }
 </style>

@@ -11,6 +11,7 @@
       v-touch:swipe.right="leftHandler"
       v-touch:swipe.left="rightHandler"
     >
+      <audioComp v-if="!soundCheck" />
       <!-- <vue-particles
         color="#dedede"
         :particleOpacity="1"
@@ -48,7 +49,8 @@ import {
 } from '@vue/composition-api'
 import Navigation from '@/components/comp-navigation'
 import compCredits from '@/components/comp-credits'
-import { Howl } from 'howler'
+import audioComp from '@/components/comp-audio'
+// import { Howl } from 'howler'
 import { isMobile, preloadImages } from '@/tools/utils'
 import { _ } from 'vue-underscore'
 import gsap from 'gsap'
@@ -58,6 +60,7 @@ export default defineComponent({
   components: {
     Navigation,
     compCredits,
+    audioComp,
   },
   setup(props, ctx) {
     const keyUp = ref(true)
@@ -74,45 +77,72 @@ export default defineComponent({
     const mode = computed(() => {
       return ctx.root.$store.state.animation.mode
     })
-
-    var sources = [
-      '../../assets/music/main.ogg',
-      '../../assets/music/cantina.ogg',
-      '../../assets/music/cantina2.ogg',
-      '../../assets/music/history.ogg',
-    ]
-
-    var sounds = []
-
-    sources.forEach((el, index) => {
-      sounds.push(
-        new Howl({
-          // src: [el],
-          src: ['main.mp3'],
-          preload: true,
-          volume: 0.5,
-          onend: function() {
-            if (index === 2 || index === 3) {
-              if (!sounds[0].playing()) {
-                sounds[0].play()
-                ctx.root.$store.commit('changeMusic', 0)
-              }
-            } else {
-              if (!sounds[index + 1].playing()) {
-                sounds[index + 1].play()
-                ctx.root.$store.commit('changeMusic', index + 1)
-              }
-            }
-          },
-          onpause: function() {
-            if (index === 3) return
-            ctx.root.$store.commit('changeMusic', index)
-          },
-        })
-      )
+    const soundCheck = computed(() => {
+      return ctx.root.$route.name === 'Loader'
     })
 
-    sounds[0].play()
+    // Audio lists
+    const audioMain = new Audio('../../assets/music/main.mp3')
+    const audioCantina = new Audio('../../assets/music/cantina.mp3')
+    const audioCantina2 = new Audio('../../assets/music/cantina2.mp3')
+    const audioHistory = new Audio('../../assets/music/history.mp3')
+
+    const sounds = [audioMain, audioCantina, audioCantina2, audioHistory]
+
+    sounds.forEach((sound, index) => {
+      sound.addEventListener('ended', () => {
+        if (index === 3 || index === 2) {
+          sounds[0].play()
+        } else {
+          sounds[index + 1].play()
+        }
+      })
+    })
+
+    watch(
+      () => ctx.root.$store.state.checks.music,
+      (value, prevValue) => {
+        if (value && ctx.root.$route.name === 'History' && sounds[3].paused) {
+          sounds[3].play()
+        } else if (value) {
+          sounds[ctx.root.$store.state.checks.player].play()
+        }
+
+        if (!value && prevValue) {
+          sounds.forEach((sound, index) => {
+            if (!sound.paused) {
+              sound.pause()
+              if (index !== 3) ctx.root.$store.commit('changeMusic', index)
+            }
+          })
+        }
+      }
+    )
+    watch(
+      () => ctx.root.$route.name,
+      (value, prevValue) => {
+        if (!ctx.root.$store.state.checks.music) return
+
+        if (
+          (value === 'History' &&
+            prevValue === 'Choice' &&
+            !ctx.root.$store.state.checks.animation) ||
+          (value === 'History' &&
+            prevValue === undefined &&
+            !ctx.root.$store.state.checks.animation)
+        ) {
+          sounds[0].pause()
+          setTimeout(() => {
+            sounds[3].play()
+          }, 250)
+        } else {
+          if (!sounds[3].paused) {
+            sounds[3].pause()
+            sounds[0].play()
+          }
+        }
+      }
+    )
 
     const routes = ctx.root.$router.options.routes
     const route = computed(() => {
@@ -404,53 +434,12 @@ export default defineComponent({
     })
 
     watch(
-      () => ctx.root.$store.state.checks.music,
-      (value, prevValue) => {
-        if (value) {
-          sounds[ctx.root.$store.state.checks.player].play()
-        }
-
-        if (!value && prevValue) {
-          sounds.forEach(el => {
-            if (el.playing()) el.pause()
-          })
-        }
-      }
-    )
-
-    watch(
       () => ctx.root.$store.state.checks.credit,
       (value, prevValue) => {
         if (value && !prevValue) {
           creditAnimation.value = 'slide-bottom'
         } else {
           creditAnimation.value = 'slide-top'
-        }
-      }
-    )
-
-    watch(
-      () => ctx.root.$route.name,
-      (value, prevValue) => {
-        if (!ctx.root.$store.state.checks.music) return
-
-        if (
-          (value === 'History' &&
-            prevValue === 'Choice' &&
-            !ctx.root.$store.state.checks.animation) ||
-          (value === 'History' &&
-            prevValue === undefined &&
-            !ctx.root.$store.state.checks.animation)
-        ) {
-          sounds[0].pause()
-          setTimeout(() => {
-            sounds[3].play()
-          }, 250)
-        } else {
-          if (sounds[3].playing()) {
-            sounds[3].pause()
-            sounds[ctx.root.$store.state.checks.player].play()
-          }
         }
       }
     )
@@ -467,6 +456,7 @@ export default defineComponent({
       rightHandler,
       leftHandler,
       downHandler,
+      soundCheck,
     }
   },
   beforeRoute(to, from, next) {
@@ -588,8 +578,9 @@ a {
   font-family: 'star_jediregular', sans-serif;
   letter-spacing: 0.1em;
   padding: 8rem;
-  width: calc(100vw - 16rem);
-  height: calc(100vh - 16rem);
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
   text-align: center;
   display: flex;
   flex-direction: column;

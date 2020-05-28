@@ -26,7 +26,7 @@ export default new Vuex.Store({
     loader,
     checks: {
       loaded: false,
-      music: true,
+      music: false,
       nav: false,
       credit: false,
       animation: false,
