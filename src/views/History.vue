@@ -25,6 +25,13 @@
       </div>
     </transition>
     <comp-history v-show="open" :number="article" :word="word" />
+    <button
+      class="history__btn"
+      @click="skipEventHandler()"
+      v-if="!animationRotate"
+    >
+      Skip animation
+    </button>
   </div>
 </template>
 
@@ -98,6 +105,7 @@ export default defineComponent({
             crawlPos -= distance
             crawlContentStyle.top = crawlPos + 'px'
             if (crawlPos < -crawlContent.clientHeight) {
+              if (animationRotate.value) return
               ctx.root.$store.commit('toggleCheck', 'animation')
             } else {
               requestAnimationFrame(tick)
@@ -149,6 +157,10 @@ export default defineComponent({
       open.value = false
     })
 
+    const skipEventHandler = () => {
+      ctx.root.$store.commit('toggleCheck', 'animation')
+    }
+
     return {
       text,
       number,
@@ -157,6 +169,7 @@ export default defineComponent({
       word,
       open,
       animationRotate,
+      skipEventHandler,
     }
   },
 })
@@ -276,7 +289,8 @@ export default defineComponent({
     right: 2rem;
     transform: translateY(-50%);
     height: auto;
-    width: calc(40rem - 86px);
+    width: 40rem;
+    box-sizing: border-box;
     background-color: #18181c;
     border: 3px solid #ffe403;
     padding: 4rem;
@@ -292,9 +306,33 @@ export default defineComponent({
     }
 
     img {
-      width: calc(40rem - 86px);
+      width: 100%;
       height: auto;
       margin-bottom: 2rem;
+    }
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: 1px solid #ffe403;
+    padding: 10px 20px;
+    color: white;
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'roboto', sans-serif;
+    font-size: 1.4rem;
+    outline: none;
+
+    cursor: pointer;
+    transition: 300ms ease-out;
+
+    &:hover {
+      background-color: #ffe403;
+      color: #18181c;
+
+      transition: 300ms ease-in;
     }
   }
 }

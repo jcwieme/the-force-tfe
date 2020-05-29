@@ -187,7 +187,9 @@
       </transition>
     </div>
     <div class="loader__enter" :class="[loaded ? showClass : '']">
-      <router-link class="loaded" to="choice">enter</router-link>
+      <router-link class="loaded" to="choice" @click.native="toggleMusic()"
+        >enter</router-link
+      >
     </div>
     <div class="loader__headphones">
       <img src="../assets/img/loader/headphones.svg" alt="" />
@@ -241,12 +243,17 @@ export default defineComponent({
       })
     })
 
+    const toggleMusic = () => {
+      ctx.root.$store.commit('toggleCheck', 'music')
+    }
+
     return {
       random,
       showClass,
       loaded,
       i,
       text,
+      toggleMusic,
     }
   },
 })
@@ -254,8 +261,9 @@ export default defineComponent({
 
 <style lang="scss">
 .loader {
-  height: calc(100vh - 10rem);
-  width: calc(100vw - 10rem);
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
   padding: 5rem;
   display: flex;
   flex-direction: column;
