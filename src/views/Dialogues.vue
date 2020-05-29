@@ -18,6 +18,7 @@ export default defineComponent({
     numberBubble,
   },
   setup(props, ctx) {
+    // Setup variables
     const title = computed(() => {
       return ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie]
         .title

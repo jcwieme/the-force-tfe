@@ -26,6 +26,7 @@ export default defineComponent({
     const choices = ctx.root.$store.state.choices
 
     onMounted(() => {
+      // Mouse over function
       document.querySelectorAll('.choice__movie').forEach(choice => {
         choice.addEventListener('mouseover', e => {
           document.querySelectorAll('.choice__movie').forEach(choice => {
