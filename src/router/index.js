@@ -55,11 +55,14 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+  console.log(from.name, to)
   // Set animation History to false if loading directly a page
-  if (from.name === null) {
+  if (from.name === null && to.name !== 'Loader') {
     if (to.name !== 'History' && to.name !== 'Loader' && to.name !== 'Choice') {
       store.commit('toggleCheck', 'animation')
     }
+    store.commit('changeRoute', to.path)
+    router.push('/')
   }
   // Arrows check down
   if (to.name === 'Numbers') {
@@ -84,7 +87,7 @@ router.beforeEach((to, from, next) => {
   }
 
   // Transitions effect
-  if (from.name !== to.name) {
+  if (from.name !== to.name && from.name !== null) {
     if (
       !from.name ||
       from.name === 'Loader' ||

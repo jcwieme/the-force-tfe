@@ -95,6 +95,7 @@ export default defineComponent({
         word.addEventListener('mouseout', functionWord)
       })
 
+      // Animation text crawl
       if (!animationRotate.value) {
         const crawl = document.getElementById('crawl')
         const crawlContent = document.getElementById('crawl-content')
@@ -129,6 +130,7 @@ export default defineComponent({
       }
     })
 
+    // Update the info box on change movie
     onUpdated(() => {
       let words = document.querySelectorAll('.history__word')
       words.forEach(word => {
@@ -137,6 +139,7 @@ export default defineComponent({
       })
     })
 
+    // Remove mouse over listener
     onBeforeUpdate(() => {
       let words = document.querySelectorAll('.history__word')
       words.forEach(word => {
@@ -157,6 +160,7 @@ export default defineComponent({
       open.value = false
     })
 
+    // Skip function
     const skipEventHandler = () => {
       ctx.root.$store.commit('toggleCheck', 'animation')
     }

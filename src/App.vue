@@ -63,6 +63,7 @@ export default defineComponent({
     audioComp,
   },
   setup(props, ctx) {
+    // Setup variables
     const keyUp = ref(true)
     const screen = computed(() => {
       return ctx.root.$store.state.checks.screen
@@ -99,6 +100,7 @@ export default defineComponent({
       })
     })
 
+    // Wtach if audio bar is clicked
     watch(
       () => ctx.root.$store.state.checks.music,
       (value, prevValue) => {
@@ -118,6 +120,8 @@ export default defineComponent({
         }
       }
     )
+
+    // Wtach change route nam (history to other)
     watch(
       () => ctx.root.$route.name,
       (value, prevValue) => {
@@ -144,6 +148,7 @@ export default defineComponent({
       }
     )
 
+    // Navigation setup variable
     const routes = ctx.root.$router.options.routes
     const route = computed(() => {
       return ctx.root.$route.name
@@ -166,7 +171,7 @@ export default defineComponent({
       }
     })
 
-    // Nav functions
+    // Nav function up
     const upHandler = () => {
       if (
         route.value === 'History' &&
@@ -188,6 +193,7 @@ export default defineComponent({
       })
     }
 
+    // Nav function down
     const downHandler = () => {
       if (
         route.value === 'History' &&
@@ -211,6 +217,7 @@ export default defineComponent({
       }
     }
 
+    // Nav function left
     const leftHandler = () => {
       if (id.value > 1) {
         ctx.root.$router.push({
@@ -220,6 +227,7 @@ export default defineComponent({
       }
     }
 
+    // Nav function right
     const rightHandler = () => {
       if (id.value < 6) {
         ctx.root.$router.push({
@@ -229,13 +237,16 @@ export default defineComponent({
       }
     }
 
+    // Setup scroll variables
     const count = ref(0)
     const direction = ref('')
     const prevDir = ref(null)
 
-    const debounce_scroll = _.throttle(event => {
-      if (ctx.root.$store.state.checks.scroll) return
+    // Scroll function throttle
+    const throttle_scroll = _.throttle(event => {
+      // Scroll guard
       if (
+        ctx.root.$store.state.checks.scroll ||
         route.value === 'Choice' ||
         route.value === 'Loader' ||
         (route.value === 'History' &&
@@ -244,11 +255,13 @@ export default defineComponent({
       )
         return
 
+      // Make the bar visible again
       document.querySelectorAll('.progress').forEach(el => {
         el.style.opacity = 0.5
       })
 
       if (event.deltaY > 0) {
+        // Scroll guard
         if (route.value === 'Numbers') return
 
         direction.value = 'down'
@@ -256,7 +269,7 @@ export default defineComponent({
         if (prevDir.value === null) {
           prevDir.value = 'down'
         } else {
-          // If change direction
+          // If change direction wait bar 0
           if (prevDir.value !== direction.value) {
             ctx.root.$store.commit('changeScroll', true)
 
@@ -273,6 +286,7 @@ export default defineComponent({
           }
         }
       } else {
+        // Scroll guard
         if (
           route.value === 'Numbers' &&
           document.querySelector('.numbers').scrollTop > 0
@@ -284,7 +298,7 @@ export default defineComponent({
         if (prevDir.value === null) {
           prevDir.value = 'up'
         } else {
-          // If change direction
+          // If change direction wait bar 0
           if (prevDir.value !== direction.value) {
             ctx.root.$store.commit('changeScroll', true)
             gsap.to('.progress-up', {
@@ -301,31 +315,22 @@ export default defineComponent({
         }
       }
       prevDir.value = direction.value
-      count.value += 1
+      count.value += 2
       transitionScreen(count.value)
     }, 50)
 
     const transitionScreen = nbr => {
-      if (nbr > 21) {
-        gsap.to(`.progress-${direction.value}`, {
-          width: '100%',
-          duration: 0.2,
-        })
+      console.log(nbr, nbr * 5)
 
+      if (nbr > 21) {
         // Block the scroll
         ctx.root.$store.commit('changeScroll', true)
 
-        // Change to top or bottom
-        if (direction.value === 'down') {
-          downHandler()
-        } else {
-          upHandler()
-        }
-        document.querySelectorAll('.progress').forEach(el => {
-          el.style.opacity = 0
+        gsap.to(`.progress-${direction.value}`, {
+          width: '100%',
+          duration: 0.2,
+          onComplete: changeScreen,
         })
-        gsap.to('.progress', { width: 0, duration: 1 })
-        count.value = 0
       } else {
         nbr *= 5
         gsap.to(`.progress-${direction.value}`, {
@@ -335,16 +340,33 @@ export default defineComponent({
       }
     }
 
+    // Change the screen on the scroll and reset value
+    const changeScreen = () => {
+      // Change to top or bottom
+      if (direction.value === 'down') {
+        downHandler()
+      } else {
+        upHandler()
+      }
+      document.querySelectorAll('.progress').forEach(el => {
+        el.style.opacity = 0
+      })
+      gsap.to('.progress', { width: 0, duration: 1 })
+      count.value = 0
+    }
+
     let scrollingTimeout = null
 
     onMounted(() => {
-      //Scroll function
-      window.addEventListener('mousewheel', debounce_scroll)
+      // Scroll function with the throttle
+      window.addEventListener('mousewheel', throttle_scroll)
+      // Scroll function for the timeout to know if scroll is break or not
       window.addEventListener(
         'mousewheel',
         () => {
-          if (ctx.root.$store.state.checks.scroll) return
+          // Scroll guard
           if (
+            ctx.root.$store.state.checks.scroll ||
             route.value === 'Choice' ||
             route.value === 'Loader' ||
             (route.value === 'History' &&

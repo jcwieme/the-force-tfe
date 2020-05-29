@@ -45,6 +45,7 @@ export default new Vuex.Store({
       name: 'slide-top',
       mode: '',
     },
+    nextRoute: 'choice',
     choices: [
       {
         title: 'the phantom menace',
@@ -103,6 +104,9 @@ export default new Vuex.Store({
     },
     changeScroll(state, option) {
       state.checks.scroll = option
+    },
+    changeRoute(state, option) {
+      state.nextRoute = option
     },
   },
   actions: {},

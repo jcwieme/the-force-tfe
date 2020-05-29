@@ -187,7 +187,7 @@
       </transition>
     </div>
     <div class="loader__enter" :class="[loaded ? showClass : '']">
-      <router-link class="loaded" to="choice" @click.native="toggleMusic()"
+      <router-link class="loaded" :to="nextRoute" @click.native="toggleMusic()"
         >enter</router-link
       >
     </div>
@@ -212,6 +212,10 @@ export default defineComponent({
     const showClass = ref('loader__enter--show')
     const loaded = computed(() => {
       return ctx.root.$store.state.checks.loaded
+    })
+
+    const nextRoute = computed(() => {
+      return ctx.root.$store.state.nextRoute
     })
 
     const text = ref('')
@@ -254,6 +258,7 @@ export default defineComponent({
       i,
       text,
       toggleMusic,
+      nextRoute,
     }
   },
 })
