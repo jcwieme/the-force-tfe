@@ -117,7 +117,7 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    loadData({ commit }) {
+    LOAD_DATA({ commit }) {
       axios
         .get('https://the-force-a0fb6.firebaseio.com/datas.json')
         .then(response => {

@@ -237,13 +237,20 @@ export default defineComponent({
         100 -
         (ctx.root.$store.state.checks.load /
           ctx.root.$store.state.loader.length) *
-          100
+          90
       )
     })
 
     watch(loadProgress, () => {
+      console.log(loadProgress.value)
       gsap.to('#theGradient stop', 0.5, {
         attr: { offset: `${loadProgress.value}%` },
+      })
+    })
+
+    watch(loaded, () => {
+      gsap.to('#theGradient stop', 1, {
+        attr: { offset: `0%` },
       })
     })
 

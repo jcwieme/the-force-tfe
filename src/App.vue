@@ -387,7 +387,7 @@ export default defineComponent({
 
       // Let's preload images
       preloadImages(ctx.root.$store.state.loader, ctx.root.$store, () => {
-        ctx.root.$store.dispatch('loadData')
+        ctx.root.$store.dispatch('LOAD_DATA')
       })
 
       // Check is mobile version
