@@ -12,7 +12,7 @@
       v-touch:swipe.left="rightHandler"
     >
       <audioComp v-if="!soundCheck" />
-      <!-- <vue-particles
+      <vue-particles
         color="#dedede"
         :particleOpacity="1"
         :particlesNumber="160"
@@ -23,7 +23,7 @@
         :hoverEffect="false"
         :clickEffect="false"
         class="particules"
-      ></vue-particles> -->
+      ></vue-particles>
       <transition name="fade">
         <Navigation v-if="navRender" />
       </transition>
@@ -320,8 +320,6 @@ export default defineComponent({
     }, 50)
 
     const transitionScreen = nbr => {
-      console.log(nbr, nbr * 5)
-
       if (nbr > 21) {
         // Block the scroll
         ctx.root.$store.commit('changeScroll', true)
@@ -389,7 +387,7 @@ export default defineComponent({
 
       // Let's preload images
       preloadImages(ctx.root.$store.state.loader, ctx.root.$store, () => {
-        ctx.root.$store.commit('toggleCheck', 'loaded')
+        ctx.root.$store.dispatch('LOAD_DATA')
       })
 
       // Check is mobile version

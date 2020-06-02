@@ -55,7 +55,6 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log(from.name, to)
   // Set animation History to false if loading directly a page
   if (from.name === null && to.name !== 'Loader') {
     if (to.name !== 'History' && to.name !== 'Loader' && to.name !== 'Choice') {

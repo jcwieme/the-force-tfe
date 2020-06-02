@@ -1,29 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
-import movie1 from '@/assets/sw01.json'
-import movie2 from '@/assets/sw02.json'
-import movie3 from '@/assets/sw03.json'
-import movie4 from '@/assets/sw04.json'
-import movie5 from '@/assets/sw05.json'
-import movie6 from '@/assets/sw06.json'
-import numbers from '@/assets/numbers.json'
 import loader from '@/assets/loader.json'
-import credits from '@/assets/credits.json'
-import definitions from '@/assets/definitions.json'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    movies: [movie1, movie2, movie3, movie4, movie5, movie6],
-    definitions,
+    loader,
+    movies: null,
+    definitions: null,
+    numbers: null,
+    credits: null,
     activeMovie: null,
     wordsInMovie: [9380, 7566, 8078, 10336, 7707, 6604],
     linesInMovie: [946, 620, 783, 1038, 947, 719],
-    numbers,
-    credits,
-    loader,
+    posts: null,
     checks: {
       loaded: false,
       music: false,
@@ -108,7 +101,30 @@ export default new Vuex.Store({
     changeRoute(state, option) {
       state.nextRoute = option
     },
+    updatePosts(state, posts) {
+      let data = null
+      Object.keys(posts).forEach(name => {
+        if (name === 'movies') {
+          data = []
+          Object.keys(posts[name]).forEach(movie => {
+            data.push(posts[name][movie])
+          })
+        } else {
+          data = posts[name]
+        }
+        state[name] = data
+      })
+    },
   },
-  actions: {},
+  actions: {
+    LOAD_DATA({ commit }) {
+      axios
+        .get('https://the-force-a0fb6.firebaseio.com/datas.json')
+        .then(response => {
+          commit('updatePosts', response.data)
+          commit('toggleCheck', 'loaded')
+        })
+    },
+  },
   modules: {},
 })
