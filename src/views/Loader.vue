@@ -242,7 +242,6 @@ export default defineComponent({
     })
 
     watch(loadProgress, () => {
-      console.log(loadProgress.value)
       gsap.to('#theGradient stop', 0.5, {
         attr: { offset: `${loadProgress.value}%` },
       })

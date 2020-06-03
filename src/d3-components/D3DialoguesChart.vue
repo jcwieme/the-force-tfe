@@ -7,7 +7,7 @@ import { defineComponent, onMounted, watch } from '@vue/composition-api'
 import * as d3 from 'd3'
 
 export default defineComponent({
-  name: 'd3Dialogues',
+  name: 'D3DialoguesChart',
   props: {
     DataDialogues: Object,
   },

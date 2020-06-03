@@ -40,7 +40,7 @@ import {
 import * as d3 from 'd3'
 
 export default defineComponent({
-  name: 'd3Bar',
+  name: 'D3BarChart',
   props: {
     dataBar: {
       type: Object,

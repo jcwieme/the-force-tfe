@@ -20,8 +20,8 @@
 <script>
 import { defineComponent, computed } from '@vue/composition-api'
 
-import d3Bar from '@/d3-components/d3-barchart'
-import d3Pie from '@/d3-components/d3-piechart'
+import d3Bar from '@/d3-components/D3BarChart'
+import d3Pie from '@/d3-components/D3PieChart'
 
 export default defineComponent({
   name: 'Numbers',

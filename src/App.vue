@@ -1,7 +1,22 @@
 <template>
   <div id="app">
+    <vue-particles
+      color="#dedede"
+      :particleOpacity="1"
+      :particlesNumber="160"
+      shapeType="circle"
+      :particleSize="2"
+      :lineLinked="false"
+      :moveSpeed="0.1"
+      :hoverEffect="false"
+      :clickEffect="false"
+      class="particules"
+    ></vue-particles>
     <div v-if="screen" class="mobile">
-      The Force arriving very soon on tablet and soon on mobile !
+      <p>
+        oh, it seems like you're trying to reach the force on a small device.
+      </p>
+      <p>Don't worry ! Just grab your computer to discover the experience !</p>
     </div>
     <div
       v-else
@@ -12,18 +27,6 @@
       v-touch:swipe.left="rightHandler"
     >
       <audioComp v-if="!soundCheck" />
-      <vue-particles
-        color="#dedede"
-        :particleOpacity="1"
-        :particlesNumber="160"
-        shapeType="circle"
-        :particleSize="2"
-        :lineLinked="false"
-        :moveSpeed="0.1"
-        :hoverEffect="false"
-        :clickEffect="false"
-        class="particules"
-      ></vue-particles>
       <transition name="fade">
         <Navigation v-if="navRender" />
       </transition>
@@ -47,10 +50,9 @@ import {
   onMounted,
   watch,
 } from '@vue/composition-api'
-import Navigation from '@/components/comp-navigation'
-import compCredits from '@/components/comp-credits'
-import audioComp from '@/components/comp-audio'
-// import { Howl } from 'howler'
+import Navigation from '@/components/CompNavigation'
+import compCredits from '@/components/CompCredits'
+import audioComp from '@/components/CompAudio'
 import { isMobile, preloadImages } from '@/tools/utils'
 import { _ } from 'vue-underscore'
 import gsap from 'gsap'
@@ -597,7 +599,7 @@ a {
   color: white;
   font-family: 'star_jediregular', sans-serif;
   letter-spacing: 0.1em;
-  padding: 8rem;
+  padding: 16rem;
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
@@ -607,6 +609,15 @@ a {
   align-items: center;
   justify-content: center;
   font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  p {
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 // Router position

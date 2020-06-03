@@ -15,7 +15,7 @@
 
 <script>
 import { defineComponent, onMounted } from '@vue/composition-api'
-import compChoice from '@/components/comp-choice'
+import compChoice from '@/components/CompChoice'
 
 export default defineComponent({
   name: 'Choice',

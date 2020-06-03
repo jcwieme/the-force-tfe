@@ -46,7 +46,7 @@ import {
   watch,
 } from '@vue/composition-api'
 
-import compHistory from '@/components/comp-history'
+import compHistory from '@/components/CompHistory'
 
 export default defineComponent({
   name: 'History',
