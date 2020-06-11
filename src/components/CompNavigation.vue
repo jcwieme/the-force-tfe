@@ -562,7 +562,7 @@ export default defineComponent({
 
     display: flex;
 
-    transform: translateX(-100%);
+    transform: translateX(-110%);
     transition: all 500ms ease;
   }
 
