@@ -105,7 +105,7 @@ import {
 } from '@vue/composition-api'
 import * as utils from '@/tools/utils'
 
-import compWords from '@/components/comp-words'
+import compWords from '@/components/CompWords'
 
 export default defineComponent({
   name: 'Words',
@@ -227,6 +227,7 @@ export default defineComponent({
         .addEventListener('click', () => {
           if (data.searchState) {
             if (data.animState) {
+              data.hoverState = false
               data.animState = false
               setTimeout(() => {
                 data.searchState = false
@@ -234,6 +235,7 @@ export default defineComponent({
                 data.search = ''
               }, 350)
             } else {
+              data.hoverState = false
               data.searchState = false
               data.instruction = 'Type something'
               data.search = ''
@@ -339,8 +341,11 @@ export default defineComponent({
           }
         }
 
+        data.hoverState = false
+
         // Close search window
         if (data.searchState === true && data.search.length === 0) {
+          data.hoverState = false
           data.searchState = false
           data.instruction = 'Type something'
         }

@@ -7,8 +7,8 @@
 
 <script>
 import { defineComponent, computed } from '@vue/composition-api'
-import d3Dialogues from '@/d3-components/d3-dialogues.vue'
-import numberBubble from '@/components/comp-number-bubble.vue'
+import d3Dialogues from '@/d3-components/D3DialoguesChart'
+import numberBubble from '@/components/CompBubbleNumber'
 import * as utils from '@/tools/utils'
 
 export default defineComponent({

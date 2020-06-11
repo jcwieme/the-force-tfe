@@ -15,7 +15,7 @@
 import { defineComponent, computed } from '@vue/composition-api'
 
 export default defineComponent({
-  name: 'comp-audio',
+  name: 'CompAudio',
   setup(props, ctx) {
     const musicPlay = computed(() => {
       return ctx.root.$store.state.checks.music

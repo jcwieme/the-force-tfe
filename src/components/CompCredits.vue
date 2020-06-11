@@ -41,7 +41,7 @@
 import { defineComponent, computed } from '@vue/composition-api'
 
 export default defineComponent({
-  name: 'comp-credits',
+  name: 'CompCredits',
   setup(props, ctx) {
     const toggleCredits = () => {
       ctx.root.$store.commit('toggleCheck', 'credit')

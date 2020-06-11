@@ -77,7 +77,7 @@
 import { defineComponent, computed, ref, watch } from '@vue/composition-api'
 
 export default defineComponent({
-  name: 'Navigation',
+  name: 'CompNavigation',
   setup(props, ctx) {
     // Get arrow's path
     const arrows = computed(() => {
@@ -562,7 +562,7 @@ export default defineComponent({
 
     display: flex;
 
-    transform: translateX(-100%);
+    transform: translateX(-110%);
     transition: all 500ms ease;
   }
 

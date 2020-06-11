@@ -12,7 +12,7 @@
 import { defineComponent, computed } from '@vue/composition-api'
 
 export default defineComponent({
-  name: 'comp-choice',
+  name: 'CompHistory',
   props: {
     number: String,
     word: String,

@@ -31,7 +31,7 @@
 import { defineComponent, computed, ref } from '@vue/composition-api'
 
 export default defineComponent({
-  name: 'comp-words',
+  name: 'CompWords',
   props: {
     dataSpeakers: Object,
   },
@@ -57,8 +57,6 @@ export default defineComponent({
     if (props.dataSpeakers.from.length >= 20) {
       sliceN.value = 19
     }
-
-    console.log(sliceN.value)
 
     return {
       columns,
