@@ -245,6 +245,7 @@ export default defineComponent({
 
       // Fire event on search keydown
       document.addEventListener('keydown', e => {
+        e.preventDefault()
         if (ctx.root.$store.state.checks.nav) return
         let charCode = e.keyCode
 

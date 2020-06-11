@@ -358,11 +358,14 @@ export default defineComponent({
     let scrollingTimeout = null
 
     onMounted(() => {
+      const mousewheelevt = /Firefox/i.test(navigator.userAgent)
+        ? 'wheel'
+        : 'mousewheel'
       // Scroll function with the throttle
-      window.addEventListener('mousewheel', throttle_scroll)
+      window.addEventListener(mousewheelevt, throttle_scroll)
       // Scroll function for the timeout to know if scroll is break or not
       window.addEventListener(
-        'mousewheel',
+        mousewheelevt,
         () => {
           // Scroll guard
           if (

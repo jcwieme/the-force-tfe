@@ -296,11 +296,11 @@ export default defineComponent({
       font-size: 4rem;
       margin-bottom: 2.5rem;
       opacity: 0;
-      animation: rollUp 1000ms 500ms normal forwards;
+      animation: rollUp 1000ms 250ms normal forwards;
     }
     p {
       opacity: 0;
-      animation: rollUp 1000ms 1000ms normal forwards;
+      animation: rollUp 1000ms 500ms normal forwards;
     }
   }
 
@@ -313,7 +313,7 @@ export default defineComponent({
     display: flex;
     flex-direction: row;
     opacity: 0;
-    animation: rollUp 1000ms 2000ms normal forwards;
+    animation: rollUp 1000ms 1000ms normal forwards;
 
     img {
       height: 4rem;
@@ -346,7 +346,7 @@ export default defineComponent({
     color: #ffe403;
     text-shadow: 0px 0px 2px #d1bc03;
     opacity: 0;
-    animation: rollUp 1000ms 1500ms normal forwards;
+    animation: rollUp 1000ms 750ms normal forwards;
   }
 
   &__enter {
@@ -355,7 +355,7 @@ export default defineComponent({
     pointer-events: none;
 
     &--show {
-      animation: rollUp 500ms 2000ms normal forwards;
+      animation: rollUp 500ms 500ms normal forwards;
       pointer-events: all;
     }
   }
