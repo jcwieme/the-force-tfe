@@ -23,4 +23,4 @@ ENV PORT 80
 ENV HOST 0.0.0.0
 EXPOSE 80
 
-CMD [ "npm", "serve" ]
+CMD [ "npm", "start" ]
