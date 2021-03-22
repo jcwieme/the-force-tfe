@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Loader from '@/views/Loader.vue'
-import Choice from '@/views/Choice.vue'
-import Words from '@/views/Words.vue'
-import Dialogues from '@/views/Dialogues.vue'
-import Numbers from '@/views/Numbers.vue'
-import History from '@/views/History.vue'
+// import Loader from '@/views/Loader.vue'
+// import Choice from '@/views/Choice.vue'
+// import Words from '@/views/Words.vue'
+// import Dialogues from '@/views/Dialogues.vue'
+// import Numbers from '@/views/Numbers.vue'
+// import History from '@/views/History.vue'
 
 import store from '@/store/'
 
@@ -15,32 +15,32 @@ const routes = [
   {
     path: '/',
     name: 'Loader',
-    component: Loader,
+    component: () => import('@/views/Loader'),
   },
   {
     path: '/choice',
     name: 'Choice',
-    component: Choice,
+    component: () => import('@/views/Choice'),
   },
   {
     path: '/movie/:id/history',
     name: 'History',
-    component: History,
+    component: () => import('@/views/History'),
   },
   {
     path: '/movie/:id/dialogues',
     name: 'Dialogues',
-    component: Dialogues,
+    component: () => import('@/views/Dialogues'),
   },
   {
     path: '/movie/:id/words',
     name: 'Words',
-    component: Words,
+    component: () => import('@/views/Words'),
   },
   {
     path: '/movie/:id/numbers',
     name: 'Numbers',
-    component: Numbers,
+    component: () => import('@/views/Numbers'),
   },
   {
     path: '*',
