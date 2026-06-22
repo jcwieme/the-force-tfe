@@ -44,7 +44,8 @@ import {
   onUpdated,
   onBeforeUpdate,
   watch,
-} from '@vue/composition-api'
+  getCurrentInstance,
+} from 'vue'
 
 import compHistory from '@/components/CompHistory'
 
@@ -53,35 +54,36 @@ export default defineComponent({
   components: {
     compHistory,
   },
-  setup(props, ctx) {
+  setup() {
+    const vm = getCurrentInstance().proxy
     // Variables
     const article = ref('one')
     const word = ref('Republic')
     let open = ref(false)
     const animationRotate = computed(() => {
-      return ctx.root.$store.state.checks.animation
+      return vm.$store.state.checks.animation
     })
 
     // Data for the view
     let text = computed(() => {
-      if (ctx.root.$store.state.movies[ctx.root.$route.params.id - 1]) {
-        return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1].text
+      if (vm.$store.state.movies[vm.$route.params.id - 1]) {
+        return vm.$store.state.movies[vm.$route.params.id - 1].text
       } else {
         return ''
       }
     })
     let number = computed(() => {
-      if (ctx.root.$store.state.movies[ctx.root.$route.params.id - 1]) {
-        return ctx.root.$store.state.movies[ctx.root.$route.params.id - 1]
+      if (vm.$store.state.movies[vm.$route.params.id - 1]) {
+        return vm.$store.state.movies[vm.$route.params.id - 1]
           .number
       } else {
         return ''
       }
     })
     let title = computed(() => {
-      if (ctx.root.$store.state.movies[ctx.root.$route.params.id - 1]) {
-        return ctx.root.$store.state.movies[
-          ctx.root.$route.params.id - 1
+      if (vm.$store.state.movies[vm.$route.params.id - 1]) {
+        return vm.$store.state.movies[
+          vm.$route.params.id - 1
         ].title.toUpperCase()
       } else {
         return ''
@@ -107,7 +109,7 @@ export default defineComponent({
             crawlContentStyle.top = crawlPos + 'px'
             if (crawlPos < -crawlContent.clientHeight) {
               if (animationRotate.value) return
-              ctx.root.$store.commit('toggleCheck', 'animation')
+              vm.$store.commit('toggleCheck', 'animation')
             } else {
               requestAnimationFrame(tick)
             }
@@ -162,7 +164,7 @@ export default defineComponent({
 
     // Skip function
     const skipEventHandler = () => {
-      ctx.root.$store.commit('toggleCheck', 'animation')
+      vm.$store.commit('toggleCheck', 'animation')
     }
 
     return {

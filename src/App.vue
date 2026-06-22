@@ -49,7 +49,8 @@ import {
   computed,
   onMounted,
   watch,
-} from '@vue/composition-api'
+  getCurrentInstance,
+} from 'vue'
 import Navigation from '@/components/CompNavigation'
 import compCredits from '@/components/CompCredits'
 import audioComp from '@/components/CompAudio'
@@ -64,24 +65,25 @@ export default defineComponent({
     compCredits,
     audioComp,
   },
-  setup(props, ctx) {
+  setup() {
+    const vm = getCurrentInstance().proxy
     // Setup variables
     const keyUp = ref(true)
     const screen = computed(() => {
-      return ctx.root.$store.state.checks.screen
+      return vm.$store.state.checks.screen
     })
     const creditsBool = computed(() => {
-      return ctx.root.$store.state.checks.credit
+      return vm.$store.state.checks.credit
     })
     const creditAnimation = ref('slide-top')
     const animation = computed(() => {
-      return ctx.root.$store.state.animation.name
+      return vm.$store.state.animation.name
     })
     const mode = computed(() => {
-      return ctx.root.$store.state.animation.mode
+      return vm.$store.state.animation.mode
     })
     const soundCheck = computed(() => {
-      return ctx.root.$route.name === 'Loader'
+      return vm.$route.name === 'Loader'
     })
 
     // Audio lists
@@ -104,19 +106,19 @@ export default defineComponent({
 
     // Wtach if audio bar is clicked
     watch(
-      () => ctx.root.$store.state.checks.music,
+      () => vm.$store.state.checks.music,
       (value, prevValue) => {
-        if (value && ctx.root.$route.name === 'History' && sounds[3].paused) {
+        if (value && vm.$route.name === 'History' && sounds[3].paused) {
           sounds[3].play()
         } else if (value) {
-          sounds[ctx.root.$store.state.checks.player].play()
+          sounds[vm.$store.state.checks.player].play()
         }
 
         if (!value && prevValue) {
           sounds.forEach((sound, index) => {
             if (!sound.paused) {
               sound.pause()
-              if (index !== 3) ctx.root.$store.commit('changeMusic', index)
+              if (index !== 3) vm.$store.commit('changeMusic', index)
             }
           })
         }
@@ -125,17 +127,17 @@ export default defineComponent({
 
     // Wtach change route nam (history to other)
     watch(
-      () => ctx.root.$route.name,
+      () => vm.$route.name,
       (value, prevValue) => {
-        if (!ctx.root.$store.state.checks.music) return
+        if (!vm.$store.state.checks.music) return
 
         if (
           (value === 'History' &&
             prevValue === 'Choice' &&
-            !ctx.root.$store.state.checks.animation) ||
+            !vm.$store.state.checks.animation) ||
           (value === 'History' &&
             prevValue === undefined &&
-            !ctx.root.$store.state.checks.animation)
+            !vm.$store.state.checks.animation)
         ) {
           sounds[0].pause()
           setTimeout(() => {
@@ -151,21 +153,21 @@ export default defineComponent({
     )
 
     // Navigation setup variable
-    const routes = ctx.root.$router.options.routes
+    const routes = vm.$router.options.routes
     const route = computed(() => {
-      return ctx.root.$route.name
+      return vm.$route.name
     })
     const index = computed(() => {
       return routes.findIndex(x => x.name === route.value)
     })
     const id = computed(() => {
-      return ctx.root.$route.params.id
+      return vm.$route.params.id
     })
     const navRender = computed(() => {
       if (
         route.value !== 'Choice' &&
         route.value !== 'Loader' &&
-        ctx.root.$store.state.checks.animation
+        vm.$store.state.checks.animation
       ) {
         return true
       } else {
@@ -177,7 +179,7 @@ export default defineComponent({
     const upHandler = () => {
       if (
         route.value === 'History' &&
-        !ctx.root.$store.state.checks.animation
+        !vm.$store.state.checks.animation
       ) {
         return
       }
@@ -186,11 +188,11 @@ export default defineComponent({
       if (
         route.value === 'Choice' ||
         route.value === 'Loader' ||
-        ctx.root.$store.state.checks.nav
+        vm.$store.state.checks.nav
       )
         return
 
-      ctx.root.$router.push({
+      vm.$router.push({
         name: routes[index.value - 1].name,
       })
     }
@@ -199,7 +201,7 @@ export default defineComponent({
     const downHandler = () => {
       if (
         route.value === 'History' &&
-        !ctx.root.$store.state.checks.animation
+        !vm.$store.state.checks.animation
       ) {
         return
       }
@@ -208,12 +210,12 @@ export default defineComponent({
       if (
         route.value === 'Choice' ||
         route.value === 'Loader' ||
-        ctx.root.$store.state.checks.nav
+        vm.$store.state.checks.nav
       )
         return
 
       if (route.value !== 'Numbers') {
-        ctx.root.$router.push({
+        vm.$router.push({
           name: routes[index.value + 1].name,
         })
       }
@@ -222,7 +224,7 @@ export default defineComponent({
     // Nav function left
     const leftHandler = () => {
       if (id.value > 1) {
-        ctx.root.$router.push({
+        vm.$router.push({
           name: route.value,
           params: { id: parseInt(id.value) - 1 },
         })
@@ -232,7 +234,7 @@ export default defineComponent({
     // Nav function right
     const rightHandler = () => {
       if (id.value < 6) {
-        ctx.root.$router.push({
+        vm.$router.push({
           name: route.value,
           params: { id: parseInt(id.value) + 1 },
         })
@@ -248,12 +250,12 @@ export default defineComponent({
     const throttle_scroll = _.throttle(event => {
       // Scroll guard
       if (
-        ctx.root.$store.state.checks.scroll ||
+        vm.$store.state.checks.scroll ||
         route.value === 'Choice' ||
         route.value === 'Loader' ||
         (route.value === 'History' &&
-          !ctx.root.$store.state.checks.animation) ||
-        (route.value === 'Numbers' && !ctx.root.$store.state.checks.numbers)
+          !vm.$store.state.checks.animation) ||
+        (route.value === 'Numbers' && !vm.$store.state.checks.numbers)
       )
         return
 
@@ -273,13 +275,13 @@ export default defineComponent({
         } else {
           // If change direction wait bar 0
           if (prevDir.value !== direction.value) {
-            ctx.root.$store.commit('changeScroll', true)
+            vm.$store.commit('changeScroll', true)
 
             gsap.to('.progress-down', {
               width: 0,
               duration: 0.5,
               onComplete: function() {
-                ctx.root.$store.commit('changeScroll', false)
+                vm.$store.commit('changeScroll', false)
                 prevDir.value = null
               },
             })
@@ -302,12 +304,12 @@ export default defineComponent({
         } else {
           // If change direction wait bar 0
           if (prevDir.value !== direction.value) {
-            ctx.root.$store.commit('changeScroll', true)
+            vm.$store.commit('changeScroll', true)
             gsap.to('.progress-up', {
               width: 0,
               duration: 0.5,
               onComplete: function() {
-                ctx.root.$store.commit('changeScroll', false)
+                vm.$store.commit('changeScroll', false)
                 prevDir.value = null
               },
             })
@@ -324,7 +326,7 @@ export default defineComponent({
     const transitionScreen = nbr => {
       if (nbr > 21) {
         // Block the scroll
-        ctx.root.$store.commit('changeScroll', true)
+        vm.$store.commit('changeScroll', true)
 
         gsap.to(`.progress-${direction.value}`, {
           width: '100%',
@@ -366,12 +368,12 @@ export default defineComponent({
         () => {
           // Scroll guard
           if (
-            ctx.root.$store.state.checks.scroll ||
+            vm.$store.state.checks.scroll ||
             route.value === 'Choice' ||
             route.value === 'Loader' ||
             (route.value === 'History' &&
-              !ctx.root.$store.state.checks.animation) ||
-            (route.value === 'Numbers' && !ctx.root.$store.state.checks.numbers)
+              !vm.$store.state.checks.animation) ||
+            (route.value === 'Numbers' && !vm.$store.state.checks.numbers)
           )
             return
 
@@ -388,16 +390,16 @@ export default defineComponent({
       )
 
       // Let's preload images
-      preloadImages(ctx.root.$store.state.loader, ctx.root.$store, () => {
-        ctx.root.$store.dispatch('LOAD_DATA')
+      preloadImages(vm.$store.state.loader, vm.$store, () => {
+        vm.$store.dispatch('LOAD_DATA')
       })
 
       // Check is mobile version
-      ctx.root.$store.commit('checkScreen', isMobile(window))
+      vm.$store.commit('checkScreen', isMobile(window))
 
       // Check is Mobile version on resize
       window.addEventListener('resize', () => {
-        ctx.root.$store.commit('checkScreen', isMobile(window))
+        vm.$store.commit('checkScreen', isMobile(window))
       })
 
       // Navigation arrows
@@ -407,7 +409,7 @@ export default defineComponent({
         // if History and animation running return
         if (
           route.value === 'History' &&
-          !ctx.root.$store.state.checks.animation
+          !vm.$store.state.checks.animation
         ) {
           return
         }
@@ -416,7 +418,7 @@ export default defineComponent({
         if (
           route.value !== 'Choice' &&
           route.value !== 'Loader' &&
-          !ctx.root.$store.state.checks.nav
+          !vm.$store.state.checks.nav
         ) {
           // right
           if (key === 39) {
@@ -456,7 +458,7 @@ export default defineComponent({
     })
 
     watch(
-      () => ctx.root.$store.state.checks.credit,
+      () => vm.$store.state.checks.credit,
       (value, prevValue) => {
         if (value && !prevValue) {
           creditAnimation.value = 'slide-bottom'

@@ -12,17 +12,18 @@
 </template>
 
 <script>
-import { defineComponent, computed } from '@vue/composition-api'
+import { defineComponent, computed, getCurrentInstance } from 'vue'
 
 export default defineComponent({
   name: 'CompAudio',
-  setup(props, ctx) {
+  setup() {
+    const vm = getCurrentInstance().proxy
     const musicPlay = computed(() => {
-      return ctx.root.$store.state.checks.music
+      return vm.$store.state.checks.music
     })
     // Toggle global function
     const toggleFn = state => {
-      ctx.root.$store.commit('toggleCheck', state)
+      vm.$store.commit('toggleCheck', state)
     }
     return {
       musicPlay,

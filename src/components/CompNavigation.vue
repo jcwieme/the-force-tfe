@@ -74,14 +74,15 @@
 </template>
 
 <script>
-import { defineComponent, computed, ref, watch } from '@vue/composition-api'
+import { defineComponent, computed, ref, watch, getCurrentInstance } from 'vue'
 
 export default defineComponent({
   name: 'CompNavigation',
-  setup(props, ctx) {
+  setup() {
+    const vm = getCurrentInstance().proxy
     // Get arrow's path
     const arrows = computed(() => {
-      let store = ctx.root.$store.state.arrows
+      let store = vm.$store.state.arrows
       let arrows = [
         {
           name: 'left',
@@ -123,24 +124,24 @@ export default defineComponent({
 
     // Check navigation open or not
     let isNavOpen = computed(() => {
-      return ctx.root.$store.state.checks.nav
+      return vm.$store.state.checks.nav
     })
     const navRef = ref(null)
 
     // Check music is playing
     // const musicPlay = computed(() => {
-    //   return ctx.root.$store.state.checks.music
+    //   return vm.$store.state.checks.music
     // })
 
-    const router = ctx.root.$router.options.routes
+    const router = vm.$router.options.routes
     const route = computed(() => {
-      return ctx.root.$route.name
+      return vm.$route.name
     })
     const index = computed(() => {
       return router.findIndex(x => x.name === route.value)
     })
     const id = computed(() => {
-      return ctx.root.$route.params.id
+      return vm.$route.params.id
     })
 
     const changeNav = name => {
@@ -152,20 +153,20 @@ export default defineComponent({
         return
 
       if (name === 'up') {
-        ctx.root.$router.push({
+        vm.$router.push({
           name: router[index.value - 1].name,
         })
       }
 
       if (name === 'down') {
-        ctx.root.$router.push({
+        vm.$router.push({
           name: router[index.value + 1].name,
         })
       }
 
       if (name === 'right') {
         if (id.value < 6) {
-          ctx.root.$router.push({
+          vm.$router.push({
             name: route.value,
             params: { id: parseInt(id.value) + 1 },
           })
@@ -174,7 +175,7 @@ export default defineComponent({
 
       if (name === 'left') {
         if (id.value > 1) {
-          ctx.root.$router.push({
+          vm.$router.push({
             name: route.value,
             params: { id: parseInt(id.value) - 1 },
           })
@@ -184,7 +185,7 @@ export default defineComponent({
 
     // Chapter explanation texts
     const chapterText = computed(() => {
-      switch (ctx.root.$route.name) {
+      switch (vm.$route.name) {
         case 'History':
           return 'Iconic text of the Star Wars sagas, it will give you a preview of the movie. Do not hesitate to hover highlighted words!'
         case 'Dialogues':
@@ -205,22 +206,22 @@ export default defineComponent({
           title: 'Back to movies',
         },
         {
-          path: `/movie/${ctx.root.$route.params.id}/history`,
+          path: `/movie/${vm.$route.params.id}/history`,
           number: '01',
           title: 'History',
         },
         {
-          path: `/movie/${ctx.root.$route.params.id}/dialogues`,
+          path: `/movie/${vm.$route.params.id}/dialogues`,
           number: '02',
           title: 'Dialogues',
         },
         {
-          path: `/movie/${ctx.root.$route.params.id}/words`,
+          path: `/movie/${vm.$route.params.id}/words`,
           number: '03',
           title: 'Words',
         },
         {
-          path: `/movie/${ctx.root.$route.params.id}/numbers`,
+          path: `/movie/${vm.$route.params.id}/numbers`,
           number: '04',
           title: 'Numbers',
         },
@@ -231,33 +232,33 @@ export default defineComponent({
     const title = computed(() => {
       return {
         title:
-          ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie].title,
-        number: ctx.root.$store.state.movies[
-          ctx.root.$store.state.activeMovie
+          vm.$store.state.movies[vm.$store.state.activeMovie].title,
+        number: vm.$store.state.movies[
+          vm.$store.state.activeMovie
         ].number.toLowerCase(),
       }
     })
 
     // Toggle global function
     const toggleFn = state => {
-      ctx.root.$store.commit('toggleCheck', state)
+      vm.$store.commit('toggleCheck', state)
     }
 
     // Get chapter number
     const chapter = computed(() => {
       return {
-        name: ctx.root.$route.name,
+        name: vm.$route.name,
         number: '0' + (index.value - 1),
       }
     })
 
     const clickFunction = e => {
       if (!navRef.value.contains(e.target))
-        ctx.root.$store.commit('toggleCheck', 'nav')
+        vm.$store.commit('toggleCheck', 'nav')
     }
 
     watch(
-      () => ctx.root.$store.state.checks.nav,
+      () => vm.$store.state.checks.nav,
       (value, prevValue) => {
         let sections = document.querySelector('.section')
         if (value) {

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, watch } from '@vue/composition-api'
+import { defineComponent, onMounted, watch, getCurrentInstance } from 'vue'
 import * as d3 from 'd3'
 
 export default defineComponent({
@@ -11,7 +11,8 @@ export default defineComponent({
   props: {
     DataDialogues: Object,
   },
-  setup(props, ctx) {
+  setup(props) {
+    const vm = getCurrentInstance().proxy
     const setup = {
       margin: {
         top: 150,
@@ -928,7 +929,7 @@ export default defineComponent({
     }
 
     const onResize = () => {
-      if (window.innerWidth > 1024 && ctx.root.$route.name === 'Dialogues') {
+      if (window.innerWidth > 1024 && vm.$route.name === 'Dialogues') {
         setup.width = window.innerWidth
         setup.height = window.innerHeight
         setup.circle.originX = setup.width / 2

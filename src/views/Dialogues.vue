@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { defineComponent, computed } from '@vue/composition-api'
+import { defineComponent, computed, getCurrentInstance } from 'vue'
 import d3Dialogues from '@/d3-components/D3DialoguesChart'
 import numberBubble from '@/components/CompBubbleNumber'
 import * as utils from '@/tools/utils'
@@ -17,17 +17,17 @@ export default defineComponent({
     d3Dialogues,
     numberBubble,
   },
-  setup(props, ctx) {
+  setup() {
+    const vm = getCurrentInstance().proxy
     // Setup variables
     const title = computed(() => {
-      return ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie]
-        .title
+      return vm.$store.state.movies[vm.$store.state.activeMovie].title
     })
 
     const movieChoice = computed(() => {
       return utils.filterMovies(
-        ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie].dialogs,
-        ctx.root.$route.params.id
+        vm.$store.state.movies[vm.$store.state.activeMovie].dialogs,
+        vm.$route.params.id
       )
     })
 

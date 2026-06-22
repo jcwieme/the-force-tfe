@@ -25,7 +25,8 @@ import {
   onMounted,
   computed,
   watch,
-} from '@vue/composition-api'
+  getCurrentInstance,
+} from 'vue'
 import * as d3 from 'd3'
 
 export default defineComponent({
@@ -35,16 +36,17 @@ export default defineComponent({
       type: Object,
     },
   },
-  setup(props, ctx) {
+  setup(props) {
+    const vm = getCurrentInstance().proxy
     const checkNumbers = computed(() => {
-      return ctx.root.$store.state.checks.numbers
+      return vm.$store.state.checks.numbers
     })
     onMounted(() => {
       window.addEventListener('resize', onResize)
       draw()
     })
     const onResize = () => {
-      if (window.innerWidth > 1024 && ctx.root.$route.name === 'Numbers') {
+      if (window.innerWidth > 1024 && vm.$route.name === 'Numbers') {
         if (document.querySelector(`#${props.dataChart.id}`))
           document.querySelector(`#${props.dataChart.id}`).innerHTML = ''
         draw()
@@ -135,7 +137,7 @@ export default defineComponent({
         .attr('y', -5)
         .text('')
 
-      if (!ctx.root.$store.state.checks.numbers) {
+      if (!vm.$store.state.checks.numbers) {
         circles
           .transition()
           .delay(function(d, i) {
@@ -156,7 +158,7 @@ export default defineComponent({
       }
 
       watch(
-        () => ctx.root.$store.state.checks.numbers,
+        () => vm.$store.state.checks.numbers,
         newV => {
           if (newV) {
             d3.selectAll(`.pie_${props.dataChart.id}`).on('mouseover', d => {

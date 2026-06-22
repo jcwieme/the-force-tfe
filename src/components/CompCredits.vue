@@ -38,16 +38,17 @@
 </template>
 
 <script>
-import { defineComponent, computed } from '@vue/composition-api'
+import { defineComponent, computed, getCurrentInstance } from 'vue'
 
 export default defineComponent({
   name: 'CompCredits',
-  setup(props, ctx) {
+  setup() {
+    const vm = getCurrentInstance().proxy
     const toggleCredits = () => {
-      ctx.root.$store.commit('toggleCheck', 'credit')
+      vm.$store.commit('toggleCheck', 'credit')
     }
     const creditsArray = computed(() => {
-      return ctx.root.$store.state.credits
+      return vm.$store.state.credits
     })
 
     return {

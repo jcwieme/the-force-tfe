@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { defineComponent, onMounted } from '@vue/composition-api'
+import { defineComponent, onMounted, getCurrentInstance } from 'vue'
 import compChoice from '@/components/CompChoice'
 
 export default defineComponent({
@@ -22,8 +22,9 @@ export default defineComponent({
   components: {
     compChoice,
   },
-  setup(props, ctx) {
-    const choices = ctx.root.$store.state.choices
+  setup() {
+    const vm = getCurrentInstance().proxy
+    const choices = vm.$store.state.choices
 
     onMounted(() => {
       // Mouse over function

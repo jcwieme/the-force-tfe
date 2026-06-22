@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { defineComponent, computed } from '@vue/composition-api'
+import { defineComponent, computed, getCurrentInstance } from 'vue'
 
 import d3Bar from '@/d3-components/D3BarChart'
 import d3Pie from '@/d3-components/D3PieChart'
@@ -29,35 +29,36 @@ export default defineComponent({
     d3Bar,
     d3Pie,
   },
-  setup(props, ctx) {
+  setup() {
+    const vm = getCurrentInstance().proxy
     const checkNumbers = computed(() => {
-      return ctx.root.$store.state.checks.numbers
+      return vm.$store.state.checks.numbers
     })
     const numbers = computed(() => {
-      return ctx.root.$store.state.numbers[ctx.root.$store.state.activeMovie]
+      return vm.$store.state.numbers[vm.$store.state.activeMovie]
     })
 
     const linesInMovies = computed(() => {
       return Math.floor(
-        ctx.root.$store.state.linesInMovie.reduce((t, n) => t + n) / 6
+        vm.$store.state.linesInMovie.reduce((t, n) => t + n) / 6
       )
     })
 
     const wordsInMovies = computed(() => {
       return Math.floor(
-        ctx.root.$store.state.wordsInMovie.reduce((t, n) => t + n) / 6
+        vm.$store.state.wordsInMovie.reduce((t, n) => t + n) / 6
       )
     })
 
     const linesInMovie = computed(() => {
-      return ctx.root.$store.state.linesInMovie[
-        ctx.root.$store.state.activeMovie
+      return vm.$store.state.linesInMovie[
+        vm.$store.state.activeMovie
       ]
     })
 
     const wordsInMovie = computed(() => {
-      return ctx.root.$store.state.wordsInMovie[
-        ctx.root.$store.state.activeMovie
+      return vm.$store.state.wordsInMovie[
+        vm.$store.state.activeMovie
       ]
     })
 
@@ -70,8 +71,8 @@ export default defineComponent({
             value: linesInMovies,
           },
           {
-            name: `${ctx.root.$store.state.movies[
-              ctx.root.$store.state.activeMovie
+            name: `${vm.$store.state.movies[
+              vm.$store.state.activeMovie
             ].number.toLowerCase()}`,
             value: linesInMovie,
           },
@@ -79,8 +80,8 @@ export default defineComponent({
         other: {
           global: 'average lines',
           title: 'Lines in the movie ',
-          sub: `lines in the  ${ctx.root.$store.state.movies[
-            ctx.root.$store.state.activeMovie
+          sub: `lines in the  ${vm.$store.state.movies[
+            vm.$store.state.activeMovie
           ].number.toLowerCase()}`,
           class:
             'numbers__column--big numbers__column--right ' +
@@ -99,8 +100,8 @@ export default defineComponent({
             value: wordsInMovies,
           },
           {
-            name: `${ctx.root.$store.state.movies[
-              ctx.root.$store.state.activeMovie
+            name: `${vm.$store.state.movies[
+              vm.$store.state.activeMovie
             ].number.toLowerCase()}`,
             value: wordsInMovie,
           },
@@ -108,8 +109,8 @@ export default defineComponent({
         other: {
           global: 'average words',
           title: 'how much words in the movie ?',
-          sub: `words in the ${ctx.root.$store.state.movies[
-            ctx.root.$store.state.activeMovie
+          sub: `words in the ${vm.$store.state.movies[
+            vm.$store.state.activeMovie
           ].number.toLowerCase()}`,
           class:
             'numbers__column--big numbers__column--left ' +
@@ -162,7 +163,7 @@ export default defineComponent({
         ],
         title: 'Races in the movie',
         sub:
-          ctx.root.$store.state.activeMovie === 0
+          vm.$store.state.activeMovie === 0
             ? 'characters are aliens'
             : 'characters are humans',
         class: 'numbers__column--small',
@@ -207,7 +208,7 @@ export default defineComponent({
 
     if (!checkNumbers.value) {
       setTimeout(() => {
-        ctx.root.$store.commit('toggleCheck', 'numbers')
+        vm.$store.commit('toggleCheck', 'numbers')
       }, 4400)
     }
 

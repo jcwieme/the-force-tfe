@@ -36,7 +36,8 @@ import {
   ref,
   computed,
   watch,
-} from '@vue/composition-api'
+  getCurrentInstance,
+} from 'vue'
 import * as d3 from 'd3'
 
 export default defineComponent({
@@ -46,16 +47,17 @@ export default defineComponent({
       type: Object,
     },
   },
-  setup(props, ctx) {
+  setup(props) {
+    const vm = getCurrentInstance().proxy
     const checkNumbers = computed(() => {
-      return ctx.root.$store.state.checks.numbers
+      return vm.$store.state.checks.numbers
     })
     onMounted(() => {
       window.addEventListener('resize', onResize)
       draw()
     })
     const onResize = () => {
-      if (window.innerWidth > 1024 && ctx.root.$route.name === 'Numbers') {
+      if (window.innerWidth > 1024 && vm.$route.name === 'Numbers') {
         if (document.querySelector(`#${props.dataBar.id}`))
           document.querySelector(`#${props.dataBar.id}`).innerHTML = ''
         draw()
@@ -173,7 +175,7 @@ export default defineComponent({
         .attr('stroke', '#ffe403')
         .attr('stroke-width', '5')
 
-      if (!ctx.root.$store.state.checks.numbers) {
+      if (!vm.$store.state.checks.numbers) {
         bar
           .transition()
           .duration(800)
@@ -202,7 +204,7 @@ export default defineComponent({
       }
 
       watch(
-        () => ctx.root.$store.state.checks.numbers,
+        () => vm.$store.state.checks.numbers,
         newV => {
           if (newV) {
             bar.on('mouseover', d => {

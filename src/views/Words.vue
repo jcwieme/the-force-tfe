@@ -102,7 +102,8 @@ import {
   computed,
   onMounted,
   reactive,
-} from '@vue/composition-api'
+  getCurrentInstance,
+} from 'vue'
 import * as utils from '@/tools/utils'
 
 import compWords from '@/components/CompWords'
@@ -112,7 +113,8 @@ export default defineComponent({
   components: {
     compWords,
   },
-  setup(props, ctx) {
+  setup() {
+    const vm = getCurrentInstance().proxy
     const choiceWords = [
       ['jedi', 'master', 'chancellor', 'mesa', 'naboo'],
       ['master', 'jedi', 'senator', 'army', 'anakin'],
@@ -163,15 +165,15 @@ export default defineComponent({
 
     const words = computed(() => {
       return utils.sortWords(
-        ctx.root.$store.state.movies[ctx.root.$store.state.activeMovie].dialogs,
-        ctx.root.$store.state.activeMovie + 1
+        vm.$store.state.movies[vm.$store.state.activeMovie].dialogs,
+        vm.$store.state.activeMovie + 1
       )
     })
 
     const movieWords = computed(() => {
       let filteredWords = []
       words.value.forEach(el => {
-        choiceWords[ctx.root.$store.state.activeMovie].forEach(temp => {
+        choiceWords[vm.$store.state.activeMovie].forEach(temp => {
           if (temp === el.word) {
             filteredWords.push(el)
           }
@@ -181,14 +183,14 @@ export default defineComponent({
     })
 
     const hoverFn = () => {
-      if (ctx.root.$store.state.checks.nav) return
+      if (vm.$store.state.checks.nav) return
       if (data.animState) {
         data.hoverState = !data.hoverState
       }
     }
 
     const hoverFnWords = e => {
-      if (ctx.root.$store.state.checks.nav) return
+      if (vm.$store.state.checks.nav) return
       let word = e.currentTarget.innerText.toLowerCase()
 
       if (e.currentTarget.classList.contains('words__word--actif')) {
@@ -245,7 +247,7 @@ export default defineComponent({
 
       // Fire event on search keydown
       document.addEventListener('keydown', e => {
-        if (ctx.root.$store.state.checks.nav) return
+        if (vm.$store.state.checks.nav) return
         let charCode = e.keyCode
 
         // Check if it's a character

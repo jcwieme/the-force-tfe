@@ -202,20 +202,21 @@
 </template>
 
 <script>
-import { defineComponent, computed, ref, watch } from '@vue/composition-api'
+import { defineComponent, computed, ref, watch, getCurrentInstance } from 'vue'
 import { gsap } from 'gsap'
 
 export default defineComponent({
   name: 'Loader',
-  setup(props, ctx) {
+  setup() {
+    const vm = getCurrentInstance().proxy
     const random = ref(Math.floor(Math.random() * 4) + 1)
     const showClass = ref('loader__enter--show')
     const loaded = computed(() => {
-      return ctx.root.$store.state.checks.loaded
+      return vm.$store.state.checks.loaded
     })
 
     const nextRoute = computed(() => {
-      return ctx.root.$store.state.nextRoute
+      return vm.$store.state.nextRoute
     })
 
     const text = ref('')
@@ -235,8 +236,8 @@ export default defineComponent({
     const loadProgress = computed(() => {
       return (
         100 -
-        (ctx.root.$store.state.checks.load /
-          ctx.root.$store.state.loader.length) *
+        (vm.$store.state.checks.load /
+          vm.$store.state.loader.length) *
           90
       )
     })
@@ -254,7 +255,7 @@ export default defineComponent({
     })
 
     const toggleMusic = () => {
-      ctx.root.$store.commit('toggleCheck', 'music')
+      vm.$store.commit('toggleCheck', 'music')
     }
 
     return {

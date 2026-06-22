@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { defineComponent, computed } from '@vue/composition-api'
+import { defineComponent, computed, getCurrentInstance } from 'vue'
 
 export default defineComponent({
   name: 'CompHistory',
@@ -17,9 +17,10 @@ export default defineComponent({
     number: String,
     word: String,
   },
-  setup(props, ctx) {
+  setup(props) {
+    const vm = getCurrentInstance().proxy
     let data = computed(() => {
-      return ctx.root.$store.state.definitions[props.number]
+      return vm.$store.state.definitions[props.number]
     })
 
     let title = computed(() => {
